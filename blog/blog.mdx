@@ -14,8 +14,18 @@ icon: "book"
 mode: "wide"
 readingTime: "6 min read"
 ---
+import BlogMeta from "@/components/BlogMeta"
 
-![cover](/images/yak-shaving.webp)
+![cover](/images/blog/agent-cover.jpg)
+
+<BlogMeta
+  tag={frontMatter.tags?.[0] ?? "Announcements"}
+  date={frontMatter.date}
+  readingTime={frontMatter.readingTime}
+  authorName={frontMatter.author?.name}
+  authorRole={frontMatter.author?.role}
+  authorAvatar={frontMatter.author?.avatar}
+/>
 
 > **Product updates** · Oct 22, 2025
 
