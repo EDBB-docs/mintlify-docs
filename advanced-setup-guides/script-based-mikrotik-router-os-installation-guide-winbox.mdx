@@ -6,18 +6,16 @@ metaTitle: "Install MikroTik RouterOS (CHR) on EDBB VPS"
 metaDescription: "Use an automated script to deploy MikroTik RouterOS (CHR) on EDBB KVM VPS instances and finish setup via Winbox."
 ---
 
-This guide walks through installing **MikroTik Cloud Hosted Router (CHR)** on an Ubuntu-based EDBB VPS.  
-You’ll download the latest CHR image, inject an autorun script with your current IP settings, write the image to the VPS disk, and reboot straight into RouterOS.  
+This guide walks through installing **MikroTik Cloud Hosted Router (CHR)** on an Debian-based EDBB VPS.  
+You’ll download the latest CHR image, inject an autorun script, write the image to the VPS disk, and reboot straight into RouterOS.  
 Winbox is then used to complete the initial configuration.
 
 ---
 
 ## 1. Prepare the VPS
 
-1. Reinstall the VPS with a clean Ubuntu 22.04 environment using the [EDBB Control Panel](https://my.edbb.com).  
+1. Reinstall the VPS with a clean Debian 12 environment using the [EDBB Control Panel](https://my.edbb.com).  
 2. Boot the VPS and connect via SSH.
-
-> The script automatically pulls your existing IPv4 and gateway from Ubuntu before overwriting the disk. Make sure the VPS has internet connectivity during the process.
 
 ---
 
@@ -31,111 +29,98 @@ nano install_chr.sh
 
 2. Paste the following script provided by EDBB:
 
-```bash
+```bash install_chr.sh expandable
 #!/bin/bash
 set -euo pipefail
 
-# Step 0: Run as root
-if [[ $EUID -ne 0 ]]; then
-    echo "Please run as root (e.g. sudo $0)"
-    exit 1
-fi
+# Include sbin paths
+export PATH="$PATH:/usr/bin:/bin:/usr/sbin:/sbin"
 
-# Install required tools
-apt-get update
-apt-get -y install wget curl gzip kpartx unzip
-
-# Step 1: Get latest CHR version
-latest_version=$(curl -s https://mikrotik.com/download \
-  | grep -oP 'chr-\K[0-9]+\.[0-9]+\.[0-9]+(?=\.img\.zip)' \
-  | sort -V | tail -n1)
-
-echo "[*] Latest CHR version: $latest_version"
-
-# Step 2: Download image
-download_url="https://download.mikrotik.com/routeros/$latest_version/chr-$latest_version.img.zip"
-echo "[*] Downloading from $download_url ..."
-wget --no-check-certificate "$download_url" -O chr.img.zip
-
-# Step 3: Extract image
-echo "[*] Extracting image..."
-unzip -o chr.img.zip
-mv "chr-$latest_version.img" chr.img
-
-# Step 4: Detect root disk (the device that hosts /)
-root_disk=$(df / | tail -1 | awk '{print $1}' | sed 's/[0-9]*$//')
-if [[ -z "${root_disk}" ]]; then
-  echo "[-] Could not detect root disk!"
+# Auto-detect target disk (vda vs sda)
+if [ -b /dev/vda ]; then
+  export TARGET_DISK=/dev/vda
+elif [ -b /dev/sda ]; then
+  export TARGET_DISK=/dev/sda
+else
+  echo "ERROR: Neither /dev/vda nor /dev/sda found. Available disks:" >&2
+  lsblk -d -o NAME,SIZE,TYPE >&2
   exit 1
 fi
-echo "[*] Root disk detected: $root_disk"
+echo "Using TARGET_DISK=$TARGET_DISK"
 
-# Step 5: Map partitions and mount
-echo "[*] Mapping partitions..."
-loop_dev=$(losetup -f --show chr.img)         # e.g. /dev/loop6
-kpartx_out=$(kpartx -av "$loop_dev" || true)  # some images may have 1 partition only
-echo "$kpartx_out"
+sudo apt-get update && sudo apt-get upgrade -y
+# add parted for partprobe; util-linux provides fdisk
+sudo apt-get -y install gzip unzip curl wget util-linux ca-certificates parted
 
-# Wait for device nodes
-udevadm settle || true
-sleep 1
+# Latest stable RouterOS v7
+latest_version="$(curl -fsSL https://download.mikrotik.com/routeros/NEWESTa7.stable | awk '{print $1}')"
 
-base=$(basename "$loop_dev")  # loopN
-candidates=(/dev/mapper/${base}p*)
-parts=()
-for p in "${candidates[@]}"; do [[ -e "$p" ]] && parts+=("$p"); done
+# CHR RAW disk image
+ZIP="chr-${latest_version}.img.zip"
+IMG="chr-${latest_version}.img"
+download_url="https://download.mikrotik.com/routeros/${latest_version}/${ZIP}"
 
-# If no mapper partitions, try mounting the whole loop device (rare case)
-if [[ ${#parts[@]} -eq 0 ]]; then
-  parts=("$loop_dev")
+# Download + extract
+wget -O "$ZIP" "$download_url"
+rm -f "$IMG"
+unzip -o "$ZIP" "$IMG"
+
+# Attach image with partition scan
+LOOP="$(sudo losetup --find --show --partscan "$IMG")"
+sudo udevadm settle 2>/dev/null || true
+lsblk "$LOOP"
+
+cleanup() {
+  set +e
+  sudo umount /mnt/image 2>/dev/null || true
+  sudo losetup -d "$LOOP" 2>/dev/null || true
+}
+trap cleanup EXIT
+
+# Mount partition for injection:
+# Prefer p2 first (typically main filesystem) then p1
+sudo mkdir -p /mnt/image
+MOUNTED=0
+for p in "${LOOP}p2" "${LOOP}p1"; do
+  [ -b "$p" ] || continue
+  if sudo mount "$p" /mnt/image 2>/dev/null; then
+    if sudo sh -c 'touch /mnt/image/.writetest && rm -f /mnt/image/.writetest'; then
+      MOUNTED=1
+      echo "Mounted writable partition: $p"
+      break
+    fi
+    sudo umount /mnt/image
+  fi
+done
+
+if [ "$MOUNTED" != "1" ]; then
+  echo "ERROR: Could not mount a writable partition inside CHR image ($IMG)." >&2
+  exit 1
 fi
-
-# Choose the highest partition if multiple exist
-part_to_mount="${parts[-1]}"
-echo "[*] Mounting $part_to_mount ..."
-mkdir -p /mnt/chr
-mount "$part_to_mount" /mnt/chr
-
-# Step 6: Collect current network settings from Ubuntu
-iface=$(ip -o -4 addr show up primary scope global | awk '{print $2}' | head -n1 || true)
-ipaddr=$(ip -o -4 addr show dev "${iface:-}" | awk '{print $4}' | head -n1 || true)
-gateway=$(ip route | awk '/^default/ {print $3; exit}' || true)
-
-if [[ -z "${ipaddr}" || -z "${gateway}" ]]; then
-  echo "[-] Could not determine IP/Gateway from host. Proceeding but autorun will miss L3 config."
-fi
-
-# Step 7: Inject autorun.scr (prefer /rw if present)
-echo "[*] Injecting autorun.scr ..."
-target_dir="/mnt/chr"
-if [[ -d "/mnt/chr/rw" ]]; then
-  target_dir="/mnt/chr/rw"
-fi
-
-cat > "${target_dir}/autorun.scr" <<EOF
-/ip address add address=${ipaddr} interface=[/interface ethernet find where name=ether1]
-/ip route add gateway=${gateway}
-/ip dns set servers=1.1.1.1,1.0.0.1 allow-remote-requests=yes
-/ip service disable telnet
-EOF
 
 sync
+sudo umount /mnt/image
+sudo losetup -d "$LOOP"
+trap - EXIT
 
-# Step 8: Cleanup mounts and mappings
-umount /mnt/chr || true
-kpartx -dv "$loop_dev" || true
-losetup -d "$loop_dev" || true
-rm -rf /mnt/chr
+# Write CHR image to disk
+echo u | sudo tee /proc/sysrq-trigger >/dev/null
+sudo dd if="$IMG" bs=4M of="$TARGET_DISK" status=progress conv=fsync
+sudo sync
 
-# Step 9: Overwrite root disk with CHR (IRREVERSIBLE)
-echo "[*] Installing CHR on $root_disk (this will erase Ubuntu!)"
-dd if=chr.img of="$root_disk" bs=4M oflag=sync status=progress
+# Verify layout best-effort
+sudo partprobe "$TARGET_DISK" 2>/dev/null || true
+lsblk "$TARGET_DISK" || true
+sudo fdisk -l "$TARGET_DISK" 2>/dev/null || true
 
-# Step 10: Reboot into CHR
-echo "[*] Done. Rebooting into CHR in 5 seconds..."
-sleep 5
-echo 1 > /proc/sys/kernel/sysrq
-echo b > /proc/sysrq-trigger
+echo s | sudo tee /proc/sysrq-trigger >/dev/null
+
+echo "Waiting 5 seconds..."
+end_time=$((SECONDS + 5))
+while [ $SECONDS -lt $end_time ]; do :; done
+
+echo "Reboot OS"
+echo b | sudo tee /proc/sysrq-trigger >/dev/null
 ```
 
 3. Save the file (`Ctrl + O`, `Enter`) and exit (`Ctrl + X`).
@@ -149,24 +134,41 @@ chmod +x install_chr.sh
 sudo ./install_chr.sh
 ```
 
-- The script verifies root privileges, installs dependencies, fetches the newest CHR image, injects the autorun script, writes the image to the VPS disk, and reboots the server.  
-- Expect the SSH session to terminate once the image begins writing and the reboot occurs.
-
-> The `dd` step erases the existing Ubuntu installation. Ensure all required data is backed up before running the script.
+The VPS will reboot automatically after installation.
+### Configure RouterOS manually
+1. Open your VPS service in the client area.
+2. Enable VNC and connect via noVNC or a VNC client.
+3. Sign in to RouterOS with user admin and a blank password.
+4. Set a new password for the admin account.
+5. Identify the network interface:
+```bash
+/interface print
+```
+6. Using the network details from your billing panel, configure the IP address (example values shown):
+```bash
+/ip address add address=212.166.2.100/24 interface=ether1
+```
+7. Configure the default route (gateway example shown):
+```bash
+/ip route add gateway=212.166.2.1 dst-address=0.0.0.0/0
+```
+8. Set DNS servers:
+```bash
+/ip dns set servers=1.1.1.1,1.0.0.1
+```
+9. After configuration, connect to RouterOS using Winbox.
 
 ---
 
 ## 4. Connect with Winbox
 
-After the VPS restarts, it will boot into MikroTik RouterOS. Finish the initial setup using Winbox:
+After the VPS restarts, it will boot into MikroTik RouterOS:
 
 1. Download Winbox from [mikrotik.com/download](https://mikrotik.com/download).  
 2. Launch Winbox and create a new session:
    - **Connect To:** public IPv4 address of the VPS.  
    - **Login:** `admin`  
-   - **Password:** leave blank on first login.  
+   - **Password:** enter `password`.  
    - Click **Connect**.
-3. When prompted, set a strong password for the `admin` account.  
-4. Verify that `ether1` carries the IP address from the autorun script, adjust DNS settings if required, and continue with your RouterOS configuration.
 
 You now have a clean MikroTik CHR deployment on EDBB infrastructure, ready for routing, firewall, and VPN services.
