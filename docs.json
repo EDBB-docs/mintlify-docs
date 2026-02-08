@@ -28,6 +28,15 @@
   "contextual": { "options": [ "copy", "view", "chatgpt", "claude", "perplexity", "cursor", "vscode" ] },
 
   "navigation": {
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Buy VPS Hosting",
+          "icon": "cloud",
+          "href": "https://www.edbb.com/#start-now"
+        }
+      ]
+    },
     "tabs": [
       {
         "tab": "Documentation",
@@ -42,7 +51,8 @@
               "linux-secure-shell-ssh",
               "windows-remote-desktop",
               "backups",
-              "acceptable-use-policy"]
+              "acceptable-use-policy"
+            ]
           },
           {
             "group": "VPS Management",
@@ -104,6 +114,7 @@
               {
                 "group": "Billing & Lifecycle",
                 "pages": [
+                  "faq/billing-lifecycle/how-to-pay-with-account-credit-mdx",
                   "faq/billing-lifecycle/moving-services-to-different-client-account",
                   "faq/billing-lifecycle/how-to-add-account-credit",
                   "faq/billing-lifecycle/no-upfront-deposits-required",
@@ -165,7 +176,6 @@
               }
             ]
           },
-
           {
             "group": "Advanced Playbooks",
             "pages": [
@@ -187,8 +197,7 @@
           }
         ]
       },
-
-        {
+      {
         "tab": "Changelog",
         "groups": [
           {
@@ -199,16 +208,7 @@
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Buy VPS Hosting",
-      "href": "https://www.edbb.com/#start-now",
-          "icon": "cloud"
-        }
-      ]
-    }
+    ]
   },
   "styling": {
     "codeblocks": "system"
