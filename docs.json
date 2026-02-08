@@ -114,9 +114,9 @@
               {
                 "group": "Billing & Lifecycle",
                 "pages": [
-                  "faq/billing-lifecycle/how-to-pay-with-account-credit",
                   "faq/billing-lifecycle/moving-services-to-different-client-account",
                   "faq/billing-lifecycle/how-to-add-account-credit",
+                  "faq/billing-lifecycle/how-to-pay-with-account-credit",
                   "faq/billing-lifecycle/no-upfront-deposits-required",
                   "faq/billing-lifecycle/accidental-renewal-convert-payment-to-credit",
                   "faq/billing-lifecycle/accepted-payment-methods",
