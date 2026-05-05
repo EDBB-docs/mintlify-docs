@@ -1,0 +1,186 @@
+---
+title: "UEFI vs BIOS and vTPM"
+sidebarTitle: "UEFI, BIOS & vTPM"
+description: "Understand Boot Mode (BIOS vs UEFI) and vTPM options in EDBB VPS, including compatibility, requirements, and best practices."
+---
+
+## 🆕 UEFI, BIOS & vTPM Overview
+
+<Info>
+  EDBB VPS supports both legacy and modern boot modes, along with optional virtual TPM support. These settings primarily affect operating system compatibility and boot behavior.
+</Info>
+
+The platform supports:
+
+- **BIOS (legacy boot)**
+- **UEFI (modern boot)**
+- **vTPM (software-based Trusted Platform Module)**
+
+These options are especially important for newer operating systems such as Windows 11.
+
+---
+
+## 🧭 BIOS vs UEFI
+
+<CardGroup cols={2}>
+  <Card title="🟢 BIOS (Default)">
+    <ul>
+      <li>Legacy boot mode</li>
+      <li>Maximum compatibility</li>
+      <li>Works with all supported operating systems</li>
+      <li>Recommended for most Linux deployments</li>
+    </ul>
+    👉 Default setting on all VPS
+  </Card>
+
+  <Card title="🔵 UEFI">
+    <ul>
+      <li>Modern boot standard</li>
+      <li>Required for newer operating systems</li>
+      <li>Supports advanced features such as Secure Boot</li>
+    </ul>
+    Required for:
+    <ul>
+      <li>Windows 11</li>
+      <li>Windows Server 2025</li>
+    </ul>
+  </Card>
+</CardGroup>
+
+---
+
+## 🔐 What is vTPM?
+
+vTPM (Virtual Trusted Platform Module) is a **software-based TPM implementation** that provides security features required by modern operating systems.
+
+It is required for:
+
+- Windows 11 installation
+- Disk encryption features (e.g. BitLocker)
+- Secure boot validation chains
+
+### Available Options
+
+- **None (Default)** → TPM disabled
+- **Software TPM** → TPM enabled
+
+<Callout type="info">
+  Only enable vTPM if your operating system explicitly requires it.
+</Callout>
+
+---
+
+## ⚙️ Default Configuration
+
+To ensure maximum compatibility across all environments:
+
+- **Boot Mode:** BIOS
+- **TPM:** Disabled
+
+These defaults are suitable for most use cases.
+
+---
+
+## 🤖 Auto-Installer Behavior
+
+When using EDBB **Auto-Installers**:
+
+- Boot mode is automatically selected
+- TPM is enabled or disabled as required
+
+<Callout type="info">
+  Manual settings are ignored during auto-installation to guarantee a successful deployment.
+</Callout>
+
+---
+
+## 🧩 When Manual Configuration Matters
+
+Manual configuration becomes relevant in advanced scenarios:
+
+### ✔️ Custom Cloud-Init Images
+
+- You may:
+  - Use the current VPS configuration
+  - Override boot mode and TPM during deployment
+
+---
+
+### ✔️ Custom ISO or Uploaded Images
+
+- The VPS uses the **System Configuration settings**
+- If needed:
+
+<Steps>
+  <Step title="Adjust configuration">
+    Change Boot Mode or TPM in the System Configuration dialog
+  </Step>
+  <Step title="Restart VPS">
+    Power-cycle the VPS to apply changes
+  </Step>
+  <Step title="Boot image">
+    Start the VPS using your custom ISO or image
+  </Step>
+</Steps>
+
+---
+
+## ⚠️ Important Considerations
+
+### OS Compatibility
+
+- Many operating systems are **not compatible with UEFI**
+- Switching from BIOS → UEFI on an existing installation typically results in:
+  - ❌ Boot failure
+
+---
+
+### Changing Boot Mode
+
+- Boot mode must match how the OS was originally installed
+- Changing it later requires:
+  - Reinstallation, or
+  - Advanced manual recovery
+
+---
+
+### TPM Usage
+
+- Not required for most Linux systems
+- Should only be enabled when explicitly needed
+- Adds complexity without benefit if unused
+
+---
+
+## 🧾 Quick Recommendations
+
+<CardGroup cols={2}>
+  <Card title="🟢 Use BIOS + No TPM">
+    <ul>
+      <li>Linux servers</li>
+      <li>General workloads</li>
+      <li>Maximum compatibility</li>
+    </ul>
+  </Card>
+
+  <Card title="🔵 Use UEFI + TPM">
+    <ul>
+      <li>Windows 11</li>
+      <li>Modern Windows deployments</li>
+      <li>Security-focused environments</li>
+    </ul>
+  </Card>
+</CardGroup>
+
+---
+
+## 🧭 Summary
+
+| Feature | Default | When to Change |
+|--------|--------|---------------|
+| Boot Mode | BIOS | Only if OS requires UEFI |
+| TPM | Disabled | Only if OS requires TPM |
+
+<Callout type="info">
+  If unsure, use the Auto-Installer — it will automatically select the correct configuration.
+</Callout>

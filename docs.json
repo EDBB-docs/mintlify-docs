@@ -73,7 +73,8 @@
               "vps-management/basic-ipv6-troubleshooting",
               "vps-management/manually-change-the-ip-address-in-ubuntu-versions-1804-to-2404",
               "vps-management/how-to-change-ip-address-in-windows-server",
-              "vps-management/your-support-pin"
+              "vps-management/your-support-pin",
+              "vps-management/efi-vs-bios-and-tpm"
             ]
           },
           {
