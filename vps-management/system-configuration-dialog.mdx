@@ -60,6 +60,57 @@ description: "Tune CPU, boot, storage, network, and display settings for your ED
 
 ---
 
+## 🆕 Boot Mode and TPM
+
+The System Configuration dialog also lets you control how your VPS boots and whether a Trusted Platform Module (TPM) is available.
+
+<CardGroup cols={2}>
+  <Card title="🧭 Boot Mode">
+    Choose between <strong>BIOS</strong> and <strong>UEFI</strong> firmware.
+    <ul>
+      <li><strong>BIOS</strong>: Maximum compatibility with legacy operating systems.</li>
+      <li><strong>UEFI</strong>: Required for modern features such as Secure Boot and newer OS releases.</li>
+    </ul>
+  </Card>
+
+  <Card title="🔐 TPM">
+    Enable or disable a virtual TPM device.
+    <ul>
+      <li><strong>Disabled</strong>: Default, widest compatibility.</li>
+      <li><strong>Software TPM (vTPM)</strong>: Needed for certain modern OS requirements.</li>
+    </ul>
+  </Card>
+</CardGroup>
+
+---
+
+### Default behavior
+
+- <strong>BIOS</strong> and <strong>TPM disabled</strong> are selected by default to ensure maximum compatibility across operating systems.
+
+---
+
+### Important considerations
+
+- Many operating systems are <strong>not compatible with UEFI</strong> and may fail to boot if switched.
+- Some modern systems, such as <strong>Windows 11</strong>, <strong>require UEFI and TPM</strong> to install and run.
+
+---
+
+### How settings are applied
+
+- <strong>Auto-installers</strong> automatically select the correct Boot Mode and TPM configuration.
+- Manual configuration is mainly relevant when:
+  - Using <strong>custom images</strong>
+  - Booting from an <strong>ISO</strong>
+
+<Callout type="info">
+  Not sure which option to choose? In most cases, leaving the default settings unchanged is the safest approach unless your OS explicitly requires UEFI or TPM.
+</Callout>
+
+👉 For detailed guidance, see:  
+[**UEFI vs BIOS & vTPM explained**](/vps-management/uefi-vs-bios-and-v-tpm)
+
 ## Apply Changes
 
 <Steps>
