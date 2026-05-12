@@ -1,30 +1,45 @@
 ---
 title: "How to Find and Use Your EDBB Support PIN"
 sidebarTitle: "Support PIN"
-description: "Locate the Support PIN in the control panel and understand when you will need it."
+description: "Locate the Support PIN in the control panel or welcome email and understand when you may need it."
 ---
 
 ## Locate Your Support PIN
 
 <Info>
-  The Support PIN proves account ownership when you contact EDBB about billing,
-  security, or sensitive service changes. Treat it like any other secret: share it
-  only with trusted teammates and rotate it if you suspect exposure.
+  The Support PIN is used to verify account ownership when requesting sensitive
+  service changes or contacting support regarding your VPS.
 </Info>
 
 ---
 
-## Spot the PIN on the Summary Card
+## Find the PIN in Your Welcome Email
+
+After ordering a VPS, EDBB automatically sends a credentials email containing your server details and Support PIN.
+
+Look for one of these email subjects:
+
+- **EDBB: Your Linux VPS Credentials**
+- **EDBB: Your Windows VPS Credentials**
+
+The Support PIN appears inside the **Plan Details** section together with your **KVM ID** and VPS information.
+
+
+---
+
+## Find the PIN in the VPS Control Panel
 
 <Steps>
   <Step title="Open your VPS summary">
     Sign in to the <a href="https://my.edbb.com/clientarea.php" target="_blank" rel="noreferrer">EDBB Control Panel</a> and open the VPS from <strong>Services</strong>.
   </Step>
-  <Step title="Check the right-side overview">
-    The <strong>Summary</strong> card on the right lists the Support PIN alongside the KVM ID, plan, and installed OS. Tap the copy icon to grab it instantly.
+
+  <Step title="Check the Summary card">
+    The <strong>Summary</strong> section displays important VPS details including the KVM ID, hostname, operating system, and your Support PIN.
   </Step>
+
   <Step title="Store it safely">
-    Paste the value into your password manager or internal secret vault—avoid plain-text notes or chat messages.
+    Save the PIN in a password manager or internal documentation system so it is available when needed.
   </Step>
 </Steps>
 
@@ -32,28 +47,34 @@ description: "Locate the Support PIN in the control panel and understand when yo
 
 ---
 
-## When Support Will Ask for the PIN
+## When You May Need the Support PIN
 
-- 🔐 **Account validation** – identity checks for billing adjustments, contact updates, or GDPR-related requests.  
-- 🛠️ **Sensitive changes** – rDNS edits, reverse DNS delegation, or provisioning additional IPs through the support desk.  
-- 🚨 **Security escalations** – suspicious login reports, suspected compromise, or ownership challenges.
+You may be asked to provide the Support PIN for requests such as:
 
-Providing the PIN with your first message speeds up verification so we can action the request without back-and-forth.
+- 🔐 Ownership verification
+- 🛠️ VPS-related configuration changes
+- 🌐 IP or rDNS modifications
+- 🚨 Security or abuse investigations
+- 💳 Billing-related account validation
+
+Providing the PIN together with your initial request helps speed up verification and reduces delays.
 
 ---
 
-## Keep the PIN Under Control
+## Security Recommendations
 
 <CardGroup cols={3}>
-  <Card title="🔒 Store & rotate">
-    Keep the PIN in a shared password manager.
+  <Card title="🔒 Keep it private">
+    Treat the Support PIN like a password and avoid sharing it publicly.
   </Card>
-  <Card title="👥 Limit visibility">
-    Grant access only to staff who handle billing or infrastructure escalations. Remove old entries promptly.
+
+  <Card title="👥 Share carefully">
+    Only provide the PIN directly to authorized EDBB support staff when requested.
   </Card>
-  <Card title="⚠️ Compromised?">
-    Reach Support via the portal messenger or email <strong>support@edbb.com</strong> and ask for a fresh PIN.
+
+  <Card title="⚠️ Lost access?">
+    If you cannot locate your PIN, contact support through the client area or by email for assistance.
   </Card>
 </CardGroup>
 
-Need help right now? Message us through the portal messenger or email <strong>support@edbb.com</strong> and include your VPS ID plus the Support PIN for quick verification.
+If you contact support regarding a VPS issue, including the VPS ID and Support PIN in your first message can help the request get processed faster.
