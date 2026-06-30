@@ -1,39 +1,95 @@
 ---
+
 title: "Can I Move My VPS to Another Location?"
+
 sidebarTitle: "Change Location"
-description: "EDBB cannot relocate an existing VPS between locations; provision a new instance in the target region and cancel the old one."
+
+description: "EDBB offers a one-time free VPS location change within 24 hours of ordering. After that, deploy a new VPS in the desired location and migrate your data."
+
 ---
 
 import { CtaButton } from "/snippets/cta-button.mdx";
 
-## Why We Don’t “Move” an Existing VPS
+## Why We Don't "Move" an Existing VPS
 
 <Info>
-  Every EDBB VPS is tied to the hardware, storage, and IP blocks of a specific data center. Relocating it mid-life would break routing policy, compliance obligations, and physical storage assignments—so we treat a new location as a fresh deployment.
+
+  Every EDBB VPS is tied to the hardware, storage, and IP resources of a specific data center. Because of this, an existing VPS cannot simply be transferred to another location. Instead, changing locations requires provisioning a new VPS in the destination region.
+
 </Info>
 
 ---
 
-## How to Change Regions the Right Way
+## Free Location Change (First 24 Hours)
 
-<Steps>
-  <Step title="Deploy in the new location">
-    Order a VPS in the target facility from the <a href="https://my.edbb.com/clientarea.php" target="_blank" rel="noreferrer">EDBB Control Panel</a>. Match the plan size so migrations stay simple.
-  </Step>
-  <Step title="Migrate data and services">
-    Use snapshots, rsync, database dumps, or configuration management to move workloads from the original instance.
-  </Step>
-  <Step title="Retire the old VPS">
-    After validation, cancel the previous VPS to stop billing. Remember to update DNS, allow-lists, and monitoring endpoints with the new IP.
-  </Step>
-</Steps>
+Ordered your VPS in the wrong location? We may be able to help.
+
+If your VPS was ordered within the last **24 hours**, you can request **one free location change**.
+
+This option is useful if you:
+
+- Selected the wrong location during checkout.
+
+- Need lower latency from another region.
+
+- Require your VPS to be deployed in a different geographic location.
+
+When your request is approved:
+
+- A new VPS is provisioned in the requested location.
+
+- Your current plan and billing cycle remain unchanged.
+
+- The original VPS is permanently removed after the relocation.
+
+- No refund is issued as part of the relocation process.
+
+### Eligibility Requirements
+
+A free location change is available only if all of the following conditions are met:
+
+- The request is submitted within **24 hours** of the original order.
+
+- Only **one** free location change is permitted per VPS.
+
+- Resources are available in the requested location.
+
+- Additional IPv4 addresses are not automatically transferred and may require re-approval.
+
+- The VPS has not been suspended or flagged for abuse, spam, fraud, or policy violations.
+
+<Warning>
+
+  A location change provisions a new VPS in the requested location. Your data, IP addresses, installed software, and configuration are **not** transferred automatically. Please create a full backup before requesting a relocation.
+
+</Warning>
 
 ---
 
-## Tips Before You Provision
+## How to Change Regions After 24 Hours
 
-- Confirm latency with the <a href="https://latency.edbb.com" target="_blank" rel="noreferrer">EDBB latency dashboard</a> or Looking Glass.  
-- Check regional compliance requirements (data residency, licensing) ahead of time.  
-- Plan for GeoIP propagation—most databases refresh within a few days of the new IP going live.
+Once the initial **24-hour** period has passed, VPS locations can no longer be changed.
 
-<CtaButton label="Browse available locations" link="https://www.edbb.com/vps" openInNewTab={true} />
+If you need your VPS in another location, simply deploy a new VPS and migrate your workload.
+
+<Steps>
+
+  <Step title="Deploy a VPS in the new location">
+
+    Order a VPS in the target location from the <a href="https://my.edbb.com/clientarea.php" target="_blank" rel="noreferrer">EDBB Control Panel</a>. Choosing the same plan usually makes migration easier.
+
+  </Step>
+
+  <Step title="Migrate your data and services">
+
+    Transfer your files, databases, and application configuration using your preferred migration method, such as rsync, backup archives, snapshots, or database exports.
+
+  </Step>
+
+  <Step title="Cancel the old VPS">
+
+    Once you've confirmed everything is working correctly, cancel your previous VPS to stop further billing. Don't forget to update DNS records, firewall rules, monitoring systems, and any services that reference the old IP address.
+
+  </Step>
+
+</Steps>
