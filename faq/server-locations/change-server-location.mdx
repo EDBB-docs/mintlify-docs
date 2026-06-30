@@ -1,11 +1,7 @@
 ---
-
 title: "Can I Move My VPS to Another Location?"
-
 sidebarTitle: "Change Location"
-
-description: "EDBB offers a one-time free VPS location change within 24 hours of ordering. After that, deploy a new VPS in the desired location and migrate your data."
-
+description: "Request a one-time free VPS location change within 24 hours of ordering. After 24 hours, relocating requires deploying a new VPS."
 ---
 
 import { CtaButton } from "/snippets/cta-button.mdx";
@@ -13,14 +9,12 @@ import { CtaButton } from "/snippets/cta-button.mdx";
 ## Why We Don't "Move" an Existing VPS
 
 <Info>
-
   Every EDBB VPS is tied to the hardware, storage, and IP resources of a specific data center. Because of this, an existing VPS cannot simply be transferred to another location. Instead, changing locations requires provisioning a new VPS in the destination region.
-
 </Info>
 
 ---
 
-## Free Location Change (First 24 Hours)
+## Free location change within 24 hours
 
 Ordered your VPS in the wrong location? We may be able to help.
 
@@ -29,19 +23,14 @@ If your VPS was ordered within the last **24 hours**, you can request **one free
 This option is useful if you:
 
 - Selected the wrong location during checkout.
-
 - Need lower latency from another region.
-
 - Require your VPS to be deployed in a different geographic location.
 
 When your request is approved:
 
 - A new VPS is provisioned in the requested location.
-
 - Your current plan and billing cycle remain unchanged.
-
 - The original VPS is permanently removed after the relocation.
-
 - No refund is issued as part of the relocation process.
 
 ### Eligibility Requirements
@@ -49,19 +38,13 @@ When your request is approved:
 A free location change is available only if all of the following conditions are met:
 
 - The request is submitted within **24 hours** of the original order.
-
 - Only **one** free location change is permitted per VPS.
-
 - Resources are available in the requested location.
-
 - Additional IPv4 addresses are not automatically transferred and may require re-approval.
-
 - The VPS has not been suspended or flagged for abuse, spam, fraud, or policy violations.
 
 <Warning>
-
   A location change provisions a new VPS in the requested location. Your data, IP addresses, installed software, and configuration are **not** transferred automatically. Please create a full backup before requesting a relocation.
-
 </Warning>
 
 ---
@@ -70,26 +53,24 @@ A free location change is available only if all of the following conditions are 
 
 Once the initial **24-hour** period has passed, VPS locations can no longer be changed.
 
-If you need your VPS in another location, simply deploy a new VPS and migrate your workload.
+If you need your VPS in another location:
 
 <Steps>
-
-  <Step title="Deploy a VPS in the new location">
-
-    Order a VPS in the target location from the <a href="https://my.edbb.com/clientarea.php" target="_blank" rel="noreferrer">EDBB Control Panel</a>. Choosing the same plan usually makes migration easier.
-
+  <Step title="Deploy a new VPS">
+    Order a VPS in your preferred location from the <a href="https://my.edbb.com/clientarea.php" target="_blank" rel="noreferrer">EDBB Control Panel</a>.
   </Step>
 
-  <Step title="Migrate your data and services">
-
-    Transfer your files, databases, and application configuration using your preferred migration method, such as rsync, backup archives, snapshots, or database exports.
-
+  <Step title="Migrate your data">
+    Transfer your files, databases, and application configuration to the new VPS using your preferred migration method.
   </Step>
 
-  <Step title="Cancel the old VPS">
-
-    Once you've confirmed everything is working correctly, cancel your previous VPS to stop further billing. Don't forget to update DNS records, firewall rules, monitoring systems, and any services that reference the old IP address.
-
+  <Step title="Cancel the previous VPS">
+    Once everything has been verified, cancel the old VPS to stop further billing. Remember to update any DNS records or services that reference the previous IP address.
   </Step>
-
 </Steps>
+
+<CtaButton
+  label="Browse VPS Locations"
+  link="https://www.edbb.com/vps"
+  openInNewTab={true}
+/>
