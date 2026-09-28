@@ -4,62 +4,65 @@ sidebarTitle: "Change an IP"
 description: "Change your primary IPv4 in the EDBB panel and configure the replacement through the console. Review eligibility and protect access before confirming."
 ---
 
-<Info>
-  You can change the primary IPv4 address once per VPS for free within the first 24 hours. After that window, order a standard or bespoke change directly inside the EDBB Control Panel.
-</Info>
+Use the **Primary IPv4** row on your VPS Dashboard to request an eligible free replacement. For paid options, use **IP Change** below the Dashboard cards.
+
+<Warning>
+A confirmed replacement permanently releases the old IPv4 address. You cannot switch back to it. Prepare console access and your network changes before submitting the request.
+</Warning>
+
+## Find the IP-change controls
+
+Sign in to the [EDBB Control Panel](https://my.edbb.com/clientarea.php), open **Services**, and select your VPS. On the **Dashboard**, the service-details card on the right contains **Primary IPv4**.
+
+<Frame caption="Find Primary IPv4 in the service-details card. Addresses, service ID and PIN are demonstration values.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/guide-refresh/ip-change-overview.png" alt="Dashboard with Primary IPv4 highlighted in the right-hand service card" />
+  </div>
+</Frame>
 
 ## Free IP Change
 
-Every new VPS includes a one-time IP change at no cost during the first 24 hours from purchase of your VPS.
+The panel offers one free primary IPv4 change within the first **24 hours after delivery**. The replacement is assigned randomly. EDBB aims to use a different /24 subnet, subject to availability.
 
 <Steps>
-  <Step title="Open the EDBB Control Panel">
-    Sign in to the <a href="https://my.edbb.com/clientarea.php" target="_blank" rel="noreferrer">
-     EDBB Control Panel</a>
-
-     and pick the VPS from <strong>Services → My Products</strong>
-    .
+  <Step title="Prepare access">
+    Open the [VNC console](/vps-management/enable-vnc-server) before changing the address. Existing SSH or RDP connections to the old IP will no longer provide access after the replacement.
   </Step>
-  <Step title="Stay on the Control Panel tab">
-    The summary card on the right lists <strong>Primary IPv4</strong>
-     with copy and refresh icons. This is where the free swap is triggered.
+  <Step title="Open the confirmation">
+    Click the **recycle icon** beside **Primary IPv4**. The adjacent copy icon only copies the current address.
   </Step>
-  <Step title="Request the change">
-    Click the circular arrows icon beside the IP, confirm the prompt, and the Control Panel will queue the replacement address.
+  <Step title="Read the warning">
+    Review the **Change IPv4 Address** dialog. **Close** leaves the address unchanged. Select **Change IP now** only when you are ready to release the old address and configure the replacement.
   </Step>
 </Steps>
 
-<Frame>
-![Recycle icon for requesting a free IP change](/assets/vps-change-ip-recycle-symbol.png)
+<Frame caption="Use the highlighted recycle button to open the change dialog. 192.0.2.10 is an example address.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/guide-refresh/ip-change-row.png" alt="Primary IPv4 row with the recycle button highlighted beside the copy button" />
+  </div>
 </Frame>
 
-<Info>
-  If the refresh icon is greyed out or missing, the free change may no longer be available; check the purchase window and contact support if uncertain—scroll down to the <strong>IP Change</strong>
-   button at the bottom of the page to order a paid change instead.
-</Info>
+<Frame caption="The confirmation explains the consequences before you submit. Close exits without changing the IP.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/guide-refresh/ip-change-confirmation.png" alt="Change IPv4 Address dialog explaining eligibility, random assignment and permanent release" />
+  </div>
+</Frame>
 
-The previous IP stops working immediately after the change. Open VNC before confirming and configure the new address manually if you need to preserve the installation.
-
-> **Please note:** The free IP change applies only to your primary IPv4 address. If you need to change any additional IPv4 addresses, you can do so using our paid **Standard** or **Bespoke IP Change** services.
-
----
+If the recycle icon is unavailable, check the delivery time and whether the free change has already been used. Contact support if eligibility is unclear. The free change applies only to the **primary IPv4**, not additional addresses.
 
 <span id="paid-ip-change-after-24-hours" />
 
 ## Paid changes
 
-Use the EDBB panel or contact [support@edbb.com](mailto:support@edbb.com) for available standard or bespoke changes. Confirm eligibility and the quoted EDBB price before ordering. A replacement address does not guarantee a particular reputation, geolocation result or country reachability.
+Use **IP Change** at the bottom of the Dashboard, or contact [support@edbb.com](mailto:support@edbb.com), for standard or bespoke replacement options. Confirm the affected VPS, address, eligibility and quoted price before ordering. A replacement does not guarantee a particular reputation, geolocation result or country reachability.
 
 <span id="don’t-forget-to-apply-the-new-ip" />
-
 <span id="apply-the-new-ip-to-apply-the-new-ip" />
 
 ## Configure the new IP address
 
-After the change completes, configure the assigned IPv4 through the [VNC console](/vps-management/enable-vnc-server) using the [Ubuntu](/vps-management/change-ip-ubuntu-1804-to-2404) or [Windows](/vps-management/change-ip-windows) instructions where applicable.
+Once a replacement has been assigned, check the new address and network settings in the panel. Use the console to update the guest operating system, following the [Ubuntu](/vps-management/change-ip-ubuntu-1804-to-2404) or [Windows](/vps-management/change-ip-windows) guide where applicable.
 
-<Warning>Reinstallation is an alternative only when you deliberately want a fresh system. It erases existing data; back up first.</Warning>
+Update any DNS records, allowlists and client connection settings that use the old address. Verify access on the new address before closing the console.
 
-[(Re)install OS](/vps-management/reinstall-vps)
-
-[Enable VNC](/vps-management/enable-vnc-server)
+<Warning>Reinstallation is an alternative only when you deliberately want a fresh system. It erases existing data; back up first. See [Reinstall VPS](/vps-management/reinstall-vps).</Warning>

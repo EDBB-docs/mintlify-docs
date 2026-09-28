@@ -4,18 +4,28 @@ sidebarTitle: "Traffic statistics"
 description: "Read the EDBB Traffic tab, understand incoming plus outgoing usage, and track warnings, automatic assignments, throttling and monthly refills."
 ---
 
+Open your VPS in the [EDBB Control Panel](https://my.edbb.com/clientarea.php) and select **Traffic**. The top cards show your allowance, refill countdown and shared pool; the charts below show how usage develops over time.
+
 <span id="edbb-traffic-overview" />
-<span id="how-we-meter-traffic" />
-<span id="inspect-daily-cumulative-graphs" />
-<span id="manage-traffic-pool-hydration" />
-<span id="read-the-summary-card" />
-<span id="what-happens-at-100%-usage" />
 
-Open your VPS in the [EDBB Control Panel](https://my.edbb.com/clientarea.php) and select the **Traffic** tab to review usage, the refill date and pool assignments.
+## Read the Traffic tab
 
-<Frame>
-![EDBB Traffic tab overview](/assets/traffic_info.png)
+<Frame caption="Illustrative example: sample traffic has been added to a current panel capture. Values and chart scales demonstrate usage; they are not live measurements.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/guide-refresh/traffic-statistics-example.png" alt="Traffic tab showing Overall Traffic, pool controls, cumulative usage and daily usage charts" />
+  </div>
 </Frame>
+
+| Area | What it tells you |
+| --- | --- |
+| **Overall Traffic** | Usage against the current VPS allowance, plus the refill countdown |
+| **Traffic Pool** | Unassigned traffic shared across your account |
+| **Manual / Auto Hydration** | How pool traffic is assigned to this VPS |
+| **Cumulative Traffic [GB]** | How total usage builds over the displayed period |
+| **Daily Traffic [GB]** | Which days account for larger amounts of traffic |
+
+<span id="how-we-meter-traffic" />
+<span id="read-the-summary-card" />
 
 ## Understand the allowance
 
@@ -23,27 +33,35 @@ Open your VPS in the [EDBB Control Panel](https://my.edbb.com/clientarea.php) an
 
 **Remaining traffic = current allowance − traffic used this cycle.**
 
-Traffic usage counts both **incoming and outgoing** data measured on the VPS Ethernet interfaces. Use the units displayed by the panel when comparing readings.
+Traffic usage counts both **incoming and outgoing** data measured on the VPS Ethernet interfaces. Read the units displayed by the panel; GB measures transferred data, not connection speed.
 
-<Frame>
-![EDBB cumulative traffic chart](/assets/cumulative_traffic.png)
+<Frame caption="Actual test-service closeup: 1 GB used from a 20,580 GB allowance, with 1,400 GB still unassigned in the pool.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/vps-guides/traffic-assigned.png" alt="Overall Traffic and shared Traffic Pool balances after a manual assignment" />
+  </div>
 </Frame>
+
+In this closeup, **1 GB / 20,580 GB** means approximately **20,579 GB remains**. The percentage can round to **0%** when usage is small. The **1,400 GB pool balance** is separate: it becomes part of a VPS allowance only after assignment.
+
+<span id="inspect-daily-cumulative-graphs" />
+
+## Compare daily and cumulative usage
+
+In the illustrative overview, daily usage peaks at **300 GB on September 25**. That day's transfer also creates the steepest increase in the cumulative line. The seven sample days total **1,240 GB**.
+
+Use the daily chart to locate a spike, then compare that date with backups, downloads, application jobs and server logs. The cumulative chart helps you see how quickly the total is growing. For unexpected usage, follow [Investigate network usage](/faq/traffic-bandwidth/investigate-network-usage).
 
 ## Monthly refill
 
-The VPS's monthly service cycle determines its refill, not the calendar month. At the refill, usage resets and the EDBB plan allowance is replenished. Unused Plan Traffic and Pool Traffic already assigned to the VPS expire. Unassigned pool balance does not expire.
+The VPS's monthly service cycle determines its refill, not the calendar month. **Refill in … day(s)** shows the countdown. At refill, usage resets and the plan allowance is replenished. Unused Plan Traffic and Pool Traffic already assigned to the VPS expire; unassigned pool balance does not expire.
 
-## Daily usage and assignments
+<span id="manage-traffic-pool-hydration" />
 
-<Frame>
-![Daily incoming and outgoing traffic usage in the EDBB panel](/assets/daily_traffic.png)
-</Frame>
+## Distinguish usage from assignments
 
-<Frame>
-![EDBB traffic calendar view](/assets/traffic_info-cal.png)
-</Frame>
+**Hydration log** records traffic assigned to a VPS; **Pool log** shows pool activity. A pool deduction does not mean that amount has already crossed the network. See [Traffic Pool and Auto-Hydration](/faq/traffic-bandwidth/traffic-pool) for manual 100 GB assignments and Auto-Hydration ON/OFF instructions.
 
-Use the daily and cumulative graphs to identify a spike and compare it with your jobs, downloads and logs. The **Hydration log** records assignments; those deductions do not prove the assigned traffic has already been consumed. See [Traffic Pool](/faq/traffic-bandwidth/traffic-pool).
+<span id="what-happens-at-100%-usage" />
 
 ## Notifications and rate limiting
 
