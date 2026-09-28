@@ -8,23 +8,26 @@ Manage your VPS from the [EDBB Control Panel](https://my.edbb.com/clientarea.php
 
 ## Meet your VPS Control Panel
 
+Start with the full panel, then follow the close-ups from left to right.
+
+<Frame caption="Panel overview: 1 — quick actions, 2 — Dashboard and tabs, 3 — service summary. Account details use demo values; Tux is illustrative.">
+  <img src="/assets/control-panel/overview.png" alt="Full EDBB VPS control panel with three numbered areas: quick actions on the left, Dashboard and tabs in the center, and service summary on the right" />
+</Frame>
+
 The panel has three main areas:
 
 | Area | What you will find |
 | --- | --- |
-| **Left: quick actions** | Power, restart and VNC console controls. |
-| **Center: service tabs** | Dashboard, Installation, Traffic, Settings, rDNS, Network and Upgrades. |
-| **Right: service summary** | Service details, IP addresses, Support PIN, upgrades and billing actions. |
+| **1 · Left: quick actions** | Power, restart and VNC console controls. |
+| **2 · Center: service tabs** | Dashboard, Installation, Traffic, Settings, rDNS, Network and Upgrades. |
+| **3 · Right: service summary** | Service details, IP addresses, Support PIN, upgrades and billing actions. |
 
-<Frame caption="Use the tabs to move between tasks for the selected VPS.">
-  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
-    <img src="/assets/control-panel/navigation.png" alt="EDBB navigation tabs: Dashboard, Installation, Traffic, Settings, rDNS, Network and Upgrades" />
-  </div>
-</Frame>
 
 The screenshots below show an example service. Plan resources, traffic allowances, balances and dates depend on your own VPS.
 
 ## Quick Actions - Console Access
+
+Start with **area 1**, the controls in the left column.
 
 <Frame caption="Power and console controls stay in the left-hand column.">
   <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
@@ -55,13 +58,14 @@ Follow the [VNC console guide](/vps-management/enable-vnc-server) for access ins
 
 ## Control Panel Highlights
 
-### Service Summary
+In **area 2**, the center column contains the service tabs and Dashboard cards. Start here to check your VPS at a glance.
 
-The right-hand sidebar identifies the selected service and shows its location, service ID, IPv4 and IPv6 details, CD-ROM state, installed OS, Support PIN and billing information. Copy buttons beside supported fields help avoid typing mistakes.
+<Frame caption="Use the tabs to move between tasks for the selected VPS.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/control-panel/navigation.png" alt="EDBB navigation tabs: Dashboard, Installation, Traffic, Settings, rDNS, Network and Upgrades" />
+  </div>
+</Frame>
 
-The service's **Active** badge and its runtime status are different: use **Running** or **Turned off** on the Dashboard to check whether the virtual machine is powered on.
-
-Use the [IP settings guide](/vps-management/ip-address-information) for networking and the [Support PIN guide](/vps-management/your-support-pin) when contacting support. Keep your Support PIN out of public screenshots.
 
 ### Live Screenshot
 
@@ -115,6 +119,14 @@ Below the dashboard cards:
 
 - **Reinstall** opens Installation. Reinstalling erases existing data; [back up first](/backups), then follow the [reinstallation guide](/vps-management/reinstall-vps).
 - **IP Change** opens the IP-change ordering options. Review the [IP-change guide](/faq/ip-addresses/change-ip-address) before replacing an address used by your services.
+
+### Service Summary
+
+In **area 3**, the right-hand sidebar identifies the selected service and shows its location, service ID, IPv4 and IPv6 details, CD-ROM state, installed OS, Support PIN and billing information. Copy buttons beside supported fields help avoid typing mistakes.
+
+The service's **Active** badge and its runtime status are different: use **Running** or **Turned off** on the Dashboard to check whether the virtual machine is powered on.
+
+Use the [IP settings guide](/vps-management/ip-address-information) for networking and the [Support PIN guide](/vps-management/your-support-pin) when contacting support. Keep your Support PIN out of public screenshots.
 
 ### Upgrades & Cancellation
 
