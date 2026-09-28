@@ -1,0 +1,40 @@
+---
+title: "Check CPU resources on Linux"
+sidebarTitle: "Check CPU on Linux"
+description: "Inspect the logical CPUs and virtual topology visible to Linux with lscpu, nproc and monitoring tools. Understand what those readings mean for a VPS."
+---
+
+<span id="conclusion" />
+<span id="the-/proc/cpuinfo-file" />
+<span id="the-hwinfo-command" />
+<span id="the-lscpu-command" />
+<span id="the-nproc-command" />
+<span id="the-top-and-htop-commands" />
+<span id="verifying-the-number-of-cores-available-to-linux" />
+
+A Linux VPS reports the virtual processors and topology presented to its guest operating system. These values do not prove that the physical host cores are exclusively reserved for your VPS.
+
+<span id="introduction-to-cpu-cores" />
+
+## Inspect virtual CPU resources
+
+```bash
+lscpu
+nproc
+```
+
+`lscpu` displays logical CPU count and the socket/core/thread topology exposed to the guest. `nproc` reports processing units available to the current process; affinity and execution limits can affect its result.
+
+To inspect processor entries and model information directly:
+
+```bash
+grep -E '^(processor|model name|cpu cores|siblings)' /proc/cpuinfo
+```
+
+Each `processor` entry represents a logical CPU visible to the guest, not necessarily a distinct physical core on the host.
+
+## Monitor use
+
+Run `top` and press **1** to display per-logical-CPU usage, or use `htop` if installed. CPU saturation is only one possible bottleneck; also inspect memory, disk I/O and application limits.
+
+If the count does not match an approved upgrade, check the activation instructions and perform the required [full power cycle](/vps-management/power-cycle-or-reboot-a-vps). See [CPU cores and sockets](/faq/upgrades-downgrades/cpu-cores-and-sockets).

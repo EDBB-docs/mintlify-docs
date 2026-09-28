@@ -1,0 +1,46 @@
+---
+title: "Investigate unusual network usage"
+sidebarTitle: "Investigate network usage"
+description: "Identify unexpected traffic on a Linux VPS, preserve relevant evidence and contain confirmed abuse without deleting legitimate services based on names."
+---
+
+<span id="1-monitor-live-network-activity" />
+<span id="2-identify-which-process-is-behind-the-network-usage" />
+<span id="4-kill-and-quarantine-the-script" />
+<span id="5-check-cron-jobs-and-autostart-entries" />
+<span id="6-use-nethogs-for-per-process-network-tracking" />
+<span id="7-check-your-overall-network-usage" />
+<span id="8-harden-the-system-against-rogue-scripts-" />
+<span id="detecting-suspicious-network-spikes-in-linux-servers-" />
+
+Unexpected traffic can come from legitimate downloads, backups, application demand, a configuration error or a compromised system. Identify the cause before deleting files or stopping services.
+
+## Check the scope
+
+Compare the EDBB **Traffic** tab with application logs and scheduled jobs. Traffic includes incoming and outgoing data. Record when the increase began and whether the destination, protocol or service is expected.
+
+On Linux, inspect connections and processes without changing them:
+
+```bash
+sudo ss -tupn
+ps aux
+systemctl --type=service --state=running
+```
+
+Package names, proxy software and remote connections are not themselves evidence of malware. Match a process to its executable, service configuration, owner and expected workload. Keep logs private and redact secrets before sharing.
+
+<span id="3-inspect-the-suspicious-process" />
+
+## Preserve evidence before stopping a process
+
+Record the process ID, command line, executable path, connections and relevant logs while the process exists. Linux `/proc/PID/` entries disappear when a process exits. Store evidence with restricted access on a separate system if an incident investigation requires it.
+
+Do not run blanket removal commands for directories or executable names. Do not execute a suspicious file to identify it.
+
+## Contain confirmed unwanted activity
+
+Use the [VNC console](/vps-management/enable-vnc-server) as a recovery path before changing the firewall. Restrict the affected service or stop it after identifying it and preserving necessary evidence. Ordinary UFW rules filter traffic by network properties; they do not identify a malicious process by its name.
+
+For suspected compromise, rotate exposed credentials from a trusted device, investigate persistence and affected accounts, and consider rebuilding from a trusted image after preserving needed evidence and data. A deleted executable does not prove that the system is clean.
+
+If you received an abuse notice, follow [responding to abuse](/misc/responding-to-abuse-complaints) and reply with your findings and remediation. See [SSH hardening](/getting-started/ssh-security-hardening) and [backups](/backups).

@@ -1,0 +1,21 @@
+---
+title: "Will I lose data when upgrading?"
+sidebarTitle: "Upgrade data safety"
+description: "Understand what happens to your disk when you upgrade an EDBB VPS and how to keep data safe."
+---
+
+<span id="keeping-data-safe" />
+<span id="upgrade-impact-at-a-glance" />
+
+A plan or resource upgrade does not reinstall your VPS. It increases the allocated resources while preserving the existing guest installation. This is not a guarantee against data loss from interrupted writes, hardware problems or later partition changes.
+
+| Resource | Required follow-up |
+| --- | --- |
+| CPU/RAM | Follow the activation email and perform a full panel power cycle |
+| Disk capacity | Verify the new disk size, then extend the correct partition and filesystem if needed |
+| Additional IPs | Configure the assigned addresses inside the guest |
+| Additional traffic | Check the current allowance; a traffic-throttle release does not require a reboot |
+
+Create and test an independent [backup](/backups) before major changes. A paid [qcow2 export](/faq/upgrades-downgrades/qcow2-export) is a separate service, not an instant snapshot.
+
+Use [Linux disk expansion](/advanced-setup-guides/resize-linux-disk) only if your layout matches its prerequisites, or follow the [Windows guide](/advanced-setup-guides/extend-windows-disk). `lsblk` inspects devices; it does not resize them.

@@ -1,0 +1,56 @@
+---
+title: "Install MikroTik CHR on your VPS"
+sidebarTitle: "Install MikroTik CHR"
+description: "Prepare a VPS for MikroTik CHR, verify the target disk and official image, and secure the first login. Installation replaces the existing disk contents."
+---
+
+<span id="4-connect-with-winbox" />
+<span id="configure-routeros-manually" />
+
+MikroTik CHR runs RouterOS as a virtual machine. This installation replaces the VPS disk; it does not preserve your existing Linux or Windows system.
+
+<Warning>
+  Download an independent backup first. Writing the CHR image to the wrong device destroys its contents. Use a rescue environment and identify the target disk explicitly; do not run a disk-overwrite script from the installed system you are replacing.
+</Warning>
+
+<span id="1-prepare-the-vps" />
+
+## Prepare the image and console
+
+1. Review [MikroTik CHR requirements and licensing](https://help.mikrotik.com/docs/spaces/ROS/pages/18350234/Cloud+Hosted+Router+CHR). The free license is limited to 1 Mbit/s upload per interface; choose a suitable license for your workload.
+2. Download the intended stable **CHR raw disk image** from [MikroTik's official downloads](https://mikrotik.com/download). Record the version and verify the vendor-published checksum for that exact image/archive.
+3. Open the [EDBB VNC console](/vps-management/enable-vnc-server), mount available [rescue media](/vps-management/mount-iso-image) and boot into it.
+4. Transfer the verified image into the rescue environment's temporary storage and extract it. Confirm sufficient temporary space and identify the raw `.img` file.
+
+<span id="2-create-the-installation-script" />
+
+## Identify the destination
+
+Use the rescue console to inspect disks and mounts:
+
+```bash
+lsblk -o NAME,SIZE,TYPE,FSTYPE,MOUNTPOINTS,MODEL
+findmnt
+```
+
+Select the **whole VPS disk**, not a partition, ISO device or rescue filesystem. Confirm no partitions on that disk are mounted. Stop if you cannot distinguish the devices or the disk is smaller than the image.
+
+<span id="3-run-the-installer" />
+
+## Write the image
+
+The example below intentionally contains placeholders. Replace both with the verified image path and whole-disk device. Recheck them before running the destructive write:
+
+```bash
+sudo dd if=/path/to/verified-chr.img of=/dev/YOUR_VPS_DISK bs=4M status=progress conv=fsync
+```
+
+Wait for successful completion. Unmount the rescue ISO and use the panel to boot from the VPS disk. If the guest cannot boot, check the [boot mode and disk driver](/vps-management/system-configuration-dialog) against the selected CHR version's requirements; do not overwrite another disk as a guess.
+
+## Secure the first login
+
+Use the console for first access. Follow the credential prompt for the selected CHR release; do not assume the password is the literal word `password`. Set a strong administrator password before enabling remote management.
+
+Configure the address and gateway shown in the EDBB **Network** tab. Restrict WinBox/SSH management to trusted source addresses and disable unused management services. Test the firewall and recovery access before exposing the router to Internet traffic. Follow the [AUP](/acceptable-use-policy), including outbound SMTP controls for forwarded VPN traffic.
+
+This manual procedure does not inject an autorun configuration. Save an exported RouterOS configuration securely after setup and test recovery for your deployment.

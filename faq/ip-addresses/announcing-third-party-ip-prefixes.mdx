@@ -1,22 +1,14 @@
 ---
-title: "Bring Your Own IP Prefix"
-sidebarTitle: "Third-Party Prefixes"
-description: "EDBB announces customer-owned prefixes only on dedicated servers. VPS plans use provider IP space."
+title: "Can I bring my own IP prefix?"
+sidebarTitle: "Customer IP prefixes"
+description: "EDBB does not offer BYOIP, customer-prefix announcements or a commercial /24-prefix product. Learn which provider-assigned IP options are available."
 ---
 
-## Can VPS Plans Announce Customer Prefixes
+<span id="can-vps-plans-announce-customer-prefixes" />
+<span id="dedicated-server-requirements" />
 
-<Info>
-  VPS offerings use EDBB-owned IP space. Customer-owned prefixes require BGP capabilities that aren’t exposed on shared virtualization platforms.
-</Info>
+No. EDBB does not offer **Bring Your Own IP (BYOIP)**, customer-owned prefix announcements or a commercial **/24-prefix product**. There is no EDBB dedicated-server/BGP offer associated with this documentation page.
 
-If you need to announce your own IPv4/IPv6 blocks, plan a move to an EDBB dedicated server.
+EDBB VPS services use provider-assigned addresses. See [IP settings](/vps-management/ip-address-information), [additional IP addresses](/faq/ip-addresses/order-additional-ip-address) and [IPv6 configuration](/vps-management/ipv6-configuration) for the available configuration workflows.
 
-## Dedicated Server Requirements
-
-- One-time non-recurring charge (NRC) for the BGP setup: **USD 250**.  
-- No ongoing fee once the announcement is active.  
-- Prefix must comply with EDBB’s policies (for example, no unsolicited email).  
-- You must provide your ASN, a current LOA, and routing details.
-
-Submit the documentation via Support to schedule the announcement window.
+This product restriction does not prohibit a valid `/24` subnet mask in an assigned network configuration. Always use the address, prefix and gateway shown for your VPS.

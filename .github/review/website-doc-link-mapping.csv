@@ -1,0 +1,51 @@
+old_url,final_url,status,observed_page,action
+https://docs.edbb.com/advanced-setup-guides/basic-ufw-debian-ubuntu,https://docs.edbb.com/advanced-setup-guides/ufw-firewall,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/advanced-setup-guides/extend-hard-drive-windows-guide,https://docs.edbb.com/advanced-setup-guides/extend-windows-disk,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/advanced-setup-guides/gui-versions-of-ubuntu-debian,https://docs.edbb.com/advanced-setup-guides/ubuntu-desktop,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/advanced-setup-guides/manually-resize-disk-after-plan-upgrade-on-live-linux-systems,https://docs.edbb.com/advanced-setup-guides/resize-linux-disk,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/advanced-setup-guides/script-based-mikrotik-router-os-installation-guide-winbox,https://docs.edbb.com/advanced-setup-guides/install-mikrotik-chr,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/faq/billing-lifecycle/accidental-renewal-convert-payment-to-credit,https://docs.edbb.com/faq/billing-lifecycle/accidental-renewal,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/faq/billing-lifecycle/add-contact-receive-invoices-different-email,https://docs.edbb.com/faq/billing-lifecycle/invoice-contacts,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/faq/billing-lifecycle/automated-vps-billing-workflow,https://docs.edbb.com/faq/billing-lifecycle/billing-workflow,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/faq/billing-lifecycle/automatic-currency-conversion,https://docs.edbb.com/faq/billing-lifecycle/currency-conversion,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/faq/billing-lifecycle/btc-payment-arrived-after-the-payment-window,https://docs.edbb.com/faq/billing-lifecycle/late-crypto-payment,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/faq/billing-lifecycle/cryptocurrency-payments-confirmation-guide-edbb,https://docs.edbb.com/faq/billing-lifecycle/crypto-confirmations,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/faq/billing-lifecycle/eu-vat-explained-if-and-how-much,https://docs.edbb.com/faq/billing-lifecycle/vat,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/faq/billing-lifecycle/handling-blocked-cryptocurrency-payments-cryptomus,https://docs.edbb.com/faq/billing-lifecycle/blocked-crypto-payment,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/faq/billing-lifecycle/how-fast-instant-delivery,https://docs.edbb.com/faq/billing-lifecycle/provisioning-time,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/faq/billing-lifecycle/how-to-receive-monthly-consolidated-invoice,https://docs.edbb.com/faq/billing-lifecycle/consolidated-invoices,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/faq/billing-lifecycle/moving-services-to-different-client-account,https://docs.edbb.com/faq/billing-lifecycle/account-transfers,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/faq/ip-addresses/anycast-reverse-dns-nameserver-locations-vs-vps-location,https://docs.edbb.com/faq/ip-addresses/anycast-and-dns-location,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/faq/ip-addresses/debugging-packet-loss-traceroute-mtr-windows,https://docs.edbb.com/faq/ip-addresses/diagnose-packet-loss,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/faq/ip-addresses/do-ip-addresses-change-during-upgrade-or-reinstall,https://docs.edbb.com/faq/ip-addresses/ip-addresses-after-upgrade-or-reinstall,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/faq/ip-addresses/ip-can-not-be-reached-from-my-country,https://docs.edbb.com/faq/ip-addresses/country-reachability,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/faq/ip-addresses/ip-location-incorrect-on-whatismyipaddresscom,https://docs.edbb.com/faq/ip-addresses/correct-geolocation,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/faq/ip-addresses/is-ip-spoofing-allowed-edbb-stance,https://docs.edbb.com/faq/ip-addresses/ip-spoofing,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/faq/ip-addresses/setting-up-reverse-pointers,https://docs.edbb.com/faq/ip-addresses/reverse-dns,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/faq/ip-addresses/understanding-dns-systems,https://docs.edbb.com/faq/ip-addresses/anycast-and-dns-location,search website source/CMS; migration candidate,,merge
+https://docs.edbb.com/faq/ip-addresses/understanding-ip-address-location,https://docs.edbb.com/faq/ip-addresses/ip-location,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/faq/is-port-25-open,https://docs.edbb.com/faq/port-25-smtp-rate-limit-policy,search website source/CMS; migration candidate,,merge
+https://docs.edbb.com/faq/traffic-bandwidth/dos-attacks/advisory-for-high-risk-clients,https://docs.edbb.com/faq/traffic-bandwidth/dos-attacks/high-risk-workloads,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/faq/traffic-bandwidth/dos-attacks/edbb-ddos-protection-overview,https://docs.edbb.com/faq/traffic-bandwidth/dos-attacks/ddos-protection,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/faq/traffic-bandwidth/how-to-investigate-and-stop-unusual-network-usage,https://docs.edbb.com/faq/traffic-bandwidth/investigate-network-usage,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/faq/traffic-bandwidth/traffic-stats-refill-explained,https://docs.edbb.com/faq/traffic-bandwidth/traffic-statistics,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/faq/upgrades-downgrades/cpu-cores-vs-cpu-sockets-in-vps-environments/how-to-check-cpu-cores-linux-vps,https://docs.edbb.com/faq/upgrades-downgrades/check-cpu-linux,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/faq/upgrades-downgrades/cpu-cores-vs-cpu-sockets-in-vps-environments/how-to-check-cpu-cores-windows-vps,https://docs.edbb.com/faq/upgrades-downgrades/check-cpu-windows,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/faq/upgrades-downgrades/cpu-cores-vs-cpu-sockets-in-vps-environments/understanding-cpu-cores-vs-sockets-in-vps,https://docs.edbb.com/faq/upgrades-downgrades/cpu-cores-and-sockets,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/faq/upgrades-downgrades/is-it-possible-to-downgrade,https://docs.edbb.com/faq/upgrades-downgrades/downgrade-policy,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/faq/upgrades-downgrades/requesting-qcow2-image-backup,https://docs.edbb.com/faq/upgrades-downgrades/qcow2-export,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/faq/upgrades-downgrades/will-i-lose-data-when-i-upgrade,https://docs.edbb.com/faq/upgrades-downgrades/upgrade-data-safety,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/getting-started/QQQQ_check-your-inbox,https://docs.edbb.com/check-your-inbox,search website source/CMS; migration candidate,,merge
+https://docs.edbb.com/misc/extending-180-day-trial-version-of-windows,https://docs.edbb.com/misc/windows-server-evaluation,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/misc/fix-black-screen-windows-server,https://docs.edbb.com/misc/rdp-black-screen,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/misc/fix-for-realvnc-closing-connection,https://docs.edbb.com/misc/realvnc-disconnects,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/vps-management/autoinstall-reinstall-install-vps-linux-windows,https://docs.edbb.com/vps-management/reinstall-vps,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/vps-management/how-to-change-ip-address-in-windows-server,https://docs.edbb.com/vps-management/change-ip-windows,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/vps-management/manually-change-the-ip-address-in-ubuntu-versions-1804-to-2404,https://docs.edbb.com/vps-management/change-ip-ubuntu-1804-to-2404,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/vps-management/reset-root-password-linux,https://docs.edbb.com/vps-management/reset-root-password,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/vps-management/reset-windows-admin-password,https://docs.edbb.com/vps-management/reset-windows-password,search website source/CMS; migration candidate,,rename
+https://docs.edbb.com/vps-management/vps-control-panel,https://docs.edbb.com/vps-management/vps-control-panel,observed; retain direct URL,https://www.edbb.com/,retain
+https://docs.edbb.com/how-our-support-team-helps-you,https://docs.edbb.com/how-our-support-team-helps-you,observed; retain direct URL,https://www.edbb.com/,retain
+https://docs.edbb.com/acceptable-use-policy,https://docs.edbb.com/acceptable-use-policy,observed; retain direct URL,https://www.edbb.com/terms,retain
+https://docs.edbb.com/acceptable-use-policy,https://docs.edbb.com/acceptable-use-policy,observed; retain direct URL,https://www.edbb.com/privacy,retain
+https://docs.edbb.com/,https://docs.edbb.com/,observed; retain direct URL,shared footer,retain

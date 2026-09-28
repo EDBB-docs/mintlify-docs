@@ -1,0 +1,10 @@
+# Review material and dormant recruitment content are not documentation routes.
+.github/
+scripts/
+README.md
+package.json
+package-lock.json
+node_modules/
+join-our-team/
+pages/
+api-reference/

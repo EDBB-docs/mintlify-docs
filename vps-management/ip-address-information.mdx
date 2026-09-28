@@ -1,6 +1,6 @@
 ---
-title: "VPS IP Address Settings & Network Info"
-sidebarTitle: "VPS IP Settings"
+title: "VPS IP address settings & network info"
+sidebarTitle: "IP settings"
 description: "Find IPv4, IPv6, gateway, and DNS details for your VPS on the Network tab of the EDBB Control Panel."
 ---
 
@@ -29,26 +29,31 @@ description: "Find IPv4, IPv6, gateway, and DNS details for your VPS on the Netw
 
 ## What the Tab Shows
 
-<CardGroup cols={2}>
-  <Card title="IPv4 Configuration">
-    Dedicated IPv4 addresses, subnet mask, and gateway. Use these values when adding or reconfiguring addresses in your OS.
-  </Card>
-  <Card title="IPv6 Configuration">
-    Your assigned /64 equivalent range, gateway, and a reminder to configure routes with a /48 prefix. Dual-stack tips are provided for Linux and other OSes.
-  </Card>
-  <Card title="DNS Resolvers">
-    Recommended public resolvers (IPv4 and IPv6) for dual-stack compatibility.
-  </Card>
-  <Card title="Add IP Helper">
-    The **Add IP** button (when available) creates requests for additional IPv4 addresses that support team members can review.
-  </Card>
-</CardGroup>
+
+### IPv4 Configuration
+
+Dedicated IPv4 addresses, subnet mask, and gateway. Use these values when adding or reconfiguring addresses in your OS.
+
+
+### IPv6 Configuration
+
+Your assigned /64 equivalent range, gateway, and a reminder to configure routes with a /48 prefix. Dual-stack tips are provided for Linux and other OSes.
+
+
+### DNS Resolvers
+
+Recommended public resolvers (IPv4 and IPv6) for dual-stack compatibility.
+
+
+### Add IP Helper
+
+The **Add IP** button (when available) creates requests for additional IPv4 addresses that support team members can review.
 
 ---
 
 ## Tips for Using the Data
 
-- Configure additional IPv4 addresses using the subnet mask and gateway shown. Use only one gateway in your OS configuration.  
-- For IPv6, assign addresses from your range and route traffic through the listed gateway using a /48 prefix.  
-- Apply DNS entries directly in your operating system or cloud-init user-data so services resolve correctly.  
+- Configure additional IPv4 addresses using the subnet mask and gateway shown. Use only one gateway in your OS configuration.
+- For IPv6, assign addresses from your range and route traffic through the listed gateway using a /48 prefix.
+- Apply DNS entries directly in your operating system or cloud-init user-data so services resolve correctly.
 - Need to change or order more addresses? Follow the <a href="/faq/ip-addresses/change-ip-address">Change IP</a> or <a href="/faq/ip-addresses/order-additional-ip-address">Order Additional IPv4</a> guides.

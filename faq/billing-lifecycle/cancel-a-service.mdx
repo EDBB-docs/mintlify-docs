@@ -1,24 +1,23 @@
 ---
-title: "VPS Cancellation"
-description: "Cancel your VPS service in the control panel. Easy step-by-step instructions, including expiration and immediate cancellation options. Includes timelines for data deletion."
+title: "VPS cancellation"
 sidebarTitle: "Cancel a VPS"
+description: "Request immediate or end-of-term VPS cancellation in the EDBB panel. Back up first and understand when the service stops and its data is deleted."
 ---
 
-## How to cancel your VPS
+<span id="after-you-cancel" />
+<span id="before-you-cancel" />
+<span id="how-to-cancel-your-vps" />
+<span id="pick-the-timing-that-fits" />
 
-Cacel your EDBB VPS directly in the control panel. Select **Request Cancellation** and the time when your cancellation request should take effect. Options are **immediate** **cancellation** or **expiration** (cancellation by the end of the paid timeframe) - your choice.
-
----
-
-## Before You Cancel
+Cancel your VPS from its EDBB Control Panel record using **Request Cancellation**. Choose immediate cancellation or cancellation at the end of the paid billing period.
 
 <Warning>
-  Cancellation is irreversible once the six-day retention window passes. Take fresh backups and confirm the correct VPS by double-checking the Primary IPv4 and plan details in the right-hand summary panel.
+  Back up data before requesting cancellation. Immediate termination stops access to the VPS. Six days after actual termination, its data is permanently deleted and cannot be recovered.
 </Warning>
 
----
+<span id="submit-the-cancellation-request-in-the-control-panel" />
 
-## Submit the Cancellation request in the Control Panel
+## Submit the request
 
 <Steps>
   <Step title="Sign in to the control panel">
@@ -42,28 +41,17 @@ Cacel your EDBB VPS directly in the control panel. Select **Request Cancellation
   </Step>
 </Steps>
 
-If you change your mind before data deletion occurs, contact Support via the messenger or by email and reference the VPS ID so we can review reinstatement options.
+## Cancellation timing
 
----
+| Choice | Service stops | Permanent deletion |
+| --- | --- | --- |
+| Immediate | At immediate termination | Six days after termination |
+| End of billing period | On the service due date | Six days after that termination date |
 
-## Pick the Timing That Fits
+Cancellation removes this VPS's renewal line items from outstanding pro-forma invoices. An invoice covering only this service is cancelled; other services on a combined invoice remain payable. This adjustment does not itself delete data.
 
-| Option                 | When it executes                                    | What changes immediately                       | Data removal                                 |
-| ---------------------- | --------------------------------------------------- | ---------------------------------------------- | -------------------------------------------- |
-| **Cancel on expiry**   | Service keeps running until the current due date    | Renewal invoice for the next term is cancelled | VPS is deleted **6 days after** the due date |
-| **Cancel immediately** | Shutdown happens as soon as you confirm the request | The VPS powers off and access stops right away | VPS is deleted **6 days after** the request  |
+Contact [support@edbb.com](mailto:support@edbb.com) promptly if you need recovery or reactivation before deletion. Do not rely on the retention period instead of making your own backups.
 
-Once the deletion window passes, snapshots and disk data cannot be recovered.
+Unassigned Traffic Pool balance belongs to your account and does not expire when a VPS ends. Traffic already assigned to a VPS is separate; see [Traffic Pool](/faq/traffic-bandwidth/traffic-pool).
 
----
-
-## After You Cancel
-
-- **Invoices stop** – the upcoming renewal is voided so the service will not bill again.
-- **Backups first** – download any data you want to keep before the termination window closes.
-- **Traffic and addons end together** – attached IPs or traffic pool top-ups are removed when the VPS is deleted.
-- **Need it back?** Message Support (messenger or email) before data removal finishes; reinstatement is only possible while the VPS still exists on the platform.
-
-<Note>
-  EDBB plans are billed per monthly subscription term. Charges that have already been paid are non-refundable unless the cancellation occurs within the initial 24-hour cooling-off window for brand-new services.
-</Note>
+Paid monthly charges are not refunded simply because you stop a service early. Eligible new purchases are handled under the [24-hour refund policy](/faq/billing-lifecycle/cancellation-and-refund-policy). See the separate [non-payment timeline](/faq/billing-lifecycle/billing-workflow).

@@ -1,0 +1,19 @@
+---
+title: "VPS IP not reachable from my country"
+sidebarTitle: "Country reachability"
+description: "Investigate country-specific access problems with console checks and network evidence. Understand why an IP change cannot guarantee reachability."
+---
+
+<span id="first-confirm-the-scope" />
+<span id="mitigation-tips" />
+<span id="request-a-replacement-ip" />
+<span id="verify-the-scope-of-the-issue" />
+
+Reachability from a particular country or ISP cannot be guaranteed. Filtering, routing changes and application rules can affect access even when the VPS is online elsewhere.
+
+1. Check the service state and console in the EDBB panel.
+2. Test from the affected network and compare with another network.
+3. Collect [MTR/traceroute evidence](/faq/ip-addresses/diagnose-packet-loss), the destination, protocol and timestamps.
+4. Contact [support@edbb.com](mailto:support@edbb.com) with those details before ordering an IP change or migration.
+
+An IP replacement may not resolve external filtering. Reinstallation erases data and is not a general cure for country-specific reachability. Review [IP changes](/faq/ip-addresses/change-ip-address) and the [refund policy](/faq/billing-lifecycle/cancellation-and-refund-policy) without assuming universal access is promised.

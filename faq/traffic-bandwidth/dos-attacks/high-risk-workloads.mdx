@@ -1,0 +1,18 @@
+---
+title: "Advisory for high-risk DDoS workloads"
+sidebarTitle: "High-risk workloads"
+description: "Services that attract frequent DDoS attacks should deploy specialized mitigation outside the standard EDBB VPS platform."
+---
+
+## Assess Your Risk Profile
+
+If your application is routinely targeted by DDoS attacks, consider whether a standard VPS platform meets your needs.
+EDBB safeguards shared infrastructure, but we do not deliver per-customer scrubbing or bespoke mitigation.
+
+## Recommended Approach
+
+- Use providers that specialize in absorbing sustained attacks (e.g., CDN/scrubbing services).
+- Place EDBB instances behind reverse proxies or filtering stacks when possible.
+- Maintain incident response plans and upstream contacts for rapid mitigation.
+
+Choosing the right architecture helps protect your project and ensures the EDBB network stays stable for all customers.

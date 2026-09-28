@@ -1,21 +1,23 @@
 ---
-title: "Order Bespoke IPv4 Addresses"
-sidebarTitle: "Bespoke IPs"
-description: "Choose exact IPv4 addresses for your EDBB VPS from curated prefixes with a one-time setup fee plus monthly recurring charge."
+title: "Order bespoke IPv4 addresses"
+sidebarTitle: "Bespoke IP addresses"
+description: "Ask EDBB support about available bespoke IPv4 addresses, confirm selection and recurring charges, and configure the assigned addresses safely."
 ---
 
-import { CtaButton } from "/snippets/cta-button.mdx";
 
 ## Bespoke Address Option
 
 <Info>
-  Bespoke IPv4s are ideal when you must land on specific geo locations, prefixes, or reputations. EDBB sources the addresses from curated pools so you can hand-pick up to <strong>10 per VPS</strong>.
+  Bespoke selection lets you discuss available provider-assigned addresses with support. It cannot guarantee a third-party location label, reputation or reachability. EDBB sources the addresses from curated pools so you can hand-pick addresses available for your service.
 </Info>
 
-## Pricing Snapshot
+<span id="pricing-snapshot" />
 
-| Item | Price |
-|------|-------|
+## Price and availability
+
+Confirm the current EDBB price, recurring charge and available quantity in the order summary or with [support@edbb.com](mailto:support@edbb.com) before payment. Do not use EDIS Global prices as an EDBB quote.
+
+------|-------|
 | One-time selection fee per IPv4 | **€10** |
 | Monthly charge per IPv4 | **€5** |
 
@@ -31,6 +33,8 @@ import { CtaButton } from "/snippets/cta-button.mdx";
 
 Support will reply with the curated list of available addresses for your location. Pick the exact IPv4s you want, confirm the selection, and pay the invoice they send. The chosen addresses appear under the **Network** tab as soon as the order is fulfilled.
 
-Finish by configuring each IPv4 manually within your operating system—or reinstall the VPS so the addresses populate automatically.
+Finish by configuring each IPv4 manually within your operating system.
 
-<CtaButton label="Prefer automated assignment?" link="./order-additional-ip-address" />
+[Prefer automated assignment?](/faq/ip-addresses/order-additional-ip-address)
+
+Use the [VNC console](/vps-management/enable-vnc-server) before changing network settings. Preserve existing addresses and data. Reinstalling erases the VPS and is not necessary just to add a guest network address.

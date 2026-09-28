@@ -1,0 +1,91 @@
+---
+title: "Extend a Windows Server disk"
+sidebarTitle: "Extend Windows disk"
+description: "Extend a Windows volume after an EDBB disk upgrade. Check free space, partition layout and backups before changing the filesystem."
+---
+
+<span id="alternative-tools" />
+<span id="common-issues-and-solutions" />
+<span id="introduction" />
+
+Back up the VPS before changing partitions. This guide expands an existing Windows Server volume after a disk upgrade; it does not shrink the provider-allocated disk.
+
+<Warning>Confirm that contiguous unallocated space follows the target volume on the same disk. Do not delete EFI or recovery partitions to make the wizard available.</Warning>
+
+<Note>
+NOTE: To fully apply your upgrade, first shut down your OS, power off the server from the Control Panel, and then power it back on through the Control Panel. This process ensures the system recognizes the updated drive specifications.
+
+Keep in mind, the additional space will remain unavailable until you resize your disk or partition. Do not format the existing volume when your intention is to extend it.
+
+</Note>
+
+---
+
+## How to Resize a Hard Drive
+
+## Step 1: Accessing Server Manager
+
+1. **Log in to the Server:**
+   Access your server via Remote Desktop or the local console.
+2. **Open Server Manager:**
+   - Click on the **Start** button and select **Server Manager.**
+   - If it doesn’t open automatically, search for `ServerManager.exe` and run it.
+
+![Extend Windows Hard Drive](/assets/1sSq3fI0sZJj8Zc4RoSr4-PVF-RTHQ6AszvmHN_-Td3-20241120-081714.png)
+
+---
+
+## Step 2: Navigate to File and Storage Services
+
+1. In the Server Manager dashboard, select **File and Storage Services** from the left-hand panel.
+2. Click on **Volumes** to display all configured drives on your server.
+
+![Extend Windows Hard Drive](/assets/1sSq3fI0sZJj8Zc4RoSr4-8X555kOnJsLqoBn3kc8Hy-20241120-082712.png)
+
+---
+
+## Step 3: Select the Target Volume
+
+1. In the **Volumes** section, locate the drive you want to resize.
+2. Right-click the drive and choose:
+   - **Extend Volume** to increase its size.
+
+![Extend Windows Hard Drive](/assets/1sSq3fI0sZJj8Zc4RoSr4-l1DTZloyGa9GZs3zf5s-H-20241120-082731.png)
+
+---
+
+<span id="step-5-shrinking-a-volume" />
+
+## Step 4: Extending a Volume
+
+1. If there’s unallocated space available on the disk:
+   - Selecting **Extend Volume** will launch a wizard that allows you to allocate the unused space to the volume.
+2. Specify the amount of space to add to the volume.
+3. Click **OK** to apply the changes.
+
+![Extend Windows Hard Drive](/assets/1sSq3fI0sZJj8Zc4RoSr4-wIHoylUNNawAvZuoYoGHR-20241120-082756.png)
+
+---
+
+<span id="step-6-verify-changes" />
+
+## Step 5: Verify changes
+
+1. Return to the **Volumes** section in Server Manager to confirm the updated volume size.
+2. For a more detailed view, you can use **Disk Management.**
+
+![Extend Windows Hard Drive](/assets/1sSq3fI0sZJj8Zc4RoSr4--vk1-kxLj7Ff7FLwwp7o0-20241120-082824.png)
+
+---
+
+## Important Notes
+
+- **Backup Data:** Always back up important data before making any changes to the disk.
+- **Unallocated Space Requirement:** To extend a volume, unallocated space must exist on the same disk and be contiguous with the target volume.
+- **In-Use Volumes:** If the volume is in use by active services or applications, a restart may be required.
+
+---
+
+## If Extend Volume is unavailable
+
+Check that Windows sees the enlarged disk and that free space is directly after the intended volume. If another partition is in the way or the filesystem/layout is unsupported, stop and obtain a layout-specific recovery plan. Do not move or delete system partitions without a tested backup and a verified procedure.

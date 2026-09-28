@@ -1,38 +1,22 @@
 ---
-title: "Upgrade Paths for Your EDBB VPS"
-sidebarTitle: "VPS Upgrades"
+title: "Upgrade paths for your EDBB VPS"
+sidebarTitle: "Upgrade options"
 description: "Decide whether to move to a larger plan or boost individual resources—see how each upgrade path works and when to use it."
 ---
 
-import { CtaButton } from "/snippets/cta-button.mdx";
+<span id="choose-the-right-upgrade-strategy" />
 
-## Choose the Right Upgrade Strategy
+Choose an upgrade based on the resource that is limiting your workload. Back up important data and plan for activation downtime before ordering.
 
-<Info>
-  EDBB offers two flexible upgrade paths: jump to a larger VPS plan in one click, or bolt on extra resources without changing tiers. Both options are prorated and complete without reinstalling your OS.
-</Info>
+| Need | Path |
+| --- | --- |
+| A larger allocation of several resources | [Upgrade the plan](/faq/upgrades-downgrades/upgrade-plan) |
+| Additional RAM, vCPU, disk or IP addresses | [Upgrade individual resources](/faq/upgrades-downgrades/upgrade-resources) |
+| More virtual disk space | [Drive Boost](/faq/upgrades-downgrades/upgrade-disk-drive-boost) |
+| Temporary additional data transfer | [Traffic Pool](/faq/traffic-bandwidth/traffic-pool) |
 
-<CardGroup cols={2}>
-  <Card title="🚀 Full Plan Upgrade">
-    <ul>
-      <li>Move to the next plan for more vCPU, RAM, disk, and traffic allowance.</li>
-      <li>Ideal when you consistently max out multiple resources.</li>
-      <li>Billing difference is prorated for the current cycle.</li>
-    </ul>
-    <CtaButton label="Upgrade to a bigger plan" link="../upgrades-downgrades/upgrade-plan" />
-  </Card>
-  <Card title="🧩 Upgrade Components">
-    <ul>
-      <li>Add RAM, vCPU, disk, or IP addresses individually.</li>
-      <li>Keep your existing plan while scaling only what you need.</li>
-      <li>Combine with traffic pool assignments for bursty workloads.</li>
-    </ul>
-    <CtaButton label="Upgrade components" link="../upgrades-downgrades/upgrade-resources" />
-  </Card>
-</CardGroup>
+Review current EDBB prices and resulting resource totals before payment. Plan and component upgrades are prorated for the remaining billing period. EDBB plans have globally uniform pricing; EDIS Global plan names and allowances do not apply.
 
----
+Follow the activation email. CPU/RAM changes require a full panel power cycle, while guest disk expansion is a separate task. See [upgrade data safety](/faq/upgrades-downgrades/upgrade-data-safety).
 
-<Note>
-  Downgrades aren’t available at the moment. If you’re experimenting with larger plans, capture snapshots or backups before upgrading so you can redeploy on a smaller instance later if needed.
-</Note>
+In-place downgrades are not supported. To move to a smaller service, plan a tested [migration](/faq/upgrades-downgrades/downgrade-policy) rather than assuming an image from a larger disk will fit.

@@ -1,0 +1,21 @@
+---
+title: "Is IP spoofing allowed?"
+sidebarTitle: "IP spoofing"
+description: "EDBB enforces source validation across its network. IP spoofing is prohibited and blocked at the edge."
+---
+
+## Policy
+
+<Info>
+  EDBB enforces source validation (BCP 38/84) across all platforms. Packets must leave the network with the IPs that belong to your service.
+</Info>
+
+IP spoofing is blocked on every VPS and dedicated server. Edge filters drop traffic with forged source addresses before it reaches upstream carriers.
+
+## Rationale
+
+- Protects the EDBB backbone and upstream partners from abuse
+- Maintains reputation for shared IP ranges
+- Complies with anti-spoofing best practices (BCP 38/84)
+
+Accounts found attempting to circumvent these controls risk immediate termination without refund.

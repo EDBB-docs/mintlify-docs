@@ -1,71 +1,53 @@
 ---
-title: "Enable IPv6 on Your EDBB VPS"
-sidebarTitle: "IPv6 Configuration"
+title: "Enable IPv6 on your EDBB VPS"
+sidebarTitle: "Configure IPv6"
 description: "Find your IPv6 range and gateway in the Network tab, then add addresses and routes to your VPS."
 ---
 
-## IPv6 on EDBB VPS
+<span id="ipv6-on-edbb-vps" />
 
-<Info>
-  Every VPS includes a dedicated <strong>/64 equivalent</strong> IPv6 range. Routing to the gateway requires configuring addresses with a <strong>/48 prefix</strong> inside your operating system.
-</Info>
+Each VPS receives an IPv6 allocation **equivalent in size to a /64**. It is not routed as a separate /64 subnet. The location uses a shared /48 network, so configure assigned addresses with a **/48 prefix** and the exact location gateway shown for your VPS.
 
----
+<Warning>
+  The /48 interface setting does not allocate the entire /48 to you. Use only your VPS's assigned addresses. The shared policy permits at most **20 stable IPv6 addresses configured simultaneously** and prohibits rotating/random-address IPv6 proxy services.
+</Warning>
 
-## Step 1 – Grab the Details from the Control Panel
+<span id="step-1-–-grab-the-details-from-the-control-panel" />
 
-<Steps>
-  <Step title="Open the Network tab">
-    Sign in to the <a href="https://my.edbb.com/clientarea.php" target="_blank">EDBB Control Panel</a>, select your VPS, and open the <strong>Network</strong> tab. Copy the IPv6 assignment and gateway.
-  </Step>
-  <Step title="Note the DNS entries">
-    The Network tab also lists recommended IPv4/IPv6 resolvers—use them if you want dual-stack name resolution.
-  </Step>
-</Steps>
+## Copy your service values
 
-![Network Tab](/assets/vps-network-tab.png)
+Open the VPS **Network** tab and record the allocation and gateway. Keep the [VNC console](/vps-management/enable-vnc-server) available before changing networking.
 
----
+<Frame>
+![EDBB Network tab containing assigned addresses and gateway information](/assets/vps-network-tab.png)
+</Frame>
 
-## Step 2 – Add an IPv6 Address (Linux example)
+<span id="step-2-–-add-an-ipv6-address-linux-example" />
 
-```bash
-# Pick an address from your /64 equivalent
-sudo ip -6 addr add 2a03:f80:ed15:82ca::10/48 dev eth0
+## Test a Linux configuration
 
-# Add the default route using the gateway from the Control Panel
-sudo ip -6 route add default via 2a03:f80:ed15::1
-```
-
-Verify the configuration:
+First inspect the existing addresses and routes:
 
 ```bash
-ip -6 addr show dev eth0
+ip -6 addr show
 ip -6 route show
 ```
 
-Persist the settings using your distro’s network tooling (Netplan, NetworkManager, or <code>/etc/network/interfaces</code>).
-
-<Callout type="warning">
-  Always use the <strong>/48 prefix</strong> when configuring addresses so traffic can reach the gateway. Using /64 in the OS will prevent routing.
-</Callout>
-
----
-
-## Step 3 – Test Connectivity
+The following values are documentation examples, not EDBB assignments. Replace the address, gateway and interface with your verified values. Do not add a second default route if the correct route already exists.
 
 ```bash
-ping6 2a03:f80:ed15::1         # Ping the gateway
-ping6 ipv6.google.com
+sudo ip -6 addr add 2001:db8:1234:5678::10/48 dev eth0
+sudo ip -6 route add default via 2001:db8:1234::1 dev eth0
 ```
 
-If gateway pings work but external hosts fail, review firewall rules or DNS configuration.
+<span id="step-3-–-test-connectivity" />
 
----
+Test the actual gateway and a known external IPv6 destination, then name resolution. Inspect firewall rules as well as routes if an application cannot connect.
 
-## Best Practices
+<span id="best-practices" />
 
-- Document the assigned /64 range and gateway for quick reference.  
-- Limit the number of active IPv6 addresses to avoid triggering flood protection.  
-- Combine IPv6 with IPv4 so services stay reachable for clients without IPv6.  
-- If routing issues persist, follow the <a href="/vps-management/basic-ipv6-troubleshooting">IPv6 troubleshooting guide</a>.
+## Make the working settings persistent
+
+Runtime `ip` changes normally disappear after reboot. Use the active distribution configuration system—Netplan, NetworkManager or interfaces files—to persist the verified settings while preserving IPv4 and other addresses. Do not configure the same interface through competing systems.
+
+See [IPv6 troubleshooting](/vps-management/basic-ipv6-troubleshooting) and the [AUP](/acceptable-use-policy).

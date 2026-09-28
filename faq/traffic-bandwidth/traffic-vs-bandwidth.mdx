@@ -1,7 +1,7 @@
 ---
-title: "Traffic vs Bandwidth"
-sidebarTitle: "Traffic vs Bandwidth"
-description: "Traffic measures total data transferred over time; bandwidth is the maximum throughput available at any moment." 
+title: "Traffic vs bandwidth"
+sidebarTitle: "Traffic and bandwidth"
+description: "Traffic measures total data transferred over time; bandwidth is the maximum throughput available at any moment."
 ---
 
 ## Same Pipe - Different Metrics
@@ -10,22 +10,23 @@ description: "Traffic measures total data transferred over time; bandwidth is th
   Bandwidth is the **speed limit** of your port; traffic is the **amount of data** you actually move during a billing cycle.
 </Info>
 
-<CardGroup cols={2}>
-  <Card title="🚀 Bandwidth">
-    <ul>
+
+###  Bandwidth
+
+<ul>
       <li>Measured in Mbit/s or Gbit/s</li>
       <li>Represents real-time throughput capacity</li>
       <li>EDBB hypervisors use multi-gigabit uplinks for bursty workloads</li>
     </ul>
-  </Card>
-  <Card title="📦 Traffic">
-    <ul>
+
+
+###  Traffic
+
+<ul>
       <li>Measured in GB or TB per month</li>
       <li>Counts all in/out data transfer during the billing period</li>
       <li>Each VPS plan includes a traffic pool you can top up if needed</li>
     </ul>
-  </Card>
-</CardGroup>
 
 ---
 
@@ -33,8 +34,8 @@ description: "Traffic measures total data transferred over time; bandwidth is th
 
 Imagine a highway:
 
-- **Bandwidth** is how many lanes you have—the maximum cars per second.  
-- **Traffic** is how many cars actually drove down that highway this month.  
+- **Bandwidth** is how many lanes you have—the maximum cars per second.
+- **Traffic** is how many cars actually drove down that highway this month.
 - You can burst to the full lane capacity, but the total number of cars still counts toward your traffic allowance.
 
 Track both metrics in the EDBB Control Panel under the **Traffic** tab; it shows current throughput and period-to-date usage side by side.

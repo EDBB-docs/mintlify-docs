@@ -1,0 +1,30 @@
+---
+title: "Install an Ubuntu 22.04 desktop on your VPS"
+sidebarTitle: "Ubuntu desktop"
+description: "Install a graphical desktop on Ubuntu 22.04, check resource requirements, and access the desktop through the VPS console after installation."
+---
+
+<span id="os-images-with-graphical-desktop-enabled" />
+
+This procedure installs the Kubuntu desktop on **Ubuntu 22.04**. It is not a Debian installation guide. A desktop consumes additional RAM and disk space; check your available capacity and the desktop package requirements before installing.
+
+## Prerequisites
+
+Have a current backup, administrative access and a working [VNC console](/vps-management/enable-vnc-server). Review the packages and additional disk space proposed by the package manager before confirming.
+
+```bash
+sudo apt update
+sudo apt install kubuntu-desktop
+```
+
+Follow any display-manager prompts and allow installation to finish. Restart the guest cleanly when ready:
+
+```bash
+sudo reboot
+```
+
+## Open the desktop
+
+Use the EDBB VNC console to view the graphical login and sign in with a normal local user. Installing a desktop does not itself configure an RDP service or a secure Internet-facing remote-desktop gateway.
+
+If the graphical login does not appear, inspect the display-manager service and available disk space from the console. Do not repeatedly reinstall the entire VPS to diagnose a desktop package problem. For another Ubuntu release or Debian, use that distribution's supported desktop installation instructions and verify the required packages first.

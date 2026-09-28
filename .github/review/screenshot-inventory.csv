@@ -1,0 +1,73 @@
+asset,unchanged_from_base,original_pages,final_pages,status
+/assets/-gvJtyF7VHSRiIGAeVws-_sysrescuecd3.png,True,advanced-setup-guides/manually-resize-disk-after-plan-upgrade-on-live-linux-systems.mdx,,retained file; no longer referenced
+/assets/13ePrT-SgVGNR1CSJAvv7_sysrescuecd5.png,True,advanced-setup-guides/manually-resize-disk-after-plan-upgrade-on-live-linux-systems.mdx,,retained file; no longer referenced
+/assets/1sSq3fI0sZJj8Zc4RoSr4--vk1-kxLj7Ff7FLwwp7o0-20241120-082824.png,True,advanced-setup-guides/extend-hard-drive-windows-guide.mdx,advanced-setup-guides/extend-windows-disk.mdx,retained and referenced
+/assets/1sSq3fI0sZJj8Zc4RoSr4-7e4qsQlMtqcneRYQoPZQp-20241106-143711.png,True,vps-management/how-to-change-ip-address-in-windows-server.mdx,vps-management/change-ip-windows.mdx,retained and referenced
+/assets/1sSq3fI0sZJj8Zc4RoSr4-8X555kOnJsLqoBn3kc8Hy-20241120-082712.png,True,advanced-setup-guides/extend-hard-drive-windows-guide.mdx,advanced-setup-guides/extend-windows-disk.mdx,retained and referenced
+/assets/1sSq3fI0sZJj8Zc4RoSr4-9mrOC1yNl1bI3VFtxq2NR-20241106-143431.png,True,vps-management/how-to-change-ip-address-in-windows-server.mdx,vps-management/change-ip-windows.mdx,retained and referenced
+/assets/1sSq3fI0sZJj8Zc4RoSr4-AGGOxauevnKCyRuSL3vFW-20241202-113527.png,True,windows-remote-desktop.mdx,windows-remote-desktop.mdx,retained and referenced
+/assets/1sSq3fI0sZJj8Zc4RoSr4-E6s05O4r7d3ThHTglgxfu-20241202-110408.png,True,windows-remote-desktop.mdx,windows-remote-desktop.mdx,retained and referenced
+/assets/1sSq3fI0sZJj8Zc4RoSr4-K1RXNa_wHwVjBcGOvTw4K-20241202-112943.png,True,windows-remote-desktop.mdx,windows-remote-desktop.mdx,retained and referenced
+/assets/1sSq3fI0sZJj8Zc4RoSr4-PVF-RTHQ6AszvmHN_-Td3-20241120-081714.png,True,advanced-setup-guides/extend-hard-drive-windows-guide.mdx,advanced-setup-guides/extend-windows-disk.mdx,retained and referenced
+/assets/1sSq3fI0sZJj8Zc4RoSr4-eE8Z7tBNfWJaa74qfI7Qv-20241202-112004.png,True,windows-remote-desktop.mdx,windows-remote-desktop.mdx,retained and referenced
+/assets/1sSq3fI0sZJj8Zc4RoSr4-l1DTZloyGa9GZs3zf5s-H-20241120-082731.png,True,advanced-setup-guides/extend-hard-drive-windows-guide.mdx,advanced-setup-guides/extend-windows-disk.mdx,retained and referenced
+/assets/1sSq3fI0sZJj8Zc4RoSr4-wIHoylUNNawAvZuoYoGHR-20241120-082756.png,True,advanced-setup-guides/extend-hard-drive-windows-guide.mdx,advanced-setup-guides/extend-windows-disk.mdx,retained and referenced
+/assets/4iwS9tjeowHQfbaaQSC-quiteditinguser.png,True,vps-management/reset-windows-admin-password.mdx,vps-management/reset-windows-password.mdx,retained and referenced
+/assets/C2wnUn7YWnYg3TUjxNgm-root-debian12.png,True,vps-management/reset-root-password-linux.mdx,vps-management/reset-root-password.mdx,retained and referenced
+/assets/Control panel.png,True,vps-management/vps-control-panel.mdx,vps-management/vps-control-panel.mdx,retained and referenced
+/assets/Ijip8O_qmSgr6LR-nJvf5_sysrescuecd1.png,True,advanced-setup-guides/manually-resize-disk-after-plan-upgrade-on-live-linux-systems.mdx,,retained file; no longer referenced
+/assets/Mu5oWRhP2anwRDejnqh-writechanges.png,True,vps-management/reset-windows-admin-password.mdx,vps-management/reset-windows-password.mdx,retained and referenced
+/assets/Restart.png,True,vps-management/power-cycle-or-reboot-a-vps.mdx,vps-management/power-cycle-or-reboot-a-vps.mdx,retained and referenced
+/assets/UVFJBNhdbn1c73-chntpw.png,True,vps-management/reset-windows-admin-password.mdx,vps-management/reset-windows-password.mdx,retained and referenced
+/assets/Upgrade-components.png,True,faq/upgrades-downgrades/upgrade-resources.mdx,faq/upgrades-downgrades/upgrade-resources.mdx,retained and referenced
+/assets/Upgrade-newplan.png,True,faq/upgrades-downgrades/upgrade-plan.mdx,faq/upgrades-downgrades/upgrade-plan.mdx,retained and referenced
+/assets/Upgrade-plan-card.png,True,faq/upgrades-downgrades/upgrade-plan.mdx,faq/upgrades-downgrades/upgrade-plan.mdx,retained and referenced
+/assets/VNC-info.png,True,vps-management/enable-vnc-server.mdx,vps-management/enable-vnc-server.mdx,retained and referenced
+/assets/after-kill.png,True,faq/traffic-bandwidth/how-to-investigate-and-stop-unusual-network-usage.mdx,,retained file; no longer referenced
+/assets/apply-credit.avif,True,faq/billing-lifecycle/how-to-pay-with-account-credit.mdx,faq/billing-lifecycle/how-to-pay-with-account-credit.mdx,retained and referenced
+/assets/bYb9Hny4tfRDK5FcumtQA_screenshot-2024-12-02-at-171013.png,True,windows-remote-desktop.mdx,windows-remote-desktop.mdx,retained and referenced
+/assets/cumulative_traffic.png,True,faq/traffic-bandwidth/traffic-stats-refill-explained.mdx,faq/traffic-bandwidth/traffic-statistics.mdx,retained and referenced
+/assets/daily_traffic.png,True,faq/traffic-bandwidth/traffic-stats-refill-explained.mdx,faq/traffic-bandwidth/traffic-statistics.mdx,retained and referenced
+/assets/enable-vnc.png,True,vps-management/enable-vnc-server.mdx,vps-management/enable-vnc-server.mdx,retained and referenced
+/assets/huaNpFAxK5PVCl_NLo3ID-QlQORqnbwx4sd8x4KCHOl-20241202-160326.png,True,windows-remote-desktop.mdx,windows-remote-desktop.mdx,retained and referenced
+/assets/huaNpFAxK5PVCl_NLo3ID-W0EeJBw1Um2ua4QWM6--f-20241202-161319.png,True,windows-remote-desktop.mdx,windows-remote-desktop.mdx,retained and referenced
+/assets/huaNpFAxK5PVCl_NLo3ID-rbCU-h7FzGiJeIcW7xO1y-20241202-160642.png,True,windows-remote-desktop.mdx,windows-remote-desktop.mdx,retained and referenced
+/assets/iftop-test.png,True,faq/traffic-bandwidth/how-to-investigate-and-stop-unusual-network-usage.mdx,,retained file; no longer referenced
+/assets/invoice-status-cancelled-cropped.webp,True,faq/billing-lifecycle/automated-vps-billing-workflow.mdx,faq/billing-lifecycle/billing-workflow.mdx,retained and referenced
+/assets/invoice-status-unpaid-cropped.webp,True,faq/billing-lifecycle/automated-vps-billing-workflow.mdx,faq/billing-lifecycle/billing-workflow.mdx,retained and referenced
+/assets/ix5iD2dZZyen4P22emv-resetadminpassword.png,True,vps-management/reset-windows-admin-password.mdx,vps-management/reset-windows-password.mdx,retained and referenced
+/assets/jeKwpMQkTdx2ZDzyQxib-continue.png,True,vps-management/reset-root-password-linux.mdx,vps-management/reset-root-password.mdx,retained and referenced
+/assets/jk221gGjGVanns-Password-Reset-Helper.png,True,vps-management/reset-root-password-linux.mdx; vps-management/reset-windows-admin-password.mdx,vps-management/reset-root-password.mdx; vps-management/reset-windows-password.mdx,retained and referenced
+/assets/m9tdma29_95LwshskbP0D_edis-vps-world-coverage-map-2710613844.jpg,True,getting-started/QQQQ_check-your-inbox.mdx,,retained file; no longer referenced
+/assets/mHzEbq4n4DXgiT5iVFz-umount.png,True,vps-management/reset-windows-admin-password.mdx,vps-management/reset-windows-password.mdx,retained and referenced
+/assets/nB_DvyqQcZNKEL5141Wak_win1.jpeg,True,vps-management/reset-windows-admin-password.mdx,vps-management/reset-windows-password.mdx,retained and referenced
+/assets/nethogs-test.png,True,faq/traffic-bandwidth/how-to-investigate-and-stop-unusual-network-usage.mdx,,retained file; no longer referenced
+/assets/nload-test.png,True,faq/traffic-bandwidth/how-to-investigate-and-stop-unusual-network-usage.mdx,,retained file; no longer referenced
+/assets/proc-cmdline.png,True,faq/traffic-bandwidth/how-to-investigate-and-stop-unusual-network-usage.mdx,,retained file; no longer referenced
+/assets/proc-exe.png,True,faq/traffic-bandwidth/how-to-investigate-and-stop-unusual-network-usage.mdx,,retained file; no longer referenced
+/assets/q7wiAyHP8mf8iXnKbh1HU_newpassword.png,True,vps-management/reset-windows-admin-password.mdx,,retained file; no longer referenced
+/assets/qdw2kfTSEeitQxPjo5Pm-unmount-drive.png,True,vps-management/reset-root-password-linux.mdx,vps-management/reset-root-password.mdx,retained and referenced
+/assets/reinstall-OS.png,True,vps-management/autoinstall-reinstall-install-vps-linux-windows.mdx,vps-management/reinstall-vps.mdx,retained and referenced
+/assets/reinstall.png,True,vps-management/autoinstall-reinstall-install-vps-linux-windows.mdx,vps-management/reinstall-vps.mdx,retained and referenced
+/assets/setting-up-reverse-pointers.png,True,faq/ip-addresses/setting-up-reverse-pointers.mdx,faq/ip-addresses/reverse-dns.mdx,retained and referenced
+/assets/settings.png,True,vps-management/system-configuration-dialog.mdx,vps-management/system-configuration-dialog.mdx,retained and referenced
+/assets/start-vps.png,True,vps-management/power-cycle-or-reboot-a-vps.mdx,vps-management/power-cycle-or-reboot-a-vps.mdx,retained and referenced
+/assets/stop-server.png,True,vps-management/power-cycle-or-reboot-a-vps.mdx,vps-management/power-cycle-or-reboot-a-vps.mdx,retained and referenced
+/assets/tXo35rruULtcDq5XS2w-Enter-new-root-password.png,True,vps-management/reset-root-password-linux.mdx,vps-management/reset-root-password.mdx,retained and referenced
+/assets/tasksel_ubuntu_debian_eb743512d0.png,True,advanced-setup-guides/gui-versions-of-ubuntu-debian.mdx,,retained file; no longer referenced
+/assets/traffic-pool-edbb-manual-auto-hydration.png,True,faq/traffic-bandwidth/traffic-pool.mdx; faq/traffic-bandwidth/traffic-stats-refill-explained.mdx,faq/traffic-bandwidth/traffic-pool.mdx,retained and referenced
+/assets/traffic_info-cal.png,True,faq/traffic-bandwidth/traffic-stats-refill-explained.mdx,faq/traffic-bandwidth/traffic-statistics.mdx,retained and referenced
+/assets/traffic_info.png,True,faq/traffic-bandwidth/traffic-stats-refill-explained.mdx,faq/traffic-bandwidth/traffic-statistics.mdx,retained and referenced
+/assets/tunpn-tests.png,True,faq/traffic-bandwidth/how-to-investigate-and-stop-unusual-network-usage.mdx,,retained file; no longer referenced
+/assets/uLxSPwfKVMf9QP5wS5E-loadiso.png,True,vps-management/reset-root-password-linux.mdx,vps-management/reset-root-password.mdx,retained and referenced
+/assets/un-mount-new.png,True,vps-management/mount-iso-image.mdx,vps-management/mount-iso-image.mdx,retained and referenced
+/assets/vI9GQIvvP61Ayho-Uhrnj_screenshot-2024-12-02-at-171118.png,True,windows-remote-desktop.mdx,windows-remote-desktop.mdx,retained and referenced
+/assets/vg4lijwNdjgyOUDN05SQD_sysrescuecd2.png,True,advanced-setup-guides/manually-resize-disk-after-plan-upgrade-on-live-linux-systems.mdx,,retained file; no longer referenced
+/assets/vnc-console.png,True,vps-management/enable-vnc-server.mdx,vps-management/enable-vnc-server.mdx,retained and referenced
+/assets/vps-change-ip-recycle-symbol.png,True,faq/ip-addresses/change-ip-address.mdx,faq/ip-addresses/change-ip-address.mdx,retained and referenced
+/assets/vps-mount-iso-co.png,True,vps-management/bring-your-own-iso.mdx,vps-management/bring-your-own-iso.mdx,retained and referenced
+/assets/vps-mount-iso.png,True,vps-management/mount-iso-image.mdx,vps-management/mount-iso-image.mdx,retained and referenced
+/assets/vps-network-info.png,True,vps-management/ip-address-information.mdx,vps-management/ip-address-information.mdx,retained and referenced
+/assets/vps-network-tab.png,True,vps-management/ipv6-configuration.mdx,vps-management/ipv6-configuration.mdx,retained and referenced
+/assets/vps-support-pin.png,True,vps-management/your-support-pin.mdx,vps-management/your-support-pin.mdx,retained and referenced
+/assets/vps-upload-iso.png,True,vps-management/cloud-init-vps-installation.mdx,vps-management/cloud-init-vps-installation.mdx,retained and referenced

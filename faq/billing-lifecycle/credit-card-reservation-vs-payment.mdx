@@ -1,7 +1,7 @@
 ---
-title: "Card Reservation vs Captured Payment"
-sidebarTitle: "Reservation vs Charge"
-description: "Understand why a card authorization may appear without a charge and how captured payments differ for EDBB invoices." 
+title: "Card reservation vs captured payment"
+sidebarTitle: "Card payment holds"
+description: "Understand why a card authorization may appear without a charge and how captured payments differ for EDBB invoices."
 ---
 
 ## Authorization (Reservation)
@@ -10,15 +10,15 @@ description: "Understand why a card authorization may appear without a charge an
   When you begin checkout, Stripe places an authorization hold. It checks the card balance but does not transfer funds.
 </Info>
 
-- Holds usually expire within seven days if the payment isn’t captured.  
+- Holds usually expire within seven days if the payment isn’t captured.
 - Because no money moves, authorizations cannot be refunded—they simply drop from the statement.
 
 ## Captured Payment
 
 After a successful checkout, the authorization is captured and the charge posts to your statement.
 
-- EDBB receives the funds.  
+- EDBB receives the funds.
 - If a refund is approved, it returns as a separate credit once processed by your bank.
 
-If you see a hold without a matching invoice, wait for the authorization to expire or contact your card issuer for details.  
+If you see a hold without a matching invoice, wait for the authorization to expire or contact your card issuer for details.
 For questions about completed charges, contact Support via the messenger or by email with the invoice number and we’ll review the transaction.

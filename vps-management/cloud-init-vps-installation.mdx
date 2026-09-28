@@ -7,7 +7,7 @@ description: "Upload a qcow2 image with Cloud-Init support, supply your user-dat
 ## Bring Your Own Cloud-Init Image
 
 <Info>
-  Cloud-Init lets you boot a custom qcow2 image and execute first-boot automation (user creation, key injection, package installs) without touching the console. Make sure you keep independent backups—the upload process wipes the VPS disk.
+  Cloud-Init lets you boot a custom qcow2 image and execute first-boot automation (user creation, key injection, package installs) on first boot. Make sure you keep independent backups—treat the custom-image upload and installation workflow as destructive; back up before starting.
 </Info>
 
 Cloud-Init is a lightweight framework baked into many Linux templates. On first boot it reads your <code>#cloud-config</code> instructions, creates users, injects SSH keys, installs packages, and runs commands so the server is ready without manual steps.
@@ -16,25 +16,28 @@ Cloud-Init is a lightweight framework baked into many Linux templates. On first 
 
 ## Why Use Cloud-Init
 
-- **Automated onboarding** – preconfigure users, passwords, SSH keys, and services.  
-- **Repeatable builds** – the same image and user-data produce identical environments across regions.  
+- **Automated onboarding** – preconfigure users, passwords, SSH keys, and services.
+- **Repeatable builds** – reuse a reviewed image and user-data; package versions and external dependencies can still change.
 - **Custom stacks** – ship bespoke templates or vendor images instead of the standard automated installers.
 
 ---
 
 ## Prepare Your Image
 
-<CardGroup cols={3}>
-  <Card title="🧰 Build & Clean">
-    Export a <strong>qcow2</strong> disk that already includes Cloud-Init. Remove SSH host keys and temporary data so the instance generates fresh credentials on first boot.
-  </Card>
-  <Card title="📝 Bring user-data">
-    Keep your <code>#cloud-config</code> YAML handy. You’ll paste it in <strong>Expert mode</strong> if you want to run custom tasks on first boot.
-  </Card>
-  <Card title="🔒 Verify & checksum">
-    Confirm the image boots locally and note its checksum. This helps you detect corruption before uploading and keeps reinstalls predictable.
-  </Card>
-</CardGroup>
+
+###  Build & Clean
+
+Export a <strong>qcow2</strong> disk that already includes Cloud-Init. Remove SSH host keys and temporary data so the instance generates fresh credentials on first boot.
+
+
+###  Bring user-data
+
+Keep your <code>#cloud-config</code> YAML handy. You’ll paste it in <strong>Expert mode</strong> if you want to run custom tasks on first boot.
+
+
+###  Verify & checksum
+
+Confirm the image boots locally and note its checksum. This helps you detect corruption before uploading and keeps reinstalls predictable.
 
 ---
 
@@ -49,9 +52,11 @@ Cloud-Init is a lightweight framework baked into many Linux templates. On first 
   </Step>
   <Step title="Upload the qcow2 file">
     Drag & drop your qcow2 (or click <em>browse</em>). The Control Panel stores the image temporarily for this reinstall.
-    <div style={{marginTop: "16px"}}>
-      <img src="/assets/vps-upload-iso.png" alt="Upload custom Cloud-Init image" style={{width: "100%", maxWidth: "820px", borderRadius: "16px", border: "1px solid rgba(0,0,0,0.08)"}} />
-    </div>
+
+<Frame>
+![Upload custom Cloud-Init image](/assets/vps-upload-iso.png)
+</Frame>
+
   </Step>
   <Step title="Configure Expert mode (optional)">
     Toggle <strong>Expert mode</strong> if you want to paste Cloud-Init user-data or SSH keys. Supply a strong password—or rely on keys only—and tick the confirmation acknowledging that the disk will be erased.
@@ -62,27 +67,32 @@ Cloud-Init is a lightweight framework baked into many Linux templates. On first 
 </Steps>
 
 <Note>
-  Uploading a qcow2 image removes the existing disk content permanently. Keep an external backup and verify the checksum of your image before you begin.
+  The panel warns that the qcow2 workflow erases the VPS disk. Back up before uploading or confirming Proceed. Keep an external backup and verify the checksum of your image before you begin.
 </Note>
 
 ---
 
-## Sample `cloud-config`
+<span id="sample-cloud-config" />
+
+## Debian/Ubuntu example `cloud-config`
+
+This example assumes a Debian/Ubuntu Cloud-Init image and its `sudo` group. Replace the entire example key line with your valid public key. It creates a user but does not grant passwordless sudo; configure administrative access deliberately and test it through the console. Do not paste secrets into reusable images. Validate user-data against your image before installation.
 
 ```yaml
 #cloud-config
 users:
   - default
   - name: deploy
-    groups: sudo
+    groups: [sudo]
     shell: /bin/bash
     ssh_authorized_keys:
-      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIExampleKeyHere
+      - ssh-ed25519 REPLACE_WITH_YOUR_COMPLETE_PUBLIC_KEY
 package_update: true
 package_upgrade: true
 packages:
   - nginx
   - fail2ban
+  - ufw
 write_files:
   - path: /etc/motd
     permissions: "0644"
@@ -100,8 +110,8 @@ power_state:
 
 ## Validate - Troubleshoot
 
-- Run `sudo cloud-init status --wait` after first boot to confirm success.  
-- Check `/var/log/cloud-init.log` for detailed logs if tasks fail.  
-- Re-upload a revised image or update the YAML and rerun the installation if you need adjustments.
+- Run `sudo cloud-init status --wait` after first boot to confirm success.
+- Check `/var/log/cloud-init.log` for detailed logs if tasks fail.
+- Inspect `/var/log/cloud-init-output.log` as well. Rerunning the installation erases the current disk; prefer correcting a running system when a reinstall is unnecessary.
 
 ---

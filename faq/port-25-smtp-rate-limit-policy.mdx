@@ -1,54 +1,96 @@
 ---
-title: "SMTP Port 25 Rate Limit"
-sidebarTitle: "Port 25 Policy"
+title: "SMTP port 25 rate limit"
+sidebarTitle: "Port 25 policy"
 description: "Learn how EDBB handles outbound SMTP traffic on port 25 and what limits apply to protect IP reputation."
 ---
 
-import { CtaButton } from "/snippets/cta-button.mdx";
+<span id="best-practices" />
+<span id="does-edbb-filter-or-block-any-ports" />
+<span id="what-this-means-for-you" />
 
-# Outbound SMTP Policy
+## Is Port 25 available?
 
-<Info>
-  EDBB keeps TCP port 25 open so you can run your own mail services. To protect shared IP reputation, outbound traffic is rate-limited to <strong>8 packets per second</strong> with an initial burst of 16 pps.
-</Info>
+Yes. EDBB permits SMTP traffic on TCP Port 25, subject to the following controls:
 
----
+| Direction | Policy |
+| --- | --- |
+| **Inbound TCP Port 25** | Unrestricted |
+| **Outbound TCP Port 25** | Open, with a default rate limit on VPS instances created on or after **February 24, 2025** |
 
-## Why We Rate-Limit Port 25
+The outbound rate limit is **8 packets per second (pps)**, with an **initial burst of up to 16 packets**.
 
-<CardGroup cols={2}>
-  <Card title="🛡️ IP Reputation">
-    Throttling prevents sudden spam bursts that could land shared IP ranges on blocklists.
-  </Card>
-  <Card title="⚖️ Fair Usage">
-    Keeps one VPS from monopolizing outbound SMTP bandwidth.
-  </Card>
-  <Card title="🚫 Abuse Deterrence">
-    Makes the platform less attractive for spammers while staying practical for legitimate email.
-  </Card>
-  <Card title="📅 Consistent Policy">
-    Applies to every VPS created after 24 February 2025. The limit is not adjustable per account.
-  </Card>
-</CardGroup>
+<Note>
+  The effective date is based on the creation date of the individual VPS, not
+  the creation date of your customer account. VPS instances created before February
+  24, 2025 are not subject to this automatic default rate limit. Our
+  Acceptable Use Policy and anti-abuse controls apply to every VPS.
+</Note>
 
----
+This is a network packet rate limit, not an allowance for a specific number of email messages.
 
-## What This Means for You
+<span id="outbound-smtp-policy" />
+<span id="why-we-rate-limit-port-25" />
 
-- Transactional email, server alerts, and admin notifications operate normally.  
-- Bulk campaigns or newsletters should use dedicated providers (SendGrid, Mailgun, Amazon SES, etc.).  
-- Exceeding the limit will slow delivery but won’t block single messages outright.  
-- EDBB enforces a strict no-spam policy—verified abuse leads to suspension without refund.
+## Why outbound Port 25 is rate-limited
 
----
+The rate limit helps EDBB:
 
-## Best Practices
+- Protect the reputation of its IP address ranges
+- Reduce unsolicited email and compromised-server abuse
+- Preserve reliable email delivery for legitimate users
+- Respond quickly to abuse while keeping Port 25 available for normal use
 
-1. Configure SPF, DKIM, and DMARC to improve deliverability.  
-2. Monitor mail queues and bounce reports; most issues stem from application misconfiguration rather than the rate limit.  
-3. Keep abuse contacts current in WHOIS/RDAP so you can respond quickly to complaints.  
-4. For high-volume sending, integrate with a reputable SMTP relay service.
+## Can the outbound rate limit be removed?
 
-Need clarifications for compliance requirements? Reach out to EDBB Support via the messenger or by email before launching your mail workload.
+The outbound Port 25 rate limit is **not a standard paid add-on**, and removal is not generally available.
 
-<CtaButton label="Contact EDBB Support" link="https://my.edbb.com/clientarea.php" openInNewTab={true} />
+EDBB may, at its sole discretion, approve an exception for an established and verifiable business operating a legitimate, consent-based email service. Contact [EDBB Support](mailto:support@edbb.com) before beginning such activity.
+
+As part of the review, we may request:
+
+- The legal business name and responsible contact person
+- A public website and verifiable business presence
+- The sending domains and a detailed description of the use case
+- Expected sending and recipient volumes
+- An explanation of how recipients provide consent
+- Unsubscribe, suppression, bounce, and complaint-handling procedures
+- A working abuse contact
+- Correct rDNS, SPF, DKIM, and DMARC configuration
+- Confirmation that the VPS is not operating as an open relay
+
+Any approval applies only to the **specific VPS reviewed**. It is not account-wide and may be revoked at any time.
+
+<Warning>
+  Payment, account credit, identity verification, supporting documents, or the
+  submission of a request does not guarantee approval. Exceptions are not
+  approved for cold email, purchased or scraped recipient lists, unsolicited
+  bulk email, or other activity that violates our
+  [Acceptable Use Policy](/acceptable-use-policy).
+</Warning>
+
+## What happens if spam is reported?
+
+EDBB may immediately block **outbound TCP Port 25 for the entire VPS** if a credible complaint or other evidence indicates that unsolicited email was sent from any IP address assigned to that VPS.
+
+The block applies to **all IPv4 and IPv6 addresses assigned to the VPS**, even if the complaint concerns only one IP address. Inbound TCP Port 25 remains unaffected.
+
+A single substantiated complaint may be sufficient. You must promptly:
+
+1. Investigate and stop the reported activity
+2. Secure any compromised accounts, credentials, applications, or software
+3. Address the cause of the incident
+4. Respond to EDBB with the remediation taken
+
+The outbound Port 25 block may remain in place indefinitely if the incident is not resolved satisfactorily. Repeated complaints, deliberate unsolicited mailing, or failure to cooperate may result in additional service restrictions, suspension, or account termination without refund.
+
+See our [Acceptable Use Policy](/acceptable-use-policy) and [Responding to an abuse complaint](/misc/responding-to-abuse-complaints) for further information.
+
+## Recommendation for VPN operators
+
+We recommend blocking outbound TCP port 25 in your VPN software or firewall unless your service has a legitimate requirement for direct SMTP delivery. Cover both traffic originating on the VPS and traffic forwarded from VPN subscribers, for IPv4 and IPv6 where enabled.
+
+The default platform rate limit is not a complete outbound block and does not replace your own abuse controls. A substantiated spam complaint can trigger an outbound port 25 block for the entire VPS, including every assigned IP address, as described above.
+
+## Need higher email capacity?
+
+For high-volume transactional or marketing email, we recommend using a specialized, authenticated email delivery service with established bounce, suppression, and complaint management.

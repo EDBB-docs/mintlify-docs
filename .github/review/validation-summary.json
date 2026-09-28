@@ -1,0 +1,17 @@
+{
+  "pages": 102,
+  "http200": 102,
+  "matching_meta_descriptions": 102,
+  "single_h1": 102,
+  "content_duplicate_ids": [],
+  "historical_fragment_links": 465,
+  "missing_historical_fragments": [],
+  "canonicals": "Absent in local preview; hosted verification required",
+  "redirects": {
+    "count": 97,
+    "status": 307,
+    "matching_destinations": 97,
+    "configured_permanent": true
+  },
+  "exports": "Local hosted-only endpoints returned 404; deployment verification required"
+}

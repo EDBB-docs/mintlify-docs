@@ -1,0 +1,21 @@
+---
+title: "Do VPS IPs change after reinstall or upgrade?"
+sidebarTitle: "IP address continuity"
+description: "Understand IP address continuity during VPS reinstalls and upgrades. Distinguish those operations from an IP replacement or a move to another location."
+---
+
+## What Happens to Your IPs
+
+<Info>
+  Reinstalling the operating system or changing your VPS plan does <strong>not</strong> rotate the assigned IPv4 or IPv6. The addresses stay linked to the service for as long as it remains active.
+</Info>
+
+---
+
+### The Exceptions
+
+- Cancelling or letting the VPS expire releases the IPs back into EDBB’s pool.
+- Ordering a free (first 24 hours) or paid IP change assigns a fresh address.
+- Adding secondary IPs appends new addresses but leaves the primary untouched.
+
+A location replacement creates a new VPS with new IP and login details; see [location changes](/faq/server-locations/change-server-location). IP continuity is separate from backups and upgrade activation.

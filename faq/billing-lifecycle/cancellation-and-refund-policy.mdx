@@ -1,109 +1,102 @@
 ---
-title: "Cancellation & Refund Policy"
-sidebarTitle: "Refund Policy"
-description: "Request a refund within 24 hours of purchase, or choose a free one-time location change if you selected the wrong VPS location."
+title: "Cancellation and refund policy"
+sidebarTitle: "Refund policy"
+description: "Check eligibility for an EDBB VPS refund within 24 hours of purchase, including exclusions, cancellation requirements and the information to send support."
 ---
 
-## VPS Cancellation and 24-Hour Refund Policy
+<span id="additional-information" />
 
-If you have recently purchased a VPS, you may request a refund within **24 hours** of the original purchase, provided your order meets the eligibility requirements outlined below.
+<span id="step-2-—-check-refund-eligibility" />
 
----
+## VPS cancellation and 24-hour refund policy
 
-## Alternative to refund: location change
+You may request a refund for an eligible VPS within **24 hours of purchase**. The 24-hour policy is not an unconditional free trial: your order and request must meet all eligibility conditions on this page.
 
-If your VPS was ordered within the last **24 hours** and the only issue is that you selected the wrong location or you would like to change the server to another location, you may not need a refund.
+Only **one refund per customer within any 12-month period** is available.
 
-Instead, you can request **one free location change**, allowing you to:
+## Options during the first 24 hours
 
-- Move your VPS to another available location.
-- Keep your current VPS plan.
-- Keep your existing billing cycle.
-- Avoid placing a new order.
+### Free primary IPv4 change
 
-<Info>
-  A free location change replaces the refund option. Once a location change has been completed, the VPS is no longer eligible for a refund.
-</Info>
+You may change the VPS's primary IPv4 address once free of charge during the first 24 hours. This does **not** remove your refund eligibility. You may still request a refund within the original 24-hour window if all other conditions are met.
 
----
+After the IP changes, the old address stops working immediately. You must reinstall the VPS or configure the new address manually through VNC.
 
-## Step 1 — Cancel the Service
+[Change Your IP Address](/faq/ip-addresses/change-ip-address)
 
-<Info>
-  You can cancel a VPS at any time from the <a href="https://my.edbb.com/clientarea.php" target="_blank" rel="noreferrer">EDBB Control Panel</a>. If you intend to request a refund, select <strong>Cancel Immediately</strong> so the service is terminated right away.
-</Info>
+<span id="alternative-to-refund-location-change" />
 
-Need a refresher? Follow the dedicated [Cancel a VPS guide](./cancel-a-service).
+### Free location change
 
----
+Instead of requesting a refund, you may request a **one-time free location change within 24 hours** while keeping the same plan and billing cycle.
 
-## Step 2 — Check Refund Eligibility
+EDBB provisions a direct replacement VPS in another available location of your choice. You receive a new VPS service, new login details, and a new IP address. If required, you may also request one additional free change of the replacement VPS's primary IPv4 address.
 
-<CardGroup cols={2}>
-  <Card title="✅ Eligible for Refund">
-    <ul>
-      <li>VPS ordered within the last 24 hours</li>
-      <li>No promo codes, special bundles, or traffic add-ons applied</li>
-      <li>No prior refund within the past 12 months</li>
-      <li>Service cancelled immediately (not end-of-term)</li>
-      <li>Account in good standing with no AUP violations</li>
-    </ul>
-  </Card>
+<Warning>
+  A completed location change replaces the refund option. After EDBB provisions the replacement VPS, the order is no longer eligible for a refund.
+</Warning>
 
-  <Card title="❌ Not Eligible for Refund">
-    <ul>
-      <li>More than 24 hours have passed since the original order</li>
-      <li>Promo codes, traffic add-ons, or plan upgrades were used</li>
-      <li>A refund has already been issued to the same customer within the last 12 months</li>
-      <li>The VPS has been suspended for abuse or policy violations</li>
-      <li>A free location change has already been completed for the VPS</li>
-    </ul>
-  </Card>
-</CardGroup>
+[Learn About Location Changes](/faq/server-locations/change-server-location)
 
----
+## Eligibility conditions
 
-## Step 3 — Contact EDBB Support
+Your refund request must satisfy all of these conditions:
+
+- Our support team receives your complete request within 24 hours of the VPS purchase.
+- You have not already used your refund allowance within the past 12 months.
+- You have not completed a location change for the VPS.
+- You have not revoked a cancellation request for the VPS.
+- You have not added Pool Traffic to the VPS.
+- You have not ordered a plan or resource upgrade for the VPS.
+- EDBB has not closed the service for violating our terms or [Acceptable Use Policy](/acceptable-use-policy).
+
+## How to request a refund
+
+<span id="step-1-—-cancel-the-service" />
+
+<span id="step-3-—-contact-edbb-support" />
 
 <Steps>
-  <Step title="Prepare your details">
-    Gather your VPS primary IPv4 address, Support PIN, invoice number, and purchase time.
+  <Step title="Cancel the VPS with immediate effect">
+    Open the VPS in the [EDBB Control Panel](https://my.edbb.com/clientarea.php), select **Request Cancellation**, and select **immediate cancellation**. An end-of-term cancellation does not satisfy the refund procedure.
   </Step>
 
-  <Step title="Submit your refund request">
-    Contact us through the portal messenger or email <strong>support@edbb.com</strong>. Include the information below and mention that you're requesting a refund under the 24-hour refund policy.
+  <Step title="Send the completed request to support">
+    Contact [support@edbb.com](mailto:support@edbb.com) within 24 hours of purchase and include the VPS IP address and Support PIN. Both values are available in the EDBB Control Panel.
 
-```text
-Subject: 24-hour refund request – VPS cancellation
+    ```text Refund request template
+    I purchased the following VPS within the past 24 hours. I have cancelled it with immediate effect and would like to request a refund under the 24-hour refund policy.
 
-Hello EDBB Support,
-
-I cancelled my VPS and would like to request a refund under the 24-hour refund policy.
-
-VPS IPv4: 203.0.113.42
-Invoice #: 123456
-Order time: 2025-04-12 09:30 UTC
-Support PIN: 1AB23
-Payment method: Visa ending 1234
-
-Thank you,
-<Your name>
-```
-
-  </Step>
-
-  <Step title="Wait for confirmation">
-    We'll review your request to confirm eligibility. If approved, we'll issue a credit note where required and refund the original payment method. Cryptocurrency refunds are processed in accordance with the Crypto Travel Rule and may require additional wallet information.
+    IP address: xxx.xxx.xxx.xxx
+    Support PIN: xxxxxxxx
+    ```
   </Step>
 </Steps>
 
-Processing times depend on your payment provider. Card refunds usually appear within a few business days, while cryptocurrency refunds depend on blockchain confirmation times and the payment provider's processing schedule.
+<Warning>
+  Requests received after the 24-hour deadline, or requests without the IP address and Support PIN, cannot be processed under this policy.
+</Warning>
 
----
+## Review and processing
 
-## Additional Information
+Our team reviews every request against the eligibility conditions. If the request qualifies, we create the applicable credit note and return the refund to the original payment method.
 
-- Refund requests must be submitted within **24 hours** of the original purchase.
-- Only **one refund request** is permitted per customer within a rolling 12-month period.
-- Refunds are not available for services purchased using promotional pricing, discount codes, special bundles, traffic add-ons, plan upgrades, or services that have already been relocated using the free location change option.
-- Requests missing the required service information may delay processing.
+The time required for the refund to appear depends on the payment provider. Alipay refunds may take up to 10 days to appear. Cryptocurrency refunds may take up to five business days for the payment provider to process.
+
+## Cryptocurrency refund requirements
+
+For cryptocurrency refunds, the payment provider requires the following information through its verified refund process:
+
+- Recipient wallet address
+- Blockchain and protocol used for the original payment, such as Ethereum ERC-20
+- Recipient's full name
+- Recipient's date and place of birth
+- Wallet type and, for a custodial wallet, the virtual asset service provider, such as Binance or Bybit
+
+<Note>
+  You may cancel a VPS at any time. A cancellation submitted after the 24-hour refund window does not qualify for a refund under this policy.
+</Note>
+
+EDBB offers annual billing at 12 months for the price of 11; there are no other discounts or volume offers. Cancelling a service and requesting a refund are separate actions. See [cancellation and data retention](/faq/billing-lifecycle/cancel-a-service) before stopping a VPS that contains data you need.
+
+Do not post refund identity information in public issues or chat channels. Follow the private instructions supplied by EDBB support and the payment provider.

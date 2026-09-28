@@ -1,76 +1,27 @@
 ---
-title: "Can I Move My VPS to Another Location?"
-sidebarTitle: "Change Location"
-description: "Request a one-time free VPS location change within 24 hours of ordering. After 24 hours, relocating requires deploying a new VPS."
+title: "Can I move my VPS to another location?"
+sidebarTitle: "Change server location"
+description: "Review the one-time location-change option within 24 hours of purchase. Understand replacement-server data loss, new access details and refund implications."
 ---
 
-import { CtaButton } from "/snippets/cta-button.mdx";
+<span id="eligibility-requirements" />
+<span id="free-location-change-within-24-hours" />
+<span id="why-we-don’t-“move”-an-existing-vps" />
 
-## Why We Don't "Move" an Existing VPS
+A location change replaces the VPS; it does not move the existing guest installation in place. EDBB VPS plan prices are the same globally, but a different location means different network paths and a new IP address.
 
-<Info>
-  Every EDBB VPS is tied to the hardware, storage, and IP resources of a specific data center. Because of this, an existing VPS cannot simply be transferred to another location. Instead, changing locations requires provisioning a new VPS in the destination region.
-</Info>
+<span id="after-24-hours" />
 
----
+## During the first 24 hours
 
-## Free location change within 24 hours
-
-Ordered your VPS in the wrong location? We may be able to help.
-
-If your VPS was ordered within the last **24 hours**, you can request **one free location change**.
-
-This option is useful if you:
-
-- Selected the wrong location during checkout.
-- Need lower latency from another region.
-- Require your VPS to be deployed in a different geographic location.
-
-When your request is approved:
-
-- A new VPS is provisioned in the requested location.
-- Your current plan and billing cycle remain unchanged.
-- The original VPS is permanently removed after the relocation.
-- No refund is issued as part of the relocation process.
-
-### Eligibility Requirements
-
-A free location change is available only if all of the following conditions are met:
-
-- The request is submitted within **24 hours** of the original order.
-- Only **one** free location change is permitted per VPS.
-- Resources are available in the requested location.
-- Additional IPv4 addresses are not automatically transferred and may require re-approval.
-- The VPS has not been suspended or flagged for abuse, spam, fraud, or policy violations.
+Instead of a refund, you may request a **one-time free location change within 24 hours of purchase**, keeping the same plan and billing cycle. EDBB provisions a replacement VPS with new login details and a new IP address. If needed, you may request one additional free primary IPv4 change for the replacement.
 
 <Warning>
-  A location change provisions a new VPS in the requested location. Your data, IP addresses, installed software, and configuration are **not** transferred automatically. Please create a full backup before requesting a relocation.
+  Once the replacement VPS has been provisioned, the order is no longer eligible for a refund. A replacement does not transfer your installed applications or data. Back up and plan the migration before requesting the change.
 </Warning>
 
----
+Contact [support@edbb.com](mailto:support@edbb.com) with the service details and desired available location. See the complete [refund policy](/faq/billing-lifecycle/cancellation-and-refund-policy).
 
-## After 24 Hours
+## Later migrations
 
-Once the initial **24-hour** period has passed, VPS locations can no longer be changed.
-
-If you need your VPS in another location:
-
-<Steps>
-  <Step title="Deploy a new VPS">
-    Order a VPS in your preferred location from the <a href="https://my.edbb.com/clientarea.php" target="_blank" rel="noreferrer">EDBB Control Panel</a>.
-  </Step>
-
-  <Step title="Migrate your data">
-    Transfer your files, databases, and application configuration to the new VPS using your preferred migration method.
-  </Step>
-
-  <Step title="Cancel the previous VPS">
-    Once everything has been verified, cancel the old VPS to stop further billing. Remember to update any DNS records or services that reference the previous IP address.
-  </Step>
-</Steps>
-
-<CtaButton
-  label="Browse VPS Locations"
-  link="https://www.edbb.com/vps"
-  openInNewTab={true}
-/>
+Order a new VPS in your chosen [EDBB location](https://www.edbb.com/), migrate and test your applications, update DNS and monitoring, then cancel the old service when the migration is verified. Keep an independent backup and allow for overlapping billing while both services exist. Do not assume a later relocation is free.

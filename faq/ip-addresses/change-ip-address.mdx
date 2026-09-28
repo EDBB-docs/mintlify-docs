@@ -1,10 +1,8 @@
 ---
-title: "Change Your VPS IP Address"
-sidebarTitle: "Change IP"
-description: "Swap the primary IPv4 on your EDBB VPS for free within 24 hours, or purchase a standard or bespoke change later on."
+title: "Change your VPS IP address"
+sidebarTitle: "Change an IP"
+description: "Change your primary IPv4 in the EDBB panel and configure the replacement through the console. Review eligibility and protect access before confirming."
 ---
-
-import { CtaButton } from "/snippets/cta-button.mdx";
 
 <Info>
   You can refresh the primary IPv4 once per VPS for free within the first 24 hours. After that window, order a standard or bespoke change directly inside the EDBB Control Panel.
@@ -12,7 +10,7 @@ import { CtaButton } from "/snippets/cta-button.mdx";
 
 ## Free IP Change
 
-Every new VPS includes a one-time IP change at no cost during the first 24 hours from the delivery of your VPS.
+Every new VPS includes a one-time IP change at no cost during the first 24 hours from purchase of your VPS.
 
 <Steps>
   <Step title="Open the EDBB Control Panel">
@@ -31,60 +29,35 @@ Every new VPS includes a one-time IP change at no cost during the first 24 hours
   </Step>
 </Steps>
 
-<div style={{ marginTop:"16px" }}>
-<img
-  src="/assets/vps-change-ip-recycle-symbol.png"
-  alt="Recycle icon for requesting a free IP change"
-  style={{ width:"100%",maxWidth:"420px",borderRadius:"16px",border:"1px solid rgba(0,0,0,0.08)" }}
-/>
-
-</div>
+<Frame>
+![Recycle icon for requesting a free IP change](/assets/vps-change-ip-recycle-symbol.png)
+</Frame>
 
 <Info>
-  If the refresh icon is greyed out or missing, the complimentary swap has been used—scroll down to the <strong>IP Change</strong>
+  If the refresh icon is greyed out or missing, the free change may no longer be available; check the purchase window and contact support if uncertain—scroll down to the <strong>IP Change</strong>
    button at the bottom of the page to order a paid change instead.
 </Info>
 
-Once processed, reinstall the VPS or configure the new address manually—the previous IP stops responding immediately.
+The previous IP stops working immediately after the change. Open VNC before confirming and configure the new address manually if you need to preserve the installation.
 
 > **Please note:** The free IP change applies only to your primary IPv4 address. If you need to change any additional IPv4 addresses, you can do so using our paid **Standard** or **Bespoke IP Change** services.
 
 ---
 
-## Paid IP Change After 24 Hours
+<span id="paid-ip-change-after-24-hours" />
 
-If the free window has passed, choose one of two add-ons:
+## Paid changes
 
-<CardGroup cols={2}>
-  <Card title="📦 Standard change">
-    <p>
-    <strong>€5</strong>
-     per request. The Control Panel assigns the next available IPv4—perfect when you just need a fresh address.
+Use the EDBB panel or contact [support@edbb.com](mailto:support@edbb.com) for available standard or bespoke changes. Confirm eligibility and the quoted EDBB price before ordering. A replacement address does not guarantee a particular reputation, geolocation result or country reachability.
 
-    </p>
+<span id="don’t-forget-to-apply-the-new-ip" />
 
-    <CtaButton label="Order Standard Change" link="https://my.edbb.com/cart.php?gid=addons" openInNewTab={true} />
-  </Card>
-  <Card title="🎯 Bespoke change">
-    <p>
-    <strong>€10</strong>
-     with a curated list of candidates so you can choose the exact IPv4 that fits your compliance or geolocation requirements.
+## Apply the new IP to Apply the New IP
 
-    </p>
+After the change completes, configure the assigned IPv4 through the [VNC console](/vps-management/enable-vnc-server) using the [Ubuntu](/vps-management/change-ip-ubuntu-1804-to-2404) or [Windows](/vps-management/change-ip-windows) instructions where applicable.
 
-    <CtaButton label="Order Bespoke Change" link="https://my.edbb.com/cart.php?gid=addons" openInNewTab={true} />
-  </Card>
-</CardGroup>
+<Warning>Reinstallation is an alternative only when you deliberately want a fresh system. It erases existing data; back up first.</Warning>
 
----
+[(Re)install OS](/vps-management/reinstall-vps)
 
-## Don't Forget to Apply the New IP
-
-After the change completes:
-
-- Reinstall the VPS, **or**
-- Configure the new IPv4 through the console or operating system tools.
-
-<CtaButton label="(Re)install OS" link="../../vps-management/autoinstall-reinstall-install-vps-linux-windows" />
-
-<CtaButton label="Enable VNC" link="../../vps-management/enable-vnc-server" />
+[Enable VNC](/vps-management/enable-vnc-server)

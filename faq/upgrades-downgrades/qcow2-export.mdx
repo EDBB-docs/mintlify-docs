@@ -1,0 +1,34 @@
+---
+title: "Request a qcow2 disk export"
+sidebarTitle: "qcow2 export"
+description: "Request a paid EUR 25 qcow2 export of your VPS disk, download it using the protected link within 30 days, and store your own copy securely."
+---
+
+<span id="how-to-order" />
+
+EDBB can provide a downloadable **qcow2 image of your VPS disk** as a separately requested service. It costs **EUR 25**. EDBB does not provide routine backups or instant customer snapshots.
+
+<span id="when-to-request-an-export" />
+
+## Request the export
+
+<Steps>
+  <Step title="Contact EDBB support">
+    Email [support@edbb.com](mailto:support@edbb.com) or use the panel support channel. Identify the VPS and request a qcow2 disk export. Ask support to coordinate any required shutdown and application-consistency preparation before the export.
+  </Step>
+  <Step title="Pay the export invoice">
+    Support issues the EUR 25 invoice. The export proceeds after payment is confirmed. Review the final invoice for applicable tax.
+  </Step>
+  <Step title="Download and store your copy">
+    Use the password-protected download link supplied by support. It is available for **30 days**, after which the export file is deleted. Store your own copy securely outside the VPS.
+  </Step>
+</Steps>
+
+## Before relying on the image
+
+- A disk export can contain passwords, keys and personal data. Restrict access to the file and its download credentials.
+- Confirm the file downloads completely and test your intended restore process in an isolated environment.
+- A target must support the image format, virtual hardware and required disk capacity. An image from a larger disk is not automatically suitable for a smaller VPS.
+- Continue making [routine backups](/backups); a one-off export is not a schedule or retention strategy.
+
+The export's download window is separate from [VPS data retention after termination](/faq/billing-lifecycle/data-retention-period). Request and download anything you need before cancelling the service.

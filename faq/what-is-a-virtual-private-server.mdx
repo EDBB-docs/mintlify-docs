@@ -1,76 +1,31 @@
 ---
-title: "What Is a Virtual Private Server?"
-sidebarTitle: "VPS Basics"
-description: "Understand how an EDBB VPS delivers dedicated resources, full OS control, and flexible networking compared with shared hosting."
+title: "What is a virtual private server?"
+sidebarTitle: "VPS explained"
+description: "Learn how a VPS uses virtual CPU, memory and storage, what you can manage, and why operating-system security and backups remain your responsibility."
 ---
 
-import { CtaButton } from "/snippets/cta-button.mdx";
+<span id="common-vps-workloads" />
+<span id="vps-fundamentals" />
+<span id="vps-vs-shared-hosting" />
 
-# VPS Fundamentals
+A virtual private server (VPS) is a virtual machine with its own operating system, virtual CPU, memory, storage and IP addresses. It shares physical infrastructure with other virtual machines while letting you administer your own guest system.
 
-<Info>
-  An EDBB Virtual Private Server (VPS) is a virtual machine with dedicated CPU, RAM, and storage carved from enterprise hardware. You get root/Administrator access, your own operating system, and isolation from other customers.
-</Info>
+## When a VPS is useful
 
----
+A VPS can run websites, application services, development tools or permitted VPN workloads when you need control over software and configuration. Choose the [EDBB plan](https://www.edbb.com/) from measured CPU, RAM, disk and traffic needs rather than an assumed visitor-to-RAM formula.
 
-## What You Get with an EDBB VPS
+<span id="what-you-get-with-an-edbb-vps" />
 
-<CardGroup cols={3}>
-  <Card title="⚙️ Dedicated Resources">
-    CPU cores, RAM, and NVMe storage are reserved for your VPS—no noisy neighbors.
-  </Card>
-  <Card title="🖥️ Full OS Control">
-    Boot Linux or Windows images, upload ISOs, or restore qcow2 snapshots without restrictions.
-  </Card>
-  <Card title="🌍 Advanced Networking">
-    IPv4 + /64-equivalent IPv6, optional VLANs, and the ability to add secondary addresses.
-  </Card>
-  <Card title="🔐 Rescue & Console">
-    Access the noVNC console, mount rescue ISOs, and recover even when SSH/RDP is offline.
-  </Card>
-  <Card title="📈 Easy Scaling">
-    Upgrade CPU, RAM, or storage from the Control Panel without rebuilding from scratch.
-  </Card>
-  <Card title="🛠️ Automation Ready">
-    Use Cloud-Init, API hooks, or configuration management tools to deploy consistently.
-  </Card>
-</CardGroup>
+## What you are responsible for
 
----
+EDBB supplies the hosting infrastructure. You install and maintain guest software, apply security updates, restrict access, monitor workloads and keep independent backups. Root or Administrator access remains subject to the [AUP](/acceptable-use-policy).
 
-## Common VPS Workloads
+EDBB uses KVM virtualization. Virtual CPU allocation does not mean ownership of a physical server or exclusive physical cores. Network uplink capacity does not guarantee a fixed speed to every destination.
 
-- Web platforms and SaaS applications
-- Databases and caching services (MySQL, PostgreSQL, Redis)
-- CI/CD runners and automation jobs
-- Game and voice servers
-- VPN gateways and security appliances
-- Learning labs or certification sandboxes
+<span id="launch-in-four-steps" />
 
----
+## Manage your VPS
 
-## VPS vs Shared Hosting
+Use the [EDBB Control Panel](/vps-management/vps-control-panel) for service actions and [SSH](/linux-secure-shell-ssh) or [RDP](/windows-remote-desktop) for guest administration. Cloud-Init can configure a supported guest at first boot. EDBB does not offer a customer or order API.
 
-| Capability | Shared Hosting | EDBB VPS |
-|------------|----------------|----------|
-| Root/Administrator access | No | Yes |
-| Custom OS installs | No | Yes |
-| Dedicated CPU/RAM | No | Yes |
-| Custom networking | Minimal | Full control |
-| Rescue tools | Limited | ISO boot + console |
-
-A VPS gives you the flexibility of a dedicated server with the convenience of cloud management.
-
----
-
-## Launch in Four Steps
-
-1. Choose a location from EDBB’s global footprint.  
-2. Pick a plan that meets your CPU, RAM, and storage requirements.  
-3. (Optional) Attach a Cloud-Init script for automated setup.  
-4. Deploy and connect via SSH (Linux) or RDP (Windows).
-
-You’re now ready to run production workloads with predictable performance and full control.
-
-<CtaButton label="Browse EDBB VPS Plans" link="https://www.edbb.com/vps" openInNewTab={true} />
+Begin with [getting started](/) and [backups](/backups).

@@ -1,0 +1,56 @@
+---
+title: "Update the IPv4 address in Windows Server"
+sidebarTitle: "Change IP on Windows"
+description: "Collect the new IPv4 details from the Network tab, change them in Windows Server, and verify connectivity."
+---
+
+<span id="automation-option" />
+<span id="final-checklist" />
+<span id="step-1-–-collect-the-new-settings" />
+<span id="step-2-–-connect-to-the-server" />
+<span id="step-3-–-open-adapter-properties" />
+<span id="step-4-–-enter-the-new-ipv4-values" />
+<span id="step-5-–-verify-with-powershell" />
+<span id="step-6-–-test-connectivity" />
+
+Changing an IPv4 address can disconnect RDP. Use the [EDBB VNC console](/vps-management/enable-vnc-server) and record the existing configuration before making the change.
+
+## Prepare
+
+Copy the new address, prefix/subnet mask, gateway and DNS values from the service's **Network** tab. Identify the adapter carrying the current address. Do not remove every IPv4 address on an adapter; secondary addresses and routes may support other services.
+
+In PowerShell, inspect the existing configuration:
+
+```powershell
+Get-NetIPConfiguration
+Get-NetIPAddress -AddressFamily IPv4
+Get-NetRoute -AddressFamily IPv4
+```
+
+Save the output securely for rollback and record whether the adapter uses DHCP or static configuration.
+
+<span id="change-the-ipv4-address-in-windows-server" />
+
+## Update the intended address
+
+1. From the console, open **Network Connections** (`ncpa.cpl`).
+2. Open the properties of the verified adapter, then **Internet Protocol Version 4 (TCP/IPv4)**.
+3. Update only the intended address and gateway using the EDBB-assigned values. Check **Advanced** settings for additional addresses before overwriting anything.
+4. Preserve unrelated secondary addresses, DNS and routes unless the change explicitly requires updating them.
+5. Apply the change and inspect the configuration again.
+
+The existing screenshots illustrate the Windows dialogs. The private IP and DNS values pictured are examples, **not your EDBB network settings**; use the values assigned to your VPS.
+
+<Frame>
+![Windows Network Connections showing the Ethernet adapter](/assets/1sSq3fI0sZJj8Zc4RoSr4-9mrOC1yNl1bI3VFtxq2NR-20241106-143431.png)
+</Frame>
+
+<Frame>
+![IPv4 properties dialog; replace the pictured example values with your assigned settings](/assets/1sSq3fI0sZJj8Zc4RoSr4-7e4qsQlMtqcneRYQoPZQp-20241106-143711.png)
+</Frame>
+
+## Verify and recover
+
+Test the gateway, an external destination and name resolution separately. Reconnect through RDP to the new address, and update DNS, application bindings, allowlists and monitoring where necessary.
+
+If connectivity fails, use the console to compare and restore the recorded configuration. Do not repeatedly remove all addresses or reinstall the VPS as a network repair. Contact [support@edbb.com](mailto:support@edbb.com) if the assigned parameters appear inconsistent.

@@ -1,111 +1,38 @@
 ---
-title: "Quick Checks for IPv6 Issues"
-sidebarTitle: "IPv6 Troubleshooting"
+title: "Quick checks for IPv6 issues"
+sidebarTitle: "IPv6 troubleshooting"
 description: "Run through portal and OS-level checks to resolve IPv6 reachability problems on your EDBB VPS."
 ---
 
-## IPv6 Troubleshooting Playbook
+<span id="ipv6-troubleshooting-playbook" />
+<span id="preventive-tips" />
+<span id="step-1-–-confirm-assigned-values" />
+<span id="step-2-–-verify-interface-state" />
+<span id="step-3-–-test-local-connectivity" />
+<span id="step-4-–-probe-external-reachability" />
+<span id="step-5-–-check-application-bindings" />
+<span id="step-6-–-gather-diagnostics-for-support" />
 
-<Info>
-  IPv6 relies on the address, gateway, and DNS values shown on the Network tab. Confirm those details first, then follow these quick checks to restore connectivity.
-</Info>
+Check IPv6 addressing, routing and DNS separately. Keep the [VNC console](/vps-management/enable-vnc-server) available before changing network settings.
 
----
-
-## Step 1 – Confirm Assigned Values
-
-<Steps>
-  <Step title="Check the Network tab">
-    Open the <strong>Network</strong> tab in the <a href="https://my.edbb.com/clientarea.php" target="_blank">EDBB Control Panel</a>. Note the IPv6 assignment, gateway, and recommended DNS resolvers.
-  </Step>
-  <Step title="Inspect the running config">
-    On the VPS, run:
+## Inspect the guest
 
 ```bash
 ip -6 addr show
 ip -6 route show
 ```
 
-    Ensure the assigned address matches your /64 range and that the default route points to the gateway from the Control Panel.
-  </Step>
-</Steps>
+Compare the address, **/48 configured prefix** and exact location gateway with the EDBB **Network** tab. Use only your assigned /64-equivalent allocation; the /48 setting does not grant access to the whole location prefix. See [IPv6 configuration](/vps-management/ipv6-configuration).
 
-<Warning>
-  Typos (especially missing `/48`) are the most common cause of IPv6 outages. Double-check each segment when editing addresses.
-</Warning>
+## Test one layer at a time
 
----
+1. Check that the intended interface is up and the address is not marked duplicate or tentative.
+2. Test the exact gateway from your service record. ICMP filtering can affect replies, so a failed ping alone is not conclusive.
+3. Test a known reachable external IPv6 destination by address.
+4. Then test name resolution and the actual application protocol.
 
-## Step 2 – Verify Interface State
+If numeric destinations work but names do not, inspect the resolver configuration. If the gateway works but external destinations do not, inspect the default route and firewall. Do not disable all firewall rules as a first troubleshooting step.
 
-```bash
-ip link show dev eth0
-```
+Binding an application to `::` can expose it on all IPv6 interfaces; restrict access appropriately. Runtime `ip` changes normally do not survive reboot. Make the final correction in your distribution's active network configuration system and verify it after a planned restart.
 
-Replace `eth0` with the correct interface. Look for <code>state UP</code> and <code>LOWER_UP</code>. If the interface is down:
-
-```bash
-sudo ip link set eth0 up
-```
-
----
-
-## Step 3 – Test Local Connectivity
-
-```bash
-ping6 -c 3 ::1
-ping6 -c 3 2a03:f80:xxxx:xxxx::10   # replace with your address
-ip -6 neigh show
-```
-
-If the neighbor entry for the gateway shows `FAILED`, flush it and retry:
-
-```bash
-sudo ip -6 neigh flush all
-```
-
----
-
-## Step 4 – Probe External Reachability
-
-```bash
-ping6 -c 3 2a03:f80:ed15::1        # example gateway
-ping6 -c 3 ipv6.google.com
-traceroute -6 ipv6.google.com
-```
-
-Gateway pings succeed but public hosts fail? Review firewalls (both inside the VPS and upstream) and confirm DNS AAAA records exist for your targets.
-
----
-
-## Step 5 – Check Application Bindings
-
-- Restart services that bind to specific addresses or interfaces (web servers, databases, proxies).  
-- Update config files to reference hostnames or `::` rather than a hard-coded old address.  
-- Use `ss -ltnp` to confirm listeners are bound to the expected IPv6 socket.
-
----
-
-## Step 6 – Gather Diagnostics for Support
-
-If problems persist, collect this output before messaging Support (via the portal messenger or email):
-
-```bash
-ip -6 addr show
-ip -6 route show
-ip -6 neigh show
-mtr -6 -r ipv6.google.com
-```
-
-Include the VPS ID and datacenter location. This confirms whether the issue is local or upstream.
-
----
-
-## Preventive Tips
-
-- Save known-good network configs before editing.  
-- Limit active IPv6 addresses to avoid router flood protection.  
-- Monitor dual-stack services so both IPv4 and IPv6 remain healthy.  
-- Need a refresher? Review the <a href="/vps-management/ipv6-configuration">IPv6 configuration guide</a> first.
-
-With these checks you can resolve most IPv6 issues quickly—and have the right data ready if you need escalation.
+Send the service IP, timestamps, relevant routes and symptoms to [support@edbb.com](mailto:support@edbb.com), excluding credentials.

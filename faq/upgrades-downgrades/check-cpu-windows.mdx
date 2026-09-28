@@ -1,0 +1,30 @@
+---
+title: "Check CPU resources on Windows"
+sidebarTitle: "Check CPU on Windows"
+description: "Use Task Manager and PowerShell to inspect virtual CPU resources on Windows Server. Distinguish logical processors from physical host hardware."
+---
+
+<span id="how-to-check-number-of-cpu-cores-available-to-windows" />
+
+Windows reports the virtual CPU layout presented to the VPS. Use Task Manager or PowerShell to inspect it; the result is not proof of physical host-core exclusivity.
+
+## Task Manager
+
+Open **Task Manager → Performance → CPU**. Review sockets, cores and logical processors. Where available, change the graph to show logical processors separately.
+
+## PowerShell
+
+```powershell
+Get-CimInstance Win32_Processor |
+  Select-Object Name, SocketDesignation, NumberOfCores, NumberOfLogicalProcessors
+```
+
+For the total logical processor count:
+
+```powershell
+(Get-CimInstance Win32_ComputerSystem).NumberOfLogicalProcessors
+```
+
+WMIC is deprecated and is not the preferred approach for new instructions. Use the [Microsoft CIM cmdlets](https://learn.microsoft.com/en-us/powershell/module/cimcmdlets/get-ciminstance).
+
+After a resource upgrade, follow its activation instructions and verify the new allocation. See [CPU cores and sockets](/faq/upgrades-downgrades/cpu-cores-and-sockets) and [power cycling](/vps-management/power-cycle-or-reboot-a-vps).

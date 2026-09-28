@@ -1,0 +1,19 @@
+---
+title: "GeoIP shows the wrong location"
+sidebarTitle: "Correct geolocation"
+description: "Third-party GeoIP sites may display outdated locations for EDBB IPs. Learn why and how to request corrections."
+---
+
+<span id="confirm-the-actual-location" />
+<span id="submit-a-correction-to-whatismyipaddress" />
+<span id="when-to-contact-edbb-support" />
+<span id="why-whatismyipaddress-shows-the-wrong-city" />
+
+If a lookup website displays an unexpected location, identify which database supplied the result before requesting a correction. A lookup label is not proof that the VPS is in the wrong datacenter.
+
+1. Record the VPS IP address, ordered location, lookup URL and date. Save the displayed result.
+2. Check whether the lookup website names its underlying GeoIP provider.
+3. Use that provider's current official support or correction workflow. For MaxMind, start at [MaxMind support](https://support.maxmind.com/); for another provider, use its own website rather than an old form URL.
+4. Send the same evidence to [support@edbb.com](mailto:support@edbb.com) if you need help checking the provider's allocation or geofeed information.
+
+Corrections are reviewed independently and may take time to reach downstream users. Do not expect a new PTR record, DNS change or VPS reinstall to correct a commercial location database.

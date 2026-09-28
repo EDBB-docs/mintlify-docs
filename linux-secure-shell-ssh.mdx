@@ -1,61 +1,38 @@
 ---
-title: Linux Secure Shell Overview
-sidebarTitle: "SSH Basics"
-description: Learn what Secure Shell (SSH) is and how to open an encrypted session to your VPS.
+title: "Connect to Linux with SSH"
+sidebarTitle: "Connect with SSH"
+description: "Connect to a Linux VPS with SSH, verify its host-key fingerprint through the console, and prepare secure administrative access before changing login rules."
 ---
 
-import { CtaButton } from "/snippets/cta-button.mdx";
+<span id="why-ssh-matters" />
 
-## Why SSH Matters
+SSH provides an encrypted terminal connection to your Linux VPS. You need the assigned IP, a valid username and the password or key configured for that installation.
 
-<Info>
-  SSH gives you an encrypted command-line tunnel into your VPS. Bring the server’s IPv4 address, your username (usually <code>root</code>), and the password you set during provisioning or reinstall.
-</Info>
+<span id="connect-to-your-vps" />
 
-<CardGroup cols={3}>
-  <Card title="🔐 Encrypted Channel">
-    Commands, output, and credentials travel inside a secure tunnel so they cannot be intercepted on the network.
-  </Card>
-  <Card title="🗝️ Strong Authentication">
-    Combine passwords with SSH keys to add an extra factor without complicating your workflow.
-  </Card>
-  <Card title="⚙️ Automation Ready">
-    Script routine tasks, deploy code, or manage configuration tools over a reliable CLI connection.
-  </Card>
-</CardGroup>
+## Connect
 
----
+1. Open a terminal with an SSH client on your computer. If Windows lacks the client, install the supported OpenSSH Client optional feature.
+2. Replace the documentation-only address below with your VPS IP and use the correct account:
 
-## Connect to Your VPS
+```bash
+ssh root@192.0.2.10
+```
 
-<Steps>
-  <Step title="Open a terminal on your local machine">
-    macOS, Linux, and Windows (PowerShell) all ship with an SSH client by default.
-  </Step>
-  <Step title="Run the SSH command">
-    ```bash
-    ssh root@<your-vps-ip>
-    ```
-  </Step>
-  <Step title="Trust the fingerprint once">
-    On the first login, type <code>yes</code> to store the host key so future sessions can verify the server’s identity.
-  </Step>
-  <Step title="Enter your password or unlock your key">
-    Provide the welcome-password (or the credential you set in the Control Panel during reinstallation). A successful authentication drops you into the remote shell.
-  </Step>
-</Steps>
+3. Before accepting a new host key, compare the shown fingerprint with the server's key through the trusted [VNC console](/vps-management/enable-vnc-server). For an Ed25519 host key, inspect it on the server with:
 
-To close the session at any time, type `exit` or press **Ctrl + D**.
+```bash
+ssh-keygen -lf /etc/ssh/ssh_host_ed25519_key.pub
+```
 
----
+4. Authenticate with your password or key. A successful connection opens the remote shell. Type `exit` to disconnect.
 
-## Quick Safety Checks
+An unexpected changed host key needs investigation; do not suppress the warning automatically. A reinstall normally generates new host keys, which you can verify through the console.
 
-- Disable password logins and rely on SSH keys once you are comfortable.  
-- Keep the package updated (`apt update && apt upgrade -y` or `dnf update -y`).  
-- Limit root access by creating a sudo-capable user for daily administration.
+<span id="quick-safety-checks" />
 
-<CtaButton
-  label='Blog Post: Are SSH Connections Truly Secure?'
-  link='https://www.edbb.com/blog/are-ssh-connections-secure'
-/>
+## Secure ongoing access
+
+Create and test a normal administrative user with SSH-key access. Verify a second login and sudo before disabling root or password authentication. A key plus an optional password is not automatically two-factor authentication.
+
+Follow [SSH hardening](/getting-started/ssh-security-hardening), keep packages updated and retain a console recovery path before firewall changes.

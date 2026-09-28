@@ -1,0 +1,15 @@
+{
+  "path": "assets/edbb-eur-bank-details.pdf",
+  "owner_confirmed": true,
+  "confirmation_date": "2026-09-28",
+  "pages": 1,
+  "beneficiary": "ED BACKBONE & CO",
+  "currency": "EUR",
+  "bank": "iBanFirst",
+  "unchanged_copy": true,
+  "iban_checksum_valid": true,
+  "sha256": "e400811129408609c434312652230fb906564cb58177c08265562a1c8e827446",
+  "local_download_matches_original": true,
+  "mintlify_validation": "passed",
+  "mintlify_broken_links": "passed"
+}

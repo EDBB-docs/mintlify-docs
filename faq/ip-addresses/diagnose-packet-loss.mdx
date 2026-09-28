@@ -1,0 +1,42 @@
+---
+title: "Diagnose packet loss (Windows & Linux)"
+sidebarTitle: "Diagnose packet loss"
+description: "Collect traceroute or MTR output from Windows or Linux to help EDBB support pinpoint connectivity issues between your network and the VPS."
+---
+
+<span id="before-you-start" />
+<span id="command-prompt-traceroute" />
+<span id="linux-or-macos" />
+<span id="windows-tools" />
+<span id="winmtr-recommended-for-trending-loss" />
+
+Use ping, traceroute and MTR to investigate a path between your device and the VPS. Collect evidence from the affected network; a result from another provider may follow a different route.
+
+## Collect a report
+
+On Debian or Ubuntu, install MTR and run a report. Replace the documentation-only destination with your VPS IP or the affected remote host:
+
+```bash
+sudo apt update
+sudo apt install mtr-tiny
+mtr -r -w -c 100 192.0.2.10
+```
+
+On Windows, use `tracert` and `ping`, or a trusted MTR implementation. On macOS, built-in `traceroute` and `ping` are available; install MTR through your trusted package manager if you need a combined report.
+
+```powershell
+tracert 192.0.2.10
+ping -n 100 192.0.2.10
+```
+
+<span id="submitting-the-results" />
+
+## Interpret results
+
+An intermediate router can deprioritize ICMP replies while forwarding traffic normally. Loss at a hop that does **not** continue to the final destination is not proof of packet loss affecting your service. Asterisks can also mean a router does not answer probes.
+
+Compare final-destination loss, latency over time and application behavior. If ICMP is filtered, test the actual application protocol where possible. Collect a reverse-direction report from the VPS to the affected network when it is reachable; paths can differ by direction.
+
+## Send useful evidence
+
+Contact [support@edbb.com](mailto:support@edbb.com) with source and destination IPs, timestamp and timezone, the affected protocol, reports and whether the issue is continuous or intermittent. Remove unrelated personal data, tokens and credentials from logs.

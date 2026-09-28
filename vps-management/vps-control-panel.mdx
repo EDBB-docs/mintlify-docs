@@ -1,86 +1,91 @@
 ---
-title: "EDBB VPS Control Panel"
-sidebarTitle: "Control Panel"
-description: "Meet your all-new VPS control panel: Intuitive Dashboard, Reinstall, Power Management, Driver Settings, Traffic Pool, Resource- and Plan-Upgrades"
+title: "EDBB VPS control panel"
+sidebarTitle: "Control panel"
+description: "Find the EDBB Dashboard, Installation, Traffic, Settings, rDNS, Network and Upgrades tabs, with links to the relevant service-management instructions."
 ---
 
 ## Meet your VPS Control Panel
 
-
-Our redesigned control panel splits daily tasks into tabs:
+The control panel groups service management into these tabs:
 **Dashboard, Installation, Traffic, Settings, rDNS, Network, Upgrades**
 while a quick-action column on the left keeps power and console controls only one click away.
 
 <Frame>
-  <img src="/assets/Control panel.png" alt="EDBB VPS Control Panel" />
+![EDBB VPS Control Panel](/assets/Control%20panel.png)
 </Frame>
-
 
 ---
 
 ## Quick Actions - Console Access
 
-<CardGroup cols={3}>
-  <Card title="⚡ Power Menu">
-    The green <strong>Server On</strong> button handles shutdowns and reboots. Open the dropdown to Stop or Restart your machine. 
-  </Card>
-  <Card title="🖥️ VNC Toggle">
-    Flip <strong>VNC</strong> on only when you need it. The button turns green while VNC is enabled, reminding you to disable it once remote work is finished.
-  </Card>
-  <Card title="🔗 Open Console">
-    Launch the embedded noVNC viewer instantly. No extra navigation. Perfect for watching reinstalls, entering rescue environments, or capturing screenshots. Button in greyed-out when VNC is off.
-  </Card>
-</CardGroup>
+
+###  Power Menu
+
+The green <strong>Server On</strong> button handles shutdowns and reboots. Open the dropdown to Stop or Restart your machine.
+
+
+###  VNC Toggle
+
+Flip <strong>VNC</strong> on only when you need it. The button turns green while VNC is enabled, reminding you to disable it once remote work is finished.
+
+
+###  Open Console
+
+Open the embedded noVNC viewer to follow installation, use recovery media or inspect the guest console. The button is unavailable while VNC is off.
 
 ---
 
 ## Control Panel Highlights
 
-<CardGroup cols={2}>
-  <Card title="📋 Service Summary">
-    The right-hand sidebar lists status, location, primary IPv4/IPv6 (with copy buttons), installed OS, Support PIN, billing cycle, and renewal dates.
-  </Card>
-  <Card title="📸 Live Screenshot">
-    Check the latest desktop image before connecting via RDP or VNC. Use it to confirm installs completed or login prompts are ready.
-  </Card>
-</CardGroup>
 
-<CardGroup cols={2}>
-  <Card title="📊 Traffic Dial">
-    Monitor consumed vs. allocated traffic. The dial shows percentage used, remaining traffic, real values in GB, and the next refill date so you can plan ahead. An info banner warns when traffic is low or fully used.
-  </Card>
-  <Card title="🌊 Traffic Pool Ledger">
-    See global pool log and balance sheet, hydration history, trigger manual hydration,  <strong>TopUp</strong> traffic pool links. An info banner warns when auto hydration isn't configured or traffic pool is empty/unused.
-  </Card>
-</CardGroup>
+###  Service Summary
 
-<CardGroup cols={2}>
-  <Card title="🛠️ Fast Maintenance">
-    Shortcut buttons for <strong>Reinstall</strong> and <strong>IP Change</strong> now sit beneath the Control Panel cards. Use them to reinstall your OS or initiate random or bespoke IP address changes.
+The right-hand sidebar lists status, location, primary IPv4/IPv6 (with copy buttons), installed OS, Support PIN, billing cycle, and renewal dates.
 
-  </Card>
-  <Card title="⬆️ Upgrades & Cancellation">
-    The green <strong>Upgrade Plan</strong> button starts a plan upgrade; the red <strong>Request Cancellation</strong> button opens the guided termination dialogue. The "Upgrades" Tab allows for plan-upgrades and  resource upgrades (adding additional IP addresses, RAM, vCPU, drive boost)
-  </Card>
-  <Card title="⚙️ Configured Options">
-    Displays all additional resources and upgrades applied to your VPS:  
-    - **Additional IPs:** shows the number of extra IPv4 addresses assigned.  
-    - **Drive Size Boost:** total extra disk space added to your main storage.  
-    - **RAM Upgrade:** amount of extra memory allocated.  
-    - **vCPU Upgrade:** number of additional CPU cores or sockets.  
-  </Card>
-</CardGroup>
+
+###  Live Screenshot
+
+Check the latest desktop image before connecting via RDP or VNC. Use it to confirm installs completed or login prompts are ready.
+
+
+###  Traffic Dial
+
+Monitor consumed vs. allocated traffic. The dial shows percentage used, remaining traffic, real values in GB, and the next refill date so you can plan ahead. An info banner warns when traffic is low or fully used.
+
+
+###  Traffic Pool Ledger
+
+Review the shared pool balance and assignment history. Use manual assignment or configure Auto-Hydration. Buying traffic adds it to the pool; assigning it makes it available to a VPS. See the [Traffic Pool guide](/faq/traffic-bandwidth/traffic-pool).
+
+
+###  Fast Maintenance
+
+Shortcut buttons for <strong>Reinstall</strong> and <strong>IP Change</strong> now sit beneath the Control Panel cards. Use them to reinstall your OS or initiate random or bespoke IP address changes.
+
+
+### Upgrades & Cancellation
+
+The green <strong>Upgrade Plan</strong> button starts a plan upgrade; the red <strong>Request Cancellation</strong> button opens the guided termination dialogue. The "Upgrades" Tab allows for plan-upgrades and  resource upgrades (adding additional IP addresses, RAM, vCPU, drive boost)
+
+
+###  Configured Options
+
+Displays all additional resources and upgrades applied to your VPS:
+    - **Additional IPs:** shows the number of extra IPv4 addresses assigned.
+    - **Drive Size Boost:** total extra disk space added to your main storage.
+    - **RAM Upgrade:** amount of extra memory allocated.
+    - **vCPU Upgrade:** additional virtual CPU allocation; the guest topology is a separate setting.
 
 ---
 
 ## Tabs for Installation - Networking
 
-- **Installation** – start AutoInstall for Linux or Windows, mount helper ISOs, review Cloud-Init status, or upload custom media.  
-- **Traffic** – inspect per-service usage graphs, refill timers, and the traffic pool ledger.  
-- **Settings** – adjust CPU sockets vs. cores, BIOS type, boot order, NIC model, and keyboard layout.  
-- **rDNS** – manage IPv4/IPv6 PTR records with instant validation.  
-- **Network** – copy your IPv4/IPv6 assignments and gateways at a glance.  
-- **⭐ Upgrades** – order add-on IPv4 addresses, RAM/CPU boosts, or full plan upgrades directly—no need to message Support.
+- **Installation** – start AutoInstall for Linux or Windows, mount helper ISOs, review Cloud-Init status, or upload custom media.
+- **Traffic** – inspect per-service usage graphs, refill timers, and the traffic pool ledger.
+- **Settings** – adjust CPU sockets vs. cores, BIOS type, boot order, NIC model, and keyboard layout.
+- **rDNS** – manage IPv4/IPv6 PTR records with instant validation.
+- **Network** – copy your IPv4/IPv6 assignments and gateways at a glance.
+- **Upgrades** – order add-on IPv4 addresses, RAM/CPU boosts, or full plan upgrades directly—no need to message Support.
 
 <Info>
   Bookmark the <a href="https://my.edbb.com/clientarea.php" target="_blank">EDBB Control Panel</a>. After signing in, open the top-right <strong>Account</strong> menu, choose <strong>Security Settings</strong>, and switch on multi-factor authentication to lock down access.
