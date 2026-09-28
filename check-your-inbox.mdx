@@ -1,34 +1,58 @@
 ---
-title: "Check your welcome email"
+title: "Check your VPS welcome email"
 sidebarTitle: "Welcome email"
-description: "Find the EDBB welcome email with your VPS IP address and access details. Check payment and spam folders if it has not arrived before attempting recovery."
+description: "Find your EDBB VPS IP address, username and password in the welcome email. Connect to Linux or Windows and learn what to do if the email has not arrived."
 ---
-
-<span id="bookmark-these-links" />
-<span id="need-assistance" />
-<span id="security-tip" />
 
 <span id="you-are-almost-ready-to-go-" />
 <span id="you’re-almost-ready-" />
 
-## You are almost ready to go!
-
-Thank you for choosing EDBB! We're excited to have you on board, and we'll make sure your experience is smooth and personalized.
-
-### What's Next
-
-After ordering and receiving a payment confirmation, please keep an eye on your mailbox for a **Welcome Email** from [**support@edbb.com**](mailto:support@edbb.com). This email contains everything you need to get started with your Virtual Private Server (VPS).
+After your payment is confirmed and the VPS is installed, we send a welcome email to the address registered to your EDBB account. Keep this email somewhere secure.
 
 <span id="what-to-expect-in-the-welcome-email" />
-### What's in the Email
 
-- VPS Primary **IPv4 address**
-- **Username** and **Password** for the OS
-- **Operating system** and configuration details
-- A direct link to the [**Control Panel**](https://my.edbb.com)
-- Links to to this [Knowledge Base](/) and to our [Acceptable Use Policy, AUP](/acceptable-use-policy).
-- Link to our public [Statuspage](https://status.edbb.com).
+<span id="you-are-almost-ready-to-go" />
 
-### Didn't Receive the Email
+<span id="whats-next" />
 
-Check your spam folder and whitelist `support@edbb.com`. If nothing arrives within a few minutes, [follow this guide](/no-email-received) for the next steps.
+<span id="whats-in-the-email" />
+
+## What the email contains
+
+- Your VPS's primary IPv4 address.
+- The username and initial password for the operating system.
+- Operating system and service details.
+- A link to the [EDBB Control Panel](https://my.edbb.com/clientarea.php).
+
+## Connect to your VPS
+
+<CardGroup cols={2}>
+  <Card title="Connect to Linux" icon="terminal" href="/linux-secure-shell-ssh">
+    Use SSH to open a terminal on your server.
+  </Card>
+  <Card title="Connect to Windows" icon="desktop" href="/windows-remote-desktop">
+    Sign in with Remote Desktop and the Administrator account.
+  </Card>
+</CardGroup>
+
+<span id="security-tip" />
+
+Store the password in a password manager. Do not post the welcome email or its credentials in a public support request.
+
+<span id="didnt-receive-the-email" />
+
+## If the email is missing
+
+Check spam and junk folders and confirm that your account email address is correct. Then follow [No welcome email? Get access to your VPS](/no-email-received). We cannot resend the original credentials, but you can choose a new password.
+
+A later reinstall does not send another welcome email. Use the password or SSH key you chose during installation.
+
+<span id="bookmark-these-links" />
+<span id="need-assistance" />
+
+## Useful links
+
+- [EDBB Control Panel](https://my.edbb.com/clientarea.php)
+- [Service emails and what they mean](/getting-started/email-notifications)
+- [Infrastructure status](https://status.edis.global/)
+- [Contact support](/how-our-support-team-helps-you)

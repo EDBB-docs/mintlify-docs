@@ -1,62 +1,48 @@
 ---
 title: "Order additional IPv4 addresses"
 sidebarTitle: "Additional IP addresses"
-description: "Request additional provider-assigned IPv4 addresses for your EDBB VPS, confirm current pricing and limits, then configure them in the guest operating system."
+description: "Add IPv4 addresses to your EDBB VPS through Upgrade Components. Check the price, find the assigned addresses and configure them in your operating system."
 ---
 
-
-## What’s Included
-
-<Info>
-  The additional IPv4 add-on delivers additional provider-assigned IPv4 addresses per VPS. Each IP comes from the local pool for your data center and is billed monthly.
-</Info>
+You can order additional provider-assigned IPv4 addresses for your VPS. Available addresses come from the pool at your server's location.
 
 <span id="pricing-snapshot" />
 
+<span id="what%E2%80%99s-included" />
+
 ## Price and availability
 
-Confirm the current EDBB price, recurring charge and available quantity in the order summary or with [support@edbb.com](mailto:support@edbb.com) before payment. Do not use EDIS Global prices as an EDBB quote.
+The **Upgrades** tab shows the available quantity and current price for your service. Check the recurring charge and total before paying. If the option is unavailable, ask [support@edbb.com](mailto:support@edbb.com) about availability.
 
-------|-------|
-| Provisioning fee | Included |
-| Monthly charge per additional IPv4 | **€5** |
+<span id="how-to-place-the-order" />
 
----
+<span id="option-b%3A-order-via-upgrade-components" />
 
-## How to Place the Order
-
-### Option A: Chat with Support
+## Order in the control panel
 
 <Steps>
-  <Step title="Start the conversation">
-    Sign in to the EDBB Control Panel and contact Support via the messenger or by email—let them know you’d like more IPv4 addresses.
+  <Step title="Open Upgrade Components">
+    Sign in to the [EDBB Control Panel](https://my.edbb.com/clientarea.php), open **Services**, select your VPS, then choose **Upgrades → Upgrade Components**.
   </Step>
-  <Step title="Share the service details">
-    Provide the primary IPv4 (or KVM service ID) and state how many extra addresses you need.
+  <Step title="Choose Additional IPs">
+    Select the quantity you need within the limit shown for your VPS. Review the new total and complete checkout.
   </Step>
-  <Step title="Approve the invoice">
-    Support sends a payment link for the add-on. Once it’s paid, the new IPv4 addresses appear under the <strong>Network</strong> tab of the service.
+  <Step title="Find the assigned addresses">
+    After payment is processed, open the VPS's **Network** tab. Copy the new IPv4 addresses and their network settings.
+  </Step>
+  <Step title="Configure the addresses on your server">
+    Add the addresses to your operating system. They are not ready for use merely because they appear in the panel. Follow [configure an additional Linux IPv4 address](/faq/ip-addresses/configure-additional-ip-linux), or add them to the existing network adapter's advanced TCP/IP settings on Windows.
   </Step>
 </Steps>
 
-### Option B: Order via Upgrade Components
+<Note>
+  Keep your existing primary address and gateway. Reinstalling is not necessary to add an IP address and would erase the VPS disk. Open the [VNC console](/vps-management/enable-vnc-server) before changing network settings.
+</Note>
 
-<Steps>
-  <Step title="Open Upgrades for the VPS">
-    From <strong>Services</strong>, pick the VPS and switch to the <strong>Upgrades</strong> tab. Choose <strong>Upgrade Components</strong>.
-  </Step>
-  <Step title="Select Additional IPs">
-    Enter the number of addresses you want within the limit shown for this service and proceed to checkout.
-  </Step>
-  <Step title="Pay and confirm">
-    Complete the payment. The new IPv4 assignments populate automatically under the <strong>Network</strong> tab.
-  </Step>
-</Steps>
+<span id="option-a%3A-chat-with-support" />
 
-After either option, configure each IP inside your operating system (netplan, NetworkManager, or Windows TCP/IP settings) so traffic starts flowing.
+## Ask support to help with the order
 
----
+Contact [support@edbb.com](mailto:support@edbb.com) or use the website messenger. Include your VPS's primary IP address or service ID and the number of additional addresses you need. Support will confirm availability and the charges before you pay.
 
-[Need a specific IP?](/faq/ip-addresses/order-bespoke-ip-address)
-
-Use the [VNC console](/vps-management/enable-vnc-server) before changing network settings. Preserve existing addresses and data. Reinstalling erases the VPS and is not necessary just to add a guest network address.
+To ask about choosing a particular address, see [bespoke IPv4 addresses](/faq/ip-addresses/order-bespoke-ip-address).

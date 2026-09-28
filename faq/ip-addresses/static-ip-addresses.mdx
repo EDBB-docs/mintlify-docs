@@ -1,15 +1,19 @@
 ---
-title: "Are EDBB VPS IPs static?"
+title: "Are my VPS IP addresses static?"
 sidebarTitle: "Static IP addresses"
-description: "Every EDBB VPS includes a static IPv4 and /64 IPv6 allocation that stays assigned for the lifetime of the service."
+description: "EDBB assigns static IP addresses to your VPS. Learn what stays the same after restarts, reinstalls and upgrades, and when an address can change."
 ---
 
-## Static by Default
+Yes. Your VPS's assigned IPv4 and IPv6 addresses normally stay the same when you restart it, reinstall the operating system or upgrade the plan.
 
-<Info>
-  Every EDBB VPS ships with one dedicated IPv4 and a /64 IPv6 subnet. They are yours for the lifetime of the service.
-</Info>
+Each VPS includes a dedicated provider-assigned IPv4 address and an IPv6 allocation equivalent in size to a /64. See [IPv6 configuration](/vps-management/ipv6-configuration) for the required /48 interface prefix and address limits.
 
-- The assignments persist through reboots, reinstalls, and plan upgrades.
-- They only change if you cancel, trigger the 24-hour complimentary swap, or order a paid IP change.
-- Additional IPv4s can be layered on via Support or the Upgrade Components flow without affecting the primary IP.
+<span id="static-by-default" />
+
+## When does an address change?
+
+- You request a [primary IPv4 change](/faq/ip-addresses/change-ip-address).
+- You [change the server location](/faq/server-locations/change-server-location), which creates a replacement VPS with new addresses.
+- The service is terminated and its addresses are released. Ordering another VPS does not reserve the old addresses for you.
+
+You can [add IPv4 addresses](/faq/ip-addresses/order-additional-ip-address) without replacing the primary address. Configure each additional address in the operating system after it has been assigned.

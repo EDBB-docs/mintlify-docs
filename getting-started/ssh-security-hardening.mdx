@@ -1,27 +1,132 @@
 ---
 title: "Secure SSH access to your VPS"
 sidebarTitle: "SSH security"
-description: "Set up key authentication, verify sudo and recovery access, and restrict SSH safely. Test a second connection before disabling the old login method."
+description: "Set up an administrator account and SSH key on Debian or Ubuntu. Test your new login before disabling root and password access, then check the SSH logs."
 ---
 
-Harden SSH in stages so you can verify access after each change. Keep the [VNC console](/vps-management/enable-vnc-server) and your current SSH session open.
+Use an SSH key and a separate administrator account to reduce unwanted login attempts. This guide gives a worked example for **Debian and Ubuntu**. Other distributions use different user-management commands and service names.
 
-## Establish trusted access
+<Warning>
+  Keep your current SSH session and the [VNC console](/vps-management/enable-vnc-server) open until you have tested a new login. Do not disable your only working access method.
+</Warning>
 
-Verify the server's host-key fingerprint through the trusted console before accepting it on first connection. A changed fingerprint can be expected after reinstalling, but investigate unexpected changes rather than suppressing the warning.
+<span id="establish-trusted-access" />
 
-Create a normal administrative user appropriate for your distribution. Install your public key for that user, protect the private key with a passphrase and confirm the user can run the required `sudo` commands.
+## 1. Create an administrator account
 
-## Test before restricting login
+In your existing root session, install `sudo` if needed and create a user. The example uses `admin`; choose another name if that account already exists.
 
-1. Open a second SSH session using the new user and key.
-2. Verify administrative commands work without relying on the old root session.
-3. Review the active SSH configuration, including distribution-specific include files.
-4. Validate syntax with `sudo sshd -t` before reloading the correct SSH service for your distribution.
-5. Confirm a fresh login after each change before closing the recovery session.
+```bash
+apt update
+apt install sudo
+adduser admin
+usermod -aG sudo admin
+```
 
-Disable password or root login only after key access and recovery are working. A key and password are not automatically two-factor authentication; additional authentication methods require deliberate server configuration and testing.
+Choose a strong password for the new user. You will use it for `sudo`, even after SSH password login is disabled.
 
-## Limit exposure
+## 2. Add your SSH public key
 
-Allow only necessary source networks where practical, keep OpenSSH updated and monitor authentication logs. Changing the port can reduce background noise but does not replace authentication or patching. Review [UFW firewall setup](/advanced-setup-guides/ufw-firewall) before enabling firewall rules.
+On **your own computer**, generate a key if you do not already have one:
+
+```bash
+ssh-keygen -t ed25519
+```
+
+Protect the private key with a passphrase. Do not overwrite an existing key you still use.
+
+<Tabs>
+  <Tab title="With ssh-copy-id">
+    From your computer, copy the public key to the new account. Replace `YOUR_VPS_IP`:
+
+    ```bash
+    ssh-copy-id admin@YOUR_VPS_IP
+    ```
+
+    Enter the new user's password when asked. If SSH password authentication is already disabled, use the manual method instead.
+  </Tab>
+  <Tab title="Manual copy">
+    Open the public key file on your computer (normally `id_ed25519.pub`). Copy the full line starting with `ssh-ed25519`. Never copy or upload the private key.
+
+    In the existing root session on the VPS:
+
+    ```bash
+    install -d -m 700 -o admin -g admin /home/admin/.ssh
+    nano /home/admin/.ssh/authorized_keys
+    ```
+
+    Paste the public key on its own line. Preserve any existing keys that are still needed, then save and set ownership and permissions:
+
+    ```bash
+    chown admin:admin /home/admin/.ssh/authorized_keys
+    chmod 600 /home/admin/.ssh/authorized_keys
+    ```
+  </Tab>
+</Tabs>
+
+On the first connection, compare the server's host-key fingerprint with the one shown through the trusted console. An unexpected changed-key warning should be investigated; do not simply disable host-key checking.
+
+<span id="test-before-restricting-login" />
+
+## 3. Test the new account
+
+Open a **second terminal on your computer** and connect using the key:
+
+```bash
+ssh -o PreferredAuthentications=publickey admin@YOUR_VPS_IP
+```
+
+Then check administrative access on the VPS:
+
+```bash
+sudo -v
+sudo whoami
+```
+
+The last command should print `root`. If either login or `sudo` fails, fix it before changing the SSH configuration.
+
+## 4. Disable root and password login
+
+Back up `/etc/ssh/sshd_config` and any files you will edit in `/etc/ssh/sshd_config.d/`. Review the `Include` line and existing settings: OpenSSH generally uses the first value it reads for an option, so adding a conflicting line at the end may not work.
+
+On a standard Debian/Ubuntu configuration that includes `/etc/ssh/sshd_config.d/*.conf`, create an early settings file such as `/etc/ssh/sshd_config.d/00-local-access.conf`. If that file already exists, review it before editing. Set:
+
+```text
+PubkeyAuthentication yes
+PasswordAuthentication no
+KbdInteractiveAuthentication no
+PermitRootLogin no
+```
+
+This example uses SSH keys only. If you already use a deliberate multi-factor SSH configuration, do not disable a method required by it.
+
+Check the syntax and effective settings:
+
+```bash
+sudo /usr/sbin/sshd -t
+sudo /usr/sbin/sshd -T | grep -E '^(pubkeyauthentication|passwordauthentication|kbdinteractiveauthentication|permitrootlogin) '
+```
+
+No output from `sshd -t` means the syntax check passed. The second command should show the four intended values. Existing `Match` rules can change settings for particular users or addresses; review those rules too.
+
+If the checks pass, reload SSH on Debian/Ubuntu:
+
+```bash
+sudo systemctl reload ssh
+```
+
+Open another fresh SSH connection with the key and repeat the `sudo` test before closing your original session. If it fails, restore the changed file through the open session or console, run the syntax check and reload again.
+
+<span id="limit-exposure" />
+
+## 5. Keep access secure
+
+Install security updates and review recent SSH activity:
+
+```bash
+sudo journalctl -u ssh --since '1 hour ago'
+```
+
+Restrict administrative access to trusted source addresses where practical. Follow the [UFW guide](/advanced-setup-guides/ufw-firewall) before enabling new firewall rules. Changing the SSH port can reduce background scanning, but does not replace keys, updates or access restrictions.
+
+For distribution-specific details, see [Ubuntu's OpenSSH guide](https://ubuntu.com/server/docs/how-to/security/openssh-server/) and the [OpenSSH configuration reference](https://man.openbsd.org/sshd_config).

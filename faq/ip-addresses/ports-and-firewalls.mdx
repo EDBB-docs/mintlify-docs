@@ -1,0 +1,57 @@
+---
+title: "Ports and firewalls on your VPS"
+sidebarTitle: "Ports and firewalls"
+description: "Find out how ports work on an EDBB VPS. Check application listeners, allow required traffic in your firewall and understand the outbound SMTP exception."
+---
+
+EDBB does not normally require you to ask support to open a TCP or UDP port. Your application must listen on the required port, and your operating system's firewall must allow the connection.
+
+<Note>
+  Outbound TCP port 25 has separate [SMTP limits and abuse controls](/faq/port-25-smtp-rate-limit-policy). Protective restrictions may also apply during attacks or abuse incidents. Inbound port 25 is unrestricted by the SMTP policy.
+</Note>
+
+## Check that your application is listening
+
+<Tabs>
+  <Tab title="Linux">
+    ```bash
+    sudo ss -lntup
+    ```
+
+    Find the required port and process. An application bound only to `127.0.0.1` or `::1` cannot accept direct connections from outside the VPS.
+  </Tab>
+  <Tab title="Windows">
+    Open PowerShell:
+
+    ```powershell
+    Get-NetTCPConnection -State Listen
+    Get-NetUDPEndpoint
+    ```
+
+    Match the local port and address to your application's configuration.
+  </Tab>
+</Tabs>
+
+## Allow the required connection
+
+Check the firewall used by your system: UFW, nftables, firewalld or Windows Defender Firewall. Open only the required protocol and port, and restrict administrative access to trusted source addresses where possible.
+
+For Debian or Ubuntu with UFW, follow the [UFW guide](/advanced-setup-guides/ufw-firewall). Keep the [VNC console](/vps-management/enable-vnc-server) open before changing rules that could block your own access.
+
+## Test from another computer
+
+For a TCP service, replace the example IP and port with yours:
+
+```bash
+nc -vz -w 5 192.0.2.10 443
+```
+
+On Windows, use:
+
+```powershell
+Test-NetConnection -ComputerName 192.0.2.10 -Port 443
+```
+
+These tests check TCP connectivity, not whether the application works correctly. For UDP, use the application's own client or a protocol-specific test; a TCP test cannot establish whether a UDP service is reachable.
+
+If the service works from one network but not another, check client firewalls, ISP restrictions and [country reachability](/faq/ip-addresses/country-reachability). For a server that is entirely unreachable, start with [VPS not reachable](/faq/ip-addresses/network-is-down).

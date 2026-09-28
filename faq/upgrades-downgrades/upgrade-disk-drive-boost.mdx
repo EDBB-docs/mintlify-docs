@@ -1,7 +1,7 @@
 ---
 title: "Expand VPS storage with Drive Boost"
 sidebarTitle: "Drive Boost"
-description: "Increase the capacity of your existing VPS disk with Drive Boost. Confirm the EDBB quote, activate the upgrade and expand the guest filesystem safely."
+description: "Increase the capacity of your existing VPS disk with Drive Boost. Confirm the EDBB quote, activate the upgrade and expand the filesystem safely."
 ---
 
 <span id="finish-the-expansion-inside-your-os" />
@@ -17,9 +17,11 @@ Drive Boost increases the virtual disk capacity of your existing VPS. It does no
 3. Review the storage additions and EDBB prices offered for that service. Confirm the resulting total disk size, recurring charge and prorated invoice before payment.
 4. Follow the activation instructions after payment and perform a full [power cycle](/vps-management/power-cycle-or-reboot-a-vps) when required to expose the new capacity.
 
-Do not assume an EDIS Global storage tier, limit or price applies to EDBB. The current EDBB order summary is the source for commercial values. Ask [support@edbb.com](mailto:support@edbb.com) if the total or billing is unclear.
+Check the new disk size and price in the order summary. Ask [support@edbb.com](mailto:support@edbb.com) if the total or billing is unclear.
 
-## Expand the guest filesystem
+<span id="expand-the-guest-filesystem" />
+
+## Expand the filesystem
 
 Make a backup first. Check the new virtual disk size, identify the partition/filesystem layout, then follow the appropriate [Linux](/advanced-setup-guides/resize-linux-disk) or [Windows](/advanced-setup-guides/extend-windows-disk) procedure. Do not delete another partition just to create adjacent free space.
 

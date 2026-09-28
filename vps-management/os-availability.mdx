@@ -4,85 +4,85 @@ sidebarTitle: "Operating systems"
 description: "Understand which operating systems are available during order and which additional OS images can be selected later in the control panel for auto-installation."
 ---
 
-<span id="available-os-in-the-shopping-cart" />
 <span id="operating-system-availability" />
-<span id="shopping-cart-=-recommended-defaults" />
 <span id="summary" />
+
+EDBB offers Linux and Windows images during ordering and in the control panel. The order form has a shorter selection; **Installation → Automated Installers** also includes older images and additional choices.
+
+Check the selector for your VPS before choosing a version. An image being available does not mean it still receives vendor security updates. For a new deployment, choose a supported release that meets your application's requirements.
+
+<span id="available-os-in-the-shopping-cart" />
+<span id="os-options-available-in-the-shopping-cart" />
+<span id="shopping-cart-=-recommended-defaults" />
+<span id="full-os-list-in-control-panel-auto-install" />
+<span id="os-options-available-in-the-control-panel-auto-install" />
 <span id="vps-control-panel-=-full-flexibility" />
 
-EDBB and EDIS Global use the same operating-system inventory. EDBB has a distinct panel: select **Installation → Automated Installers** on your VPS to see its available images. The current selector is authoritative for the service.
+<span id="shared-image-inventory-reference" />
 
-<span id="-manual-vnc-/-iso-installation" />
-<span id="custom-installation" />
-<span id="installing-other-operating-systems" />
+## Linux images
 
-<span id="-cloud-init" />
+| OS family | Order and reinstall images | Additional reinstall choices |
+| --- | --- | --- |
+| <span id="debian" /><span id="debian-2" />Debian | 13, 12, 11 | Check the current selector. |
+| <span id="ubuntu-lts" /><span id="ubuntu-lts-2" />Ubuntu | 24.04, 22.04, 20.04 | Older 18.04 and 16.04 images may be available for compatibility. |
+| <span id="almalinux" /><span id="almalinux-2" />AlmaLinux | 9, 8 | Check the current selector. |
+| <span id="rocky-linux" /><span id="rocky-linux-2" />Rocky Linux | 10, 9 | Check the current selector. |
+| <span id="centos-stream" /><span id="centos-/-centos-stream" />CentOS Stream | 10, 9 and legacy 8 | Legacy CentOS 7 may be available. |
+| <span id="arch-linux" /><span id="arch-linux-2" />Arch Linux | Available snapshot | Additional archived snapshots. |
 
-## Installation methods
-
-| Method | Purpose |
-| --- | --- |
-| Automated Installers | Install a supplied Linux or Windows image |
-| Custom Image | Install a compatible qcow2 image with Cloud-Init support |
-| ISO Boot | Boot installation or recovery media through the console |
-
-The order form can show a smaller selection than the panel. Availability does not mean a release still receives vendor security updates. Check the vendor lifecycle before choosing an older release for production.
-
-<span id="why-are-the-lists-different" />
-
-<span id="almalinux" />
-
-<span id="almalinux-2" />
-
-<span id="arch-linux" />
-
-<span id="arch-linux-2" />
-
-<span id="centos-/-centos-stream" />
-
-<span id="centos-stream" />
-
-<span id="debian" />
-
-<span id="debian-2" />
-
-<span id="full-os-list-in-control-panel-auto-install" />
-
-<span id="os-options-available-in-the-control-panel-auto-install" />
-
-<span id="os-options-available-in-the-shopping-cart" />
-
-<span id="rocky-linux" />
-
-<span id="rocky-linux-2" />
-
-<span id="ubuntu-lts" />
-
-<span id="ubuntu-lts-2" />
+These are image choices, not a recommendation to use an unsupported release. Check the OS vendor's lifecycle and update the installed system before putting it into service.
 
 <span id="windows" />
-
 <span id="windows-server-trial-installers" />
 
-## Shared image inventory reference
+## Windows images
 
-The shared image inventory lists Debian 13, 12 and 11; Ubuntu 24.04, 22.04 and 20.04; AlmaLinux 9 and 8; Rocky Linux 10 and 9; CentOS Stream 10, 9 and legacy 8; and Arch Linux snapshots. The broader panel inventory also lists older Ubuntu versions and CentOS 7 for compatibility.
+Windows Server **2025, 2022 and 2019** evaluation images are listed for automated installation. The control panel also offers Windows 10/11 evaluation choices where available.
 
-Windows Server 2025, 2022 and 2019 evaluation images are listed, with additional Windows evaluation choices in the panel. Evaluation media do not include a production license. Use only an edition/license valid for your workload and hosting arrangement.
+Evaluation media do not include a paid production licence. Check your chosen edition's requirements and licence terms. See [Windows evaluation and activation](/misc/windows-server-evaluation).
 
+## Why are the lists different?
+
+The shopping cart makes it easier to choose an initial system. The reinstall selector keeps additional images for compatibility and recovery needs. Use **Services → your VPS → Installation → Automated Installers** to see the choices for your service.
+
+<Warning>
+  Reinstalling an image erases the existing VPS disk. Back up your files before changing operating systems. See [reinstall your VPS](/vps-management/reinstall-vps) for the full procedure.
+</Warning>
+
+<span id="installing-other-operating-systems" />
+<span id="custom-installation" />
 <span id="custom-os" />
+
+<span id="installation-methods" />
+
+## Install a different system
+
+| Method | When to use it |
+| --- | --- |
+| Automated Installers | Install one of the supplied Linux or Windows images. |
+| <span id="-cloud-init" />Custom Image / Cloud-Init | Install a compatible qcow2 image and configure its first boot. Follow [Cloud-Init installation](/vps-management/cloud-init-vps-installation). |
+| <span id="-manual-vnc-/-iso-installation" />ISO Boot | Run a compatible installer through the console. Use an available ISO or [request a custom ISO](/vps-management/bring-your-own-iso). |
+
+Check that a custom image supports the VPS architecture, boot mode, disk and network drivers. Cloud-Init configures a compatible image; it does not convert an incompatible OS into a bootable one.
 
 ## ISO and recovery media
 
-The shared ISO inventory includes fixed-version installers, some older than current vendor releases. It lists **SystemRescue 10.02** and **1_Password-Reset-Helper.iso** as recovery tools. Check the actual **ISO Boot** selector before following a version-specific procedure.
+ISO images are separate from automated installers. The **Installation → ISO Boot** selector shows the current media for your VPS.
 
-A compatible custom image must support the virtual architecture, boot mode and devices presented by your VPS. Cloud-Init configures an existing compatible OS; it does not make arbitrary software or architectures bootable.
+| Media | Purpose |
+| --- | --- |
+| Linux and appliance installers | Manual installation; the listed ISO may be an older fixed version. |
+| Windows Server evaluation ISOs | Manual Windows installation. A Windows Server 2016 ISO may be listed even though it is not in the automated-install list. |
+| SystemRescue 10.02 | Inspect and recover an existing Linux installation. See [Linux rescue](/vps-management/linux-rescue). |
+| `1_Password-Reset-Helper.iso` | Follow the [Linux](/vps-management/reset-root-password) or [Windows](/vps-management/reset-windows-password) password-reset procedure. |
 
-<Warning>Automated or manual installation can overwrite your disk. Back up existing data first. Recovery media should be used without formatting or reinstalling when the aim is to recover the current system.</Warning>
+Do not format or reinstall the disk when the aim is to recover existing data. After using rescue media, unmount the ISO and boot from the local disk. See [mount and unmount an ISO](/vps-management/mount-iso-image).
 
 <span id="-related-articles" />
 
+## Related guides
+
 - [Reinstall Linux or Windows](/vps-management/reinstall-vps)
-- [Cloud-Init installation](/vps-management/cloud-init-vps-installation)
-- [Custom ISO](/vps-management/bring-your-own-iso)
-- [Mount or unmount an ISO](/vps-management/mount-iso-image)
+- [Install MikroTik CHR](/advanced-setup-guides/install-mikrotik-chr)
+- [Boot mode and TPM](/vps-management/efi-vs-bios-and-tpm)

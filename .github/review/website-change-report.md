@@ -1,6 +1,9 @@
 # EDBB website changes for Gerhard
 
-Review date: 28 September 2026. This is a separate proposal for **edbb.com**. No website files, CMS records or production settings were changed. The documentation proposal is in EDBB-docs/mintlify-docs, branch `codex/edbb-documentation-overhaul`.
+
+> **Owner confirmation, 28 September 2026:** Gerhard confirmed that the annual **11+1 offer uses a coupon and is excluded from refunds**. Apply this exclusion in website Terms and any refund/annual-offer FAQ, including matching JSON-LD. The offer itself remains available. Do not describe every annual order as refundable under the 24-hour policy.
+
+Review date: 28 September 2026. This is a separate proposal for **edbb.com**. No website files, CMS records or production settings were changed. The original documentation proposal was merged as PR #2. Follow-up corrections are in EDBB-docs/mintlify-docs, branch `codex/edbb-docs-content-recovery`.
 
 ## Evidence and scope
 
@@ -20,7 +23,7 @@ Source: EDIS `faq/billing-lifecycle/cancellation-and-refund-policy.mdx`; EDBB's 
 
 Replace **Payment and Billing** with:
 
-> Services are billed in advance. Eligible VPS purchases may be refunded under our 24-hour cancellation and refund policy, subject to its conditions and exclusions. Other fees are non-refundable except where these Terms provide otherwise. We reserve the right to adjust pricing with reasonable notice. Continued use of our services after the notice period constitutes acceptance of the new rates.
+> Services are billed in advance. Eligible VPS purchases may be refunded under our 24-hour cancellation and refund policy, subject to its conditions and exclusions. Purchases made with coupons or promotional discounts, including the annual 11+1 offer, are excluded from this policy. Other fees are non-refundable except where these Terms provide otherwise. We reserve the right to adjust pricing with reasonable notice. Continued use of our services after the notice period constitutes acceptance of the new rates.
 
 Link “24-hour cancellation and refund policy” to https://docs.edbb.com/faq/billing-lifecycle/cancellation-and-refund-policy.
 

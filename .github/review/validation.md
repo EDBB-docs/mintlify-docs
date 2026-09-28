@@ -1,5 +1,7 @@
 # Validation evidence and limits
 
+> Historical record for the original rewrite and bank-PDF follow-up. For the subsequent content corrections, use [recovery-validation.md](recovery-validation.md). The checks below do not certify changes made after that original review.
+
 Date: 28 September 2026. Source base: EDBB `2e975ea120a5c43ecf73ff3a0165a721ec59191c`; shared reference: EDIS `713a2cf2369196445eee8853e42c67eae2601018`. EDBB main was rechecked before preparing the PR and had not advanced. The live docs' edit destination identifies EDBB-docs/mintlify-docs; the separate starter repository was not edited. No repository-specific AGENTS instructions were present in either checkout.
 
 ## Passed

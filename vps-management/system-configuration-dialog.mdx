@@ -1,52 +1,64 @@
 ---
-title: "Understand the system configuration dialog"
-sidebarTitle: "System configuration"
-description: "Review EDBB Settings controls for virtual CPU, storage, networking and display. Check driver compatibility and recovery access before applying changes."
+title: "VPS hardware settings explained"
+sidebarTitle: "Hardware settings"
+description: "Understand the CPU, disk, network, display and boot options in EDBB Settings. Choose compatible drivers and apply changes with a full power cycle."
 ---
 
-<span id="default-behavior" />
+The **Settings** tab controls the virtual hardware your operating system sees. Most customers can keep the settings selected by the installer. Change them when an operating system or application needs a particular option.
+
 <span id="system-configuration-overview" />
-
-The **Settings** tab controls how virtual hardware is presented to your VPS. Record the current configuration before making a change and plan a maintenance window.
-
-<span id="important-considerations" />
-
-<Warning>
-Changing disk/network drivers or boot mode can prevent startup or remote access. Verify guest driver support, keep backups and a console recovery path, and store encryption recovery keys before changing vTPM settings.
-</Warning>
-
-<span id="how-settings-are-applied" />
-<span id="key-settings" />
-
 <span id="accessing-the-dialog" />
 
 ## Open Settings
 
-Select the VPS in the [EDBB Control Panel](https://my.edbb.com/clientarea.php), then open **Settings**.
+Sign in to the [EDBB Control Panel](https://my.edbb.com/clientarea.php), open **Services**, select your VPS, then open **Settings**.
 
 <Frame>
-![EDBB Settings tab showing boot, CPU, display, driver and identification controls](/assets/settings.png)
+![EDBB Settings tab with boot, CPU, display, disk and network controls](/assets/settings.png)
 </Frame>
 
-## Review the available controls
+<span id="important-considerations" />
 
-| Control | Purpose and caution |
+<Warning>
+  Changing a disk or network driver can stop the system from booting or disconnect it. Check driver support first, record the old settings and keep a backup. Open the [VNC console](/vps-management/enable-vnc-server) before applying changes.
+</Warning>
+
+<span id="key-settings" />
+
+<span id="review-the-available-controls" />
+
+## What the settings do
+
+| Setting | How to choose |
 | --- | --- |
-| Boot Menu Timeout | Time available to select a boot device |
-| CPU Model | Model exposed to the guest; host passthrough exposes host features but can affect migration compatibility |
-| CPU cores vs sockets | Virtual topology; check guest and application limits, not assumptions about physical core ownership |
-| Video Driver | Guest display adapter; choose a driver supported by the OS |
-| Disk Driver | Storage controller; install the guest driver before switching |
-| Network Driver | Virtual NIC; switching can change guest interface behavior |
-| VNC Keymap | Console keyboard interpretation; test special characters before changing passwords |
-| Description | Service label; changing it does not rename an already installed guest OS |
+| **Boot Menu Timeout** | Controls how long the boot menu waits. A longer timeout gives you more time to select recovery media in the console. |
+| **CPU cores / sockets** | Controls whether virtual CPUs appear as cores in one socket or as multiple sockets. Match your OS and software's socket limits; this does not change the number of vCPUs in your plan. |
+| **CPU Model** | Host CPU Passthrough exposes the host processor's available features. A more generic model may be needed for compatibility. Check application requirements before changing it. |
+| **Video Driver** | Select a display adapter supported by your OS. Cirrus is a compatibility option; QXL needs suitable drivers. This controls the virtual display, not RDP access. |
+| **Disk Driver** | Virtio is designed for virtual machines and needs OS driver support. Windows or a custom ISO may need Virtio drivers installed before you switch. Legacy IDE is available for systems that require it. |
+| **Network Driver** | Virtio is the usual virtual-machine option; E1000 and RTL8139 provide compatibility alternatives. A change may make the OS detect a new adapter, so check its IP configuration afterwards. |
+| **VNC Keymap** | Match the console keyboard layout to your keyboard. Check symbols and punctuation before setting passwords in the console. |
+| **Description** | A label to help you identify the VPS in your account. It does not change the hostname inside the installed operating system. |
 
 <span id="-boot-mode-and-tpm" />
+<span id="default-behavior" />
+<span id="how-settings-are-applied" />
 
-Boot mode and vTPM options, where exposed for your service, must match your image and recovery requirements. See [boot mode and TPM](/vps-management/efi-vs-bios-and-tpm). UEFI does not by itself establish that Secure Boot is enabled.
+## Boot mode and TPM
+
+Automated installers choose the boot settings needed by their images. For custom images and ISO installations, **BIOS or UEFI** must match how the system is installed. Changing firmware mode after installation can make an otherwise working disk fail to boot.
+
+A virtual TPM can be required by the OS or used to protect encryption keys. Keep the recovery keys before changing TPM settings. UEFI alone does not mean Secure Boot is enabled. See [boot mode and TPM](/vps-management/efi-vs-bios-and-tpm).
 
 <span id="apply-changes" />
 
-## Apply and verify
+<span id="apply-and-verify" />
 
-Review the changes and select **Apply**. Follow the required [full power-cycle procedure](/vps-management/power-cycle-or-reboot-a-vps) for hardware changes, then verify boot, networking and applications through the console before closing it. If a setting is absent, ask support rather than assuming an EDIS Global panel workflow applies.
+## Apply and check the result
+
+1. Record the current settings, then change only the options you need and click **Apply**.
+2. Shut down the operating system cleanly and follow the [full power-cycle procedure](/vps-management/power-cycle-or-reboot-a-vps). A restart inside the OS does not reload all virtual hardware settings.
+3. Watch startup in the console. Check disks, network addresses and applications before closing it.
+4. If the system no longer starts or connects, restore the previous setting and repeat the power cycle.
+
+If an option is missing or you are unsure which driver an image needs, contact [support@edbb.com](mailto:support@edbb.com) with the VPS IP and operating system.

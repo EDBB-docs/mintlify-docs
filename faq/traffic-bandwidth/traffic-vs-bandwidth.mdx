@@ -1,41 +1,34 @@
 ---
-title: "Traffic vs bandwidth"
+title: "What is the difference between traffic and bandwidth?"
 sidebarTitle: "Traffic and bandwidth"
-description: "Traffic measures total data transferred over time; bandwidth is the maximum throughput available at any moment."
+description: "Understand traffic in GB or TB and connection speed in Mbit/s or Gbit/s. Learn how incoming and outgoing data count towards your EDBB VPS allowance."
 ---
 
-## Same Pipe - Different Metrics
+**Traffic** is the amount of data transferred. **Bandwidth** describes how much data a connection can carry per second.
 
-<Info>
-  Bandwidth is the **speed limit** of your port; traffic is the **amount of data** you actually move during a billing cycle.
-</Info>
+| Term | Typical units | Example |
+| --- | --- | --- |
+| Traffic | GB or TB | The total data your VPS sends and receives during its monthly traffic cycle. |
+| Bandwidth or connection speed | Mbit/s or Gbit/s | How quickly a file can be transferred at a particular moment. |
 
+<span id="same-pipe-different-metrics" />
 
-###  Bandwidth
+<span id="traffic" />
 
-<ul>
-      <li>Measured in Mbit/s or Gbit/s</li>
-      <li>Represents real-time throughput capacity</li>
-      <li>EDBB hypervisors use multi-gigabit uplinks for bursty workloads</li>
-    </ul>
+## What counts towards your allowance?
 
+EDBB counts **incoming plus outgoing traffic**. Uploads, downloads, backups and application traffic all contribute to the total.
 
-###  Traffic
+Each VPS plan includes a monthly traffic allowance. Your account also has a separate **Traffic Pool**, from which you can assign more traffic to a VPS. The pool and the VPS allowance are not the same balance. See [Traffic Pool](/faq/traffic-bandwidth/traffic-pool).
 
-<ul>
-      <li>Measured in GB or TB per month</li>
-      <li>Counts all in/out data transfer during the billing period</li>
-      <li>Each VPS plan includes a traffic pool you can top up if needed</li>
-    </ul>
+<span id="bandwidth" />
 
----
+<span id="visualizing-the-difference" />
 
-## Visualizing the Difference
+## Does a faster connection include more traffic?
 
-Imagine a highway:
+No. Connection speed and traffic allowance are separate. A fast transfer uses the same amount of traffic as a slow transfer of the same data.
 
-- **Bandwidth** is how many lanes you have—the maximum cars per second.
-- **Traffic** is how many cars actually drove down that highway this month.
-- You can burst to the full lane capacity, but the total number of cars still counts toward your traffic allowance.
+An advertised infrastructure uplink speed is not guaranteed throughput for one VPS. Actual speed depends on the plan, destination, route and current load.
 
-Track both metrics in the EDBB Control Panel under the **Traffic** tab; it shows current throughput and period-to-date usage side by side.
+Open the VPS's **Traffic** tab to check [usage and the next refill date](/faq/traffic-bandwidth/traffic-statistics). If its allowance runs out, follow [restore network speed](/faq/traffic-bandwidth/exceeding-monthly-included-traffic).

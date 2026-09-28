@@ -1,0 +1,13 @@
+{
+  "base": "4017489f8675514a136acf0bb9b16736e050f500",
+  "rendered_pages": 110,
+  "http200": 110,
+  "one_h1": 110,
+  "matching_descriptions": 110,
+  "preserved_explicit_ids": 328,
+  "preserved_changed_heading_ids": 45,
+  "redirects_unchanged": 97,
+  "assets_unchanged": true,
+  "browser_visual_review": "blocked: agent-browser daemon startup failure",
+  "errors": []
+}

@@ -1,38 +1,84 @@
 ---
-title: "Quick checks for IPv6 issues"
+title: "Troubleshoot IPv6 connectivity"
 sidebarTitle: "IPv6 troubleshooting"
-description: "Run through portal and OS-level checks to resolve IPv6 reachability problems on your EDBB VPS."
+description: "Check IPv6 addresses, the /48 prefix, gateway, DNS and listening services on your EDBB VPS. Use the results to identify where a connection is failing."
 ---
 
+Check the IPv6 address, route and DNS separately. Open the [VNC console](/vps-management/enable-vnc-server) before changing network settings.
+
 <span id="ipv6-troubleshooting-playbook" />
-<span id="preventive-tips" />
 <span id="step-1-–-confirm-assigned-values" />
-<span id="step-2-–-verify-interface-state" />
-<span id="step-3-–-test-local-connectivity" />
-<span id="step-4-–-probe-external-reachability" />
-<span id="step-5-–-check-application-bindings" />
-<span id="step-6-–-gather-diagnostics-for-support" />
 
-Check IPv6 addressing, routing and DNS separately. Keep the [VNC console](/vps-management/enable-vnc-server) available before changing network settings.
+<span id="inspect-the-guest" />
 
-## Inspect the guest
+## 1. Compare the address with the control panel
+
+Open the VPS's **Network** tab. On Linux, run:
 
 ```bash
+ip -br link
 ip -6 addr show
+```
+
+The interface should be `UP`. Its global IPv6 address must come from your assigned allocation and use the **/48 interface prefix**. A `fe80::` address alone is only link-local and cannot provide Internet access. An address marked `tentative` is still being checked; `dadfailed` indicates a duplicate-address problem.
+
+<span id="step-2-–-verify-interface-state" />
+
+Use [IPv6 configuration](/vps-management/ipv6-configuration) if the assigned address is missing. Do not choose addresses outside your VPS's allocation.
+
+<span id="step-3-–-test-local-connectivity" />
+
+<span id="test-one-layer-at-a-time" />
+
+## 2. Check the gateway and route
+
+```bash
 ip -6 route show
 ```
 
-Compare the address, **/48 configured prefix** and exact location gateway with the EDBB **Network** tab. Use only your assigned /64-equivalent allocation; the /48 setting does not grant access to the whole location prefix. See [IPv6 configuration](/vps-management/ipv6-configuration).
+Look for a default route through the exact gateway listed in the panel. Replace the example below with that gateway:
 
-## Test one layer at a time
+```bash
+ping -6 -c 4 2001:db8:1234::1
+```
 
-1. Check that the intended interface is up and the address is not marked duplicate or tentative.
-2. Test the exact gateway from your service record. ICMP filtering can affect replies, so a failed ping alone is not conclusive.
-3. Test a known reachable external IPv6 destination by address.
-4. Then test name resolution and the actual application protocol.
+If the route is missing or uses the wrong gateway, correct the saved network configuration. A failed ping alone is not conclusive because ICMP can be filtered.
 
-If numeric destinations work but names do not, inspect the resolver configuration. If the gateway works but external destinations do not, inspect the default route and firewall. Do not disable all firewall rules as a first troubleshooting step.
+<span id="step-4-–-probe-external-reachability" />
 
-Binding an application to `::` can expose it on all IPv6 interfaces; restrict access appropriately. Runtime `ip` changes normally do not survive reboot. Make the final correction in your distribution's active network configuration system and verify it after a planned restart.
+## 3. Test external connectivity and DNS
 
-Send the service IP, timestamps, relevant routes and symptoms to [support@edbb.com](mailto:support@edbb.com), excluding credentials.
+```bash
+ping -6 -c 4 2606:4700:4700::1111
+getent ahostsv6 example.com
+curl -6 -I --connect-timeout 10 https://example.com
+```
+
+| Result | What to check |
+| --- | --- |
+| Gateway works, external IPv6 does not | Default route, firewall and any current network incident. |
+| Numeric IPv6 works, name lookup fails | DNS resolver settings. |
+| DNS works, HTTPS fails | The destination, local firewall, application/proxy settings and the route. Test another destination too. |
+| Outgoing traffic works, incoming application fails | Application listening address and inbound firewall rules. |
+
+<span id="step-5-–-check-application-bindings" />
+
+## 4. Check the application
+
+```bash
+sudo ss -lntup
+```
+
+An application listening only on IPv4 will not necessarily accept IPv6. Listening on `::1` allows local access only. Listening on `::` can accept connections on all IPv6 addresses, so check firewall restrictions before changing it. Do not disable the whole firewall to test one port.
+
+<span id="preventive-tips" />
+
+## 5. Check the settings survive a reboot
+
+Once IPv6 works, [save the configuration](/vps-management/ipv6-configuration#keep-the-settings-after-a-reboot) in the network manager used by your OS. Test IPv4 and IPv6 again after a planned restart.
+
+<span id="step-6-–-gather-diagnostics-for-support" />
+
+## Send useful details to support
+
+Email [support@edbb.com](mailto:support@edbb.com) with the VPS IP, time and timezone, failing destination and the address/route results above. Include whether IPv4 still works and whether the problem affects incoming or outgoing connections. Remove passwords and other secrets from logs.

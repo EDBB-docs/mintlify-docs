@@ -41,116 +41,111 @@
         "tab": "Documentation",
         "groups": [
           {
-            "group": "Getting Started",
+            "group": "Getting started",
             "pages": [
               "index",
               "check-your-inbox",
               "no-email-received",
-              "how-our-support-team-helps-you",
               "linux-secure-shell-ssh",
               "windows-remote-desktop",
-              "backups",
               "getting-started/ssh-security-hardening",
-              "getting-started/infrastructure-status"
+              "backups",
+              "getting-started/email-notifications",
+              "getting-started/infrastructure-status",
+              "how-our-support-team-helps-you"
             ]
           },
           {
-            "group": "VPS Management",
+            "group": "Manage your VPS",
             "pages": [
-              "vps-management/reinstall-vps",
-              "vps-management/basic-ipv6-troubleshooting",
-              "vps-management/bring-your-own-iso",
-              "vps-management/cloud-init-vps-installation",
-              "vps-management/efi-vs-bios-and-tpm",
-              "vps-management/enable-vnc-server",
-              "vps-management/change-ip-windows",
-              "vps-management/ip-address-information",
-              "vps-management/ipv6-configuration",
-              "vps-management/change-ip-ubuntu-1804-to-2404",
-              "vps-management/mount-iso-image",
-              "vps-management/os-availability",
+              "vps-management/vps-control-panel",
               "vps-management/power-cycle-or-reboot-a-vps",
+              "vps-management/reinstall-vps",
+              "vps-management/os-availability",
+              "vps-management/enable-vnc-server",
               "vps-management/reset-root-password",
               "vps-management/reset-windows-password",
+              "vps-management/mount-iso-image",
+              "vps-management/bring-your-own-iso",
+              "vps-management/cloud-init-vps-installation",
               "vps-management/system-configuration-dialog",
-              "vps-management/vps-control-panel",
-              "vps-management/your-support-pin"
+              "vps-management/efi-vs-bios-and-tpm",
+              "vps-management/your-support-pin",
+              "misc/windows-server-evaluation"
             ]
           },
           {
-            "group": "Billing and Payments",
+            "group": "Billing and payments",
             "pages": [
-              "faq/billing-lifecycle/accepted-payment-methods",
-              "faq/billing-lifecycle/accidental-renewal",
-              "faq/billing-lifecycle/invoice-contacts",
               "faq/billing-lifecycle/billing-workflow",
-              "faq/billing-lifecycle/currency-conversion",
-              "faq/billing-lifecycle/late-crypto-payment",
-              "faq/billing-lifecycle/can-i-get-a-refund",
-              "faq/billing-lifecycle/cancel-a-service",
-              "faq/billing-lifecycle/cancellation-and-refund-policy",
-              "faq/billing-lifecycle/credit-card-reservation-vs-payment",
-              "faq/billing-lifecycle/crypto-confirmations",
-              "faq/billing-lifecycle/data-retention-period",
-              "faq/billing-lifecycle/vat",
-              "faq/billing-lifecycle/find-and-download-invoices",
-              "faq/billing-lifecycle/blocked-crypto-payment",
+              "faq/billing-lifecycle/scheduled-billing-window",
               "faq/billing-lifecycle/provisioning-time",
+              "faq/billing-lifecycle/accepted-payment-methods",
+              "faq/billing-lifecycle/find-and-download-invoices",
+              "faq/billing-lifecycle/vat",
+              "faq/billing-lifecycle/currency-conversion",
               "faq/billing-lifecycle/how-to-add-account-credit",
               "faq/billing-lifecycle/how-to-pay-with-account-credit",
-              "faq/billing-lifecycle/consolidated-invoices",
-              "faq/billing-lifecycle/account-transfers",
               "faq/billing-lifecycle/no-upfront-deposits-required",
-              "faq/billing-lifecycle/scheduled-billing-window"
+              "faq/billing-lifecycle/consolidated-invoices",
+              "faq/billing-lifecycle/invoice-contacts",
+              "faq/billing-lifecycle/cancel-paypal-subscription",
+              "faq/billing-lifecycle/credit-card-reservation-vs-payment",
+              "faq/billing-lifecycle/crypto-confirmations",
+              "faq/billing-lifecycle/late-crypto-payment",
+              "faq/billing-lifecycle/blocked-crypto-payment"
             ]
           },
           {
-            "group": "VPS Basics",
+            "group": "Cancellation and account",
             "pages": [
-              "faq/what-is-a-virtual-private-server",
-              "faq/what-is-a-kvm-vps",
-              "faq/free-trials-available",
-              "faq/hourly-plans-available",
-              "faq/service-api"
+              "faq/billing-lifecycle/cancel-a-service",
+              "faq/billing-lifecycle/can-i-get-a-refund",
+              "faq/billing-lifecycle/cancellation-and-refund-policy",
+              "faq/billing-lifecycle/data-retention-period",
+              "faq/billing-lifecycle/accidental-renewal",
+              "faq/billing-lifecycle/reset-2fa",
+              "faq/billing-lifecycle/account-transfers"
             ]
           },
           {
-            "group": "IP Addresses and DNS",
+            "group": "IP addresses and DNS",
             "pages": [
-              "faq/ip-addresses/announcing-third-party-ip-prefixes",
-              "faq/ip-addresses/anycast-and-dns-location",
-              "faq/ip-addresses/change-ip-address",
-              "faq/ip-addresses/diagnose-packet-loss",
-              "faq/ip-addresses/dns-leak-tests",
-              "faq/ip-addresses/ip-addresses-after-upgrade-or-reinstall",
-              "faq/ip-addresses/geolocation-geoip-databases",
-              "faq/ip-addresses/country-reachability",
-              "faq/ip-addresses/correct-geolocation",
-              "faq/ip-addresses/ip-spoofing",
-              "faq/ip-addresses/order-additional-ip-address",
-              "faq/ip-addresses/order-bespoke-ip-address",
-              "faq/ip-addresses/ping-test-ip",
-              "faq/ip-addresses/reverse-dns",
+              "vps-management/ip-address-information",
               "faq/ip-addresses/static-ip-addresses",
-              "faq/ip-addresses/ip-location"
+              "vps-management/ipv6-configuration",
+              "faq/ip-addresses/order-additional-ip-address",
+              "faq/ip-addresses/configure-additional-ip-linux",
+              "faq/ip-addresses/order-bespoke-ip-address",
+              "faq/ip-addresses/change-ip-address",
+              "vps-management/change-ip-ubuntu-1804-to-2404",
+              "vps-management/change-ip-windows",
+              "faq/ip-addresses/ip-addresses-after-upgrade-or-reinstall",
+              "faq/ip-addresses/reverse-dns",
+              "faq/ip-addresses/ports-and-firewalls",
+              "faq/ip-addresses/ping-test-ip",
+              "faq/ip-addresses/diagnose-packet-loss",
+              "faq/ip-addresses/ip-location",
+              "faq/ip-addresses/geolocation-geoip-databases",
+              "faq/ip-addresses/correct-geolocation",
+              "faq/ip-addresses/anycast-and-dns-location",
+              "faq/ip-addresses/dns-leak-tests",
+              "faq/ip-addresses/country-reachability",
+              "faq/ip-addresses/ip-spoofing",
+              "faq/ip-addresses/announcing-third-party-ip-prefixes"
             ]
           },
           {
-            "group": "Traffic and Network",
+            "group": "Traffic",
             "pages": [
-              "faq/port-25-smtp-rate-limit-policy",
-              "faq/traffic-bandwidth/traffic-pool",
-              "faq/traffic-bandwidth/traffic-statistics",
               "faq/traffic-bandwidth/traffic-vs-bandwidth",
-              "faq/traffic-bandwidth/exceeding-monthly-included-traffic",
-              "faq/traffic-bandwidth/investigate-network-usage",
-              "faq/traffic-bandwidth/dos-attacks/ddos-protection",
-              "faq/traffic-bandwidth/dos-attacks/high-risk-workloads",
-              "faq/server-locations/change-server-location"
+              "faq/traffic-bandwidth/traffic-statistics",
+              "faq/traffic-bandwidth/traffic-pool",
+              "faq/traffic-bandwidth/exceeding-monthly-included-traffic"
             ]
           },
           {
-            "group": "Upgrades and Resources",
+            "group": "Upgrades and locations",
             "pages": [
               "faq/upgrades-downgrades/upgrades",
               "faq/upgrades-downgrades/upgrade-plan",
@@ -161,29 +156,52 @@
               "faq/upgrades-downgrades/qcow2-export",
               "faq/upgrades-downgrades/cpu-cores-and-sockets",
               "faq/upgrades-downgrades/check-cpu-linux",
-              "faq/upgrades-downgrades/check-cpu-windows"
+              "faq/upgrades-downgrades/check-cpu-windows",
+              "faq/server-locations/change-server-location"
             ]
           },
           {
-            "group": "Advanced Guides",
+            "group": "Troubleshooting",
+            "pages": [
+              "faq/ip-addresses/network-is-down",
+              "vps-management/basic-ipv6-troubleshooting",
+              "faq/traffic-bandwidth/investigate-network-usage",
+              "vps-management/rdp-account-locked",
+              "misc/rdp-black-screen",
+              "misc/realvnc-disconnects",
+              "vps-management/linux-rescue"
+            ]
+          },
+          {
+            "group": "Advanced guides",
             "pages": [
               "advanced-setup-guides/ufw-firewall",
               "advanced-setup-guides/extend-windows-disk",
-              "advanced-setup-guides/ubuntu-desktop",
               "advanced-setup-guides/resize-linux-disk",
+              "advanced-setup-guides/ubuntu-desktop",
               "advanced-setup-guides/install-mikrotik-chr"
             ]
           },
           {
-            "group": "Policies and Reference",
+            "group": "Policies and abuse",
             "pages": [
               "acceptable-use-policy",
-              "misc/windows-server-evaluation",
-              "misc/rdp-black-screen",
-              "misc/realvnc-disconnects",
+              "faq/port-25-smtp-rate-limit-policy",
+              "faq/traffic-bandwidth/dos-attacks/ddos-protection",
+              "faq/traffic-bandwidth/dos-attacks/high-risk-workloads",
               "misc/reporting-abuse",
-              "misc/security-compliance",
-              "misc/responding-to-abuse-complaints"
+              "misc/responding-to-abuse-complaints",
+              "misc/security-compliance"
+            ]
+          },
+          {
+            "group": "About VPS hosting",
+            "pages": [
+              "faq/what-is-a-virtual-private-server",
+              "faq/what-is-a-kvm-vps",
+              "faq/free-trials-available",
+              "faq/hourly-plans-available",
+              "faq/service-api"
             ]
           }
         ]

@@ -1,21 +1,65 @@
 ---
-title: "Find a missing VPS welcome email"
+title: "No welcome email? Get access to your VPS"
 sidebarTitle: "Missing welcome email"
-description: "Check your account, payment and email folders before attempting access recovery. Avoid reinstalling a server when you still need its existing data."
+description: "Get access to your EDBB VPS if the welcome email is missing. Reinstall an unused server, or reset the password on a server with data to keep."
 ---
 
-<span id="how-to-access-your-new-vps" />
+Your welcome email contains the login details for your new VPS. First check the spam or junk folder of the email address registered to your EDBB account.
+
 <span id="we-can-not-send-emails-again" />
 
-If you cannot find a welcome email, check the service and payment status before changing anything on the VPS.
+We cannot resend the original welcome email or recover the password created during setup. You can still get access to your server by choosing a new password.
 
-1. Check spam, junk and filtered folders for the address used on your EDBB account.
-2. Sign in to the [EDBB Control Panel](https://my.edbb.com/clientarea.php) and confirm the invoice is paid and the service exists.
-3. Open the service and review its **Dashboard**, IP details and **Installation** status. An installation still in progress is not ready for SSH or RDP.
-4. If the email or access details remain unavailable, contact [support@edbb.com](mailto:support@edbb.com) from your account email with the order/invoice number. Do not send passwords.
+## Check that your VPS is ready
+
+Sign in to the [EDBB Control Panel](https://my.edbb.com/clientarea.php), open **Services**, and select your VPS. Check that the invoice is paid and the installation has finished. SSH and Remote Desktop are unavailable while the operating system is being installed.
+
+If the service is missing or installation does not finish, contact [support@edbb.com](mailto:support@edbb.com) from your account email address. Include the order or invoice number, but do not send a password.
+
+<span id="how-to-access-your-new-vps" />
+
+## New VPS with no data to keep: reinstall it
+
+Reinstalling lets you choose a new password or SSH key. This is a simple way to start using a new VPS when you have not yet stored anything on it.
 
 <Warning>
-  Do not reinstall merely to locate a missing email if the VPS contains data you need. Reinstallation erases the existing system. Use the [Linux](/vps-management/reset-root-password) or [Windows](/vps-management/reset-windows-password) recovery guide when appropriate.
+  Reinstallation permanently erases the VPS disk. If the server already contains data you need, use the password-reset guides below instead.
 </Warning>
 
-A deliberate [reinstall](/vps-management/reinstall-vps) uses the password or SSH key you provide and does not send another welcome email.
+<Steps>
+  <Step title="Open the installer">
+    Open your VPS in **Services**, select **Installation**, then **Automated Installers**.
+
+    <Frame>
+      ![EDBB Installation tab with Automated Installers](/assets/reinstall.png)
+    </Frame>
+  </Step>
+  <Step title="Choose the operating system">
+    Select Linux or Windows and choose the required version. Enter a strong password, or supply your SSH public key when offered.
+  </Step>
+  <Step title="Start the installation">
+    Click **Start the installation** and follow the progress in the Installation tab. Do not power off or reboot the VPS while installation is running.
+  </Step>
+  <Step title="Connect with your new login details">
+    When installation finishes, connect using [SSH for Linux](/linux-secure-shell-ssh) or [Remote Desktop for Windows](/windows-remote-desktop). Use the password you just chose, or your SSH key.
+  </Step>
+</Steps>
+
+Linux usually takes about five minutes to install and Windows about 15 minutes. These are estimates. See the [full reinstall guide](/vps-management/reinstall-vps) for more screenshots and details.
+
+<Note>
+  Reinstalling does not send another welcome email. Save the password you choose in a password manager.
+</Note>
+
+## Existing VPS: reset the password and keep your data
+
+Use the guide for your operating system. Resetting a password is different from reinstalling the server.
+
+<CardGroup cols={2}>
+  <Card title="Reset a Linux password" icon="key" href="/vps-management/reset-root-password">
+    Recover root access using the console and recovery tools.
+  </Card>
+  <Card title="Reset a Windows password" icon="key" href="/vps-management/reset-windows-password">
+    Choose a new Administrator password for the existing installation.
+  </Card>
+</CardGroup>

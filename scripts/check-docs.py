@@ -71,6 +71,14 @@ for route, row in active.items():
     ids = re.findall(r'\bid="([^"]+)"', prose)
     check(len(ids) == len(set(ids)), f'{route}: duplicate explicit anchor')
     check('manage.edisglobal.com' not in text, f'{route}: wrong-brand customer destination')
+    check('status.edbb.com' not in text, f'{route}: use the shared status.edis.global destination')
+    # A leftover separator without a table header passed MDX validation in PR #2.
+    lines = prose.splitlines()
+    for index, line in enumerate(lines):
+        if '|' in line and re.fullmatch(r'[\s|:\-]+', line):
+            previous = lines[index - 1].strip() if index else ''
+            check('|' in previous and not re.fullmatch(r'[\s|:\-]+', previous),
+                  f'{route}: table separator has no header')
     links = re.findall(r'\]\(([^\s)]+)', prose) + re.findall(r'(?:href|src)=["\']([^"\']+)', prose)
     for link in links:
         parsed = urlsplit(link)
