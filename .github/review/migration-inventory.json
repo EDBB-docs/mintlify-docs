@@ -95,7 +95,7 @@
     "action": "retain",
     "title": "Which payment methods does EDBB accept?",
     "sidebarTitle": "Payment methods",
-    "description": "Review supported cards, PayPal, cryptocurrencies and bank-transfer arrangements. Obtain verified EDBB bank details from support before sending funds.",
+    "description": "Review supported cards, PayPal, cryptocurrencies and bank-transfer arrangements. Download EDBB EUR bank details and confirm your payment reference with support.",
     "redirect_destination": "",
     "reason": "Clear established route retained; content and metadata reviewed."
   },

@@ -1,8 +1,8 @@
 # Remaining decisions and release requirements
 
-## Owner input still needed
+## Bank details resolved
 
-**EDBB bank-details PDF:** please supply the correct PDF or an existing verified EDBB URL. No PDF was found in the source and none was supplied in the follow-up answer. The payment page safely directs customers to support for ED Backbone & Co bank details; it contains no invented account, EDIS PDF or placeholder download. Add the real document only after its beneficiary and details are verified.
+**EDBB bank-details PDF:** supplied and explicitly confirmed by Mehdi on 28 September 2026. The original, unchanged PDF is included as `assets/edbb-eur-bank-details.pdf` and linked from Payment methods. The one-page document identifies ED BACKBONE & CO, EUR and iBanFirst; visual/text checks and the IBAN checksum pass. Ownership/current payment suitability is based on the owner confirmation, not independent bank authentication.
 
 No fixed EDBB price was copied for bespoke IPs, resource additions, traffic quantities or Drive Boost. The pages direct customers to EDBB's current quote/order summary. These are not publication blockers unless the owner wants fixed commercial tables in the docs.
 
@@ -18,7 +18,7 @@ The website report separately lists decisions about uptime, support availability
 ## Before approval/publication
 
 1. Review the draft PR, especially billing/refunds/traffic, technical recovery guides and retained EDBB UI labels. An actual EDBB account was not used to execute workflows.
-2. Supply the bank PDF if it is required for this release; otherwise explicitly accept the support-only bank-detail path as an interim solution.
+2. Confirm the bank-details PDF link works in the hosted preview before publishing; the missing-file requirement is resolved.
 3. Review the coordinated website Terms correction. The existing website still contradicts the approved conditional refund policy until the website owner releases its separate change.
 4. In a hosted Mintlify preview, verify canonical URLs, permanent redirect status, sitemap, robots, `.md`, `llms.txt`, `llms-full.txt` and search. Local preview does not implement all hosted endpoints. Check that the starter OpenAPI entry disappears from exports and its historical URL resolves to the no-API page. If it persists, inspect the Mintlify dashboard's API configuration/build cache; do not claim the repository redirect alone removed hosted template metadata.
 5. Verify excluded careers/review paths and reseller non-exposure. Careers and review files are excluded by `.mintignore`; the reseller draft is outside the public repository entirely.

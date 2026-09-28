@@ -37,4 +37,10 @@ These are documentation-rendering checks. VPS installations, destructive recover
 
 Node.js 23.11.0; `mint` 4.2.942 with `@mintlify/cli` 4.0.1545. See the repository README for pinned commands. Raw local observations are delivered in `rendered-pages.json`, `rendered-redirects.json`, `excluded-route-checks.json`, `local-exports.json` and `external-link-checks.json`; the compact `validation-summary.json` is also included in the PR.
 
-Final approval should consider the outstanding bank PDF, actual EDBB UI spot-check, hosted migration/indexing checks and coordinated website Terms update. The PR is a review proposal, not permission to publish.
+Final approval should consider the hosted bank-PDF link, actual EDBB UI spot-check, hosted migration/indexing checks and coordinated website Terms update. The PR is a review proposal, not permission to publish.
+
+## Confirmed bank PDF follow-up
+
+Mehdi supplied and confirmed the original one-page EUR iBanFirst document on 28 September 2026. It is copied unchanged into `assets/edbb-eur-bank-details.pdf`; source/destination SHA-256 hashes match. Text and visual inspection confirm the named beneficiary, currency and bank, and the IBAN checksum passes. These checks do not independently authenticate the bank account; owner confirmation is the authority. The payment page and metadata now link the PDF, and the missing-bank-PDF blocker has been removed.
+
+The local PDF download matched the supplied original byte for byte. Mintlify build validation and broken-link checks passed after adding the download link.

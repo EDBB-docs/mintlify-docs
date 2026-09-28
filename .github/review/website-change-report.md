@@ -50,7 +50,7 @@ Replacement for the visible answer and schema:
 
 > EDBB accepts supported cards, PayPal and cryptocurrencies, with additional wallet methods where available. The options shown on your invoice depend on provider availability and eligibility. Contact EDBB support for bank-transfer arrangements and verified EDBB bank details.
 
-Do not insert an EDIS bank PDF, guessed EDBB PDF URL or bank account. EDBB's PDF is still outstanding.
+Mehdi supplied and confirmed the EDBB EUR PDF on 28 September 2026. It is included unchanged in the docs review branch at `assets/edbb-eur-bank-details.pdf`. After the documentation release, link to `https://docs.edbb.com/assets/edbb-eur-bank-details.pdf` if a website download is needed. Do not use that new production URL before it is deployed, or substitute EDIS banking details.
 
 ### W4 — P1: Traffic Pool expiry needs qualification
 
