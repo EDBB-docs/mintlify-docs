@@ -4,60 +4,144 @@ sidebarTitle: "Restart and power cycle"
 description: "Choose a restart inside the operating system or a full VPS power cycle. Save work, use the EDBB power controls and verify hardware changes after the service starts again."
 ---
 
-<Note>
-  For a graceful Linux restart, use <code>sudo shutdown -r now</code>. For a full power cycle, shut down the operating system cleanly with <code>sudo shutdown -h now</code>, wait for shutdown, then start it from the EDBB panel. In Windows, use the corresponding Restart or Shut down action. A restart inside the operating system is not a full hypervisor stop/start.
-</Note>
+Use the **Restart** menu to restart a running VPS or power it off and on. Use **Server On** to stop it, and **Server Off** to start it again.
+
+## Choose the right action
+
+| Action | What happens | VNC connection |
+| --- | --- | --- |
+| Restart inside Linux or Windows | The operating system closes services and restarts normally. | The VPS stays powered on. |
+| **Restart → Restart VPS** | Restarts the virtual machine without a full power-off/power-on cycle. | The panel indicates that your VNC session stays connected. |
+| **Restart → Power Cycle VPS** | Powers the virtual machine off, then on again. | Disconnects; reconnect after the VPS starts. |
+| **Server On → Power Off** | Stops the virtual machine immediately and leaves it off. | Disconnects. |
+| **Server Off** | Starts a stopped virtual machine. | Enable VNC again if needed. |
+
+<Warning>
+  Restarting interrupts applications and SSH/RDP connections. Powering off can lose unsaved work. Save your work and arrange a maintenance window before using these controls.
+</Warning>
+
+For an orderly restart when the operating system responds, use its normal restart command:
+
+<Tabs>
+  <Tab title="Linux">
+    Connect with [SSH](/linux-secure-shell-ssh) and run:
+
+    ```bash
+    sudo shutdown -r now
+    ```
+
+    Your SSH connection closes. Reconnect after the operating system finishes starting.
+  </Tab>
+  <Tab title="Windows">
+    Save your work and choose **Restart** from the Windows power menu. Reconnect with [Remote Desktop](/windows-remote-desktop) after startup.
+  </Tab>
+</Tabs>
+
+The panel's **Restart VPS** action is not a substitute for an orderly shutdown inside the operating system.
 
 ## Restart a Running VPS
 
 <Steps>
-  <Step title="Open the VPS Control Panel">
-    Sign in to the <a href="https://my.edbb.com/clientarea.php" target="_blank">EDBB Control Panel</a>, go to <strong>Services</strong>, and select the VPS you want to reboot.
-  </Step>
-  <Step title="Choose Restart">
-    Click the arrow next to the green <strong>Server On</strong> button and select <strong>Restart Server</strong>. The VPS powers off and back on in one action.
+  <Step title="Open your VPS">
+    Sign in to the [EDBB Control Panel](https://my.edbb.com/clientarea.php), open **Services**, and select your VPS. The left-hand power button shows **Server On** while the dashboard status shows **Running**.
 
-![Restart server menu](/assets/Restart.png)
+    <Frame caption="Running VPS: power and restart controls are in the left-hand column.">
+      <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+        <img src="/assets/power-controls/running-controls.png" alt="Server On and Restart controls beside the Running VPS status" />
+      </div>
+    </Frame>
+  </Step>
+  <Step title="Open Restart and select Restart VPS">
+    Click **Restart**, then choose **Restart VPS**. The request starts immediately; there is no separate confirmation dialog.
+
+    <Frame caption="Choose Restart VPS to restart without a full power cycle.">
+      <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+        <img src="/assets/power-controls/restart-menu.png" alt="Restart dropdown with Restart VPS and Power Cycle VPS, including their VNC behavior" />
+      </div>
+    </Frame>
+
+    The panel indicates that an existing VNC session stays connected. SSH, RDP and applications still need time to become available again.
+  </Step>
+  <Step title="Check that the operating system has restarted">
+    Allow the request to finish. Check the dashboard's **Screenshot** preview or use the [VNC console](/vps-management/enable-vnc-server) to follow boot progress, then reconnect with SSH or RDP.
+
+    **Running** means the virtual machine is powered on; it does not guarantee that the operating system or every application is ready.
   </Step>
 </Steps>
 
+## Power Cycle VPS
+
+A power cycle stops and starts the virtual machine. Use it when a full stop/start is required, such as an upgrade whose activation instructions explicitly require it.
+
 <Warning>
-  Restart performs an immediate power cycle at the hypervisor level. If the operating system still responds, run its built-in reboot command first for a graceful shutdown.
+  A power cycle interrupts the VPS and can lose unsaved work. If the operating system responds, shut it down cleanly first and then start it from the panel instead.
 </Warning>
 
----
+1. With the VPS running, open **Restart**.
+2. Select **Power Cycle VPS**, the second option in the menu shown above. The request starts immediately, without a separate confirmation dialog.
+3. Wait for the VPS to start again. The VNC connection disconnects during the power cycle; if the panel shows **VNC Off**, enable it again before reopening the console.
+4. Check boot progress, reconnect with SSH or RDP, and verify your applications.
+
+For a clean full stop/start on Linux, run `sudo shutdown -h now`, wait for **Turned off**, then click **Server Off** to start the VPS. On Windows, use **Shut down**, then start it from the panel.
 
 ## Stop VPS
 
 <Steps>
-  <Step title="Navigate to the power controls">
-    From the same dropdown next to <strong>Server On</strong>, choose <strong>Stop Server</strong> to shut the VPS down.
+  <Step title="Click Server On">
+    Click the green **Server On** button. This opens a confirmation dialog; it is separate from the **Restart** dropdown.
   </Step>
-  <Step title="Wait for the state to change">
-    The service status switches to <strong>Stopped</strong> once the hypervisor powers it off. Console access ends immediately.
-    ![Restart server menu](/assets/stop-server.png)
+  <Step title="Confirm Power Off">
+    Read the warning, then select **Power Off** to stop the VPS immediately. Choose **Cancel** to leave it running.
+
+    <Frame caption="Power Off stops the VPS immediately and disconnects VNC.">
+      <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+        <img src="/assets/power-controls/power-off-confirmation.png" alt="Power off VPS confirmation warning about unsaved work, with Cancel and Power Off buttons" />
+      </div>
+    </Frame>
+  </Step>
+  <Step title="Verify that it is off">
+    The power button changes to **Server Off**, and the dashboard status changes to **Turned off**. Restart and VNC controls are disabled while the VPS is off.
+
+    <Frame caption="Stopped state: Server Off is the button used to start the VPS again.">
+      <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+        <img src="/assets/power-controls/stopped-controls.png" alt="Red Server Off button, disabled Restart and VNC controls, and Turned off dashboard status" />
+      </div>
+    </Frame>
+
+    The screenshot preview also shows **KVM IS NOT RUNNING**.
+
+    <Frame caption="The screenshot preview confirms that the virtual machine is stopped.">
+      <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+        <img src="/assets/power-controls/stopped-screen.png" alt="VPS screenshot preview displaying KVM IS NOT RUNNING" />
+      </div>
+    </Frame>
   </Step>
 </Steps>
 
----
+Stopping a VPS does not cancel the service or stop billing.
 
 ## Start VPS
 
 <Steps>
-  <Step title="Press Start Server">
-    When the instance is stopped, the button turns blue and reads <strong>Start Server</strong>. Click it to boot the VM.
-
-![Start server after shutdown](/assets/start-vps.png)
+  <Step title="Click Server Off">
+    Click the red **Server Off** button shown above. Despite its label, clicking it starts the stopped VPS. No confirmation dialog is required.
   </Step>
-  <Step title="Reconnect">
-    Once the status changes to <strong>Running</strong>, reopen the console or reconnect over SSH/RDP to resume work.
+  <Step title="Wait for Running">
+    Allow the startup request to finish. The button changes to green **Server On**, and the dashboard status returns to **Running**.
+  </Step>
+  <Step title="Reconnect and check your services">
+    Wait for the operating system to boot, then reconnect with SSH or RDP. If you need console access and the panel shows **VNC Off**, follow the [VNC guide](/vps-management/enable-vnc-server) to enable it.
+
+    Check that your applications have started and are reachable. Disable VNC when you finish using it.
   </Step>
 </Steps>
 
-<Warning>
-  Stop is equivalent to pulling the power cable. Use it only if the operating system no longer reacts to `shutdown` or `poweroff` commands.
-</Warning>
+## If a request reports an error
+
+Check the current power button and dashboard status before issuing another request. If necessary, refresh the page to obtain the current state. If the VPS already shows **Running**, check its boot progress rather than immediately repeating the power action.
+
+If the VPS stays off, or the operating system does not boot, check the console where available and contact [EDBB support](/how-our-support-team-helps-you). Include the action you attempted and the exact error message.
 
 ## Upgrade activation
 
-Follow the activation email for CPU, RAM or disk changes. When a full power cycle is required, shut down the operating system cleanly, confirm it is stopped, then use **Start Server**. Save work and plan for SSH/RDP and application interruption. Stopping a VPS does not cancel billing. If your panel differs from these retained EDBB screenshots, contact support before guessing an action.
+Follow the activation email for CPU, RAM or disk changes. When a full power cycle is required, a normal restart alone is insufficient: shut down the operating system cleanly, confirm **Turned off**, then click **Server Off** to start the VPS. Verify the new resources inside the operating system and follow any disk-expansion instructions supplied with the upgrade.
