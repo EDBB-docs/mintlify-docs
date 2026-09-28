@@ -13,8 +13,10 @@ The **Settings** tab controls the virtual hardware your operating system sees. M
 
 Sign in to the [EDBB Control Panel](https://my.edbb.com/clientarea.php), open **Services**, select your VPS, then open **Settings**.
 
-<Frame>
-![EDBB Settings tab with boot, CPU, display, disk and network controls](/assets/settings.png)
+<Frame caption="Settings overview: Boot & CPU, Display & Drivers, then Access & Identification. The values shown are examples, not universal recommendations.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/vps-guides/settings-overview.png" alt="Full Settings tab with all three hardware configuration sections and Apply buttons" />
+  </div>
 </Frame>
 
 <span id="important-considerations" />
@@ -29,6 +31,38 @@ Sign in to the [EDBB Control Panel](https://my.edbb.com/clientarea.php), open **
 
 ## What the settings do
 
+### Boot & CPU
+
+This first group contains startup timing, firmware, TPM and CPU presentation. **CPU cores vs sockets** changes how the existing vCPUs are presented; it does not add CPU capacity.
+
+<Frame caption="Review boot compatibility and CPU layout before changing these options.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/vps-guides/settings-boot-cpu.png" alt="Boot and CPU settings including BIOS UEFI, Software TPM, CPU Model and cores versus sockets" />
+  </div>
+</Frame>
+
+### Display & Drivers
+
+The second group selects the virtual video, disk and network devices. Confirm that the installed OS has a compatible driver before changing a device.
+
+<Frame caption="Video, disk and network drivers are separate choices.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/vps-guides/settings-drivers.png" alt="Display and Drivers card with Video Driver, Disk Driver and Network Driver controls" />
+  </div>
+</Frame>
+
+### Access & Identification
+
+The last group controls the VNC keyboard layout and the service description.
+
+<Frame caption="VNC Keymap affects console input. Description labels the VPS and is used as its hostname on a fresh installation.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/vps-guides/settings-access.png" alt="Access and Identification card with VNC Keymap and Description fields" />
+  </div>
+</Frame>
+
+### Settings reference
+
 | Setting | How to choose |
 | --- | --- |
 | **Boot Menu Timeout** | Controls how long the boot menu waits. A longer timeout gives you more time to select recovery media in the console. |
@@ -38,7 +72,7 @@ Sign in to the [EDBB Control Panel](https://my.edbb.com/clientarea.php), open **
 | **Disk Driver** | Virtio is designed for virtual machines and needs OS driver support. Windows or a custom ISO may need Virtio drivers installed before you switch. Legacy IDE is available for systems that require it. |
 | **Network Driver** | Virtio is the usual virtual-machine option; E1000 and RTL8139 provide compatibility alternatives. A change may make the OS detect a new adapter, so check its IP configuration afterwards. |
 | **VNC Keymap** | Match the console keyboard layout to your keyboard. Check symbols and punctuation before setting passwords in the console. |
-| **Description** | A label to help you identify the VPS in your account. It does not change the hostname inside the installed operating system. |
+| **Description** | A label to help you identify the VPS in your account. It is used as the hostname during a fresh installation; changing it later does not rename an already installed system. |
 
 <span id="-boot-mode-and-tpm" />
 <span id="default-behavior" />

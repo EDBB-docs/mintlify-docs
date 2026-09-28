@@ -7,6 +7,18 @@ description: "Use your shared Traffic Pool, 100 GB starter credit and automatic 
 
 The Traffic Pool is a shared account reserve. Assign traffic from it to a VPS when the monthly allowance is insufficient. Every newly purchased VPS adds **100 GB starter credit** to your pool.
 
+## Find the Traffic Pool controls
+
+Open your VPS and select **Traffic**. The left side separates **Overall Traffic** for this VPS from your shared **Traffic Pool**. On the right are manual assignments, Auto Hydration and the logs.
+
+<Frame caption="Traffic overview: VPS allowance and pool balance on the left; assignment controls and logs on the right.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/vps-guides/traffic-pool-overview.png" alt="Traffic tab with Overall Traffic, Traffic Pool, Manual Hydration, Auto Hydration and log buttons" />
+  </div>
+</Frame>
+
+Screenshots show a test service. Your balance, allowance and refill date will differ.
+
 <span id="traffic-pool-balance-sheet" />
 <span id="traffic-pool-starter-credit" />
 <span id="what-is-a-traffic-pool" />
@@ -30,8 +42,10 @@ Open the VPS in the [EDBB Control Panel](https://my.edbb.com/clientarea.php) and
 
 After payment is confirmed, assign traffic using **Manual Hydration**: **+100 GB**, **+500 GB**, **+1 TB** or **+10 TB**, then **Assign Traffic**. The amount is deducted from the account pool and added to this VPS's current allowance.
 
-<Frame>
-![EDBB Traffic tab with pool balance, manual assignment and Auto-Hydration controls](/assets/traffic-pool-edbb-manual-auto-hydration.png)
+<Frame caption="Selecting 100 GB prepares an assignment. Assign Traffic submits it.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/vps-guides/traffic-manual.png" alt="Manual Hydration with 100 GB selected and Assign Traffic button" width="223" />
+  </div>
 </Frame>
 
 <Warning>
@@ -40,6 +54,12 @@ After payment is confirmed, assign traffic using **Manual Hydration**: **+100 GB
 
 ## Auto-Hydration
 
+<Frame caption="Use the Auto Hydration dropdown to choose an increment, or Off for manual assignments only.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/vps-guides/traffic-auto.png" alt="Auto Hydration dropdown set to Off manual only" width="240" />
+  </div>
+</Frame>
+
 Enable Auto-Hydration separately for each VPS and select **100 GB**, **200 GB**, **300 GB** or **500 GB**. At **99% of the current allowance**, the selected amount is assigned from the pool if enough balance is available.
 
 The current allowance includes Plan Traffic and traffic already assigned during the cycle. Auto-Hydration uses existing pool balance; it never purchases traffic automatically.
@@ -47,6 +67,14 @@ The current allowance includes Plan Traffic and traffic already assigned during 
 ## Read the logs
 
 Use **Hydration log** and **Pool log** to distinguish assignment to a VPS from actual network usage. A pool deduction means traffic was assigned, not that it was already consumed.
+
+<Frame caption="Hydration log shows VPS assignments; Pool log shows account-pool activity.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/vps-guides/traffic-log-buttons.png" alt="Traffic Zone label with Hydration log and Pool log buttons" width="322" />
+  </div>
+</Frame>
+
+A new VPS may show **no log available** until an assignment has been recorded.
 
 This fictional example uses GB consistently and starts with a zero pool balance. Newest transactions are shown first.
 

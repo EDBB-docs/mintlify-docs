@@ -8,67 +8,77 @@ description: "Use the EDBB Installation tab to select an operating system, set a
 
 ## Reinstall from the Installation Tab
 
+Reinstalling replaces the operating system on your existing VPS. Open **Services**, select the VPS, then choose **Installation → Automated Installers**.
+
 <Warning>
-  Important: Reinstalling your VPS will permanently erase all data. Make sure you have backups before proceeding.
+  Reinstalling permanently erases the VPS disk. Back up your data before continuing. Treat **Start the installation** as the destructive action; do not expect a separate confirmation screen.
 </Warning>
+
+<Frame caption="Start with the Installation tab: select an OS family, then its version and access credentials.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/vps-guides/reinstall-overview.png" alt="Installation tab showing Automated Installers, OS tiles, Debian version, password and SSH key fields" />
+  </div>
+</Frame>
+
+The example uses Debian. Select the Windows tile for a Windows Server installation. Available versions depend on the selected OS family.
 
 ## Install the operating system
 
 <Steps>
-  <Step title="Locate your VPS in the control panel">
-    Sign in to the <a href="https://my.edbb.com/clientarea.php" target="_blank">
-     EDBB Control Panel</a>
-
-    Go to <strong>Services</strong>
-     and select the VPS you would like to reinstall.
-  </Step>
-  <Step title="Switch to Installation tab → Select Automated Installers">
-    Use the <strong>Installation</strong>
-     tab on the service Control Panel, then stay on the default <strong>Automated Installers</strong>
-     view.
-
-    <Frame>
-      ![Install OS in Control Panel](/assets/reinstall.png)
-    </Frame>
-  </Step>
   <Step title="Select the operating system">
-    Click the tile of the OS family you would like to install (Ubuntu, Debian, Rocky, AlmaLinux, Windows Server, etc.). The available releases are shown in the version selector.
+    Click an OS family tile, such as Debian, Ubuntu or Windows. Then choose the required release in **Version**.
+  </Step>
+  <Step title="Prepare access credentials">
+    Set a strong password and store it securely. For Linux, the panel also provides an optional **SSH-RSA** public-key field. Never paste a private key there.
 
-
-<Frame>
-![Selecting an AutoInstall template](/assets/reinstall-OS.png)
+<Frame caption="Check the version and save your credentials before starting. The password stays masked.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/vps-guides/reinstall-credentials.png" alt="Debian version selector, masked password, optional SSH-RSA field and Start the installation button" />
+  </div>
 </Frame>
-
   </Step>
-  <Step title="Choose the OS version">
-    Use the dropdown below the OS family tile to pick the version/release you would like to install.
-  </Step>
-  <Step title="Set password and launch">
-    Enter a password (or paste an SSH public key) and click <strong>Start the installation.</strong>
-     Our Control Panel initiates the installation.
+  <Step title="Start the reinstall">
+    Check that you selected the correct VPS and have a backup, then click **Start the installation**. The installer replaces the disk contents and starts the VPS automatically.
 
-    We do not send a new Welcome Email when you reinstall! The password you specify during installation will be your new root (Linux) or Windows Administrator password.
+    A reinstall does not send a new welcome email. Use the credentials you specified for the new Linux root or Windows Administrator account.
   </Step>
 </Steps>
 
----
-
 ## Track Progress - then Connect
 
-| OS          | Approx. time | What happens / What to do                                                                                                                                                                                                                                   |
-| ----------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Linux**   | **≈ 5 min**  | AutoInstall provisions and reboots automatically — no extra clicks required. SSH is blocked during installation. Linux typically finishes installation in 5 minutes. When the status changes to _Running_, connect via **SSH** using the new root password. |
-| **Windows** | **≈ 15 min** | RDP access is blocked during installation. When the status changes to _Running_, connect via **RDP** using the new Administrator password. Windows usually takes 15 minutes to install.                                                                     |
+The Installation tab shows a waiting message while the selected operating system is being installed. Power controls may be temporarily disabled.
+
+<Frame caption="During installation, wait for the automated process to finish.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/vps-guides/reinstall-progress.png" alt="Please wait, Debian Trixie (13) is being installed message" />
+  </div>
+</Frame>
+
+| Operating system | Installation time | Connect afterward |
+| --- | --- | --- |
+| **Linux** | Up to **5 minutes** | [SSH](/linux-secure-shell-ssh) with your new credentials. |
+| **Windows** | Up to **15 minutes** | [Remote Desktop](/windows-remote-desktop) as Administrator with your new password. |
 
 <Warning>
-  The **Installation** tab streams logs while the image is provisioned. SSH/RDP ports stay closed until the job finishes.\
-   Do **not** power off or reboot the VPS manually — AutoInstall restarts it automatically when the OS is ready.
+  Do not power off, restart or power cycle the VPS during installation. The installer handles the required restarts. SSH/RDP access is unavailable until installation finishes.
 </Warning>
 
----
+When the waiting message clears, return to **Dashboard** and check **Status**. Refresh the **Screenshot** preview to see boot progress or the login screen.
+
+<Frame caption="Running confirms the VPS is powered on. Check the display and connection as well.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/vps-guides/reinstall-running.png" alt="Dashboard Status showing Running" width="319" />
+  </div>
+</Frame>
+
+<Frame caption="The refreshed Debian display shows a login prompt after this reinstall.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/vps-guides/reinstall-console.png" alt="Actual VPS Screenshot card with a Debian console login prompt" width="331" />
+  </div>
+</Frame>
+
+**Running** alone does not prove that SSH, RDP or applications are ready. Try your normal connection after installation finishes. If access still fails after the installation window, use the [VNC console](/vps-management/enable-vnc-server) and [connectivity guide](/faq/ip-addresses/network-is-down).
 
 ## Install a Custom Image
 
-Prefer to Bring Your Own .qcow2 image and/or run a cloud-init automation? Use the Cloud-Init workflow to keep full control over first boot actions.
-
-[Provision with Cloud-Init](/vps-management/cloud-init-vps-installation)
+For a custom qcow2 image and first-boot automation, follow [Provision with Cloud-Init](/vps-management/cloud-init-vps-installation). For installation media, use [Mount an ISO image](/vps-management/mount-iso-image).
