@@ -43,9 +43,9 @@
     "existing_path": "/advanced-setup-guides/manually-resize-disk-after-plan-upgrade-on-live-linux-systems",
     "final_path": "/advanced-setup-guides/resize-linux-disk",
     "action": "rename",
-    "title": "Resize a Linux disk after an upgrade",
+    "title": "Expand a Linux filesystem after a disk upgrade",
     "sidebarTitle": "Resize Linux disk",
-    "description": "Identify your Linux disk, partition and filesystem before expanding storage after a VPS upgrade. Review supported layouts and recovery precautions.",
+    "description": "Use extra VPS storage on Linux: identify the disk layout, grow a supported partition or LVM volume, then extend ext4 or XFS and check the result.",
     "redirect_destination": "/advanced-setup-guides/resize-linux-disk",
     "reason": "Shorter task-based route reflecting the revised scope."
   },
@@ -55,7 +55,7 @@
     "action": "rename",
     "title": "Install MikroTik CHR on your VPS",
     "sidebarTitle": "Install MikroTik CHR",
-    "description": "Prepare a VPS for MikroTik CHR, verify the target disk and official image, and secure the first login. Installation replaces the existing disk contents.",
+    "description": "Install MikroTik CHR from a rescue environment, configure your EDBB IP address and gateway, secure the administrator account and connect with WinBox.",
     "redirect_destination": "/advanced-setup-guides/install-mikrotik-chr",
     "reason": "Shorter task-based route reflecting the revised scope."
   },
@@ -83,9 +83,9 @@
     "existing_path": "/check-your-inbox",
     "final_path": "/check-your-inbox",
     "action": "retain",
-    "title": "Check your welcome email",
+    "title": "Check your VPS welcome email",
     "sidebarTitle": "Welcome email",
-    "description": "Find the EDBB welcome email with your VPS IP address and access details. Check payment and spam folders if it has not arrived before attempting recovery.",
+    "description": "Find your EDBB VPS IP address, username and password in the welcome email. Connect to Linux or Windows and learn what to do if the email has not arrived.",
     "redirect_destination": "",
     "reason": "Clear established route retained; content and metadata reviewed."
   },
@@ -124,7 +124,7 @@
     "final_path": "/faq/billing-lifecycle/billing-workflow",
     "action": "rename",
     "title": "How VPS billing and renewals work",
-    "description": "Follow renewal invoices, automatic payment attempts, reminders, suspension and deletion. Distinguish non-payment from customer-requested cancellation.",
+    "description": "Find out when EDBB sends renewal invoices, takes payments, suspends overdue services and deletes data. See how to avoid an unwanted renewal.",
     "sidebarTitle": "Billing and renewals",
     "redirect_destination": "/faq/billing-lifecycle/billing-workflow",
     "reason": "Shorter task-based route reflecting the revised scope."
@@ -215,7 +215,7 @@
     "action": "rename",
     "title": "VAT on EDBB invoices",
     "sidebarTitle": "VAT",
-    "description": "Understand how billing location and a validated business VAT ID affect EDBB invoices. Check your account details and ask support about tax discrepancies.",
+    "description": "See when VAT is added to EDBB invoices for customers in Cyprus, elsewhere in the EU or outside the EU, and how a valid business VAT ID affects billing.",
     "redirect_destination": "/faq/billing-lifecycle/vat",
     "reason": "Shorter task-based route reflecting the revised scope."
   },
@@ -325,7 +325,7 @@
     "action": "retain",
     "title": "Do you offer hourly VPS billing?",
     "sidebarTitle": "Hourly billing",
-    "description": "EDBB offers subscription billing rather than hourly VPS billing. Annual billing provides 12 months for the price of 11; review the total before ordering.",
+    "description": "EDBB uses subscription billing, not hourly charges. The annual 11+1 coupon gives 12 months for the price of 11 and excludes the purchase from refunds.",
     "redirect_destination": "",
     "reason": "Clear established route retained; content and metadata reviewed."
   },
@@ -435,7 +435,7 @@
     "action": "retain",
     "title": "Order additional IPv4 addresses",
     "sidebarTitle": "Additional IP addresses",
-    "description": "Request additional provider-assigned IPv4 addresses for your EDBB VPS, confirm current pricing and limits, then configure them in the guest operating system.",
+    "description": "Add IPv4 addresses to your EDBB VPS through Upgrade Components. Check the price, find the assigned addresses and configure them in your operating system.",
     "redirect_destination": "",
     "reason": "Clear established route retained; content and metadata reviewed."
   },
@@ -443,9 +443,9 @@
     "existing_path": "/faq/ip-addresses/order-bespoke-ip-address",
     "final_path": "/faq/ip-addresses/order-bespoke-ip-address",
     "action": "retain",
-    "title": "Order bespoke IPv4 addresses",
-    "sidebarTitle": "Bespoke IP addresses",
-    "description": "Ask EDBB support about available bespoke IPv4 addresses, confirm selection and recurring charges, and configure the assigned addresses safely.",
+    "title": "Request a specific IPv4 address",
+    "sidebarTitle": "Choose an IP address",
+    "description": "Ask EDBB about choosing an available IPv4 address for your VPS. Confirm selection and recurring fees before ordering, then configure the assigned address.",
     "redirect_destination": "",
     "reason": "Clear established route retained; content and metadata reviewed."
   },
@@ -473,9 +473,9 @@
     "existing_path": "/faq/ip-addresses/static-ip-addresses",
     "final_path": "/faq/ip-addresses/static-ip-addresses",
     "action": "retain",
-    "title": "Are EDBB VPS IPs static?",
+    "title": "Are my VPS IP addresses static?",
     "sidebarTitle": "Static IP addresses",
-    "description": "Every EDBB VPS includes a static IPv4 and /64 IPv6 allocation that stays assigned for the lifetime of the service.",
+    "description": "EDBB assigns static IP addresses to your VPS. Learn what stays the same after restarts, reinstalls and upgrades, and when an address can change.",
     "redirect_destination": "",
     "reason": "Clear established route retained; content and metadata reviewed."
   },
@@ -565,7 +565,7 @@
     "action": "rename",
     "title": "Investigate unusual network usage",
     "sidebarTitle": "Investigate network usage",
-    "description": "Identify unexpected traffic on a Linux VPS, preserve relevant evidence and contain confirmed abuse without deleting legitimate services based on names.",
+    "description": "Find which connections and processes are using your Linux VPS traffic. Compare live traffic with EDBB statistics, investigate the cause and stop unwanted activity.",
     "redirect_destination": "/faq/traffic-bandwidth/investigate-network-usage",
     "reason": "Shorter task-based route reflecting the revised scope."
   },
@@ -593,9 +593,9 @@
     "existing_path": "/faq/traffic-bandwidth/traffic-vs-bandwidth",
     "final_path": "/faq/traffic-bandwidth/traffic-vs-bandwidth",
     "action": "retain",
-    "title": "Traffic vs bandwidth",
+    "title": "What is the difference between traffic and bandwidth?",
     "sidebarTitle": "Traffic and bandwidth",
-    "description": "Traffic measures total data transferred over time; bandwidth is the maximum throughput available at any moment.",
+    "description": "Understand traffic in GB or TB and connection speed in Mbit/s or Gbit/s. Learn how incoming and outgoing data count towards your EDBB VPS allowance.",
     "redirect_destination": "",
     "reason": "Clear established route retained; content and metadata reviewed."
   },
@@ -655,7 +655,7 @@
     "action": "retain",
     "title": "Expand VPS storage with Drive Boost",
     "sidebarTitle": "Drive Boost",
-    "description": "Increase the capacity of your existing VPS disk with Drive Boost. Confirm the EDBB quote, activate the upgrade and expand the guest filesystem safely.",
+    "description": "Increase the capacity of your existing VPS disk with Drive Boost. Confirm the EDBB quote, activate the upgrade and expand the filesystem safely.",
     "redirect_destination": "",
     "reason": "Clear established route retained; content and metadata reviewed."
   },
@@ -665,7 +665,7 @@
     "action": "retain",
     "title": "Upgrade to a higher VPS plan",
     "sidebarTitle": "Upgrade plan",
-    "description": "Order a higher EDBB VPS plan, review prorated billing and activate new resources. Keep your existing installation and expand guest storage separately.",
+    "description": "Order a higher EDBB VPS plan, review prorated billing and activate new resources. Keep your existing installation and expand the filesystem separately.",
     "redirect_destination": "",
     "reason": "Clear established route retained; content and metadata reviewed."
   },
@@ -733,9 +733,9 @@
     "existing_path": "/how-our-support-team-helps-you",
     "final_path": "/how-our-support-team-helps-you",
     "action": "retain",
-    "title": "What to expect from EDBB Support",
-    "sidebarTitle": "Support scope",
-    "description": "Find help with EDBB accounts, billing, panel functions and infrastructure. Prepare useful evidence and understand your responsibilities on an unmanaged VPS.",
+    "title": "How EDBB support can help",
+    "sidebarTitle": "Contact support",
+    "description": "Contact EDBB for account, billing, control-panel and infrastructure help. Learn what support covers and which details to include in your request.",
     "redirect_destination": "",
     "reason": "Clear established route retained; content and metadata reviewed."
   },
@@ -843,8 +843,8 @@
     "existing_path": "/no-email-received",
     "final_path": "/no-email-received",
     "action": "retain",
-    "title": "Find a missing VPS welcome email",
-    "description": "Check your account, payment and email folders before attempting access recovery. Avoid reinstalling a server when you still need its existing data.",
+    "title": "No welcome email? Get access to your VPS",
+    "description": "Get access to your EDBB VPS if the welcome email is missing. Reinstall an unused server, or reset the password on a server with data to keep.",
     "sidebarTitle": "Missing welcome email",
     "redirect_destination": "",
     "reason": "Clear established route retained; content and metadata reviewed."
@@ -863,9 +863,9 @@
     "existing_path": "/vps-management/basic-ipv6-troubleshooting",
     "final_path": "/vps-management/basic-ipv6-troubleshooting",
     "action": "retain",
-    "title": "Quick checks for IPv6 issues",
+    "title": "Troubleshoot IPv6 connectivity",
     "sidebarTitle": "IPv6 troubleshooting",
-    "description": "Run through portal and OS-level checks to resolve IPv6 reachability problems on your EDBB VPS.",
+    "description": "Check IPv6 addresses, the /48 prefix, gateway, DNS and listening services on your EDBB VPS. Use the results to identify where a connection is failing.",
     "redirect_destination": "",
     "reason": "Clear established route retained; content and metadata reviewed."
   },
@@ -933,9 +933,9 @@
     "existing_path": "/vps-management/ipv6-configuration",
     "final_path": "/vps-management/ipv6-configuration",
     "action": "retain",
-    "title": "Enable IPv6 on your EDBB VPS",
+    "title": "Configure IPv6 on your VPS",
     "sidebarTitle": "Configure IPv6",
-    "description": "Find your IPv6 range and gateway in the Network tab, then add addresses and routes to your VPS.",
+    "description": "Find your EDBB IPv6 address and gateway, test connectivity and save the settings in Linux. Understand the /48 interface prefix and your assigned range.",
     "redirect_destination": "",
     "reason": "Clear established route retained; content and metadata reviewed."
   },
@@ -975,7 +975,7 @@
     "action": "retain",
     "title": "Power cycle or reboot a VPS",
     "sidebarTitle": "Restart and power cycle",
-    "description": "Choose a guest restart or a full VPS power cycle. Save work, use the EDBB power controls and verify hardware changes after the service starts again.",
+    "description": "Choose a restart inside the operating system or a full VPS power cycle. Save work, use the EDBB power controls and verify hardware changes after the service starts again.",
     "redirect_destination": "",
     "reason": "Clear established route retained; content and metadata reviewed."
   },
@@ -1003,9 +1003,9 @@
     "existing_path": "/vps-management/system-configuration-dialog",
     "final_path": "/vps-management/system-configuration-dialog",
     "action": "retain",
-    "title": "Understand the system configuration dialog",
-    "sidebarTitle": "System configuration",
-    "description": "Review EDBB Settings controls for virtual CPU, storage, networking and display. Check driver compatibility and recovery access before applying changes.",
+    "title": "VPS hardware settings explained",
+    "sidebarTitle": "Hardware settings",
+    "description": "Understand the CPU, disk, network, display and boot options in EDBB Settings. Choose compatible drivers and apply changes with a full power cycle.",
     "redirect_destination": "",
     "reason": "Clear established route retained; content and metadata reviewed."
   },
@@ -1045,7 +1045,7 @@
     "action": "add",
     "title": "Secure SSH access to your VPS",
     "sidebarTitle": "SSH security",
-    "description": "Set up key authentication, verify sudo and recovery access, and restrict SSH safely. Test a second connection before disabling the old login method.",
+    "description": "Set up an administrator account and SSH key on Debian or Ubuntu. Test your new login before disabling root and password access, then check the SSH logs.",
     "redirect_destination": "",
     "reason": "Relevant missing customer guidance; no EDIS-only panel or API workflow."
   },
@@ -1078,5 +1078,85 @@
     "description": "Check the shared EDIS Global status page for infrastructure incidents affecting EDBB locations, and provide useful evidence when contacting support.",
     "redirect_destination": "",
     "reason": "Relevant missing customer guidance; no EDIS-only panel or API workflow."
+  },
+  {
+    "existing_path": "",
+    "final_path": "/faq/billing-lifecycle/cancel-paypal-subscription",
+    "action": "new",
+    "redirect_destination": "",
+    "reason": "Support gap identified in the recovery audit; EDIS explanation adapted for EDBB.",
+    "title": "Cancel a PayPal subscription",
+    "sidebarTitle": "Cancel PayPal subscription",
+    "description": "Stop automatic PayPal payments for EDBB, check the subscription status and understand why cancelling a payment agreement does not cancel your VPS."
+  },
+  {
+    "existing_path": "",
+    "final_path": "/faq/billing-lifecycle/reset-2fa",
+    "action": "new",
+    "redirect_destination": "",
+    "reason": "Support gap identified in the recovery audit; EDIS explanation adapted for EDBB.",
+    "title": "Lost access to your two-factor authentication?",
+    "sidebarTitle": "Reset 2FA",
+    "description": "Recover access to your EDBB account if you lose your authenticator or backup codes. Contact support from your registered email and verify account ownership."
+  },
+  {
+    "existing_path": "",
+    "final_path": "/faq/ip-addresses/configure-additional-ip-linux",
+    "action": "new",
+    "redirect_destination": "",
+    "reason": "Support gap identified in the recovery audit; EDIS explanation adapted for EDBB.",
+    "title": "Configure an additional IPv4 address on Linux",
+    "sidebarTitle": "Configure extra IPv4",
+    "description": "Add an assigned IPv4 address to your Linux VPS without reinstalling. Test the address, then save it with Netplan, NetworkManager or Debian interfaces."
+  },
+  {
+    "existing_path": "",
+    "final_path": "/faq/ip-addresses/network-is-down",
+    "action": "new",
+    "redirect_destination": "",
+    "reason": "Support gap identified in the recovery audit; EDIS explanation adapted for EDBB.",
+    "title": "My VPS is not reachable",
+    "sidebarTitle": "VPS not reachable",
+    "description": "Check service status, console access, network settings and listening ports when your EDBB VPS is unreachable. Narrow down the problem before changing settings."
+  },
+  {
+    "existing_path": "",
+    "final_path": "/faq/ip-addresses/ports-and-firewalls",
+    "action": "new",
+    "redirect_destination": "",
+    "reason": "Support gap identified in the recovery audit; EDIS explanation adapted for EDBB.",
+    "title": "Ports and firewalls on your VPS",
+    "sidebarTitle": "Ports and firewalls",
+    "description": "Find out how ports work on an EDBB VPS. Check application listeners, allow required traffic in your firewall and understand the outbound SMTP exception."
+  },
+  {
+    "existing_path": "",
+    "final_path": "/getting-started/email-notifications",
+    "action": "new",
+    "redirect_destination": "",
+    "reason": "Support gap identified in the recovery audit; EDIS explanation adapted for EDBB.",
+    "title": "Understand EDBB service emails",
+    "sidebarTitle": "Service emails",
+    "description": "Understand EDBB emails about VPS access, traffic, upgrades and billing. Check what happened, which service is affected and whether you need to take action."
+  },
+  {
+    "existing_path": "",
+    "final_path": "/vps-management/linux-rescue",
+    "action": "new",
+    "redirect_destination": "",
+    "reason": "Support gap identified in the recovery audit; EDIS explanation adapted for EDBB.",
+    "title": "Recover a Linux VPS with rescue media",
+    "sidebarTitle": "Linux rescue",
+    "description": "Boot rescue media from the EDBB panel, inspect the installed Linux system and recover files or configuration when the VPS will not start or accept SSH."
+  },
+  {
+    "existing_path": "",
+    "final_path": "/vps-management/rdp-account-locked",
+    "action": "new",
+    "redirect_destination": "",
+    "reason": "Support gap identified in the recovery audit; EDIS explanation adapted for EDBB.",
+    "title": "RDP error 0xd07: account locked",
+    "sidebarTitle": "RDP account locked",
+    "description": "Resolve Windows RDP error 0xd07 after failed sign-in attempts. Check saved credentials, recover access and restrict Remote Desktop to trusted connections."
   }
 ]

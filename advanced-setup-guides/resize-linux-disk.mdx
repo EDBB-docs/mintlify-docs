@@ -1,25 +1,25 @@
 ---
-title: "Resize a Linux disk after an upgrade"
+title: "Expand a Linux filesystem after a disk upgrade"
 sidebarTitle: "Resize Linux disk"
-description: "Identify your Linux disk, partition and filesystem before expanding storage after a VPS upgrade. Review supported layouts and recovery precautions."
+description: "Use extra VPS storage on Linux: identify the disk layout, grow a supported partition or LVM volume, then extend ext4 or XFS and check the result."
 ---
 
-<span id="access-the-edbb-vps-control-panel" />
-<span id="identify-the-new-swap-partition" />
-<span id="important-notice-risks-associated-with-resizing-disk-space" />
-<span id="launch-novnc" />
-<span id="mount-system-rescue-cd-and-boot" />
-<span id="resize-partition" />
+A disk upgrade increases the virtual disk size. Linux may still show the old usable space until you expand the partition and filesystem.
 
-A VPS disk upgrade increases the virtual disk capacity. It does not automatically extend the guest partition or filesystem. Make a recoverable off-server backup and schedule maintenance before changing storage.
+<span id="important-notice-risks-associated-with-resizing-disk-space" />
 
 <Warning>
-  This worked procedure covers a **plain ext4 root filesystem on the last partition of a single disk**, with contiguous free space immediately after it. It does not cover LVM, encryption, RAID, XFS, a full-disk filesystem or a partition followed by swap/EFI/recovery partitions. Stop if your layout differs; do not delete another partition to force it to fit.
+  Make a current off-server backup before changing partitions or filesystems. The examples cover ext4 and XFS on a single disk, with or without a simple LVM layout. They do not cover RAID, encrypted volumes or moving partitions.
 </Warning>
 
-## Inspect the existing layout
+<span id="access-the-edbb-vps-control-panel" />
+<span id="launch-novnc" />
 
-Activate the upgrade using the [power-cycle guide](/vps-management/power-cycle-or-reboot-a-vps) and keep the [console](/vps-management/enable-vnc-server) open. Inspect the disk from Linux:
+<span id="inspect-the-existing-layout" />
+
+## 1. Check the disk and filesystem
+
+Follow the upgrade's [power-cycle instructions](/vps-management/power-cycle-or-reboot-a-vps) and keep the [VNC console](/vps-management/enable-vnc-server) open. Run:
 
 ```bash
 findmnt -no SOURCE,FSTYPE /
@@ -27,37 +27,120 @@ lsblk -o NAME,SIZE,TYPE,FSTYPE,MOUNTPOINTS
 df -hT /
 ```
 
-Confirm the virtual disk is larger than the root partition and identify the actual disk and partition. If the disk still shows its old size, resolve upgrade activation before altering partitions.
+Check that the **whole disk** shows the upgraded capacity. Then identify the root filesystem:
 
-## Expand a matching ext4 layout
+| Layout | Next step |
+| --- | --- |
+| Root on a plain partition, such as `/dev/vda1` | Expand that partition if there is free space immediately after it, then expand the filesystem. |
+| Root on an LVM logical volume | Inspect the physical volume and free space, then use the LVM steps below. |
+| Swap, EFI or another partition sits after the partition you want to grow | Stop. The free space is not adjacent; do not delete the other partition. |
+| Filesystem occupies the whole disk with no partition | Do not run `growpart`; use a procedure for that layout. |
+| RAID, encryption, an unfamiliar filesystem or unclear device names | Get a layout-specific procedure before continuing. |
 
-On Debian or Ubuntu, `growpart` is supplied by `cloud-guest-utils`. Review installation before proceeding:
+<span id="resize-partition" />
 
-```bash
-sudo apt update
-sudo apt install cloud-guest-utils
-```
+## 2. Expand a partition into adjacent free space
 
-The following example is **only for `/dev/vda1` on `/dev/vda`**. Substitute your verified values. First inspect the proposed partition change without applying it:
+Install `growpart` if it is missing:
+
+<Tabs>
+  <Tab title="Debian / Ubuntu">
+    ```bash
+    sudo apt update
+    sudo apt install cloud-guest-utils
+    ```
+  </Tab>
+  <Tab title="Rocky / AlmaLinux">
+    ```bash
+    sudo dnf install cloud-utils-growpart
+    ```
+  </Tab>
+</Tabs>
+
+This example is for **partition 1 on `/dev/vda`**. Use the disk and partition number from your own layout. Preview the change first:
 
 ```bash
 sudo growpart -N /dev/vda 1
 ```
 
-Proceed only if the output extends the intended partition into free space and leaves its start unchanged:
+Proceed only if it keeps the partition start unchanged and extends the intended partition into adjacent free space:
 
 ```bash
 sudo growpart /dev/vda 1
-sudo resize2fs /dev/vda1
+lsblk -o NAME,SIZE,TYPE,FSTYPE,MOUNTPOINTS
 ```
 
-`resize2fs` is for ext filesystems, not XFS. If the kernel cannot reread the partition table, stop and arrange a clean reboot before continuing; do not force repeated writes.
+If the partition already fills the disk, it does not need this step. If Linux cannot reread the partition table, arrange a clean reboot and inspect the result before continuing; do not force repeated writes.
 
-## Verify
+<span id="expand-a-matching-ext4-layout" />
+
+## 3. Expand the filesystem
+
+<Tabs>
+  <Tab title="Plain ext4">
+    For an ext4 root filesystem directly on `/dev/vda1`:
+
+    ```bash
+    sudo resize2fs /dev/vda1
+    ```
+
+    Use the actual filesystem device. Do not run this command on XFS or on an LVM physical volume.
+  </Tab>
+  <Tab title="Plain XFS">
+    XFS grows using its mounted directory. For the root filesystem:
+
+    ```bash
+    sudo xfs_growfs /
+    ```
+
+    The underlying partition must already have the extra space. XFS cannot be shrunk with this command.
+  </Tab>
+  <Tab title="LVM with ext4 or XFS">
+    Inspect the volume names and free space:
+
+    ```bash
+    sudo pvs
+    sudo vgs
+    sudo lvs -o lv_path,lv_size,vg_name
+    ```
+
+    If the physical volume is inside a partition, grow that partition first using its **actual number**. For example, `/dev/vda3` requires `growpart -N /dev/vda 3`, followed by `growpart /dev/vda 3` after checking the preview.
+
+    Let LVM recognise the larger physical volume:
+
+    ```bash
+    sudo pvresize /dev/vda3
+    sudo vgs
+    ```
+
+    Substitute your actual physical volume. If the volume group already has enough free space, a partition change and `pvresize` are unnecessary.
+
+    Extend the root logical volume by an amount no greater than the group's free space. This example adds **10 GiB**; replace both the amount and logical-volume path:
+
+    ```bash
+    sudo lvextend -L +10G /dev/VG/ROOT_LV
+    ```
+
+    Then grow the filesystem: for ext4, run `sudo resize2fs /dev/VG/ROOT_LV`; for XFS mounted at `/`, run `sudo xfs_growfs /`. Do not allocate space to a different logical volume by guessing its name.
+  </Tab>
+</Tabs>
+
+<span id="verify" />
+
+## 4. Verify the result
 
 ```bash
 lsblk -o NAME,SIZE,TYPE,FSTYPE,MOUNTPOINTS
 df -hT /
 ```
 
-Check the expected filesystem capacity and application health. For another layout, obtain a procedure specific to the filesystem and volume manager. If rescue media is required, mount it through the [ISO guide](/vps-management/mount-iso-image), avoid formatting existing data, and eject the ISO before booting from disk again.
+`df` should show the larger usable filesystem. Check that your applications work and that the system logs contain no storage errors.
+
+<span id="identify-the-new-swap-partition" />
+<span id="mount-system-rescue-cd-and-boot" />
+
+## If another partition is in the way
+
+Do not delete swap, EFI or recovery partitions just to make `growpart` succeed. Moving partitions requires a separate maintenance and recovery plan. The [Linux rescue guide](/vps-management/linux-rescue) explains how to inspect the disk and recover files; booting rescue media alone does not make a partition move safe.
+
+For a layout you cannot safely extend, consider moving your data to a freshly installed VPS with the required disk size, then verifying the new installation before cancelling the old one.

@@ -12,7 +12,7 @@ description: "Inspect the logical CPUs and virtual topology visible to Linux wit
 <span id="the-top-and-htop-commands" />
 <span id="verifying-the-number-of-cores-available-to-linux" />
 
-A Linux VPS reports the virtual processors and topology presented to its guest operating system. These values do not prove that the physical host cores are exclusively reserved for your VPS.
+A Linux VPS reports the virtual processors and topology presented to its operating system. These values do not prove that the physical host cores are exclusively reserved for your VPS.
 
 <span id="introduction-to-cpu-cores" />
 
@@ -23,7 +23,7 @@ lscpu
 nproc
 ```
 
-`lscpu` displays logical CPU count and the socket/core/thread topology exposed to the guest. `nproc` reports processing units available to the current process; affinity and execution limits can affect its result.
+`lscpu` displays logical CPU count and the socket/core/thread topology exposed to the operating system. `nproc` reports processing units available to the current process; affinity and execution limits can affect its result.
 
 To inspect processor entries and model information directly:
 
@@ -31,7 +31,7 @@ To inspect processor entries and model information directly:
 grep -E '^(processor|model name|cpu cores|siblings)' /proc/cpuinfo
 ```
 
-Each `processor` entry represents a logical CPU visible to the guest, not necessarily a distinct physical core on the host.
+Each `processor` entry represents a logical CPU visible to the operating system, not necessarily a distinct physical core on the host.
 
 ## Monitor use
 

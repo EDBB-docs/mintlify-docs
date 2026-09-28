@@ -1,40 +1,37 @@
 ---
-title: "Order bespoke IPv4 addresses"
-sidebarTitle: "Bespoke IP addresses"
-description: "Ask EDBB support about available bespoke IPv4 addresses, confirm selection and recurring charges, and configure the assigned addresses safely."
+title: "Request a specific IPv4 address"
+sidebarTitle: "Choose an IP address"
+description: "Ask EDBB about choosing an available IPv4 address for your VPS. Confirm selection and recurring fees before ordering, then configure the assigned address."
 ---
 
-
-## Bespoke Address Option
-
-<Info>
-  Bespoke selection lets you discuss available provider-assigned addresses with support. It cannot guarantee a third-party location label, reputation or reachability. EDBB sources the addresses from curated pools so you can hand-pick addresses available for your service.
-</Info>
+If you would like to choose an IPv4 address from the available pool at your VPS's location, contact support before ordering.
 
 <span id="pricing-snapshot" />
 
+<span id="bespoke-address-option" />
+
 ## Price and availability
 
-Confirm the current EDBB price, recurring charge and available quantity in the order summary or with [support@edbb.com](mailto:support@edbb.com) before payment. Do not use EDIS Global prices as an EDBB quote.
+Support will confirm which addresses are available, any one-time selection fee and the recurring charge. Review the quote before you pay.
 
-------|-------|
-| One-time selection fee per IPv4 | **€10** |
-| Monthly charge per IPv4 | **€5** |
+Choosing an address does not guarantee its reputation, its location in third-party databases or its reachability from a particular network. See [IP geolocation](/faq/ip-addresses/geolocation-geoip-databases) and [country reachability](/faq/ip-addresses/country-reachability).
 
----
+<span id="how-to-request-a-bespoke-ipv4" />
 
-## How to Request a Bespoke IPv4
+## Request an address
 
 <Steps>
-  <Step title="Contact EDBB Support">
-    From the EDBB Control Panel, reach out via the messenger or by email. Include your VPS identifier (primary IPv4 or KVM ID) and how many bespoke addresses you need.
+  <Step title="Contact support">
+    Email [support@edbb.com](mailto:support@edbb.com) or use the website messenger. Include your VPS's primary IPv4 address or service ID, how many addresses you need, and what you are looking for.
+  </Step>
+  <Step title="Review the available choices and price">
+    Support will explain the available options. Confirm your selection and the charges before paying the invoice.
+  </Step>
+  <Step title="Configure the assigned address">
+    Once the order is completed, find the address and network settings in your VPS's **Network** tab. Add the address to the operating system while keeping the existing primary address and gateway.
   </Step>
 </Steps>
 
-Support will reply with the curated list of available addresses for your location. Pick the exact IPv4s you want, confirm the selection, and pay the invoice they send. The chosen addresses appear under the **Network** tab as soon as the order is fulfilled.
+Open the [VNC console](/vps-management/enable-vnc-server) before changing networking. On Linux, follow [configure an additional IPv4 address](/faq/ip-addresses/configure-additional-ip-linux). You do not need to reinstall the VPS to add an address.
 
-Finish by configuring each IPv4 manually within your operating system.
-
-[Prefer automated assignment?](/faq/ip-addresses/order-additional-ip-address)
-
-Use the [VNC console](/vps-management/enable-vnc-server) before changing network settings. Preserve existing addresses and data. Reinstalling erases the VPS and is not necessary just to add a guest network address.
+If you do not need to choose a particular address, use [Additional IPs in Upgrade Components](/faq/ip-addresses/order-additional-ip-address).

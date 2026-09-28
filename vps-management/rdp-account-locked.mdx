@@ -1,0 +1,35 @@
+---
+title: "RDP error 0xd07: account locked"
+sidebarTitle: "RDP account locked"
+description: "Resolve Windows RDP error 0xd07 after failed sign-in attempts. Check saved credentials, recover access and restrict Remote Desktop to trusted connections."
+---
+
+RDP error **0xd07** means Windows has locked the account after too many failed sign-in or password-change attempts. Old saved credentials or automated attempts against a public RDP port can cause repeated lockouts.
+
+## Check your login details
+
+1. Stop repeated connection attempts, including saved connections on other devices.
+2. Check the username, password and keyboard layout. On a standard Windows Server installation, the administrative account is usually **Administrator**.
+3. If you changed the password recently, remove the old saved password from your Remote Desktop client. On Windows, open **Control Panel → Credential Manager** and find the saved RDP credentials for this server.
+4. Try again after the account's configured lockout period. The duration depends on Windows policy; some policies require an administrator to unlock the account.
+
+## Use the console if you are still locked out
+
+Open the [EDBB VNC console](/vps-management/enable-vnc-server). This gives you another way to reach the Windows sign-in screen, but it does not bypass a Windows account lockout.
+
+If another administrator account is available, sign in with it and review the affected account in **Computer Management → Local Users and Groups → Users**. Check the account properties for the lockout setting. Domain accounts must be handled through the domain's administration tools.
+
+If you have forgotten the password, follow [reset the Windows Administrator password](/vps-management/reset-windows-password). A password reset alone does not prevent new lockouts caused by ongoing failed attempts.
+
+## Prevent repeated lockouts
+
+- Restrict Remote Desktop in Windows Firewall to trusted source addresses, or connect through a VPN you control.
+- Keep Network Level Authentication enabled and install Windows security updates.
+- Check Windows Security logs for failed sign-ins and the source addresses involved.
+- Update saved credentials on every device that connects to the server.
+
+<Warning>
+  Keep the console open while changing firewall rules. Do not disable account-lockout protection or expose all ports just to restore access.
+</Warning>
+
+If you need help, send [support@edbb.com](mailto:support@edbb.com) your VPS IP, the error code and the time the problem started. Do not send the password.

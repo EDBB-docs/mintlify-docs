@@ -7,7 +7,7 @@ description: "Understand how vCPUs are mapped to sockets and cores, why it matte
 <span id="change-the-cpu-topology-in-the-control-panel" />
 <span id="core-vs-socket-basics" />
 
-A VPS can present its virtual CPUs as multiple cores in one virtual socket or as several virtual sockets. This is a guest-visible layout, not a description of the physical processors dedicated to your service.
+A VPS can present its virtual CPUs as multiple cores in one virtual socket or as several virtual sockets. This is a layout shown inside your VPS, not a description of the physical processors dedicated to your service.
 
 <span id="why-the-topology-matters" />
 
@@ -17,4 +17,4 @@ Some operating systems and applications limit the number of sockets or license s
 
 Use the **Settings** tab and [system configuration](/vps-management/system-configuration-dialog) to review the options available for your VPS. Record the existing settings before making a change and plan for a restart.
 
-Check what the guest actually sees using the [Linux](/faq/upgrades-downgrades/check-cpu-linux) or [Windows](/faq/upgrades-downgrades/check-cpu-windows) guide.
+Check what your operating system sees using the [Linux](/faq/upgrades-downgrades/check-cpu-linux) or [Windows](/faq/upgrades-downgrades/check-cpu-windows) guide.

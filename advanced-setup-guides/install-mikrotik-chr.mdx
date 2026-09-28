@@ -1,56 +1,128 @@
 ---
 title: "Install MikroTik CHR on your VPS"
 sidebarTitle: "Install MikroTik CHR"
-description: "Prepare a VPS for MikroTik CHR, verify the target disk and official image, and secure the first login. Installation replaces the existing disk contents."
+description: "Install MikroTik CHR from a rescue environment, configure your EDBB IP address and gateway, secure the administrator account and connect with WinBox."
 ---
 
-<span id="4-connect-with-winbox" />
-<span id="configure-routeros-manually" />
-
-MikroTik CHR runs RouterOS as a virtual machine. This installation replaces the VPS disk; it does not preserve your existing Linux or Windows system.
+MikroTik Cloud Hosted Router (CHR) runs RouterOS on your VPS. This guide uses a raw CHR disk image and a Linux rescue environment, then walks through the first network configuration.
 
 <Warning>
-  Download an independent backup first. Writing the CHR image to the wrong device destroys its contents. Use a rescue environment and identify the target disk explicitly; do not run a disk-overwrite script from the installed system you are replacing.
+  Installing CHR replaces the entire VPS disk, including the existing operating system and files. Download a backup first. Do not write the image from the running system you are replacing.
 </Warning>
 
 <span id="1-prepare-the-vps" />
 
-## Prepare the image and console
+<span id="prepare-the-image-and-console" />
 
-1. Review [MikroTik CHR requirements and licensing](https://help.mikrotik.com/docs/spaces/ROS/pages/18350234/Cloud+Hosted+Router+CHR). The free license is limited to 1 Mbit/s upload per interface; choose a suitable license for your workload.
-2. Download the intended stable **CHR raw disk image** from [MikroTik's official downloads](https://mikrotik.com/download). Record the version and verify the vendor-published checksum for that exact image/archive.
-3. Open the [EDBB VNC console](/vps-management/enable-vnc-server), mount available [rescue media](/vps-management/mount-iso-image) and boot into it.
-4. Transfer the verified image into the rescue environment's temporary storage and extract it. Confirm sufficient temporary space and identify the raw `.img` file.
+## 1. Prepare the VPS and image
+
+1. Check [MikroTik's CHR requirements and licence options](https://help.mikrotik.com/docs/spaces/ROS/pages/18350234/Cloud+Hosted+Router+CHR). The free licence limits upload speed to 1 Mbit/s per interface.
+2. Copy your VPS's IPv4 address, prefix, gateway and DNS settings from the EDBB **Network** tab. Keep them available outside the VPS.
+3. Open the [VNC console](/vps-management/enable-vnc-server), then boot a Linux rescue ISO through **Installation → ISO Boot**. See [Linux rescue](/vps-management/linux-rescue).
+4. Review **Settings** for the chosen CHR release's boot requirements. CHR supports Virtio network and disk devices on KVM; do not switch to legacy drivers without a reason. Boot-mode support depends on the image/version you install.
+5. Choose the intended stable CHR **raw disk image** from [MikroTik downloads](https://mikrotik.com/download). Do not choose a RouterBOARD package or a VMDK image.
 
 <span id="2-create-the-installation-script" />
 
-## Identify the destination
+## 2. Download and extract in rescue mode
 
-Use the rescue console to inspect disks and mounts:
+First check that the rescue environment has network access with `ip -br addr` and `ip route`. If needed, configure its interface using the IP and gateway from the panel. Changes to rescue networking do not configure RouterOS later.
+
+Use the direct HTTPS download link for the version you selected:
+
+```bash
+cd /tmp
+curl --fail --location --output chr.img.zip 'PASTE_OFFICIAL_CHR_RAW_ZIP_URL'
+sha256sum chr.img.zip
+unzip -l chr.img.zip
+```
+
+Compare the checksum with the value published for that exact download. Check there is enough temporary space before extracting. Then run:
+
+```bash
+unzip chr.img.zip
+ls -lh *.img
+```
+
+Note the extracted filename, such as `chr-VERSION.img`. Do not use a different version's filename or checksum. If rescue has no Internet access, download the archive on your own computer, verify it there and transfer it into the rescue environment before extracting it.
+
+<span id="identify-the-destination" />
+
+## 3. Identify the destination disk
 
 ```bash
 lsblk -o NAME,SIZE,TYPE,FSTYPE,MOUNTPOINTS,MODEL
 findmnt
 ```
 
-Select the **whole VPS disk**, not a partition, ISO device or rescue filesystem. Confirm no partitions on that disk are mounted. Stop if you cannot distinguish the devices or the disk is smaller than the image.
+Identify the **whole VPS disk**, such as `/dev/vda`, rather than a partition, the ISO or a temporary rescue disk. Check its size against the VPS plan and the extracted image. None of its partitions may remain mounted; unmount them and disable any swap on that disk before writing it.
+
+Stop if you cannot clearly identify the disk. Do not choose a device only because it is first in the list.
 
 <span id="3-run-the-installer" />
 
-## Write the image
+<span id="write-the-image" />
 
-The example below intentionally contains placeholders. Replace both with the verified image path and whole-disk device. Recheck them before running the destructive write:
+## 4. Write the image and boot from disk
+
+Replace the image path and destination below with the values you checked. This command is destructive:
 
 ```bash
-sudo dd if=/path/to/verified-chr.img of=/dev/YOUR_VPS_DISK bs=4M status=progress conv=fsync
+sudo dd if=/tmp/chr-VERSION.img of=/dev/REPLACE_WITH_VPS_DISK bs=4M status=progress conv=fsync,nocreat
+sync
 ```
 
-Wait for successful completion. Unmount the rescue ISO and use the panel to boot from the VPS disk. If the guest cannot boot, check the [boot mode and disk driver](/vps-management/system-configuration-dialog) against the selected CHR version's requirements; do not overwrite another disk as a guess.
+Wait for `dd` to finish without errors. Unmount the rescue ISO in **Installation → ISO Boot**, then restart from the local disk. Watch the VNC console. If it does not boot, check the image and boot/device settings before making another disk change.
 
-## Secure the first login
+<span id="configure-routeros-manually" />
 
-Use the console for first access. Follow the credential prompt for the selected CHR release; do not assume the password is the literal word `password`. Set a strong administrator password before enabling remote management.
+<span id="secure-the-first-login" />
 
-Configure the address and gateway shown in the EDBB **Network** tab. Restrict WinBox/SSH management to trusted source addresses and disable unused management services. Test the firewall and recovery access before exposing the router to Internet traffic. Follow the [AUP](/acceptable-use-policy), including outbound SMTP controls for forwarded VPN traffic.
+## 5. Set a password and configure networking
 
-This manual procedure does not inject an autorun configuration. Save an exported RouterOS configuration securely after setup and test recovery for your deployment.
+Sign in through the console using the initial login procedure for your CHR release. Follow any first-login password prompt and choose a strong administrator password. If needed, use RouterOS's interactive `/password` command. Do not use `password` as the password.
+
+Inspect the interface and any existing configuration:
+
+```text
+/interface print
+/ip address print
+/ip route print
+```
+
+The following example uses `ether1` and documentation addresses. Replace the interface, address/prefix and gateway with the values from your VPS's **Network** tab. Do not add duplicate addresses or routes:
+
+```text
+/ip address add address=192.0.2.10/24 interface=ether1
+/ip route add dst-address=0.0.0.0/0 gateway=192.0.2.1
+/ip dns set servers=1.1.1.1,1.0.0.1 allow-remote-requests=no
+```
+
+The DNS example uses public resolvers; you can use the resolver addresses shown in the panel instead. Keep `allow-remote-requests=no` unless you deliberately configure and protect a DNS service.
+
+Check connectivity:
+
+```text
+/ping 1.1.1.1 count=4
+/ping example.com count=4
+```
+
+If numeric addresses work but names do not, check the DNS settings. If neither works, recheck the address, gateway and interface.
+
+<span id="4-connect-with-winbox" />
+
+## 6. Restrict management access and connect with WinBox
+
+Before leaving the console, restrict management to an address or network you control. Replace `YOUR_ADMIN_IP/32` with the public address of the computer or trusted network you will connect from:
+
+```text
+/ip service set winbox address=YOUR_ADMIN_IP/32
+/ip service set ssh address=YOUR_ADMIN_IP/32
+/ip service disable telnet,ftp,www,www-ssl,api,api-ssl
+```
+
+These are **RouterOS services inside your VPS**, not an EDBB account API. Configure an appropriate RouterOS firewall before exposing routing or VPN services. Keep console access while testing; changing your Internet connection may change the source address allowed to manage the router.
+
+Download WinBox from [MikroTik](https://mikrotik.com/download), enter the VPS's public IP, and sign in with the account and password you set. Use IP access; local MAC discovery does not extend across the Internet.
+
+Finally, apply the licence needed for your workload and store a RouterOS configuration backup securely outside the VPS. All traffic, including forwarded VPN traffic, remains subject to the [AUP](/acceptable-use-policy) and [SMTP policy](/faq/port-25-smtp-rate-limit-policy).

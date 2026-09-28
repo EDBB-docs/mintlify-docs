@@ -1,53 +1,119 @@
 ---
-title: "Enable IPv6 on your EDBB VPS"
+title: "Configure IPv6 on your VPS"
 sidebarTitle: "Configure IPv6"
-description: "Find your IPv6 range and gateway in the Network tab, then add addresses and routes to your VPS."
+description: "Find your EDBB IPv6 address and gateway, test connectivity and save the settings in Linux. Understand the /48 interface prefix and your assigned range."
 ---
+
+Each VPS receives an IPv6 allocation equivalent in size to a **/64**. The gateway is on the location's shared **/48** network, so configure your assigned address with a **/48 prefix** and use the gateway shown in the control panel.
 
 <span id="ipv6-on-edbb-vps" />
 
-Each VPS receives an IPv6 allocation **equivalent in size to a /64**. It is not routed as a separate /64 subnet. The location uses a shared /48 network, so configure assigned addresses with a **/48 prefix** and the exact location gateway shown for your VPS.
-
-<Warning>
-  The /48 interface setting does not allocate the entire /48 to you. Use only your VPS's assigned addresses. The shared policy permits at most **20 stable IPv6 addresses configured simultaneously** and prohibits rotating/random-address IPv6 proxy services.
-</Warning>
+<Note>
+  The /48 setting does not give you the whole location's address range. Use only your assigned allocation. You may configure up to **20 stable IPv6 addresses at the same time**. Rotating or random-address IPv6 proxy services are prohibited by the [AUP](/acceptable-use-policy).
+</Note>
 
 <span id="step-1-–-grab-the-details-from-the-control-panel" />
 
-## Copy your service values
+<span id="copy-your-service-values" />
 
-Open the VPS **Network** tab and record the allocation and gateway. Keep the [VNC console](/vps-management/enable-vnc-server) available before changing networking.
+## Find your IPv6 settings
+
+Open **Services**, select your VPS, then open **Network**. Copy your assigned IPv6 range and gateway. Open the [VNC console](/vps-management/enable-vnc-server) before changing networking.
 
 <Frame>
-![EDBB Network tab containing assigned addresses and gateway information](/assets/vps-network-tab.png)
+![EDBB Network tab with assigned addresses and gateway](/assets/vps-network-tab.png)
 </Frame>
+
+The following examples use documentation addresses and `eth0`. Replace them with an address from your allocation, your location's gateway and the actual interface name.
 
 <span id="step-2-–-add-an-ipv6-address-linux-example" />
 
-## Test a Linux configuration
+<span id="test-a-linux-configuration" />
 
-First inspect the existing addresses and routes:
+## Test the settings on Linux
+
+Check what is already configured:
 
 ```bash
+ip -br link
 ip -6 addr show
 ip -6 route show
 ```
 
-The following values are documentation examples, not EDBB assignments. Replace the address, gateway and interface with your verified values. Do not add a second default route if the correct route already exists.
+If the address and default route are missing, add them:
 
 ```bash
 sudo ip -6 addr add 2001:db8:1234:5678::10/48 dev eth0
 sudo ip -6 route add default via 2001:db8:1234::1 dev eth0
 ```
 
+Do not add a duplicate address or default route. If a wrong route is already present, review the saved configuration before replacing it.
+
 <span id="step-3-–-test-connectivity" />
 
-Test the actual gateway and a known external IPv6 destination, then name resolution. Inspect firewall rules as well as routes if an application cannot connect.
+Test your actual gateway and an external IPv6 destination:
+
+```bash
+ping -6 -c 4 2001:db8:1234::1
+ping -6 -c 4 2606:4700:4700::1111
+```
+
+A filtered ping does not prove connectivity is broken. See [IPv6 troubleshooting](/vps-management/basic-ipv6-troubleshooting) for DNS, route and application checks.
 
 <span id="best-practices" />
 
-## Make the working settings persistent
+<span id="make-the-working-settings-persistent" />
 
-Runtime `ip` changes normally disappear after reboot. Use the active distribution configuration system—Netplan, NetworkManager or interfaces files—to persist the verified settings while preserving IPv4 and other addresses. Do not configure the same interface through competing systems.
+## Keep the settings after a reboot
 
-See [IPv6 troubleshooting](/vps-management/basic-ipv6-troubleshooting) and the [AUP](/acceptable-use-policy).
+Temporary `ip` commands disappear after a reboot. Back up the configuration and use the network manager already controlling the interface. Keep all working IPv4 settings.
+
+<Tabs>
+  <Tab title="Netplan">
+    Edit the active file in `/etc/netplan/`. Append your IPv6 address to the existing `addresses` list and the IPv6 default route to `routes`. Preserve the existing IPv4 entries and other settings.
+
+    The relevant additions look like this; they are not a complete replacement file:
+
+    ```yaml
+    addresses:
+      - 2001:db8:1234:5678::10/48
+    routes:
+      - to: "::/0"
+        via: "2001:db8:1234::1"
+    ```
+
+    Check the YAML, then test with rollback available:
+
+    ```bash
+    sudo netplan generate
+    sudo netplan try --timeout 120
+    ```
+
+    Test IPv4 and IPv6 from a second connection before confirming. If the attempt rolls back, verify the previous settings were restored.
+  </Tab>
+  <Tab title="NetworkManager">
+    Run `nmcli connection show --active` to find the connection name. For a connection that should use your assigned static IPv6 settings, replace the example values and run:
+
+    ```bash
+    sudo nmcli connection modify 'CONNECTION' ipv6.method manual +ipv6.addresses '2001:db8:1234:5678::10/48' ipv6.gateway '2001:db8:1234::1'
+    sudo nmcli device reapply eth0
+    ```
+
+    Keep the existing IPv4 and DNS settings. If reapplying requires a connection restart, do that from the console during a maintenance window. Check the IPv6 default route afterwards.
+  </Tab>
+  <Tab title="Debian interfaces">
+    If ifupdown manages the interface, back up its file in `/etc/network/interfaces` or `/etc/network/interfaces.d/`.
+
+    Add or update the interface's IPv6 stanza while leaving its IPv4 stanza in place:
+
+    ```text
+    iface eth0 inet6 static
+        address 2001:db8:1234:5678::10/48
+        gateway 2001:db8:1234::1
+    ```
+
+    Do not create a second IPv6 stanza for an interface that already has one. Use the temporary commands above for the current session and check persistence at the next planned reboot.
+  </Tab>
+</Tabs>
+
+After a planned reboot, repeat the address, route and connectivity checks. If a generated configuration overwrites your changes, update the tool that generates it, such as Cloud-Init, instead of maintaining a competing file.

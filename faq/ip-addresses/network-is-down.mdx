@@ -1,0 +1,74 @@
+---
+title: "My VPS is not reachable"
+sidebarTitle: "VPS not reachable"
+description: "Check service status, console access, network settings and listening ports when your EDBB VPS is unreachable. Narrow down the problem before changing settings."
+---
+
+If you cannot connect to your VPS, first check whether the problem affects the whole server or one application, such as SSH, Remote Desktop or a website.
+
+## Check the service and console
+
+<Steps>
+  <Step title="Check the control panel">
+    Sign in to [EDBB](https://my.edbb.com/clientarea.php) and open the VPS. Confirm it is powered on and installation has finished. If it is suspended, check [billing and renewals](/faq/billing-lifecycle/billing-workflow). If connections are extremely slow, check [traffic usage](/faq/traffic-bandwidth/traffic-statistics).
+  </Step>
+  <Step title="Check for an incident">
+    Look at the [status page](https://status.edis.global/) for your server's location. If you recently changed the primary IP, use the new address and check its configuration inside the VPS.
+  </Step>
+  <Step title="Open the VNC console">
+    Follow [open the console](/vps-management/enable-vnc-server). If you can see the operating system, use it to check networking and services. A boot error needs a different repair from an SSH or firewall problem.
+  </Step>
+</Steps>
+
+## Check from inside the VPS
+
+<Tabs>
+  <Tab title="Linux">
+    Inspect the interface, addresses and default route:
+
+    ```bash
+    ip -br link
+    ip -br addr
+    ip route
+    ```
+
+    Compare them with the **Network** tab. Look for an interface marked `UP`, the assigned IPv4 address and a `default via` route using your gateway.
+
+    Test the gateway, then an external address and DNS. Replace `YOUR_GATEWAY` with the value in your panel:
+
+    ```bash
+    ping -c 4 YOUR_GATEWAY
+    ping -c 4 1.1.1.1
+    getent ahostsv4 example.com
+    sudo ss -lntup
+    ```
+
+    The last command lists listening services. For SSH on Debian or Ubuntu, check `sudo systemctl status ssh`; on Rocky or AlmaLinux, check `sudo systemctl status sshd`. Use the service's logs to investigate errors.
+  </Tab>
+  <Tab title="Windows">
+    In the console, open PowerShell and inspect the network settings:
+
+    ```powershell
+    Get-NetIPConfiguration
+    Get-NetRoute -AddressFamily IPv4
+    Get-NetTCPConnection -State Listen
+    ```
+
+    Compare the address and gateway with the **Network** tab. Check that the required application or Remote Desktop service is running and that Windows Firewall allows the intended connection.
+  </Tab>
+</Tabs>
+
+## What the results mean
+
+| Result | Next check |
+| --- | --- |
+| Wrong or missing IP address | Correct the operating system's network configuration using the Network tab values. |
+| Gateway or external IP does not reply | Check routes and firewall rules. Ping can be filtered; test the actual application too. |
+| Numeric IP works, names fail | Check DNS resolver settings. |
+| Server responds, but one port fails | Check the application, listening address and local firewall. See [ports and firewalls](/faq/ip-addresses/ports-and-firewalls). |
+| Works from one network but not another | Compare client/network restrictions and [country reachability](/faq/ip-addresses/country-reachability). |
+| Linux will not boot | Use the [Linux rescue guide](/vps-management/linux-rescue). |
+
+Do not disable every firewall rule or reinstall the server as a first troubleshooting step.
+
+For support, include the VPS IP, time and timezone, exact error, affected port and results from these checks. Send logs with passwords and other secrets removed to [support@edbb.com](mailto:support@edbb.com).

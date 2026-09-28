@@ -1,0 +1,39 @@
+---
+title: "Understand EDBB service emails"
+sidebarTitle: "Service emails"
+description: "Understand EDBB emails about VPS access, traffic, upgrades and billing. Check what happened, which service is affected and whether you need to take action."
+---
+
+Service emails explain what has changed and whether you need to do anything. Read the body as well as the subject, and check which VPS or invoice it refers to.
+
+## Common notifications
+
+| Email about | What to check or do |
+| --- | --- |
+| New VPS access details | Save the login details and follow [your welcome email](/check-your-inbox). If it is missing, use [access recovery](/no-email-received). |
+| 100 GB starter traffic or a pool top-up | The traffic is in your account's shared pool. Assign it to a VPS before expecting that VPS's allowance to increase. |
+| Traffic usage approaching the limit | Check that VPS's remaining allowance and arrange more traffic if needed. |
+| Low Traffic Pool balance | Refill the shared reserve if you want to keep using it. A low pool balance does not necessarily mean a VPS has run out of traffic. |
+| Network speed restriction | Check the affected VPS and [restore its traffic allowance](/faq/traffic-bandwidth/exceeding-monthly-included-traffic). |
+| RAM or vCPU upgrade ready | Follow the activation instructions. A full shutdown and power-on is needed; a restart inside the operating system is not enough. |
+| IPv4 address added or changed | Configure the address inside the operating system. An assignment in the panel is not the same as a working network configuration. |
+| Invoice or payment reminder | Check the amount, due date and payment status in the panel. See [billing and renewals](/faq/billing-lifecycle/billing-workflow). |
+| Abuse notification | Investigate and [reply to the notice](/misc/responding-to-abuse-complaints), following its instructions and deadline. |
+
+## Pool traffic and VPS traffic are different
+
+A pool top-up adds traffic to the account's reserve. It does not automatically assign traffic to a VPS or restore a rate-limited VPS's speed.
+
+Assign traffic manually or use Auto-Hydration when it is enabled and its conditions are met. Auto-Hydration uses the existing pool balance; it does not purchase more traffic. See [Traffic Pool](/faq/traffic-bandwidth/traffic-pool).
+
+## Ready does not always mean active
+
+For CPU or RAM changes, follow the [power-cycle procedure](/vps-management/power-cycle-or-reboot-a-vps). For extra IPv4 addresses, follow [Linux IP configuration](/faq/ip-addresses/configure-additional-ip-linux) or your Windows adapter settings.
+
+When the primary IPv4 address changes, the old address stops working immediately. Use the [IP-change guide](/faq/ip-addresses/change-ip-address) and console access to update the configuration.
+
+## Check the current status
+
+An email describes the situation when it was sent. Sign in to the [EDBB Control Panel](https://my.edbb.com/clientarea.php) to check the latest service, traffic and invoice status.
+
+If you are unsure what a message means, email [support@edbb.com](mailto:support@edbb.com) with its subject and the affected service. Do not include passwords or authentication codes.

@@ -10,14 +10,14 @@ description: "Diagnose a blank Remote Desktop session, compare console access an
 <span id="solution-1-modify-the-windows-registry" />
 <span id="solution-2-use-alternative-rdp-clients" />
 
-A black RDP screen can have several causes. First check whether the Windows desktop is visible through the [EDBB VNC console](/vps-management/enable-vnc-server). That helps separate a guest login/display problem from an RDP client or transport issue.
+A black RDP screen can have several causes. First check whether the Windows desktop is visible through the [EDBB VNC console](/vps-management/enable-vnc-server). That helps separate a Windows login or display problem from an RDP client or transport issue.
 
 ## Start with reversible checks
 
 1. Record the Windows Server and RDP client versions and whether the problem affects one or all users.
 2. Disconnect and reconnect the RDP client. Signing out is different: it closes that user's applications, so save work first.
 3. Test a current supported client and check available server disk space and Windows event logs from the console.
-4. If the console is also blank or the server is unresponsive, investigate the guest before changing the client registry.
+4. If the console is also blank or the server is unresponsive, check Windows in the console before changing the client registry.
 
 ## Test TCP-only transport on a Windows client
 

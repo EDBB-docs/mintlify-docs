@@ -1,5 +1,7 @@
 # Remaining decisions and release requirements
 
+> This is the original rewrite handover. PR #2 and the bank-PDF follow-up have since merged. See [recovery-validation.md](recovery-validation.md) for the current correction branch, completed hosted audit and remaining release checks.
+
 ## Bank details resolved
 
 **EDBB bank-details PDF:** supplied and explicitly confirmed by Mehdi on 28 September 2026. The original, unchanged PDF is included as `assets/edbb-eur-bank-details.pdf` and linked from Payment methods. The one-page document identifies ED BACKBONE & CO, EUR and iBanFirst; visual/text checks and the IBAN checksum pass. Ownership/current payment suitability is based on the owner confirmation, not independent bank authentication.
@@ -12,7 +14,7 @@ The website report separately lists decisions about uptime, support availability
 
 - Traffic purchase: https://my.edbb.com/cart.php?gid=214, confirmed by Mehdi.
 - Paid qcow2 exports: same price and download process as EDIS — EUR 25, password-protected download for 30 days.
-- Annual billing: 12 months for the price of 11; preserve this exception to the earlier “no discounts” instruction.
+- Annual billing: 12 months for the price of 11; preserve this exception to the earlier “no discounts” instruction. Gerhard subsequently confirmed that the 11+1 offer uses a coupon and is excluded from refunds. The recovery branch applies that rule across the refund and annual-offer pages.
 - Billing window: Mehdi's final direction was to use the EDIS pattern. The page follows the published 00:00–05:15 CET schedule and the EDIS table's UTC equivalents. No invented daylight-saving rule was added. If the shared backend schedule later changes, update the shared-source page and EDBB together.
 
 ## Before approval/publication

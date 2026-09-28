@@ -4,17 +4,57 @@ sidebarTitle: "Report abuse"
 description: "Report abusive activity involving an EDBB address with timestamps, logs and relevant URLs. Send evidence to the abuse desk and remove unrelated secrets."
 ---
 
-<span id="build-a-complete-abuse-report" />
+## How to correctly report abuse
+
+Report suspected abuse involving EDBB VPS services to **[abuse@edbb.com](mailto:abuse@edbb.com)**. Include enough evidence to identify the affected service, understand what happened and investigate it. Examples include spam, phishing, malware, network attacks and intellectual-property complaints.
+
+Include the actual IP address and evidence, even if the IP registration lists another company. EDBB uses infrastructure from the EDIS Global resource pool.
+
 <span id="contact-&amp;-context" />
-<span id="evidence-&amp;-scope" />
 <span id="reach-the-edbb-abuse-team" />
+
+## Where to send your report
+
+Email **abuse@edbb.com** from an address that can receive replies. Please write in English, send one IP address per notification and use a clear subject such as `Abuse report: 192.0.2.10 — phishing — 2026-09-18 12:00 UTC`.
+
+For an existing report, reply in the same email thread and retain its reference number, if one was provided. Ordinary billing, login and configuration questions belong with [support](https://www.edbb.com/contact).
+
+<span id="build-a-complete-abuse-report" />
+<span id="evidence-&amp;-scope" />
+
+## What to include
+
+Include:
+
+- **The EDBB IP address** involved, and whether it is the source of traffic or the address hosting the reported content.
+- **The date and time**, with timezone or UTC offset; UTC is preferred. Include the start and end of a repeated incident if known.
+- **A factual description** of the activity and why you believe it breaches our [Acceptable Use Policy](/acceptable-use-policy), infringes your rights or is unlawful.
+- **Relevant evidence**, such as exact URLs, original email headers or timestamped log excerpts. Include source and destination IP addresses, ports and protocol where relevant.
+- **A reply-capable contact email** and your name or organization where relevant. Rights holders or representatives should explain their relationship to the complaint and provide the details needed to assess it.
+
+A static URL is useful for hosted content but is not required for network attacks or spam. A screenshot or IP-reputation score alone may not contain enough detail; include the underlying URLs, headers or logs where possible.
+
 <span id="supporting-material" />
-<span id="what-happens-next" />
 
-Report suspected abuse involving an EDBB IP to [abuse@edbb.com](mailto:abuse@edbb.com).
+## Evidence by incident type
 
-Include the affected IP address, the activity, timestamps with timezone, and relevant logs or URLs. Explain how the evidence relates to the reported address. Do not include passwords, private keys or unnecessary personal data.
+| Incident | Useful evidence |
+| --- | --- |
+| Spam | Original message with full headers, receiving timestamp and timezone. Attach the original email as an `.eml` file where possible. |
+| Phishing or malicious content | Exact page or download URL, observed IP address, time of access and a brief explanation. Provide the URL instead of attaching executable malware. |
+| Scanning, brute-force attempts or attacks | Timestamped log excerpts showing source and destination IPs, relevant ports, protocol and the observed behavior. State whether the activity is continuing. |
+| Copyright complaint | Identify the protected work and rights holder, provide a source or description of the original work, list the specific reported URLs, and explain your authority to report. |
+| Trademark complaint | Identify the trademark, registration details and number where applicable, the specific URLs and how the use infringes your rights. |
+| VPN exit traffic | Provide the observed public source IP, accurate timestamps and connection details. The IP may identify a VPN endpoint rather than the originating subscriber; do not assume the content is hosted on that VPS. |
 
-EDBB reviews reports under its [Acceptable Use Policy](/acceptable-use-policy). For ordinary billing or service help, contact [support@edbb.com](mailto:support@edbb.com).
+Include only evidence relevant to the incident. Do not send passwords, private keys or unrelated personal data. Do not download or attach suspected child sexual abuse material; report its location and your observations.
 
-If EDBB sent you an abuse notice, follow [responding to an abuse complaint](/misc/responding-to-abuse-complaints) and reply in that conversation with your investigation and remediation.
+## What happens next?
+
+EDBB reviews the report and may request further information. Valid complaints are normally forwarded to the account holder for investigation and remediation. Depending on the incident, we may take action to protect affected parties and the network.
+
+Serious or ongoing attacks, phishing, malware, scanning, spam or immediate network risk may require **immediate filtering, port blocking, suspension or other restrictions** under the AUP. Submitting a complaint does not itself establish a violation, and the action taken depends on the evidence and circumstances.
+
+## If you receive an abuse notice
+
+If EDBB has sent you an abuse notification about your service, see [Responding to an abuse complaint](/misc/responding-to-abuse-complaints) for the steps to take and how to reply.
