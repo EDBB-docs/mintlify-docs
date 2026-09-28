@@ -52,17 +52,46 @@ After payment is confirmed, assign traffic using **Manual Hydration**: **+100 GB
   Check the monthly refill date before assigning a large amount. Assigned traffic expires at that refill even if unused. Purchasing alone does not assign traffic to a VPS.
 </Warning>
 
-## Auto-Hydration
+### Example: assign 100 GB manually
 
-<Frame caption="Use the Auto Hydration dropdown to choose an increment, or Off for manual assignments only.">
+1. Under **Manual Hydration**, choose **+100**.
+2. Check that **Selected** reads **100 GB**, then click **Assign Traffic** once.
+3. Wait for the success message and check both balances. In this example, the shared pool falls from **1,500 GB to 1,400 GB**, while the VPS allowance rises from **20,480 GB to 20,580 GB**. Usage remains separate from the allowance.
+4. Open **Hydration log** to check the assignment entry.
+
+<Frame caption="After one 100 GB assignment: the pool has 1,400 GB and the VPS allowance is 20,580 GB.">
   <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
-    <img src="/assets/vps-guides/traffic-auto.png" alt="Auto Hydration dropdown set to Off manual only" width="240" />
+    <img src="/assets/vps-guides/traffic-assigned.png" alt="Overall Traffic and Traffic Pool after a successful 100 GB manual assignment" width="265" />
   </div>
 </Frame>
+
+## Auto-Hydration
+
+
 
 Enable Auto-Hydration separately for each VPS and select **100 GB**, **200 GB**, **300 GB** or **500 GB**. At **99% of the current allowance**, the selected amount is assigned from the pool if enough balance is available.
 
 The current allowance includes Plan Traffic and traffic already assigned during the cycle. Auto-Hydration uses existing pool balance; it never purchases traffic automatically.
+
+### Turn on automatic 100 GB assignments
+
+Select **Auto: +100 GB** in the **Auto Hydration** dropdown. The selection saves immediately. Check that the status says **Automatically add 100GB at 99% usage.** Selecting this option does not itself assign 100 GB; it sets the increment for the next threshold-triggered assignment.
+
+<Frame caption="ON: the dropdown and green status confirm automatic 100 GB assignments at 99% usage.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/vps-guides/traffic-auto-on.png" alt="Auto Hydration set to Auto plus 100 GB with the automatic assignment status" width="397" />
+  </div>
+</Frame>
+
+### Turn Auto-Hydration off
+
+Select **Off (manual only)**. The status changes to **Manage pool manually.** The 100 GB already assigned stays in the VPS allowance until its monthly refill; switching automation off does not return it to the pool.
+
+<Frame caption="OFF: future assignments are manual. Previously assigned traffic is unchanged.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/vps-guides/traffic-auto-off.png" alt="Auto Hydration set to Off manual only with Manage pool manually status" width="397" />
+  </div>
+</Frame>
 
 ## Read the logs
 

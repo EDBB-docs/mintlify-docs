@@ -6,79 +6,65 @@ description: "Turn VNC on or off from the EDBB Control Panel so you can reach th
 
 ## Enable VNC for Console Access
 
-<Info>
-  VNC provides a screen-and-keyboard view of your VPS even when SSH or RDP is unavailable. Enable it only while you need interactive console access and turn it off afterward.
-</Info>
+VNC gives you a screen-and-keyboard connection to the VPS even when SSH or RDP is unavailable. Open your VPS in the [Control Panel](https://my.edbb.com/clientarea.php). The controls are in the left-hand quick-action column.
 
----
+<Frame caption="Find VNC Off and Open Console below the power controls.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/control-panel/quick-actions.png" alt="Left-hand quick actions with power restart VNC and Open Console controls" width="191" />
+  </div>
+</Frame>
 
 ## What You’ll Need
 
-
-###  Control Panel Access
-
-Sign in to the <a href="https://my.edbb.com/clientarea.php" target="_blank">EDBB Control Panel</a> and open the VPS you want to manage.
-
-
-###  Maintenance Window
-
-Plan a brief window—it’s best to enable VNC only when you’re actively using it.
-
-
-###  Modern Browser or VNC Client
-
-You can use the built-in <strong>Open Console</strong> button (browser-based) or a desktop VNC client such as RealVNC/TightVNC.
-
----
+Use your signed-in panel session and a running VPS. Enable VNC while you need interactive console access, then disable it afterward. You can use **Open Console** in your browser or a desktop VNC viewer.
 
 ## Step 1 – Toggle VNC
 
-<Steps>
-  <Step title="Open the quick action menu">
-    In the service Control Panel, locate the quick action panel. Click the arrow next to the red <strong>VNC Off</strong> button and choose <strong>Enable VNC</strong>.
-    ![VNC access controls in the quick action panel](/assets/enable-vnc.png)
-  </Step>
-  <Step title="Wait for VNC to turn on">
-    The button turns green and displays <strong>VNC On</strong>. The panel now shows the VNC hostname and password for desktop clients.
-  </Step>
-</Steps>
+Open the arrow beside **VNC Off** and select **Enable VNC**.
 
-![VNC access controls in the quick action panel](/assets/VNC-info.png)
+<Frame caption="Open the dropdown and choose Enable VNC.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/panel-workflows/vnc-enable.png" alt="VNC Off dropdown with Enable VNC action" width="173" />
+  </div>
+</Frame>
 
----
+Wait for **VNC On** and an enabled **Open Console** button. The panel also shows connection details for desktop viewers. Keep those details private.
+
+<Frame caption="VNC On means console access is enabled; Open Console is now available.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/panel-workflows/vnc-on.png" alt="Green VNC On control and enabled Open Console button" width="168" />
+  </div>
+</Frame>
 
 ## Step 2 – Open the Console
 
-- Click <strong>Open Console</strong> to launch the browser-based console. No password is required for this view—just click inside the window to capture keyboard and mouse input.
-- Prefer a desktop client? Copy the VNC hostname and password shown in the panel and connect using RealVNC, TightVNC, or any compatible viewer.
+Click **Open Console**. A new browser tab opens the VPS display through your signed-in panel session. Click inside the display to send keyboard input. A Linux login prompt still requires your operating-system credentials.
 
-![Open console](/assets/vnc-console.png)
----
+<Frame caption="Example: a working browser console showing the Debian login prompt.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/panel-workflows/vnc-console.png" alt="Browser VNC display showing Debian GNU Linux 13 and its login prompt" />
+  </div>
+</Frame>
+
+The side handle opens the console toolbar, where you can find extra keys, clipboard, full-screen, settings and disconnect controls.
 
 ## Step 3 – Disable VNC When Finished
 
-<Steps>
-  <Step title="Toggle VNC off">
-    Open the dropdown beside <strong>VNC On</strong> and choose <strong>Disable VNC</strong> once you’re done troubleshooting or installing software.
-  </Step>
-  <Step title="Confirm access paths">
-    After disabling VNC, reconnect using SSH or RDP as normal. The console will no longer be accessible until you enable VNC again.
-  </Step>
-</Steps>
+Return to the panel, open the arrow beside **VNC On**, and select **Disable VNC**.
 
-<Warning>
-  Leaving VNC enabled exposes an additional attack surface. Disable it when you’re finished to keep the VPS secure.
-</Warning>
+<Frame caption="Choose Disable VNC when your console work is finished.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/panel-workflows/vnc-disable.png" alt="VNC On dropdown with Disable VNC action" width="173" />
+  </div>
+</Frame>
 
-You can now confidently toggle VNC on and off whenever you need direct console access to your EDBB VPS.
+Check that **VNC Off** is shown and **Open Console** is disabled. Use SSH or RDP for normal access afterward.
 
 ## Desktop VNC Client Instructions
 
-Connect to your server using your preferred **VNC Viewer** (for example: RealVNC, TightVNC, or UltraVNC).
+1. Enable VNC in the panel.
+2. Copy the **VNC Hostname**, including its port, into your VNC viewer.
+3. Use the VNC password shown in the panel. This is separate from your operating-system login.
+4. Connect, complete your console work, then disable VNC in the panel.
 
-1. **Open your VNC Client** on your computer.
-2. **Enter the VNC Server address and port** shown in the **Information card** (e.g. `your-server-ip:5901`).
-3. **Use the VNC password** provided in **Step 1 – Start VNC**.
-4. Click **Connect** to establish the session.
-
- *Tip:* If the connection fails, make sure the Rescue System or VPS is running.
+For connection problems, see [RealVNC disconnects](/misc/realvnc-disconnects). For boot media, see [Mount an ISO](/vps-management/mount-iso-image).

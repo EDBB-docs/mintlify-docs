@@ -14,6 +14,14 @@ Cloud-Init is a lightweight framework baked into many Linux templates. On first 
 
 ---
 
+Open **Installation → Custom Image** for the QCOW2 workflow. The normal view provides password and public-key fields; Expert mode exposes a user-data editor.
+
+<Frame caption="Custom Image overview: QCOW2 upload, access settings, firmware choice and the erase acknowledgement.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/panel-workflows/cloud-init-overview.png" alt="Cloud Init QCOW2 upload screen with Expert mode off and Proceed disabled" />
+  </div>
+</Frame>
+
 ## Why Use Cloud-Init
 
 - **Automated onboarding** – preconfigure users, passwords, SSH keys, and services.
@@ -53,13 +61,17 @@ Confirm the image boots locally and note its checksum. This helps you detect cor
   <Step title="Upload the qcow2 file">
     Drag & drop your qcow2 (or click <em>browse</em>). The Control Panel stores the image temporarily for this reinstall.
 
-<Frame>
-![Upload custom Cloud-Init image](/assets/vps-upload-iso.png)
-</Frame>
+
 
   </Step>
   <Step title="Configure Expert mode (optional)">
-    Toggle <strong>Expert mode</strong> if you want to paste Cloud-Init user-data or SSH keys. Supply a strong password—or rely on keys only—and tick the confirmation acknowledging that the disk will be erased.
+    Toggle <strong>Expert mode</strong> to replace the simple password/key fields with the <strong>Cloud-Init "user_data"</strong> editor. Supply the full configuration, including the access credentials you need. Review the optional firmware setting, then acknowledge that the disk will be erased.
+
+<Frame caption="Expert mode with a short illustrative YAML example. Configure account access as well before installing.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/panel-workflows/cloud-init-expert.png" alt="Expert mode enabled with sample cloud config user-data and erase acknowledgement" width="450" />
+  </div>
+</Frame>
   </Step>
   <Step title="Start the installation">
     Click <strong>Proceed</strong>. The VPS is rebuilt from your qcow2 image and executes the supplied Cloud-Init directives on first boot.

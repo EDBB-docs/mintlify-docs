@@ -7,10 +7,18 @@ description: "Load recovery tools or custom installers by mounting an ISO direct
 ## Mount ISO Images from the Control Panel
 
 <Info>
-  Mounting an ISO temporarily changes the boot order. Be ready for the VPS to reboot and save any work before you proceed.
+  Mounting attaches installation or recovery media. Selecting **Force reset & boot from selected ISO** also restarts the VPS. Save your work before choosing that option.
 </Info>
 
 ---
+
+Open **Installation → ISO Boot** to find the media selector and mounting controls.
+
+<Frame caption="Overview of the ISO Boot screen. The custom-image filename is a demo value.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/panel-workflows/iso-overview.png" alt="ISO Boot overview showing library media selection and URL download" />
+  </div>
+</Frame>
 
 ## Before You Start
 
@@ -22,7 +30,7 @@ Confirm you can sign in to the <a href="https://my.edbb.com/clientarea.php" targ
 
 ###  Maintenance Window
 
-Plan a short outage—the VPS restarts when the ISO is attached.
+Plan a short outage if you will force-reset or restart the VPS to boot from the ISO.
 
 
 ###  Console Ready
@@ -45,7 +53,11 @@ Enable VNC via the quick actions (Server On column) or follow the <a href="/vps-
   </Step>
 </Steps>
 
-![EDBB ISO library selection](/assets/vps-mount-iso.png)
+<Frame caption="Leaving Force reset unchecked attaches media without requesting a forced restart.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/panel-workflows/iso-mount.png" alt="ISO selector and Force reset checkbox above Mount ISO" width="334" />
+  </div>
+</Frame>
 
 ---
 
@@ -69,16 +81,20 @@ Enable VNC via the quick actions (Server On column) or follow the <a href="/vps-
 
 <Steps>
   <Step title="Return to ISO Boot">
-    Go back to <strong>Installation → ISO Boot</strong>.
+    Return to the VPS control panel and find <strong>Unmount ISO</strong> in the left-hand quick-action column.
   </Step>
   <Step title="Unmount">
-    Click <strong>Unmount</strong> (or switch to <strong>Boot from local disk</strong>) so the VPS boots normally next time.
+    Click <strong>Unmount ISO</strong>. Check that the sidebar CD-ROM field returns to <strong>Empty</strong>.
   </Step>
   <Step title="Reboot if needed">
-    Use the <strong>Server On</strong> menu to restart the VPS from disk and disable VNC if you no longer need console access.
+    Use <strong>Restart → Restart VPS</strong> if a restart from disk is needed, then disable VNC when finished.
   </Step>
 </Steps>
 
 Unmounting ensures the VPS returns to its local disk on the next restart.
 
-![Unmount ISO option in the portal](/assets/un-mount-new.png)
+<Frame caption="The mounted filename appears beneath Unmount ISO in the left column.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/panel-workflows/iso-unmount.png" alt="Unmount ISO button with the mounted SystemRescue filename" width="168" />
+  </div>
+</Frame>

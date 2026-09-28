@@ -16,6 +16,14 @@ description: "Download a compatible custom ISO through the EDBB Installation tab
 
 ---
 
+Open **Installation → ISO Boot**. This screen contains both the image selector and **Download ISO from URL**.
+
+<Frame caption="ISO Boot contains mounting controls above the custom URL download form. The filename uses a demo value.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/panel-workflows/iso-overview.png" alt="ISO Boot overview with Mount ISO Image and Download ISO from URL sections" />
+  </div>
+</Frame>
+
 ## Quick Health Check
 
 
@@ -41,24 +49,26 @@ Keep the portal console (or your VNC client) ready—you’ll need it to interac
 ## Upload the ISO to the Control Panel
 
 <Steps>
-  <Step title="Open Installation → Custom Image">
-    Sign in to the <a href="https://my.edbb.com/clientarea.php" target="_blank" rel="noreferrer">EDBB Control Panel</a>, open your VPS, and switch to <strong>Installation</strong>. Choose the <strong>Custom Image</strong> tab.
+  <Step title="Open Installation → ISO Boot">
+    Sign in to the <a href="https://my.edbb.com/clientarea.php" target="_blank" rel="noreferrer">EDBB Control Panel</a>, open your VPS, and switch to <strong>Installation</strong>. Choose the <strong>ISO Boot</strong> tab.
   </Step>
   <Step title="Paste the ISO URL">
-    Select <strong>Download ISO</strong>, paste the direct link (the documentation-only example <code>https://cdn.example.com/os/custom.iso</code> must be replaced with your real image URL), and confirm.
+    In <strong>Download ISO from URL</strong>, paste the direct link (the documentation-only example <code>https://cdn.example.com/os/custom.iso</code> must be replaced with your real image URL), then click <strong>Download ISO from another server</strong>.
   </Step>
   <Step title="Wait for the transfer">
-    The Control Panel downloads the file into your account. Leave the page open until the status changes to <strong>Ready</strong>.
+    The Control Panel downloads the file into your account. Wait for the transfer to finish, then find the downloaded file in the ISO selector.
 
-<Frame>
-![Custom ISO download in the Installation tab](/assets/vps-mount-iso-co.png)
+<Frame caption="Enter a direct URL to your ISO. This example.com address is a placeholder, not a downloadable image.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/panel-workflows/iso-url.png" alt="Download ISO from URL form with a documentation-only example address" width="334" />
+  </div>
 </Frame>
 
   </Step>
 </Steps>
 
 <Info>
-  Completed uploads receive an internal filename such as <code>xxxx/iso/KVM_custom_12345.iso</code>. Jot this down—you will select it in the mounting step.
+  Completed uploads receive an internal filename based on the service ID, such as <code>kvm_DEMO.iso</code>. Jot this down—you will select it in the mounting step.
 </Info>
 
 ---
@@ -77,6 +87,12 @@ Keep the portal console (or your VNC client) ready—you’ll need it to interac
   </Step>
 </Steps>
 
+<Frame caption="Choose the downloaded file in ISO. Check Force reset only when ready to reboot.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/panel-workflows/iso-mount.png" alt="ISO selector Force reset checkbox and Mount ISO button" width="334" />
+  </div>
+</Frame>
+
 Need a refresher on console controls or unmounting? Review the <a href="/vps-management/mount-iso-image">Mount ISO</a> guide.
 
 ---
@@ -84,7 +100,7 @@ Need a refresher on console controls or unmounting? Review the <a href="/vps-man
 ## Retention - Cleanup
 
 - Custom ISOs stay available for **24 hours**. Re-upload them if you need another session later.
-- For sensitive media, remove the ISO manually once you finish the installation.
+- Unmount the ISO once you finish. Unmounting detaches the media; it is not proof that a retained copy has been deleted. Ask support if sensitive media needs earlier removal.
 - Keep local copies—expired files are purged automatically and cannot be restored.
 
 <Warning>
