@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="430" viewBox="0 0 1080 430" role="img" aria-label="Illustrative daily and cumulative VPS traffic over thirty days">
+<rect width="1080" height="430" rx="16" fill="#0b1830"/>
+<g font-family="Arial, sans-serif">
+<text x="32" y="42" fill="#ffffff" font-size="23" font-weight="700">Traffic over 30 days</text>
+<text x="1048" y="41" text-anchor="end" fill="#5eead4" font-size="14">ILLUSTRATIVE DATA</text>
+<rect x="32" y="66" width="488" height="307" rx="10" fill="#12243e"/>
+<text x="54" y="100" fill="white" font-size="18" font-weight="600">Daily traffic [GB]</text>
+<path d="M87,320.0h408" stroke="#2b3e56"/>
+<text x="77" y="324.0" fill="#a9bad1" font-size="12" text-anchor="end">0</text>
+<path d="M87,272.0h408" stroke="#2b3e56"/>
+<text x="77" y="276.0" fill="#a9bad1" font-size="12" text-anchor="end">20</text>
+<path d="M87,224.0h408" stroke="#2b3e56"/>
+<text x="77" y="228.0" fill="#a9bad1" font-size="12" text-anchor="end">40</text>
+<path d="M87,176.0h408" stroke="#2b3e56"/>
+<text x="77" y="180.0" fill="#a9bad1" font-size="12" text-anchor="end">60</text>
+<path d="M87,128.0h408" stroke="#2b3e56"/>
+<text x="77" y="132.0" fill="#a9bad1" font-size="12" text-anchor="end">80</text>
+<text x="87.0" y="346" text-anchor="middle" fill="#a9bad1" font-size="12">Day 1</text>
+<text x="213.6206896551724" y="346" text-anchor="middle" fill="#a9bad1" font-size="12">Day 10</text>
+<text x="354.3103448275862" y="346" text-anchor="middle" fill="#a9bad1" font-size="12">Day 20</text>
+<text x="495.0" y="346" text-anchor="middle" fill="#a9bad1" font-size="12">Day 30</text>
+<rect x="89.0" y="291.2" width="9" height="28.799999999999997" rx="2" fill="#2dd4bf"/>
+<rect x="102.6" y="284.0" width="9" height="36.0" rx="2" fill="#2dd4bf"/>
+<rect x="116.2" y="276.8" width="9" height="43.2" rx="2" fill="#2dd4bf"/>
+<rect x="129.8" y="286.4" width="9" height="33.599999999999994" rx="2" fill="#2dd4bf"/>
+<rect x="143.4" y="267.2" width="9" height="52.800000000000004" rx="2" fill="#2dd4bf"/>
+<rect x="157.0" y="252.8" width="9" height="67.19999999999999" rx="2" fill="#2dd4bf"/>
+<rect x="170.6" y="269.6" width="9" height="50.400000000000006" rx="2" fill="#2dd4bf"/>
+<rect x="184.2" y="279.2" width="9" height="40.8" rx="2" fill="#2dd4bf"/>
+<rect x="197.8" y="262.4" width="9" height="57.599999999999994" rx="2" fill="#2dd4bf"/>
+<rect x="211.4" y="245.6" width="9" height="74.4" rx="2" fill="#2dd4bf"/>
+<rect x="225.0" y="204.8" width="9" height="115.19999999999999" rx="2" fill="#2dd4bf"/>
+<rect x="238.6" y="164.0" width="9" height="156.0" rx="2" fill="#2dd4bf"/>
+<rect x="252.2" y="216.8" width="9" height="103.19999999999999" rx="2" fill="#2dd4bf"/>
+<rect x="265.8" y="248.0" width="9" height="72.0" rx="2" fill="#2dd4bf"/>
+<rect x="279.4" y="255.2" width="9" height="64.80000000000001" rx="2" fill="#2dd4bf"/>
+<rect x="293.0" y="238.4" width="9" height="81.6" rx="2" fill="#2dd4bf"/>
+<rect x="306.6" y="226.4" width="9" height="93.6" rx="2" fill="#2dd4bf"/>
+<rect x="320.2" y="195.2" width="9" height="124.80000000000001" rx="2" fill="#2dd4bf"/>
+<rect x="333.8" y="149.60000000000002" width="9" height="170.39999999999998" rx="2" fill="#2dd4bf"/>
+<rect x="347.4" y="180.8" width="9" height="139.2" rx="2" fill="#2dd4bf"/>
+<rect x="361.0" y="219.2" width="9" height="100.80000000000001" rx="2" fill="#2dd4bf"/>
+<rect x="374.6" y="233.6" width="9" height="86.4" rx="2" fill="#2dd4bf"/>
+<rect x="388.2" y="250.4" width="9" height="69.6" rx="2" fill="#2dd4bf"/>
+<rect x="401.8" y="240.8" width="9" height="79.19999999999999" rx="2" fill="#2dd4bf"/>
+<rect x="415.4" y="209.60000000000002" width="9" height="110.39999999999999" rx="2" fill="#2dd4bf"/>
+<rect x="429.0" y="173.60000000000002" width="9" height="146.39999999999998" rx="2" fill="#2dd4bf"/>
+<rect x="442.6" y="212.0" width="9" height="108.0" rx="2" fill="#2dd4bf"/>
+<rect x="456.2" y="243.2" width="9" height="76.80000000000001" rx="2" fill="#2dd4bf"/>
+<rect x="469.8" y="257.6" width="9" height="62.400000000000006" rx="2" fill="#2dd4bf"/>
+<rect x="483.4" y="264.8" width="9" height="55.199999999999996" rx="2" fill="#2dd4bf"/>
+<rect x="560" y="66" width="488" height="307" rx="10" fill="#12243e"/>
+<text x="582" y="100" fill="white" font-size="18" font-weight="600">Cumulative traffic [GB]</text>
+<path d="M615,320.0h408" stroke="#2b3e56"/>
+<text x="605" y="324.0" fill="#a9bad1" font-size="12" text-anchor="end">0</text>
+<path d="M615,272.0h408" stroke="#2b3e56"/>
+<text x="605" y="276.0" fill="#a9bad1" font-size="12" text-anchor="end">300</text>
+<path d="M615,224.0h408" stroke="#2b3e56"/>
+<text x="605" y="228.0" fill="#a9bad1" font-size="12" text-anchor="end">600</text>
+<path d="M615,176.0h408" stroke="#2b3e56"/>
+<text x="605" y="180.0" fill="#a9bad1" font-size="12" text-anchor="end">900</text>
+<path d="M615,128.0h408" stroke="#2b3e56"/>
+<text x="605" y="132.0" fill="#a9bad1" font-size="12" text-anchor="end">1200</text>
+<text x="615.0" y="346" text-anchor="middle" fill="#a9bad1" font-size="12">Day 1</text>
+<text x="741.6206896551724" y="346" text-anchor="middle" fill="#a9bad1" font-size="12">Day 10</text>
+<text x="882.3103448275863" y="346" text-anchor="middle" fill="#a9bad1" font-size="12">Day 20</text>
+<text x="1023.0" y="346" text-anchor="middle" fill="#a9bad1" font-size="12">Day 30</text>
+<polygon points="615,320 615.0,318.08 629.0689655172414,315.68 643.1379310344828,312.8 657.2068965517242,310.56 671.2758620689655,307.04 685.3448275862069,302.56 699.4137931034483,299.2 713.4827586206897,296.48 727.551724137931,292.64 741.6206896551724,287.68 755.6896551724137,280.0 769.7586206896551,269.6 783.8275862068965,262.72 797.8965517241379,257.92 811.9655172413793,253.6 826.0344827586207,248.16 840.1034482758621,241.92000000000002 854.1724137931035,233.6 868.2413793103449,222.24 882.3103448275863,212.96 896.3793103448276,206.24 910.448275862069,200.48 924.5172413793103,195.84 938.5862068965517,190.56 952.655172413793,183.2 966.7241379310344,173.44 980.7931034482758,166.24 994.8620689655172,161.12 1008.9310344827586,156.96 1023.0,153.28 1023,320" fill="#14b8a6" opacity="0.12"/>
+<polyline points="615.0,318.08 629.0689655172414,315.68 643.1379310344828,312.8 657.2068965517242,310.56 671.2758620689655,307.04 685.3448275862069,302.56 699.4137931034483,299.2 713.4827586206897,296.48 727.551724137931,292.64 741.6206896551724,287.68 755.6896551724137,280.0 769.7586206896551,269.6 783.8275862068965,262.72 797.8965517241379,257.92 811.9655172413793,253.6 826.0344827586207,248.16 840.1034482758621,241.92000000000002 854.1724137931035,233.6 868.2413793103449,222.24 882.3103448275863,212.96 896.3793103448276,206.24 910.448275862069,200.48 924.5172413793103,195.84 938.5862068965517,190.56 952.655172413793,183.2 966.7241379310344,173.44 980.7931034482758,166.24 994.8620689655172,161.12 1008.9310344827586,156.96 1023.0,153.28" fill="none" stroke="#2dd4bf" stroke-width="3" stroke-linejoin="round"/>
+<text x="32" y="407" fill="#cbd5e1" font-size="14">Example total: 1,042 GB · Sample values for explanation; not the test VPS’s measured usage.</text>
+</g></svg>

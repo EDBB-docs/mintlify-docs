@@ -4,89 +4,142 @@ sidebarTitle: "Control panel"
 description: "Find the EDBB Dashboard, Installation, Traffic, Settings, rDNS, Network and Upgrades tabs, with links to the relevant service-management instructions."
 ---
 
+Manage your VPS from the [EDBB Control Panel](https://my.edbb.com/clientarea.php). Open **Services**, select your VPS, and use this guide to find the right control.
+
 ## Meet your VPS Control Panel
 
-The control panel groups service management into these tabs:
-**Dashboard, Installation, Traffic, Settings, rDNS, Network, Upgrades**
-while a quick-action column on the left keeps power and console controls only one click away.
+The panel has three main areas:
 
-<Frame>
-![EDBB VPS Control Panel](/assets/Control%20panel.png)
+| Area | What you will find |
+| --- | --- |
+| **Left: quick actions** | Power, restart and VNC console controls. |
+| **Center: service tabs** | Dashboard, Installation, Traffic, Settings, rDNS, Network and Upgrades. |
+| **Right: service summary** | Service details, IP addresses, Support PIN, upgrades and billing actions. |
+
+<Frame caption="Use the tabs to move between tasks for the selected VPS.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/control-panel/navigation.png" alt="EDBB navigation tabs: Dashboard, Installation, Traffic, Settings, rDNS, Network and Upgrades" />
+  </div>
 </Frame>
 
----
+The screenshots below show an example service. Plan resources, traffic allowances, balances and dates depend on your own VPS.
 
 ## Quick Actions - Console Access
 
+<Frame caption="Power and console controls stay in the left-hand column.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/control-panel/quick-actions.png" alt="Server On, Restart, VNC Off and disabled Open Console controls" width="191" />
+  </div>
+</Frame>
 
-###  Power Menu
+### Power Menu
 
-The green <strong>Server On</strong> button handles shutdowns and reboots. Open the dropdown to Stop or Restart your machine.
+**Server On** shows that the VPS is powered on. Clicking it opens the **Power Off** confirmation. When the VPS is off, the button reads **Server Off**; click it to start the VPS.
 
+The separate **Restart** dropdown offers:
 
-###  VNC Toggle
+- **Restart VPS** — restart the virtual machine; the panel indicates that VNC stays connected.
+- **Power Cycle VPS** — power off, then on again; VNC disconnects.
 
-Flip <strong>VNC</strong> on only when you need it. The button turns green while VNC is enabled, reminding you to disable it once remote work is finished.
+See [Restart and power cycle](/vps-management/power-cycle-or-reboot-a-vps) for the differences, confirmation screens and startup checks.
 
+### VNC Toggle
 
-###  Open Console
+Open **VNC Off** to find **Enable VNC** when you need console access. Use VNC only while you need it, then disable it when you finish.
 
-Open the embedded noVNC viewer to follow installation, use recovery media or inspect the server console. The button is unavailable while VNC is off.
+### Open Console
 
----
+**Open Console** opens the browser-based console so you can follow boot or installation progress and use recovery tools. It is disabled while VNC is off, as shown above.
+
+Follow the [VNC console guide](/vps-management/enable-vnc-server) for access instructions.
 
 ## Control Panel Highlights
 
+### Service Summary
 
-###  Service Summary
+The right-hand sidebar identifies the selected service and shows its location, service ID, IPv4 and IPv6 details, CD-ROM state, installed OS, Support PIN and billing information. Copy buttons beside supported fields help avoid typing mistakes.
 
-The right-hand sidebar lists status, location, primary IPv4/IPv6 (with copy buttons), installed OS, Support PIN, billing cycle, and renewal dates.
+The service's **Active** badge and its runtime status are different: use **Running** or **Turned off** on the Dashboard to check whether the virtual machine is powered on.
 
+Use the [IP settings guide](/vps-management/ip-address-information) for networking and the [Support PIN guide](/vps-management/your-support-pin) when contacting support. Keep your Support PIN out of public screenshots.
 
-###  Live Screenshot
+### Live Screenshot
 
-Check the latest desktop image before connecting via RDP or VNC. Use it to confirm installs completed or login prompts are ready.
+The **Screenshot** card gives you a view of the VPS display before opening a console. Use its refresh button to request a newer preview. It can show boot messages, a login prompt, a desktop or the stopped-server screen.
 
+<Frame caption="Illustration: Tux is added for this guide. Your preview shows the actual VPS display.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/control-panel/console-tux-illustration.png" alt="Illustrated Screenshot card showing Tux on a black console screen" width="331" />
+  </div>
+</Frame>
 
-###  Traffic Dial
+A **Running** status means that the virtual machine is powered on; it does not guarantee that the operating system or your applications have finished starting.
 
-Monitor consumed vs. allocated traffic. The dial shows percentage used, remaining traffic, real values in GB, and the next refill date so you can plan ahead. An info banner warns when traffic is low or fully used.
+### Traffic Dial
 
+The **Traffic** card shows usage as a percentage and in GB, the monthly allowance, the refill timing and the current speed status.
 
-###  Traffic Pool Ledger
+<Frame caption="Monthly VPS traffic and the shared Traffic Pool are shown separately.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/control-panel/traffic-cards.png" alt="Dashboard Traffic card beside Traffic Pool balance and Auto Hydration status" />
+  </div>
+</Frame>
 
-Review the shared pool balance and assignment history. Use manual assignment or configure Auto-Hydration. Buying traffic adds it to the pool; assigning it makes it available to a VPS. See the [Traffic Pool guide](/faq/traffic-bandwidth/traffic-pool).
+For usage over time, open **Traffic** and inspect **Cumulative Traffic [GB]** and **Daily Traffic [GB]**.
 
+<Frame caption="Illustrative data: daily usage and its matching cumulative total over 30 days.">
+  <img src="/assets/control-panel/traffic-example.svg" alt="Illustrative traffic charts showing daily variation and a cumulative total of 1,042 GB over 30 days" />
+</Frame>
 
-###  Fast Maintenance
+Daily peaks help you spot unusually busy days; the cumulative chart shows how usage builds up. The example above is invented for explanation and does not represent the service shown in the screenshots. See [Traffic statistics](/faq/traffic-bandwidth/traffic-statistics) for the usage view.
 
-Shortcut buttons for <strong>Reinstall</strong> and <strong>IP Change</strong> now sit beneath the Control Panel cards. Use them to reinstall your OS or initiate random or bespoke IP address changes.
+### Traffic Pool Ledger
 
+The **Traffic Pool** card shows your shared reserve and Auto Hydration status. **TopUp** adds purchased traffic to the pool; it does not by itself assign that traffic to a VPS.
+
+In the **Traffic** tab, use **Manual Hydration** and **Assign Traffic**, or select an **Auto Hydration** option. **Hydration log** shows assignments; **Pool log** shows pool activity. See the [Traffic Pool guide](/faq/traffic-bandwidth/traffic-pool) before assigning traffic.
+
+### Configured Options
+
+<Frame caption="Review existing resource options before opening an upgrade.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/control-panel/configured-options.png" alt="Configured Options with Additional IPs, Drive Size Boost, RAM Upgrade, vCPU Upgrade and maintenance shortcuts" width="338" />
+  </div>
+</Frame>
+
+The card lists **Additional IPs**, **Drive Size Boost**, **RAM Upgrade** and **vCPU Upgrade**. It describes configured additions to your plan; it is not a live CPU or memory usage monitor. **Upgrade Now** opens the resource-upgrade flow.
+
+### Fast Maintenance
+
+Below the dashboard cards:
+
+- **Reinstall** opens Installation. Reinstalling erases existing data; [back up first](/backups), then follow the [reinstallation guide](/vps-management/reinstall-vps).
+- **IP Change** opens the IP-change ordering options. Review the [IP-change guide](/faq/ip-addresses/change-ip-address) before replacing an address used by your services.
 
 ### Upgrades & Cancellation
 
-The green <strong>Upgrade Plan</strong> button starts a plan upgrade; the red <strong>Request Cancellation</strong> button opens the guided termination dialogue. The "Upgrades" Tab allows for plan-upgrades and  resource upgrades (adding additional IP addresses, RAM, vCPU, drive boost)
+<Frame caption="Plan, renewal and cancellation actions are in the service sidebar.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/control-panel/service-actions.png" alt="Upgrade Plan, Create Invoice / Renew and Request Cancellation buttons" width="257" />
+  </div>
+</Frame>
 
-
-###  Configured Options
-
-Displays all additional resources and upgrades applied to your VPS:
-    - **Additional IPs:** shows the number of extra IPv4 addresses assigned.
-    - **Drive Size Boost:** total extra disk space added to your main storage.
-    - **RAM Upgrade:** amount of extra memory allocated.
-    - **vCPU Upgrade:** additional virtual CPU allocation; the CPU layout is a separate setting.
-
----
+- **Upgrade Plan** opens the [plan-upgrade flow](/faq/upgrades-downgrades/upgrade-plan).
+- **Create Invoice / Renew** opens renewal options. Check the next due date and [billing guide](/faq/billing-lifecycle/billing-workflow) before proceeding.
+- **Request Cancellation** opens the [cancellation process](/faq/billing-lifecycle/cancel-a-service). Review its timing and consequences before submitting.
 
 ## Tabs for Installation - Networking
 
-- **Installation** – start AutoInstall for Linux or Windows, mount helper ISOs, review Cloud-Init status, or upload custom media.
-- **Traffic** – inspect per-service usage graphs, refill timers, and the traffic pool ledger.
-- **Settings** – adjust CPU sockets vs. cores, BIOS type, boot order, NIC model, and keyboard layout.
-- **rDNS** – manage IPv4/IPv6 PTR records with instant validation.
-- **Network** – copy your IPv4/IPv6 assignments and gateways at a glance.
-- **Upgrades** – order add-on IPv4 addresses, RAM/CPU boosts, or full plan upgrades directly—no need to message Support.
+| Tab | Use it for | Detailed guide |
+| --- | --- | --- |
+| **Dashboard** | Check status, resources, display preview, traffic and configured options. | The dashboard tour above. |
+| **Installation** | Choose **Automated Installers**, **Custom Image** or **ISO Boot**. | [Reinstall](/vps-management/reinstall-vps), [custom images](/vps-management/bring-your-own-iso), [mount ISO](/vps-management/mount-iso-image), [Cloud-Init](/vps-management/cloud-init-vps-installation). |
+| **Traffic** | View usage graphs, assign pool traffic, configure Auto Hydration and inspect logs. | [Traffic statistics](/faq/traffic-bandwidth/traffic-statistics) and [Traffic Pool](/faq/traffic-bandwidth/traffic-pool). |
+| **Settings** | Adjust boot timeout, BIOS/UEFI, TPM, CPU layout, drivers, VNC keymap and description. | [Hardware settings](/vps-management/system-configuration-dialog) and [boot mode](/vps-management/efi-vs-bios-and-tpm). |
+| **rDNS** | Manage PTR records for reverse DNS. | [Reverse DNS](/faq/ip-addresses/reverse-dns). |
+| **Network** | Find assigned addresses, subnet/prefix information, gateways and resolver guidance. | [IP settings](/vps-management/ip-address-information) and [IPv6 configuration](/vps-management/ipv6-configuration). |
+| **Upgrades** | Choose **Upgrade Your Plan** or **Upgrade Now** for individual components. | [Upgrade options](/faq/upgrades-downgrades/upgrades). |
 
-<Info>
-  Bookmark the <a href="https://my.edbb.com/clientarea.php" target="_blank">EDBB Control Panel</a>. After signing in, open the top-right <strong>Account</strong> menu, choose <strong>Security Settings</strong>, and switch on multi-factor authentication to lock down access.
-</Info>
+Settings changes can affect boot and connectivity. Read the relevant guide before applying them. Additional IP addresses also need configuration inside the operating system; the **Network** tab provides the values to use.
+
+Bookmark the [Control Panel](https://my.edbb.com/clientarea.php). For a platform incident, check [infrastructure status](/getting-started/infrastructure-status); for help with your service, see [Contact support](/how-our-support-team-helps-you).
