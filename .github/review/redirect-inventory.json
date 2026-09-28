@@ -1,0 +1,487 @@
+[
+  {
+    "source": "/advanced-setup-guides/basic-ufw-debian-ubuntu",
+    "destination": "/advanced-setup-guides/ufw-firewall",
+    "permanent": true
+  },
+  {
+    "source": "/advanced-setup-guides/basic-ufw-debian-ubuntu.md",
+    "destination": "/advanced-setup-guides/ufw-firewall.md",
+    "permanent": true
+  },
+  {
+    "source": "/advanced-setup-guides/extend-hard-drive-windows-guide",
+    "destination": "/advanced-setup-guides/extend-windows-disk",
+    "permanent": true
+  },
+  {
+    "source": "/advanced-setup-guides/extend-hard-drive-windows-guide.md",
+    "destination": "/advanced-setup-guides/extend-windows-disk.md",
+    "permanent": true
+  },
+  {
+    "source": "/advanced-setup-guides/gui-versions-of-ubuntu-debian",
+    "destination": "/advanced-setup-guides/ubuntu-desktop",
+    "permanent": true
+  },
+  {
+    "source": "/advanced-setup-guides/gui-versions-of-ubuntu-debian.md",
+    "destination": "/advanced-setup-guides/ubuntu-desktop.md",
+    "permanent": true
+  },
+  {
+    "source": "/advanced-setup-guides/manually-resize-disk-after-plan-upgrade-on-live-linux-systems",
+    "destination": "/advanced-setup-guides/resize-linux-disk",
+    "permanent": true
+  },
+  {
+    "source": "/advanced-setup-guides/manually-resize-disk-after-plan-upgrade-on-live-linux-systems.md",
+    "destination": "/advanced-setup-guides/resize-linux-disk.md",
+    "permanent": true
+  },
+  {
+    "source": "/advanced-setup-guides/script-based-mikrotik-router-os-installation-guide-winbox",
+    "destination": "/advanced-setup-guides/install-mikrotik-chr",
+    "permanent": true
+  },
+  {
+    "source": "/advanced-setup-guides/script-based-mikrotik-router-os-installation-guide-winbox.md",
+    "destination": "/advanced-setup-guides/install-mikrotik-chr.md",
+    "permanent": true
+  },
+  {
+    "source": "/api-reference/openapi.json",
+    "destination": "/faq/service-api",
+    "permanent": true
+  },
+  {
+    "source": "/enable-vnc-server",
+    "destination": "/vps-management/enable-vnc-server",
+    "permanent": true
+  },
+  {
+    "source": "/everything-vps",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/everything-vps.md",
+    "destination": "/index.md",
+    "permanent": true
+  },
+  {
+    "source": "/faq/billing-lifecycle/accidental-renewal-convert-payment-to-credit",
+    "destination": "/faq/billing-lifecycle/accidental-renewal",
+    "permanent": true
+  },
+  {
+    "source": "/faq/billing-lifecycle/accidental-renewal-convert-payment-to-credit.md",
+    "destination": "/faq/billing-lifecycle/accidental-renewal.md",
+    "permanent": true
+  },
+  {
+    "source": "/faq/billing-lifecycle/add-contact-receive-invoices-different-email",
+    "destination": "/faq/billing-lifecycle/invoice-contacts",
+    "permanent": true
+  },
+  {
+    "source": "/faq/billing-lifecycle/add-contact-receive-invoices-different-email.md",
+    "destination": "/faq/billing-lifecycle/invoice-contacts.md",
+    "permanent": true
+  },
+  {
+    "source": "/faq/billing-lifecycle/automated-vps-billing-workflow",
+    "destination": "/faq/billing-lifecycle/billing-workflow",
+    "permanent": true
+  },
+  {
+    "source": "/faq/billing-lifecycle/automated-vps-billing-workflow.md",
+    "destination": "/faq/billing-lifecycle/billing-workflow.md",
+    "permanent": true
+  },
+  {
+    "source": "/faq/billing-lifecycle/automatic-currency-conversion",
+    "destination": "/faq/billing-lifecycle/currency-conversion",
+    "permanent": true
+  },
+  {
+    "source": "/faq/billing-lifecycle/automatic-currency-conversion.md",
+    "destination": "/faq/billing-lifecycle/currency-conversion.md",
+    "permanent": true
+  },
+  {
+    "source": "/faq/billing-lifecycle/btc-payment-arrived-after-the-payment-window",
+    "destination": "/faq/billing-lifecycle/late-crypto-payment",
+    "permanent": true
+  },
+  {
+    "source": "/faq/billing-lifecycle/btc-payment-arrived-after-the-payment-window.md",
+    "destination": "/faq/billing-lifecycle/late-crypto-payment.md",
+    "permanent": true
+  },
+  {
+    "source": "/faq/billing-lifecycle/cryptocurrency-payments-confirmation-guide-edbb",
+    "destination": "/faq/billing-lifecycle/crypto-confirmations",
+    "permanent": true
+  },
+  {
+    "source": "/faq/billing-lifecycle/cryptocurrency-payments-confirmation-guide-edbb.md",
+    "destination": "/faq/billing-lifecycle/crypto-confirmations.md",
+    "permanent": true
+  },
+  {
+    "source": "/faq/billing-lifecycle/eu-vat-explained-if-and-how-much",
+    "destination": "/faq/billing-lifecycle/vat",
+    "permanent": true
+  },
+  {
+    "source": "/faq/billing-lifecycle/eu-vat-explained-if-and-how-much.md",
+    "destination": "/faq/billing-lifecycle/vat.md",
+    "permanent": true
+  },
+  {
+    "source": "/faq/billing-lifecycle/handling-blocked-cryptocurrency-payments-cryptomus",
+    "destination": "/faq/billing-lifecycle/blocked-crypto-payment",
+    "permanent": true
+  },
+  {
+    "source": "/faq/billing-lifecycle/handling-blocked-cryptocurrency-payments-cryptomus.md",
+    "destination": "/faq/billing-lifecycle/blocked-crypto-payment.md",
+    "permanent": true
+  },
+  {
+    "source": "/faq/billing-lifecycle/how-fast-instant-delivery",
+    "destination": "/faq/billing-lifecycle/provisioning-time",
+    "permanent": true
+  },
+  {
+    "source": "/faq/billing-lifecycle/how-fast-instant-delivery.md",
+    "destination": "/faq/billing-lifecycle/provisioning-time.md",
+    "permanent": true
+  },
+  {
+    "source": "/faq/billing-lifecycle/how-to-receive-monthly-consolidated-invoice",
+    "destination": "/faq/billing-lifecycle/consolidated-invoices",
+    "permanent": true
+  },
+  {
+    "source": "/faq/billing-lifecycle/how-to-receive-monthly-consolidated-invoice.md",
+    "destination": "/faq/billing-lifecycle/consolidated-invoices.md",
+    "permanent": true
+  },
+  {
+    "source": "/faq/billing-lifecycle/moving-services-to-different-client-account",
+    "destination": "/faq/billing-lifecycle/account-transfers",
+    "permanent": true
+  },
+  {
+    "source": "/faq/billing-lifecycle/moving-services-to-different-client-account.md",
+    "destination": "/faq/billing-lifecycle/account-transfers.md",
+    "permanent": true
+  },
+  {
+    "source": "/faq/ip-addresses/anycast-reverse-dns-nameserver-locations-vs-vps-location",
+    "destination": "/faq/ip-addresses/anycast-and-dns-location",
+    "permanent": true
+  },
+  {
+    "source": "/faq/ip-addresses/anycast-reverse-dns-nameserver-locations-vs-vps-location.md",
+    "destination": "/faq/ip-addresses/anycast-and-dns-location.md",
+    "permanent": true
+  },
+  {
+    "source": "/faq/ip-addresses/debugging-packet-loss-traceroute-mtr-windows",
+    "destination": "/faq/ip-addresses/diagnose-packet-loss",
+    "permanent": true
+  },
+  {
+    "source": "/faq/ip-addresses/debugging-packet-loss-traceroute-mtr-windows.md",
+    "destination": "/faq/ip-addresses/diagnose-packet-loss.md",
+    "permanent": true
+  },
+  {
+    "source": "/faq/ip-addresses/do-ip-addresses-change-during-upgrade-or-reinstall",
+    "destination": "/faq/ip-addresses/ip-addresses-after-upgrade-or-reinstall",
+    "permanent": true
+  },
+  {
+    "source": "/faq/ip-addresses/do-ip-addresses-change-during-upgrade-or-reinstall.md",
+    "destination": "/faq/ip-addresses/ip-addresses-after-upgrade-or-reinstall.md",
+    "permanent": true
+  },
+  {
+    "source": "/faq/ip-addresses/ip-can-not-be-reached-from-my-country",
+    "destination": "/faq/ip-addresses/country-reachability",
+    "permanent": true
+  },
+  {
+    "source": "/faq/ip-addresses/ip-can-not-be-reached-from-my-country.md",
+    "destination": "/faq/ip-addresses/country-reachability.md",
+    "permanent": true
+  },
+  {
+    "source": "/faq/ip-addresses/ip-location-incorrect-on-whatismyipaddresscom",
+    "destination": "/faq/ip-addresses/correct-geolocation",
+    "permanent": true
+  },
+  {
+    "source": "/faq/ip-addresses/ip-location-incorrect-on-whatismyipaddresscom.md",
+    "destination": "/faq/ip-addresses/correct-geolocation.md",
+    "permanent": true
+  },
+  {
+    "source": "/faq/ip-addresses/is-ip-spoofing-allowed-edbb-stance",
+    "destination": "/faq/ip-addresses/ip-spoofing",
+    "permanent": true
+  },
+  {
+    "source": "/faq/ip-addresses/is-ip-spoofing-allowed-edbb-stance.md",
+    "destination": "/faq/ip-addresses/ip-spoofing.md",
+    "permanent": true
+  },
+  {
+    "source": "/faq/ip-addresses/setting-up-reverse-pointers",
+    "destination": "/faq/ip-addresses/reverse-dns",
+    "permanent": true
+  },
+  {
+    "source": "/faq/ip-addresses/setting-up-reverse-pointers.md",
+    "destination": "/faq/ip-addresses/reverse-dns.md",
+    "permanent": true
+  },
+  {
+    "source": "/faq/ip-addresses/understanding-dns-systems",
+    "destination": "/faq/ip-addresses/anycast-and-dns-location",
+    "permanent": true
+  },
+  {
+    "source": "/faq/ip-addresses/understanding-dns-systems.md",
+    "destination": "/faq/ip-addresses/anycast-and-dns-location.md",
+    "permanent": true
+  },
+  {
+    "source": "/faq/ip-addresses/understanding-ip-address-location",
+    "destination": "/faq/ip-addresses/ip-location",
+    "permanent": true
+  },
+  {
+    "source": "/faq/ip-addresses/understanding-ip-address-location.md",
+    "destination": "/faq/ip-addresses/ip-location.md",
+    "permanent": true
+  },
+  {
+    "source": "/faq/is-port-25-open",
+    "destination": "/faq/port-25-smtp-rate-limit-policy",
+    "permanent": true
+  },
+  {
+    "source": "/faq/is-port-25-open.md",
+    "destination": "/faq/port-25-smtp-rate-limit-policy.md",
+    "permanent": true
+  },
+  {
+    "source": "/faq/traffic-bandwidth/dos-attacks/advisory-for-high-risk-clients",
+    "destination": "/faq/traffic-bandwidth/dos-attacks/high-risk-workloads",
+    "permanent": true
+  },
+  {
+    "source": "/faq/traffic-bandwidth/dos-attacks/advisory-for-high-risk-clients.md",
+    "destination": "/faq/traffic-bandwidth/dos-attacks/high-risk-workloads.md",
+    "permanent": true
+  },
+  {
+    "source": "/faq/traffic-bandwidth/dos-attacks/edbb-ddos-protection-overview",
+    "destination": "/faq/traffic-bandwidth/dos-attacks/ddos-protection",
+    "permanent": true
+  },
+  {
+    "source": "/faq/traffic-bandwidth/dos-attacks/edbb-ddos-protection-overview.md",
+    "destination": "/faq/traffic-bandwidth/dos-attacks/ddos-protection.md",
+    "permanent": true
+  },
+  {
+    "source": "/faq/traffic-bandwidth/how-to-investigate-and-stop-unusual-network-usage",
+    "destination": "/faq/traffic-bandwidth/investigate-network-usage",
+    "permanent": true
+  },
+  {
+    "source": "/faq/traffic-bandwidth/how-to-investigate-and-stop-unusual-network-usage.md",
+    "destination": "/faq/traffic-bandwidth/investigate-network-usage.md",
+    "permanent": true
+  },
+  {
+    "source": "/faq/traffic-bandwidth/traffic-pool-global-and-premium-traffic-zone",
+    "destination": "/faq/traffic-bandwidth/traffic-pool",
+    "permanent": true
+  },
+  {
+    "source": "/faq/traffic-bandwidth/traffic-stats-refill-explained",
+    "destination": "/faq/traffic-bandwidth/traffic-statistics",
+    "permanent": true
+  },
+  {
+    "source": "/faq/traffic-bandwidth/traffic-stats-refill-explained.md",
+    "destination": "/faq/traffic-bandwidth/traffic-statistics.md",
+    "permanent": true
+  },
+  {
+    "source": "/faq/upgrades-downgrades/cpu-cores-vs-cpu-sockets-in-vps-environments/how-to-check-cpu-cores-linux-vps",
+    "destination": "/faq/upgrades-downgrades/check-cpu-linux",
+    "permanent": true
+  },
+  {
+    "source": "/faq/upgrades-downgrades/cpu-cores-vs-cpu-sockets-in-vps-environments/how-to-check-cpu-cores-linux-vps.md",
+    "destination": "/faq/upgrades-downgrades/check-cpu-linux.md",
+    "permanent": true
+  },
+  {
+    "source": "/faq/upgrades-downgrades/cpu-cores-vs-cpu-sockets-in-vps-environments/how-to-check-cpu-cores-windows-vps",
+    "destination": "/faq/upgrades-downgrades/check-cpu-windows",
+    "permanent": true
+  },
+  {
+    "source": "/faq/upgrades-downgrades/cpu-cores-vs-cpu-sockets-in-vps-environments/how-to-check-cpu-cores-windows-vps.md",
+    "destination": "/faq/upgrades-downgrades/check-cpu-windows.md",
+    "permanent": true
+  },
+  {
+    "source": "/faq/upgrades-downgrades/cpu-cores-vs-cpu-sockets-in-vps-environments/understanding-cpu-cores-vs-sockets-in-vps",
+    "destination": "/faq/upgrades-downgrades/cpu-cores-and-sockets",
+    "permanent": true
+  },
+  {
+    "source": "/faq/upgrades-downgrades/cpu-cores-vs-cpu-sockets-in-vps-environments/understanding-cpu-cores-vs-sockets-in-vps.md",
+    "destination": "/faq/upgrades-downgrades/cpu-cores-and-sockets.md",
+    "permanent": true
+  },
+  {
+    "source": "/faq/upgrades-downgrades/is-it-possible-to-downgrade",
+    "destination": "/faq/upgrades-downgrades/downgrade-policy",
+    "permanent": true
+  },
+  {
+    "source": "/faq/upgrades-downgrades/is-it-possible-to-downgrade.md",
+    "destination": "/faq/upgrades-downgrades/downgrade-policy.md",
+    "permanent": true
+  },
+  {
+    "source": "/faq/upgrades-downgrades/requesting-qcow2-image-backup",
+    "destination": "/faq/upgrades-downgrades/qcow2-export",
+    "permanent": true
+  },
+  {
+    "source": "/faq/upgrades-downgrades/requesting-qcow2-image-backup.md",
+    "destination": "/faq/upgrades-downgrades/qcow2-export.md",
+    "permanent": true
+  },
+  {
+    "source": "/faq/upgrades-downgrades/will-i-lose-data-when-i-upgrade",
+    "destination": "/faq/upgrades-downgrades/upgrade-data-safety",
+    "permanent": true
+  },
+  {
+    "source": "/faq/upgrades-downgrades/will-i-lose-data-when-i-upgrade.md",
+    "destination": "/faq/upgrades-downgrades/upgrade-data-safety.md",
+    "permanent": true
+  },
+  {
+    "source": "/getting-started/QQQQ_check-your-inbox",
+    "destination": "/check-your-inbox",
+    "permanent": true
+  },
+  {
+    "source": "/getting-started/QQQQ_check-your-inbox.md",
+    "destination": "/check-your-inbox.md",
+    "permanent": true
+  },
+  {
+    "source": "/misc/extending-180-day-trial-version-of-windows",
+    "destination": "/misc/windows-server-evaluation",
+    "permanent": true
+  },
+  {
+    "source": "/misc/extending-180-day-trial-version-of-windows.md",
+    "destination": "/misc/windows-server-evaluation.md",
+    "permanent": true
+  },
+  {
+    "source": "/misc/fix-black-screen-windows-server",
+    "destination": "/misc/rdp-black-screen",
+    "permanent": true
+  },
+  {
+    "source": "/misc/fix-black-screen-windows-server.md",
+    "destination": "/misc/rdp-black-screen.md",
+    "permanent": true
+  },
+  {
+    "source": "/misc/fix-for-realvnc-closing-connection",
+    "destination": "/misc/realvnc-disconnects",
+    "permanent": true
+  },
+  {
+    "source": "/misc/fix-for-realvnc-closing-connection.md",
+    "destination": "/misc/realvnc-disconnects.md",
+    "permanent": true
+  },
+  {
+    "source": "/responding-to-abuse-complaints",
+    "destination": "/misc/responding-to-abuse-complaints",
+    "permanent": true
+  },
+  {
+    "source": "/ssh-security-hardening-guide",
+    "destination": "/getting-started/ssh-security-hardening",
+    "permanent": true
+  },
+  {
+    "source": "/vps-management/autoinstall-reinstall-install-vps-linux-windows",
+    "destination": "/vps-management/reinstall-vps",
+    "permanent": true
+  },
+  {
+    "source": "/vps-management/autoinstall-reinstall-install-vps-linux-windows.md",
+    "destination": "/vps-management/reinstall-vps.md",
+    "permanent": true
+  },
+  {
+    "source": "/vps-management/how-to-change-ip-address-in-windows-server",
+    "destination": "/vps-management/change-ip-windows",
+    "permanent": true
+  },
+  {
+    "source": "/vps-management/how-to-change-ip-address-in-windows-server.md",
+    "destination": "/vps-management/change-ip-windows.md",
+    "permanent": true
+  },
+  {
+    "source": "/vps-management/manually-change-the-ip-address-in-ubuntu-versions-1804-to-2404",
+    "destination": "/vps-management/change-ip-ubuntu-1804-to-2404",
+    "permanent": true
+  },
+  {
+    "source": "/vps-management/manually-change-the-ip-address-in-ubuntu-versions-1804-to-2404.md",
+    "destination": "/vps-management/change-ip-ubuntu-1804-to-2404.md",
+    "permanent": true
+  },
+  {
+    "source": "/vps-management/reset-root-password-linux",
+    "destination": "/vps-management/reset-root-password",
+    "permanent": true
+  },
+  {
+    "source": "/vps-management/reset-root-password-linux.md",
+    "destination": "/vps-management/reset-root-password.md",
+    "permanent": true
+  },
+  {
+    "source": "/vps-management/reset-windows-admin-password",
+    "destination": "/vps-management/reset-windows-password",
+    "permanent": true
+  },
+  {
+    "source": "/vps-management/reset-windows-admin-password.md",
+    "destination": "/vps-management/reset-windows-password.md",
+    "permanent": true
+  }
+]

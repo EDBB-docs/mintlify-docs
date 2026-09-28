@@ -1,0 +1,1082 @@
+[
+  {
+    "existing_path": "/acceptable-use-policy",
+    "final_path": "/acceptable-use-policy",
+    "action": "retain",
+    "title": "Acceptable Use Policy",
+    "sidebarTitle": "Acceptable use",
+    "description": "Understand prohibited activity, IPv6 address limits, abuse handling and customer responsibilities when using EDBB VPS hosting services.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/advanced-setup-guides/basic-ufw-debian-ubuntu",
+    "final_path": "/advanced-setup-guides/ufw-firewall",
+    "action": "rename",
+    "title": "Configure a UFW firewall on Debian or Ubuntu",
+    "sidebarTitle": "UFW firewall",
+    "description": "Allow your SSH connection before enabling UFW, review firewall rules, and keep a console recovery path when changing access to your Linux VPS.",
+    "redirect_destination": "/advanced-setup-guides/ufw-firewall",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/advanced-setup-guides/extend-hard-drive-windows-guide",
+    "final_path": "/advanced-setup-guides/extend-windows-disk",
+    "action": "rename",
+    "title": "Extend a Windows Server disk",
+    "sidebarTitle": "Extend Windows disk",
+    "description": "Extend a Windows volume after an EDBB disk upgrade. Check free space, partition layout and backups before changing the filesystem.",
+    "redirect_destination": "/advanced-setup-guides/extend-windows-disk",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/advanced-setup-guides/gui-versions-of-ubuntu-debian",
+    "final_path": "/advanced-setup-guides/ubuntu-desktop",
+    "action": "rename",
+    "title": "Install an Ubuntu 22.04 desktop on your VPS",
+    "description": "Install a graphical desktop on Ubuntu 22.04, check resource requirements, and access the desktop through the VPS console after installation.",
+    "sidebarTitle": "Ubuntu desktop",
+    "redirect_destination": "/advanced-setup-guides/ubuntu-desktop",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/advanced-setup-guides/manually-resize-disk-after-plan-upgrade-on-live-linux-systems",
+    "final_path": "/advanced-setup-guides/resize-linux-disk",
+    "action": "rename",
+    "title": "Resize a Linux disk after an upgrade",
+    "sidebarTitle": "Resize Linux disk",
+    "description": "Identify your Linux disk, partition and filesystem before expanding storage after a VPS upgrade. Review supported layouts and recovery precautions.",
+    "redirect_destination": "/advanced-setup-guides/resize-linux-disk",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/advanced-setup-guides/script-based-mikrotik-router-os-installation-guide-winbox",
+    "final_path": "/advanced-setup-guides/install-mikrotik-chr",
+    "action": "rename",
+    "title": "Install MikroTik CHR on your VPS",
+    "sidebarTitle": "Install MikroTik CHR",
+    "description": "Prepare a VPS for MikroTik CHR, verify the target disk and official image, and secure the first login. Installation replaces the existing disk contents.",
+    "redirect_destination": "/advanced-setup-guides/install-mikrotik-chr",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/backups",
+    "final_path": "/backups",
+    "action": "retain",
+    "title": "Back up your VPS",
+    "sidebarTitle": "Backups",
+    "description": "Plan independent VPS backups, keep versioned copies off the server, and test recovery. Understand how a paid qcow2 export differs from routine backups.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/changelog/product",
+    "final_path": "/changelog/product",
+    "action": "retain",
+    "title": "Product changelog",
+    "sidebarTitle": "Product updates",
+    "description": "Read dated EDBB product updates and follow links to current documentation for the supported features, workflows and service policies.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/check-your-inbox",
+    "final_path": "/check-your-inbox",
+    "action": "retain",
+    "title": "Check your welcome email",
+    "sidebarTitle": "Welcome email",
+    "description": "Find the EDBB welcome email with your VPS IP address and access details. Check payment and spam folders if it has not arrived before attempting recovery.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/faq/billing-lifecycle/accepted-payment-methods",
+    "final_path": "/faq/billing-lifecycle/accepted-payment-methods",
+    "action": "retain",
+    "title": "Which payment methods does EDBB accept?",
+    "sidebarTitle": "Payment methods",
+    "description": "Review supported cards, PayPal, cryptocurrencies and bank-transfer arrangements. Obtain verified EDBB bank details from support before sending funds.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/faq/billing-lifecycle/accidental-renewal-convert-payment-to-credit",
+    "final_path": "/faq/billing-lifecycle/accidental-renewal",
+    "action": "rename",
+    "title": "Accidental renewal: convert payment to account credit",
+    "sidebarTitle": "Accidental renewal",
+    "description": "Ask support to review an accidental renewal paid before its due date. Request account credit within 24 hours of payment; conversion is not automatic.",
+    "redirect_destination": "/faq/billing-lifecycle/accidental-renewal",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/faq/billing-lifecycle/add-contact-receive-invoices-different-email",
+    "final_path": "/faq/billing-lifecycle/invoice-contacts",
+    "action": "rename",
+    "title": "Send invoices to a different email",
+    "sidebarTitle": "Invoice contacts",
+    "description": "Add contacts in the EDBB Control Panel so invoices and other notices go to additional email addresses.",
+    "redirect_destination": "/faq/billing-lifecycle/invoice-contacts",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/faq/billing-lifecycle/automated-vps-billing-workflow",
+    "final_path": "/faq/billing-lifecycle/billing-workflow",
+    "action": "rename",
+    "title": "How VPS billing and renewals work",
+    "description": "Follow renewal invoices, automatic payment attempts, reminders, suspension and deletion. Distinguish non-payment from customer-requested cancellation.",
+    "sidebarTitle": "Billing and renewals",
+    "redirect_destination": "/faq/billing-lifecycle/billing-workflow",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/faq/billing-lifecycle/automatic-currency-conversion",
+    "final_path": "/faq/billing-lifecycle/currency-conversion",
+    "action": "rename",
+    "title": "How currency conversion works",
+    "sidebarTitle": "Currency conversion",
+    "description": "Understand EUR invoices, payment-provider currency conversion and fees. Check the final payment amount and contact support about discrepancies.",
+    "redirect_destination": "/faq/billing-lifecycle/currency-conversion",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/faq/billing-lifecycle/btc-payment-arrived-after-the-payment-window",
+    "final_path": "/faq/billing-lifecycle/late-crypto-payment",
+    "action": "rename",
+    "title": "Crypto payment arrived after the time window",
+    "sidebarTitle": "Late crypto payments",
+    "description": "If your crypto payment misses the quoted window, share the transaction details with EDBB so we can reconcile it manually.",
+    "redirect_destination": "/faq/billing-lifecycle/late-crypto-payment",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/faq/billing-lifecycle/can-i-get-a-refund",
+    "final_path": "/faq/billing-lifecycle/can-i-get-a-refund",
+    "action": "retain",
+    "title": "Can I get a refund?",
+    "sidebarTitle": "Refund eligibility",
+    "description": "Check whether your VPS purchase qualifies for a refund within 24 hours. Follow the full policy, cancellation steps and exclusions before contacting support.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/faq/billing-lifecycle/cancel-a-service",
+    "final_path": "/faq/billing-lifecycle/cancel-a-service",
+    "action": "retain",
+    "title": "VPS cancellation",
+    "sidebarTitle": "Cancel a VPS",
+    "description": "Request immediate or end-of-term VPS cancellation in the EDBB panel. Back up first and understand when the service stops and its data is deleted.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/faq/billing-lifecycle/cancellation-and-refund-policy",
+    "final_path": "/faq/billing-lifecycle/cancellation-and-refund-policy",
+    "action": "retain",
+    "title": "Cancellation and refund policy",
+    "sidebarTitle": "Refund policy",
+    "description": "Check eligibility for an EDBB VPS refund within 24 hours of purchase, including exclusions, cancellation requirements and the information to send support.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/faq/billing-lifecycle/credit-card-reservation-vs-payment",
+    "final_path": "/faq/billing-lifecycle/credit-card-reservation-vs-payment",
+    "action": "retain",
+    "title": "Card reservation vs captured payment",
+    "sidebarTitle": "Card payment holds",
+    "description": "Understand why a card authorization may appear without a charge and how captured payments differ for EDBB invoices.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/faq/billing-lifecycle/cryptocurrency-payments-confirmation-guide-edbb",
+    "final_path": "/faq/billing-lifecycle/crypto-confirmations",
+    "action": "rename",
+    "title": "Cryptocurrency payment confirmations",
+    "sidebarTitle": "Crypto confirmations",
+    "description": "Check the coin, network, amount and confirmation status shown for your crypto invoice. Learn when payment is recognized and how to report a delay.",
+    "redirect_destination": "/faq/billing-lifecycle/crypto-confirmations",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/faq/billing-lifecycle/data-retention-period",
+    "final_path": "/faq/billing-lifecycle/data-retention-period",
+    "action": "retain",
+    "title": "Data retention after cancellation",
+    "sidebarTitle": "Data retention",
+    "description": "Compare data retention after customer-requested termination and non-payment. Contact support before permanent deletion and download paid exports within 30 days.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/faq/billing-lifecycle/eu-vat-explained-if-and-how-much",
+    "final_path": "/faq/billing-lifecycle/vat",
+    "action": "rename",
+    "title": "VAT on EDBB invoices",
+    "sidebarTitle": "VAT",
+    "description": "Understand how billing location and a validated business VAT ID affect EDBB invoices. Check your account details and ask support about tax discrepancies.",
+    "redirect_destination": "/faq/billing-lifecycle/vat",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/faq/billing-lifecycle/find-and-download-invoices",
+    "final_path": "/faq/billing-lifecycle/find-and-download-invoices",
+    "action": "retain",
+    "title": "Find and download your invoices",
+    "sidebarTitle": "Download invoices",
+    "description": "Access all EDBB invoices from the client portal and download PDFs for your records.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/faq/billing-lifecycle/handling-blocked-cryptocurrency-payments-cryptomus",
+    "final_path": "/faq/billing-lifecycle/blocked-crypto-payment",
+    "action": "rename",
+    "title": "Blocked cryptocurrency payment",
+    "sidebarTitle": "Blocked crypto payments",
+    "description": "If Cryptomus flags a payment as suspicious, complete the compliance questionnaire or contact their support with your TXID.",
+    "redirect_destination": "/faq/billing-lifecycle/blocked-crypto-payment",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/faq/billing-lifecycle/how-fast-instant-delivery",
+    "final_path": "/faq/billing-lifecycle/provisioning-time",
+    "action": "rename",
+    "title": "When will my VPS be ready?",
+    "sidebarTitle": "Provisioning time",
+    "description": "Learn how payment confirmation and operating-system installation affect VPS delivery, and what to check before contacting EDBB support about a delay.",
+    "redirect_destination": "/faq/billing-lifecycle/provisioning-time",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/faq/billing-lifecycle/how-to-add-account-credit",
+    "final_path": "/faq/billing-lifecycle/how-to-add-account-credit",
+    "action": "retain",
+    "title": "How to top up your account credit",
+    "sidebarTitle": "Add account credit",
+    "description": "Learn how to add funds to your account, apply credit to invoices, and avoid underpayment issues. Step-by-step guide for account top-ups.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/faq/billing-lifecycle/how-to-pay-with-account-credit",
+    "final_path": "/faq/billing-lifecycle/how-to-pay-with-account-credit",
+    "action": "retain",
+    "title": "Paying invoices with account credit",
+    "sidebarTitle": "Pay with credit",
+    "description": "Learn how to use your account credit balance to pay invoices in EDBB.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/faq/billing-lifecycle/how-to-receive-monthly-consolidated-invoice",
+    "final_path": "/faq/billing-lifecycle/consolidated-invoices",
+    "action": "rename",
+    "title": "Request a monthly consolidated invoice",
+    "sidebarTitle": "Consolidated invoices",
+    "description": "EDBB can align all active services to a single billing date so you receive one monthly invoice.",
+    "redirect_destination": "/faq/billing-lifecycle/consolidated-invoices",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/faq/billing-lifecycle/moving-services-to-different-client-account",
+    "final_path": "/faq/billing-lifecycle/account-transfers",
+    "action": "rename",
+    "title": "Move services to another client account",
+    "sidebarTitle": "Account transfers",
+    "description": "EDBB VPS instances remain bound to the account they were created under; transfers to other client accounts are not supported.",
+    "redirect_destination": "/faq/billing-lifecycle/account-transfers",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/faq/billing-lifecycle/no-upfront-deposits-required",
+    "final_path": "/faq/billing-lifecycle/no-upfront-deposits-required",
+    "action": "retain",
+    "title": "Do I need an upfront deposit?",
+    "sidebarTitle": "Upfront deposits",
+    "description": "Order an EDBB VPS without preloading account credit, then pay the subscription invoice using a supported payment method before provisioning.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/faq/billing-lifecycle/scheduled-billing-window",
+    "final_path": "/faq/billing-lifecycle/scheduled-billing-window",
+    "action": "retain",
+    "title": "Scheduled billing window",
+    "sidebarTitle": "Billing window",
+    "description": "Understand nightly billing processing, automatic account-credit use and recovery after suspension. Check renewal deadlines before changing services.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/faq/free-trials-available",
+    "final_path": "/faq/free-trials-available",
+    "action": "retain",
+    "title": "Do you offer free VPS trials?",
+    "sidebarTitle": "Free trial policy",
+    "description": "EDBB has no free VPS trial. Review network tests before ordering and check the eligibility conditions and exclusions of the 24-hour refund policy.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/faq/hourly-plans-available",
+    "final_path": "/faq/hourly-plans-available",
+    "action": "retain",
+    "title": "Do you offer hourly VPS billing?",
+    "sidebarTitle": "Hourly billing",
+    "description": "EDBB offers subscription billing rather than hourly VPS billing. Annual billing provides 12 months for the price of 11; review the total before ordering.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/faq/ip-addresses/announcing-third-party-ip-prefixes",
+    "final_path": "/faq/ip-addresses/announcing-third-party-ip-prefixes",
+    "action": "retain",
+    "title": "Can I bring my own IP prefix?",
+    "sidebarTitle": "Customer IP prefixes",
+    "description": "EDBB does not offer BYOIP, customer-prefix announcements or a commercial /24-prefix product. Learn which provider-assigned IP options are available.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/faq/ip-addresses/anycast-reverse-dns-nameserver-locations-vs-vps-location",
+    "final_path": "/faq/ip-addresses/anycast-and-dns-location",
+    "action": "rename",
+    "title": "Anycast, DNS and VPS location",
+    "sidebarTitle": "Anycast and DNS",
+    "description": "Distinguish your VPS location from DNS resolver and authoritative nameserver locations. Understand what anycast and reverse DNS can and cannot show.",
+    "redirect_destination": "/faq/ip-addresses/anycast-and-dns-location",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/faq/ip-addresses/change-ip-address",
+    "final_path": "/faq/ip-addresses/change-ip-address",
+    "action": "retain",
+    "title": "Change your VPS IP address",
+    "sidebarTitle": "Change an IP",
+    "description": "Change your primary IPv4 in the EDBB panel and configure the replacement through the console. Review eligibility and protect access before confirming.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/faq/ip-addresses/debugging-packet-loss-traceroute-mtr-windows",
+    "final_path": "/faq/ip-addresses/diagnose-packet-loss",
+    "action": "rename",
+    "title": "Diagnose packet loss (Windows & Linux)",
+    "sidebarTitle": "Diagnose packet loss",
+    "description": "Collect traceroute or MTR output from Windows or Linux to help EDBB support pinpoint connectivity issues between your network and the VPS.",
+    "redirect_destination": "/faq/ip-addresses/diagnose-packet-loss",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/faq/ip-addresses/dns-leak-tests",
+    "final_path": "/faq/ip-addresses/dns-leak-tests",
+    "action": "retain",
+    "title": "DNS leak tests explained",
+    "sidebarTitle": "DNS leak tests",
+    "description": "Learn why DNS leak tools may show resolvers outside the VPS location when using EDBB’s anycast DNS, and how to adjust resolvers if needed.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/faq/ip-addresses/do-ip-addresses-change-during-upgrade-or-reinstall",
+    "final_path": "/faq/ip-addresses/ip-addresses-after-upgrade-or-reinstall",
+    "action": "rename",
+    "title": "Do VPS IPs change after reinstall or upgrade?",
+    "sidebarTitle": "IP address continuity",
+    "description": "Understand IP address continuity during VPS reinstalls and upgrades. Distinguish those operations from an IP replacement or a move to another location.",
+    "redirect_destination": "/faq/ip-addresses/ip-addresses-after-upgrade-or-reinstall",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/faq/ip-addresses/geolocation-geoip-databases",
+    "final_path": "/faq/ip-addresses/geolocation-geoip-databases",
+    "action": "retain",
+    "title": "How GeoIP databases see EDBB addresses",
+    "sidebarTitle": "GeoIP databases",
+    "description": "GeoIP providers rely on registry and geofeed data. EDBB keeps records current, but third-party databases may lag until they refresh.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/faq/ip-addresses/ip-can-not-be-reached-from-my-country",
+    "final_path": "/faq/ip-addresses/country-reachability",
+    "action": "rename",
+    "title": "VPS IP not reachable from my country",
+    "sidebarTitle": "Country reachability",
+    "description": "Investigate country-specific access problems with console checks and network evidence. Understand why an IP change cannot guarantee reachability.",
+    "redirect_destination": "/faq/ip-addresses/country-reachability",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/faq/ip-addresses/ip-location-incorrect-on-whatismyipaddresscom",
+    "final_path": "/faq/ip-addresses/correct-geolocation",
+    "action": "rename",
+    "title": "GeoIP shows the wrong location",
+    "sidebarTitle": "Correct geolocation",
+    "description": "Third-party GeoIP sites may display outdated locations for EDBB IPs. Learn why and how to request corrections.",
+    "redirect_destination": "/faq/ip-addresses/correct-geolocation",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/faq/ip-addresses/is-ip-spoofing-allowed-edbb-stance",
+    "final_path": "/faq/ip-addresses/ip-spoofing",
+    "action": "rename",
+    "title": "Is IP spoofing allowed?",
+    "sidebarTitle": "IP spoofing",
+    "description": "EDBB enforces source validation across its network. IP spoofing is prohibited and blocked at the edge.",
+    "redirect_destination": "/faq/ip-addresses/ip-spoofing",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/faq/ip-addresses/order-additional-ip-address",
+    "final_path": "/faq/ip-addresses/order-additional-ip-address",
+    "action": "retain",
+    "title": "Order additional IPv4 addresses",
+    "sidebarTitle": "Additional IP addresses",
+    "description": "Request additional provider-assigned IPv4 addresses for your EDBB VPS, confirm current pricing and limits, then configure them in the guest operating system.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/faq/ip-addresses/order-bespoke-ip-address",
+    "final_path": "/faq/ip-addresses/order-bespoke-ip-address",
+    "action": "retain",
+    "title": "Order bespoke IPv4 addresses",
+    "sidebarTitle": "Bespoke IP addresses",
+    "description": "Ask EDBB support about available bespoke IPv4 addresses, confirm selection and recurring charges, and configure the assigned addresses safely.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/faq/ip-addresses/ping-test-ip",
+    "final_path": "/faq/ip-addresses/ping-test-ip",
+    "action": "retain",
+    "title": "Ping test & latency tools",
+    "sidebarTitle": "Network tests",
+    "description": "Use EDBB’s latency, gateway, and looking-glass tools to benchmark network routes and choose the best VPS location.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/faq/ip-addresses/setting-up-reverse-pointers",
+    "final_path": "/faq/ip-addresses/reverse-dns",
+    "action": "rename",
+    "title": "Configure reverse DNS (PTR)",
+    "sidebarTitle": "Reverse DNS",
+    "description": "Set or remove reverse DNS records for provider-assigned VPS addresses in the EDBB rDNS tab. Check forward DNS and verify the result afterward.",
+    "redirect_destination": "/faq/ip-addresses/reverse-dns",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/faq/ip-addresses/static-ip-addresses",
+    "final_path": "/faq/ip-addresses/static-ip-addresses",
+    "action": "retain",
+    "title": "Are EDBB VPS IPs static?",
+    "sidebarTitle": "Static IP addresses",
+    "description": "Every EDBB VPS includes a static IPv4 and /64 IPv6 allocation that stays assigned for the lifetime of the service.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/faq/ip-addresses/understanding-dns-systems",
+    "final_path": "/faq/ip-addresses/anycast-and-dns-location",
+    "action": "merge",
+    "title": "Anycast, DNS and VPS location",
+    "sidebarTitle": "Anycast and DNS",
+    "description": "Distinguish your VPS location from DNS resolver and authoritative nameserver locations. Understand what anycast and reverse DNS can and cannot show.",
+    "redirect_destination": "/faq/ip-addresses/anycast-and-dns-location",
+    "reason": "Duplicate intent consolidated into the maintained page."
+  },
+  {
+    "existing_path": "/faq/ip-addresses/understanding-ip-address-location",
+    "final_path": "/faq/ip-addresses/ip-location",
+    "action": "rename",
+    "title": "Understand an IP address location",
+    "description": "Understand physical hosting location, routing, registry country fields and commercial GeoIP results before requesting an IP-location correction.",
+    "sidebarTitle": "IP location",
+    "redirect_destination": "/faq/ip-addresses/ip-location",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/faq/is-port-25-open",
+    "final_path": "/faq/port-25-smtp-rate-limit-policy",
+    "action": "merge",
+    "title": "SMTP port 25 rate limit",
+    "sidebarTitle": "Port 25 policy",
+    "description": "Learn how EDBB handles outbound SMTP traffic on port 25 and what limits apply to protect IP reputation.",
+    "redirect_destination": "/faq/port-25-smtp-rate-limit-policy",
+    "reason": "Duplicate intent consolidated into the maintained page."
+  },
+  {
+    "existing_path": "/faq/port-25-smtp-rate-limit-policy",
+    "final_path": "/faq/port-25-smtp-rate-limit-policy",
+    "action": "retain",
+    "title": "SMTP port 25 rate limit",
+    "sidebarTitle": "Port 25 policy",
+    "description": "Learn how EDBB handles outbound SMTP traffic on port 25 and what limits apply to protect IP reputation.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/faq/server-locations/change-server-location",
+    "final_path": "/faq/server-locations/change-server-location",
+    "action": "retain",
+    "title": "Can I move my VPS to another location?",
+    "sidebarTitle": "Change server location",
+    "description": "Review the one-time location-change option within 24 hours of purchase. Understand replacement-server data loss, new access details and refund implications.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/faq/traffic-bandwidth/dos-attacks/advisory-for-high-risk-clients",
+    "final_path": "/faq/traffic-bandwidth/dos-attacks/high-risk-workloads",
+    "action": "rename",
+    "title": "Advisory for high-risk DDoS workloads",
+    "sidebarTitle": "High-risk workloads",
+    "description": "Services that attract frequent DDoS attacks should deploy specialized mitigation outside the standard EDBB VPS platform.",
+    "redirect_destination": "/faq/traffic-bandwidth/dos-attacks/high-risk-workloads",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/faq/traffic-bandwidth/dos-attacks/edbb-ddos-protection-overview",
+    "final_path": "/faq/traffic-bandwidth/dos-attacks/ddos-protection",
+    "action": "rename",
+    "title": "EDBB DDoS protection overview",
+    "sidebarTitle": "DDoS protection",
+    "description": "EDBB shields its infrastructure against DDoS attacks; learn what is covered and when null-routing may occur.",
+    "redirect_destination": "/faq/traffic-bandwidth/dos-attacks/ddos-protection",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/faq/traffic-bandwidth/exceeding-monthly-included-traffic",
+    "final_path": "/faq/traffic-bandwidth/exceeding-monthly-included-traffic",
+    "action": "retain",
+    "title": "Exceeded monthly traffic",
+    "sidebarTitle": "Traffic limits",
+    "description": "Understand the traffic grace allowance and throttling near 105% usage. Assign pool traffic, upgrade or wait for refill to restore normal throughput.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/faq/traffic-bandwidth/how-to-investigate-and-stop-unusual-network-usage",
+    "final_path": "/faq/traffic-bandwidth/investigate-network-usage",
+    "action": "rename",
+    "title": "Investigate unusual network usage",
+    "sidebarTitle": "Investigate network usage",
+    "description": "Identify unexpected traffic on a Linux VPS, preserve relevant evidence and contain confirmed abuse without deleting legitimate services based on names.",
+    "redirect_destination": "/faq/traffic-bandwidth/investigate-network-usage",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/faq/traffic-bandwidth/traffic-pool",
+    "final_path": "/faq/traffic-bandwidth/traffic-pool",
+    "action": "retain",
+    "title": "Traffic Pool and Auto-Hydration",
+    "sidebarTitle": "Traffic Pool",
+    "description": "Use your shared Traffic Pool, 100 GB starter credit and automatic assignments. Understand which traffic expires at your VPS monthly refill.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/faq/traffic-bandwidth/traffic-stats-refill-explained",
+    "final_path": "/faq/traffic-bandwidth/traffic-statistics",
+    "action": "rename",
+    "title": "Traffic statistics and monthly refills",
+    "sidebarTitle": "Traffic statistics",
+    "description": "Read the EDBB Traffic tab, understand incoming plus outgoing usage, and track warnings, automatic assignments, throttling and monthly refills.",
+    "redirect_destination": "/faq/traffic-bandwidth/traffic-statistics",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/faq/traffic-bandwidth/traffic-vs-bandwidth",
+    "final_path": "/faq/traffic-bandwidth/traffic-vs-bandwidth",
+    "action": "retain",
+    "title": "Traffic vs bandwidth",
+    "sidebarTitle": "Traffic and bandwidth",
+    "description": "Traffic measures total data transferred over time; bandwidth is the maximum throughput available at any moment.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/faq/upgrades-downgrades/cpu-cores-vs-cpu-sockets-in-vps-environments/how-to-check-cpu-cores-linux-vps",
+    "final_path": "/faq/upgrades-downgrades/check-cpu-linux",
+    "action": "rename",
+    "title": "Check CPU resources on Linux",
+    "sidebarTitle": "Check CPU on Linux",
+    "description": "Inspect the logical CPUs and virtual topology visible to Linux with lscpu, nproc and monitoring tools. Understand what those readings mean for a VPS.",
+    "redirect_destination": "/faq/upgrades-downgrades/check-cpu-linux",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/faq/upgrades-downgrades/cpu-cores-vs-cpu-sockets-in-vps-environments/how-to-check-cpu-cores-windows-vps",
+    "final_path": "/faq/upgrades-downgrades/check-cpu-windows",
+    "action": "rename",
+    "title": "Check CPU resources on Windows",
+    "sidebarTitle": "Check CPU on Windows",
+    "description": "Use Task Manager and PowerShell to inspect virtual CPU resources on Windows Server. Distinguish logical processors from physical host hardware.",
+    "redirect_destination": "/faq/upgrades-downgrades/check-cpu-windows",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/faq/upgrades-downgrades/cpu-cores-vs-cpu-sockets-in-vps-environments/understanding-cpu-cores-vs-sockets-in-vps",
+    "final_path": "/faq/upgrades-downgrades/cpu-cores-and-sockets",
+    "action": "rename",
+    "title": "CPU cores vs sockets in an EDBB VPS",
+    "sidebarTitle": "CPU cores and sockets",
+    "description": "Understand how vCPUs are mapped to sockets and cores, why it matters for licensing/performance, and how to change the topology in the Control Panel.",
+    "redirect_destination": "/faq/upgrades-downgrades/cpu-cores-and-sockets",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/faq/upgrades-downgrades/is-it-possible-to-downgrade",
+    "final_path": "/faq/upgrades-downgrades/downgrade-policy",
+    "action": "rename",
+    "title": "Is downgrading an EDBB VPS possible?",
+    "sidebarTitle": "Downgrade policy",
+    "description": "Learn why in-place downgrades aren’t supported and how to move to a smaller plan safely.",
+    "redirect_destination": "/faq/upgrades-downgrades/downgrade-policy",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/faq/upgrades-downgrades/requesting-qcow2-image-backup",
+    "final_path": "/faq/upgrades-downgrades/qcow2-export",
+    "action": "rename",
+    "title": "Request a qcow2 disk export",
+    "sidebarTitle": "qcow2 export",
+    "description": "Request a paid EUR 25 qcow2 export of your VPS disk, download it using the protected link within 30 days, and store your own copy securely.",
+    "redirect_destination": "/faq/upgrades-downgrades/qcow2-export",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/faq/upgrades-downgrades/upgrade-disk-drive-boost",
+    "final_path": "/faq/upgrades-downgrades/upgrade-disk-drive-boost",
+    "action": "retain",
+    "title": "Expand VPS storage with Drive Boost",
+    "sidebarTitle": "Drive Boost",
+    "description": "Increase the capacity of your existing VPS disk with Drive Boost. Confirm the EDBB quote, activate the upgrade and expand the guest filesystem safely.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/faq/upgrades-downgrades/upgrade-plan",
+    "final_path": "/faq/upgrades-downgrades/upgrade-plan",
+    "action": "retain",
+    "title": "Upgrade to a higher VPS plan",
+    "sidebarTitle": "Upgrade plan",
+    "description": "Order a higher EDBB VPS plan, review prorated billing and activate new resources. Keep your existing installation and expand guest storage separately.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/faq/upgrades-downgrades/upgrade-resources",
+    "final_path": "/faq/upgrades-downgrades/upgrade-resources",
+    "action": "retain",
+    "title": "Upgrade VPS components",
+    "sidebarTitle": "Upgrade resources",
+    "description": "Add RAM, vCPU, disk, or IPs to your existing EDBB VPS without switching plans—learn the workflow, billing, and post-upgrade steps.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/faq/upgrades-downgrades/upgrades",
+    "final_path": "/faq/upgrades-downgrades/upgrades",
+    "action": "retain",
+    "title": "Upgrade paths for your EDBB VPS",
+    "sidebarTitle": "Upgrade options",
+    "description": "Decide whether to move to a larger plan or boost individual resources—see how each upgrade path works and when to use it.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/faq/upgrades-downgrades/will-i-lose-data-when-i-upgrade",
+    "final_path": "/faq/upgrades-downgrades/upgrade-data-safety",
+    "action": "rename",
+    "title": "Will I lose data when upgrading?",
+    "sidebarTitle": "Upgrade data safety",
+    "description": "Understand what happens to your disk when you upgrade an EDBB VPS and how to keep data safe.",
+    "redirect_destination": "/faq/upgrades-downgrades/upgrade-data-safety",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/faq/what-is-a-kvm-vps",
+    "final_path": "/faq/what-is-a-kvm-vps",
+    "action": "retain",
+    "title": "What is a KVM VPS?",
+    "sidebarTitle": "KVM explained",
+    "description": "Understand KVM virtualization, virtual hardware and administrative access. Learn which responsibilities remain with you when running an EDBB VPS.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/faq/what-is-a-virtual-private-server",
+    "final_path": "/faq/what-is-a-virtual-private-server",
+    "action": "retain",
+    "title": "What is a virtual private server?",
+    "sidebarTitle": "VPS explained",
+    "description": "Learn how a VPS uses virtual CPU, memory and storage, what you can manage, and why operating-system security and backups remain your responsibility.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/getting-started/QQQQ_check-your-inbox",
+    "final_path": "/check-your-inbox",
+    "action": "merge",
+    "title": "Check your welcome email",
+    "sidebarTitle": "Welcome email",
+    "description": "Find the EDBB welcome email with your VPS IP address and access details. Check payment and spam folders if it has not arrived before attempting recovery.",
+    "redirect_destination": "/check-your-inbox",
+    "reason": "Duplicate intent consolidated into the maintained page."
+  },
+  {
+    "existing_path": "/how-our-support-team-helps-you",
+    "final_path": "/how-our-support-team-helps-you",
+    "action": "retain",
+    "title": "What to expect from EDBB Support",
+    "sidebarTitle": "Support scope",
+    "description": "Find help with EDBB accounts, billing, panel functions and infrastructure. Prepare useful evidence and understand your responsibilities on an unmanaged VPS.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/index",
+    "final_path": "/index",
+    "action": "retain",
+    "title": "Get started with your EDBB VPS",
+    "sidebarTitle": "Getting started",
+    "description": "Find your server, connect with SSH or Remote Desktop, secure access and arrange backups. Follow EDBB guides for everyday management and recovery.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/join-our-team/jobs-edisglobal-support-agent-non-voice",
+    "final_path": "",
+    "action": "exclude",
+    "title": "Support agent (non-voice)",
+    "sidebarTitle": "Support role",
+    "description": "Join EDBB’s non-voice support team to deliver world-class chat and email assistance for our VPS platform.",
+    "redirect_destination": "",
+    "reason": "Unverified recruitment content excluded from deployment; no unrelated redirect."
+  },
+  {
+    "existing_path": "/join-our-team/senior-linux-systems-engineer-kvm-and-hosting-expert",
+    "final_path": "",
+    "action": "exclude",
+    "title": "Senior Linux systems engineer (KVM & hosting expert)",
+    "sidebarTitle": "Linux engineering role",
+    "description": "Join EDBB as a senior Linux engineer focused on KVM virtualization, large-scale hosting, and always-on infrastructure.",
+    "redirect_destination": "",
+    "reason": "Unverified recruitment content excluded from deployment; no unrelated redirect."
+  },
+  {
+    "existing_path": "/join-our-team/technical-procurement-and-server-operations-coordinator",
+    "final_path": "",
+    "action": "exclude",
+    "title": "Technical procurement & server operations coordinator",
+    "sidebarTitle": "Server operations role",
+    "description": "Join EDBB to manage global hardware procurement, logistics, and server deployments across our data center footprint.",
+    "redirect_destination": "",
+    "reason": "Unverified recruitment content excluded from deployment; no unrelated redirect."
+  },
+  {
+    "existing_path": "/linux-secure-shell-ssh",
+    "final_path": "/linux-secure-shell-ssh",
+    "action": "retain",
+    "title": "Connect to Linux with SSH",
+    "sidebarTitle": "Connect with SSH",
+    "description": "Connect to a Linux VPS with SSH, verify its host-key fingerprint through the console, and prepare secure administrative access before changing login rules.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/misc/extending-180-day-trial-version-of-windows",
+    "final_path": "/misc/windows-server-evaluation",
+    "action": "rename",
+    "title": "Manage a Windows Server evaluation",
+    "sidebarTitle": "Windows evaluation",
+    "description": "Check Windows Server evaluation status and remaining rearms. Understand licensing responsibilities before extending a test installation or using it in production.",
+    "redirect_destination": "/misc/windows-server-evaluation",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/misc/fix-black-screen-windows-server",
+    "final_path": "/misc/rdp-black-screen",
+    "action": "rename",
+    "title": "Troubleshoot an RDP black screen",
+    "description": "Diagnose a blank Remote Desktop session, compare console access and test client transport settings with a reversible Windows registry change.",
+    "sidebarTitle": "RDP black screen",
+    "redirect_destination": "/misc/rdp-black-screen",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/misc/fix-for-realvnc-closing-connection",
+    "final_path": "/misc/realvnc-disconnects",
+    "action": "rename",
+    "title": "RealVNC Viewer closes after connecting",
+    "sidebarTitle": "RealVNC disconnects",
+    "description": "Investigate RealVNC Viewer disconnects using the browser console and version-specific color settings. Restore the previous setting if the test does not help.",
+    "redirect_destination": "/misc/realvnc-disconnects",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/misc/reporting-abuse",
+    "final_path": "/misc/reporting-abuse",
+    "action": "retain",
+    "title": "Reporting abuse",
+    "sidebarTitle": "Report abuse",
+    "description": "Report abusive activity involving an EDBB address with timestamps, logs and relevant URLs. Send evidence to the abuse desk and remove unrelated secrets.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/misc/security-compliance",
+    "final_path": "/misc/security-compliance",
+    "action": "retain",
+    "title": "Security responsibilities and legal information",
+    "sidebarTitle": "Security responsibilities",
+    "description": "Understand EDBB infrastructure and customer security responsibilities. Find the correct legal entity, terms, privacy policy and abuse contact.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/no-email-received",
+    "final_path": "/no-email-received",
+    "action": "retain",
+    "title": "Find a missing VPS welcome email",
+    "description": "Check your account, payment and email folders before attempting access recovery. Avoid reinstalling a server when you still need its existing data.",
+    "sidebarTitle": "Missing welcome email",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/vps-management/autoinstall-reinstall-install-vps-linux-windows",
+    "final_path": "/vps-management/reinstall-vps",
+    "action": "rename",
+    "title": "Reinstall your VPS with Linux or Windows",
+    "sidebarTitle": "Reinstall VPS",
+    "description": "Use the EDBB Installation tab to select an operating system, set access credentials and follow installation progress. Reinstalling erases existing data.",
+    "redirect_destination": "/vps-management/reinstall-vps",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/vps-management/basic-ipv6-troubleshooting",
+    "final_path": "/vps-management/basic-ipv6-troubleshooting",
+    "action": "retain",
+    "title": "Quick checks for IPv6 issues",
+    "sidebarTitle": "IPv6 troubleshooting",
+    "description": "Run through portal and OS-level checks to resolve IPv6 reachability problems on your EDBB VPS.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/vps-management/bring-your-own-iso",
+    "final_path": "/vps-management/bring-your-own-iso",
+    "action": "retain",
+    "title": "Upload a custom ISO image",
+    "sidebarTitle": "Custom ISO",
+    "description": "Download a compatible custom ISO through the EDBB Installation tab, mount it for installation or recovery, and remove the media when finished.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/vps-management/cloud-init-vps-installation",
+    "final_path": "/vps-management/cloud-init-vps-installation",
+    "action": "retain",
+    "title": "Provision EDBB VPS with Cloud-Init",
+    "sidebarTitle": "Cloud-Init",
+    "description": "Upload a qcow2 image with Cloud-Init support, supply your user-data, and boot it via the EDBB Installation → Custom Image workflow.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/vps-management/efi-vs-bios-and-tpm",
+    "final_path": "/vps-management/efi-vs-bios-and-tpm",
+    "action": "retain",
+    "title": "Boot modes and TPM in VPS",
+    "sidebarTitle": "Boot mode and TPM",
+    "description": "Learn the differences between BIOS and UEFI boot modes and when to enable virtual TPM (vTPM) for your VPS.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/vps-management/enable-vnc-server",
+    "final_path": "/vps-management/enable-vnc-server",
+    "action": "retain",
+    "title": "Enable VNC on your VPS",
+    "sidebarTitle": "VNC console",
+    "description": "Turn VNC on or off from the EDBB Control Panel so you can reach the console via Open Console or a desktop VNC client.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/vps-management/how-to-change-ip-address-in-windows-server",
+    "final_path": "/vps-management/change-ip-windows",
+    "action": "rename",
+    "title": "Update the IPv4 address in Windows Server",
+    "sidebarTitle": "Change IP on Windows",
+    "description": "Collect the new IPv4 details from the Network tab, change them in Windows Server, and verify connectivity.",
+    "redirect_destination": "/vps-management/change-ip-windows",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/vps-management/ip-address-information",
+    "final_path": "/vps-management/ip-address-information",
+    "action": "retain",
+    "title": "VPS IP address settings & network info",
+    "sidebarTitle": "IP settings",
+    "description": "Find IPv4, IPv6, gateway, and DNS details for your VPS on the Network tab of the EDBB Control Panel.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/vps-management/ipv6-configuration",
+    "final_path": "/vps-management/ipv6-configuration",
+    "action": "retain",
+    "title": "Enable IPv6 on your EDBB VPS",
+    "sidebarTitle": "Configure IPv6",
+    "description": "Find your IPv6 range and gateway in the Network tab, then add addresses and routes to your VPS.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/vps-management/manually-change-the-ip-address-in-ubuntu-versions-1804-to-2404",
+    "final_path": "/vps-management/change-ip-ubuntu-1804-to-2404",
+    "action": "rename",
+    "title": "Change an Ubuntu IP address with Netplan",
+    "sidebarTitle": "Change IP on Ubuntu",
+    "description": "Update an Ubuntu 18.04–24.04 IPv4 configuration using Netplan, preserve existing settings and use the console and timed rollback to avoid losing access.",
+    "redirect_destination": "/vps-management/change-ip-ubuntu-1804-to-2404",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/vps-management/mount-iso-image",
+    "final_path": "/vps-management/mount-iso-image",
+    "action": "retain",
+    "title": "Mount an ISO image",
+    "sidebarTitle": "Mount ISO",
+    "description": "Load recovery tools or custom installers by mounting an ISO directly from the EDBB Control Panel.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/vps-management/os-availability",
+    "final_path": "/vps-management/os-availability",
+    "action": "retain",
+    "title": "Operating system availability on EDBB",
+    "sidebarTitle": "Operating systems",
+    "description": "Understand which operating systems are available during order and which additional OS images can be selected later in the control panel for auto-installation.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/vps-management/power-cycle-or-reboot-a-vps",
+    "final_path": "/vps-management/power-cycle-or-reboot-a-vps",
+    "action": "retain",
+    "title": "Power cycle or reboot a VPS",
+    "sidebarTitle": "Restart and power cycle",
+    "description": "Choose a guest restart or a full VPS power cycle. Save work, use the EDBB power controls and verify hardware changes after the service starts again.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/vps-management/reset-root-password-linux",
+    "final_path": "/vps-management/reset-root-password",
+    "action": "rename",
+    "title": "Reset your Linux root password",
+    "sidebarTitle": "Reset root password",
+    "description": "Use recovery media and the EDBB VNC console to reset a Linux root password. Check disk access, remove the recovery ISO and verify login afterward.",
+    "redirect_destination": "/vps-management/reset-root-password",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/vps-management/reset-windows-admin-password",
+    "final_path": "/vps-management/reset-windows-password",
+    "action": "rename",
+    "title": "Reset your Windows Administrator password",
+    "sidebarTitle": "Reset Windows password",
+    "description": "Use the EDBB console and recovery media to reset a local Windows Administrator password. Review encrypted-data and account limitations first.",
+    "redirect_destination": "/vps-management/reset-windows-password",
+    "reason": "Shorter task-based route reflecting the revised scope."
+  },
+  {
+    "existing_path": "/vps-management/system-configuration-dialog",
+    "final_path": "/vps-management/system-configuration-dialog",
+    "action": "retain",
+    "title": "Understand the system configuration dialog",
+    "sidebarTitle": "System configuration",
+    "description": "Review EDBB Settings controls for virtual CPU, storage, networking and display. Check driver compatibility and recovery access before applying changes.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/vps-management/vps-control-panel",
+    "final_path": "/vps-management/vps-control-panel",
+    "action": "retain",
+    "title": "EDBB VPS control panel",
+    "sidebarTitle": "Control panel",
+    "description": "Find the EDBB Dashboard, Installation, Traffic, Settings, rDNS, Network and Upgrades tabs, with links to the relevant service-management instructions.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/vps-management/your-support-pin",
+    "final_path": "/vps-management/your-support-pin",
+    "action": "retain",
+    "title": "How to find and use your EDBB Support PIN",
+    "sidebarTitle": "Support PIN",
+    "description": "Find your EDBB Support PIN in the panel or welcome email. Share it only through official support channels when requested for service verification.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "/windows-remote-desktop",
+    "final_path": "/windows-remote-desktop",
+    "action": "retain",
+    "title": "Windows remote desktop access",
+    "sidebarTitle": "Connect with RDP",
+    "description": "Connect to your Windows VPS using Remote Desktop, verify server identity and understand the difference between disconnecting and signing out.",
+    "redirect_destination": "",
+    "reason": "Clear established route retained; content and metadata reviewed."
+  },
+  {
+    "existing_path": "",
+    "final_path": "/getting-started/ssh-security-hardening",
+    "action": "add",
+    "title": "Secure SSH access to your VPS",
+    "sidebarTitle": "SSH security",
+    "description": "Set up key authentication, verify sudo and recovery access, and restrict SSH safely. Test a second connection before disabling the old login method.",
+    "redirect_destination": "",
+    "reason": "Relevant missing customer guidance; no EDIS-only panel or API workflow."
+  },
+  {
+    "existing_path": "",
+    "final_path": "/misc/responding-to-abuse-complaints",
+    "action": "add",
+    "title": "Respond to an abuse complaint",
+    "sidebarTitle": "Respond to abuse",
+    "description": "Review an EDBB abuse notice, investigate and stop prohibited activity, secure affected systems, and reply with evidence and remediation.",
+    "redirect_destination": "",
+    "reason": "Relevant missing customer guidance; no EDIS-only panel or API workflow."
+  },
+  {
+    "existing_path": "",
+    "final_path": "/faq/service-api",
+    "action": "add",
+    "title": "Does EDBB offer an API?",
+    "sidebarTitle": "API availability",
+    "description": "EDBB has no customer or order API. Use the EDBB control panel for service management and SSH or Cloud-Init for supported automation inside your VPS.",
+    "redirect_destination": "",
+    "reason": "Relevant missing customer guidance; no EDIS-only panel or API workflow."
+  },
+  {
+    "existing_path": "",
+    "final_path": "/getting-started/infrastructure-status",
+    "action": "add",
+    "title": "Check infrastructure status",
+    "sidebarTitle": "Infrastructure status",
+    "description": "Check the shared EDIS Global status page for infrastructure incidents affecting EDBB locations, and provide useful evidence when contacting support.",
+    "redirect_destination": "",
+    "reason": "Relevant missing customer guidance; no EDIS-only panel or API workflow."
+  }
+]

@@ -1,76 +1,44 @@
 ---
-title: "Scheduled Billing Window"
-sidebarTitle: "Scheduled Billing Window"
-description: "Learn about the nightly EDBB billing window, including credit manipulation, invoice generation, and service suspension times. Understand how billing integrity is maintained and when to avoid placing new orders."
+title: "Scheduled billing window"
+sidebarTitle: "Billing window"
+description: "Understand nightly billing processing, automatic account-credit use and recovery after suspension. Check renewal deadlines before changing services."
 ---
 
-## 🕓 Scheduled Billing Window
+<span id="-scheduled-billing-window" />
+<span id="-summary" />
 
-Every night, **EDBB performs a scheduled billing window** to process invoices, service renewals, and account updates across all active VPS accounts.\
-During this time, billing automation ensures accuracy, prevents conflicts, and maintains data integrity.
+EDBB processes renewal invoices, payment attempts and service lifecycle actions during a nightly billing window. Avoid placing new orders or changing services during the published **00:00–05:15 CET** processing window; transactions can be delayed or temporarily locked.
 
----
+Pay renewal invoices before their due date rather than relying on a last-minute payment during processing.
 
-## ⏰ Timeframe
+<span id="-timeframe" />
 
-The billing window occurs **daily between midnight and 05:15 CET (Central European Time)**.
+<span id="-what-happens-during-the-billing-window" />
 
-| Process                     | CET Time   | UTC Time   |
-| --------------------------- | ---------- | ---------- |
-| Pre-billing procedures      | 00:01 CET  | 23:01 UTC  |
-| Credit Manipulation – Start | 03:58 CET  | 02:58 UTC  |
-| Billrun – Start             | 04:00 CET  | 03:00 UTC  |
-| Billrun – End               | ~05:00 CET | ~04:00 UTC |
-| Credit Manipulation – End   | 05:15 CET  | 04:15 UTC  |
+## Billing schedule
 
-⚠️ **Do not place new orders or modify services** between **00:00 CET and 05:15 CET**, as transactions may be delayed or temporarily locked during this period. During this time, **account credit may be applied to scheduled invoices**, which might not be desirable if you have **credit manipulation** enabled on your account.
+The schedule below follows the shared EDIS billing schedule. CET is UTC+1; the UTC window begins on the preceding calendar day.
 
----
+| Process | CET | UTC |
+| --- | --- | --- |
+| Pre-billing procedures | 00:01 | 23:01 (previous day) |
+| Optional credit hold starts | 03:58 | 02:58 |
+| Billing run starts | 04:00 | 03:00 |
+| Billing run ends | Approximately 05:00 | Approximately 04:00 |
+| Optional credit hold ends | 05:15 | 04:15 |
 
-## 💰 Credit Manipulation
+<span id="-credit-manipulation" />
 
-These are **special pre-billrun procedures** designed to protect billing integrity and prevent unwanted automatic renewals.
+<span id="important" />
 
-At **Credit Manipulation Start**, the system safely **backs up account credit** and temporarily sets it to zero.\
-At **Credit Manipulation End**, after the billrun has finished, the **full account credit is restored** to the client account.
+## Account credit
 
-### Important:
+Available account credit is applied by default when renewal invoices are created. If support has disabled automatic credit application during invoice creation for your account, its credit balance is temporarily set to zero at 03:58 CET (02:58 UTC) and restored at 05:15 CET (04:15 UTC). This optional hold lets you review invoices before manually applying credit afterward. This does not cancel invoices or change their due dates, and other automatic payment arrangements are managed separately.
 
-By default, **99% of customers have their account credit automatically applied** to renewal invoices.\
-However, a **small group of resellers** have opted out of this automatic credit application. For these resellers, account credit is locked during the billing window and restored afterward. If you are interested in this billing behaviour, please get in touch with our support team.
+<span id="-service-suspension" />
 
----
+## Suspension and recovery
 
-## 🧾 What Happens During the Billing Window
+A VPS suspended for non-payment is reactivated automatically when its outstanding renewal invoice is paid. A terminated VPS requires a support review before permanent deletion. Invoice cancellation alone does not establish whether data has been deleted.
 
-1. **Invoice Generation** – Renewal invoices are created for upcoming services.
-2. **Credit Card Charges** – Automatic payment attempts are processed.
-3. **Credit Manipulation** – Credits are temporarily locked to ensure billing accuracy (if configured).
-4. **Service Suspension** – Non-paid services are automatically suspended
-4. **Service Termination** – Terminations are processed 
-5. **Finalization** – After 05:15 CET, all billing operations resume as normal.
-
----
-
-## ⚙️ Service Suspension
-
-Service suspension (if related to non-payments) happens **during the billrun window**.\
-If your service is suspended for non-payment, it will automatically reactivate once an invoice gets paid. Once an invoice shows _cancelled_, it can not longer be paid, the service no longer exists.
-
-📘 For full details, see:\
-[**VPS Billing Workflow → Automated Billing Lifecycle**](/faq/billing-lifecycle/automated-vps-billing-workflow)
-
----
-
-## ✅ Summary
-
-- The billing window ensures accurate renewals and payment processing.
-- Do not place orders or top-up your account between **00:00–05:15 CET**.
-- Account credit is backed up, temporarily locked, and restored automatically \
-  (if configured for your account)
-- Automatic attempts to charge your saved payment method (via our payment provider).
-- Service suspensions and terminations are handled during the billrun.
-
----
-
-**Last updated:** November 2025
+See [billing and renewals](/faq/billing-lifecycle/billing-workflow), [cancellation](/faq/billing-lifecycle/cancel-a-service) and [retention](/faq/billing-lifecycle/data-retention-period).

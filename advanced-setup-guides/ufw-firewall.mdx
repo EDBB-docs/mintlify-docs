@@ -1,0 +1,62 @@
+---
+title: "Configure a UFW firewall on Debian or Ubuntu"
+sidebarTitle: "UFW firewall"
+description: "Allow your SSH connection before enabling UFW, review firewall rules, and keep a console recovery path when changing access to your Linux VPS."
+---
+
+<span id="advanced-configuration" />
+<span id="allow-incoming-connections" />
+<span id="allow-specific-ip-addresses" />
+<span id="basic-ufw-commands" />
+<span id="basic-web-server-setup" />
+<span id="check-ufw-status" />
+<span id="common-configuration-examples" />
+<span id="conclusion" />
+<span id="configure-default-policies" />
+<span id="database-server-setup" />
+<span id="delete-rules" />
+<span id="deny-incoming-connections" />
+<span id="enable-and-disable-ufw" />
+<span id="installation" />
+<span id="introduction-to-ufw" />
+<span id="managing-basic-rules" />
+<span id="rate-limiting" />
+
+UFW is a firewall interface commonly used on Debian and Ubuntu. Enabling it before allowing your current SSH port can lock you out.
+
+<span id="troubleshooting" />
+
+## Before you begin
+
+- Open the [VNC console](/vps-management/enable-vnc-server) and keep it available.
+- Confirm your SSH port; do not assume it is 22 if you changed it.
+- Record existing firewall rules. Check IPv6 access as well as IPv4.
+- If Docker or another tool manages firewall rules, review how those rules interact with UFW before relying on it.
+
+## Allow access before enabling the firewall
+
+Install UFW if necessary, then inspect its state:
+
+```bash
+sudo apt update
+sudo apt install ufw
+sudo ufw status verbose
+```
+
+For SSH on **port 22**, allow it before enabling UFW. Replace 22 with your actual SSH port if different:
+
+```bash
+sudo ufw allow 22/tcp
+sudo ufw enable
+sudo ufw status numbered
+```
+
+Open a **second SSH session** and verify login before closing the first. Allow other ports only for services you intend to expose, and restrict source addresses where practical.
+
+<span id="best-practices" />
+
+## Recover access
+
+If SSH fails, use the already-open console to inspect rules. Correct the specific rule; if needed for recovery, `sudo ufw disable` temporarily disables UFW. Restore the intended protections after testing. Do not run `ufw reset` as a routine repair because it removes your configured rules.
+
+When backing up UFW configuration, include `/etc/ufw/`, including both IPv4 and IPv6 rule files. Keep a note of whether the firewall was enabled.

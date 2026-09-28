@@ -1,0 +1,19 @@
+---
+title: "Understand an IP address location"
+sidebarTitle: "IP location"
+description: "Understand physical hosting location, routing, registry country fields and commercial GeoIP results before requesting an IP-location correction."
+---
+
+<span id="need-an-ip-from-another-country" />
+<span id="the-geographic-link-of-ip-addresses" />
+<span id="the-limitations-and-principles-of-ip-address-allocation-why-your-server’s-location-matters" />
+
+Separate the physical VPS location from IP registration, routing and commercial geolocation. These answer different questions and may show different countries.
+
+## Check the relevant evidence
+
+Your EDBB service record identifies the location you ordered. Registry data describes address registration, while a GeoIP database estimates the location associated with an IP. Neither a WHOIS country field nor a PTR hostname alone proves a physical datacenter location.
+
+IP prefixes can be routed across networks and countries. Do not infer that a prefix can never be used elsewhere solely from its size or registration. EDBB assigns addresses for the service you order; ask support about a mismatch rather than changing the guest subnet or reinstalling.
+
+For database errors, see [GeoIP databases](/faq/ip-addresses/geolocation-geoip-databases). For resolver or anycast questions, see [DNS and VPS location](/faq/ip-addresses/anycast-and-dns-location). For actual reachability, collect [network diagnostics](/faq/ip-addresses/diagnose-packet-loss).

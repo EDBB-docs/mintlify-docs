@@ -1,108 +1,111 @@
 ---
-title: "Acceptable Use Policy (AUP)"
-sidebarTitle: "Usage Rules (AUP)"
-description: "Use cases that violate EDBB's Acceptable Use Policy (AUP), including but not limited to child sexual abuse material, illegal content, and other prohibited activities."
+title: "Acceptable Use Policy"
+sidebarTitle: "Acceptable use"
+description: "Understand prohibited activity, IPv6 address limits, abuse handling and customer responsibilities when using EDBB VPS hosting services."
 ---
 
-## Prohibited Applications and Activities
+<span id="1-zero-tolerance-offences" />
+<span id="2-network-and-platform-safeguards" />
+<span id="4-staying-compliant" />
+<span id="5-security-research-and-authorized-testing-activities" />
 
-Our **Acceptable Use Policy (AUP)** explains the terms of using our services. You must comply with these policies and engage only in legal activities. The following violations will result in account termination or legal action:
+##  Prohibited applications and activities
 
-We split the rules into three quick-reference sections so you can confirm compliance easily.
+Our **Acceptable Use Policy (AUP)** explains the terms of using our services. You must comply with these policies and engage only in legal activities. Violations may result in service restrictions, suspension, account termination, or legal action, depending on their nature and severity.
 
-## 1. Zero-Tolerance Offences
+###  Child sexual abuse material (CSAM)
 
-The following violations will result in account termination and legal action:
+* Hosting or distributing CSAM will lead to immediate account termination and reporting to authorities.
 
-<CardGroup cols={2}>
-  <Card title="🚨 Child Sexual Abuse Material CSAM">
-    - Hosting or distributing CSAM will lead to immediate account termination and reporting to authorities.
-  </Card>
-  <Card title="🦠 Malware & Botnets">
-    C2 Servers, sinkholes, droppers, phishing kits or similar tools lead to immediate termination - no warnings are sent.
-  </Card>
-  <Card title="🔓 Unauthorized Access">
-    Attempts to tamper with EDBB infrastructure or upstream carriers void your service agreement immediately.
-  </Card>
-  <Card title="🌪️ DDoS Operations">
-    Launching attacks (booter services), any kind of stress testing, or using EDBB infrastructure for attacks is prohibited.
-  </Card>
-  <Card title='🛍️ Counterfeit Commerce, "fake shops"'>
-    - Hosting websites selling counterfeit products (e.g., fake Nike, Adidas, Moncler, ...) leads to account suspension.
-  </Card>
-</CardGroup>
+###  Unsolicited emails (SPAM)
 
----
+We have zero tolerance for unsolicited email (SPAM).
 
-## 2. Network and Platform Safeguards
+If a credible complaint or other evidence indicates that unsolicited email was sent from any IP address assigned to a VPS, we may immediately block **outbound TCP Port 25 for the entire VPS**. The block applies to every IPv4 and IPv6 address assigned to that VPS, even if the complaint concerns only one IP address. A single substantiated complaint may be sufficient.
 
-The following activities are forbidden and will lead to account suspension or termination.
+You must promptly stop the activity, investigate its cause, secure any compromised systems or accounts, and respond with the remediation taken. The outbound Port 25 block may remain in place indefinitely if the incident is not resolved satisfactorily.
 
-<CardGroup cols={2}>
-  <Card title="📨 SPAM & Bulk Messaging">
-    Unsolicited email, SMS, or direct messages are not allowed. Verified complaints suspend the service; repeat offences result in cancellation without refund.
-  </Card>
-  <Card title="🧮 IPv6 Usage">
-    - Maximum of <strong>10 simultaneously configured IPv6 addresses</strong>
-       per VPS.
-    - Rapid rotation or randomized usage (random IPv6 proxies) are not allowed.
-    - Flooding the Neighbor Discovery cache leads to account termination.
-  </Card>
-  <Card title="🕵️ Scanning">
-    Unauthorized port scans, vulnerability probing against third-party infrastructure are not allowed. (Get in touch to obtain an exempt if you are a security firm conducting contractual work).
-  </Card>
-  <Card title="🛡️ TOR & Anonymity">
-    Entry nodes and middle relays are allowed; TOR exit nodes, I2P outproxies, and similar egress services are forbidden.
-  </Card>
-  <Card title="💬 IRC Hosting">
-    IRC workloads attract attacks. Review the [Advisory for High-Risk Clients](https://docs.edbb.com//faq/traffic-bandwidth/dos-attacks/advisory-for-high-risk-clients) before deploying IRC-related services.
-  </Card>
-  <Card title="⛏️ Cryptocurrency Mining">
-    Cryptocurrency mining activities are prohibited on EDBB VPS plans (and no longer profitable anyway)
-  </Card>
-</CardGroup>
+Repeated complaints, deliberate unsolicited mailing, or failure to cooperate may result in additional restrictions, service suspension, or permanent account termination without refund. See our [Port 25 SMTP policy and rate limits](/faq/port-25-smtp-rate-limit-policy).
 
----
+###  Network infrastructure interference
 
-## 3. Content and Conduct Rules
+* Any interference with our network infrastructure will result in immediate account termination.
 
-Users must respect the dignity, rights, and safety of others. The following activities are strictly forbidden and will result in account termination:
+###  Malware or phishing websites
 
-<CardGroup cols={2}>
-  <Card title="📚 Intellectual Property">
-    - Distributing, hosting, or endorsing content that infringes on intellectual property rights, including copyrights, trademarks, and patents.
-  </Card>
-  <Card title="🗞️ Defamation">
-    - Publishing or sharing knowingly false information with the purpose of damaging the reputation of individuals or organizations.
-  </Card>
-  <Card title="🔐 Privacy">
-    - Unauthorized sharing of private information, images, videos, or other content that violates personal privacy.
-  </Card>
-  <Card title="💙 Self-Harm Advocacy">
-    Content that promotes, instructs, or glorifies self-harm or suicide is not allowed.
-  </Card>
-  <Card title="🚫 Extremist Content">
-    - Distributing or endorsing materials that promote radical ideologies, hate speech, or discrimination.
-  </Card>
-  <Card title="⚖️ Illegal Content">
-    Hosting any illegal content (e.g. "warez") will result in account suspension.
-  </Card>
-</CardGroup>
+* Hosting malicious software or phishing sites will result in account suspension.
 
----
+###  DDoS or network attacks
 
-## 4. Staying Compliant
+We have zero tolerance for DDoS attacks or other harmful network activities, including port scans.
 
-- Keep your contact details up-to-date so you can respond quickly to abuse notifications.
-- Apply strong passwords, MFA, and regular patching to prevent compromised workloads.
-- Unsure about an edge case? Contact EDBB Support for clarification before deploying.
+###  TOR usage
 
-Following these guidelines keeps the network safe for everyone and ensures your services stay online without interruption.
+* TOR Entry Nodes: Allowed
 
-## 5. Security Research and Authorized Testing Activities
+* TOR Middle Nodes and Bridges: Allowed
 
-We actively support verified security research and controlled commercial testing.
+* TOR Exit Nodes and I2P Outproxies: Prohibited
 
-If your work includes hosting sinkholes, operating honeypots, monitoring network segments, conducting forensic or traffic analysis, or performing authorized stress and resilience tests — we can provide suitable exemptions and infrastructure guidance.
+###  Malicious software
 
-Security software developers, accredited research teams, and governmental entities conducting legitimate investigations are welcome to collaborate under predefined security frameworks.
+* Hosting Trojan Horses, Botnet Executables, Dropzones, or Botnet C2 Servers will result in immediate account termination and reporting to appropriate authorities.
+
+###  Cryptocurrency mining
+
+* All cryptocurrency mining activities are prohibited (and no longer profitable anyway).
+
+###  Counterfeit websites
+
+* Hosting websites selling counterfeit products (e.g., Nike, Adidas, Moncler) leads to account suspension.
+
+###  Illegal content
+
+Hosting any illegal content will result in account suspension.
+
+###  IPv6 address usage
+
+Each VPS may have a maximum of **20 IPv6 addresses configured simultaneously**. Use only addresses from the `/64`-equivalent allocation assigned to that VPS.
+
+IPv6 proxy services that rotate addresses, automatically generate random IPv6 addresses, or otherwise cycle through large numbers of addresses are prohibited.
+
+The following activities will result in service suspension:
+
+- Configuring more than 20 IPv6 addresses simultaneously on one VPS
+- Using IPv6 addresses outside the allocation assigned to the VPS
+- Operating a rotating or random-address IPv6 proxy
+- Generating excessive IPv6 Neighbor Discovery activity
+
+Repeated violations will result in permanent account termination without refund. See [IPv6 Setup](/vps-management/ipv6-configuration) for the correct allocation and prefix-length configuration.
+
+###  IRC services
+
+IRC services are susceptible to denial of service attacks. Review our [advisory for clients at high risk of DDoS attacks](/faq/traffic-bandwidth/dos-attacks/high-risk-workloads) before proceeding.
+
+<span id="3-content-and-conduct-rules" />
+
+##  Prohibited content and conduct
+
+You must respect the dignity, rights, and safety of others. The following activities are strictly forbidden and will result in immediate account termination:
+
+###  Intellectual property violations
+
+* Distributing, hosting, or endorsing content that infringes on intellectual property rights, including copyrights, trademarks, and patents.
+
+###  Defamatory content
+
+* Publishing or sharing false information that damages the reputation of individuals or organizations.
+
+###  Privacy violations
+
+* Unauthorized sharing of private information, images, videos, or other content that violates personal privacy.
+
+###  Self-harm content
+
+* Hosting or promoting content that encourages, guides, or supports self-harm or suicide.
+
+###  Extremist content
+
+* Distributing or endorsing materials that promote radical ideologies, hate speech, or discrimination.
+
+You must act responsibly and ensure all activities comply with these guidelines to maintain service access.

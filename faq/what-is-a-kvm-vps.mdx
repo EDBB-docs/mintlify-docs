@@ -1,69 +1,28 @@
 ---
-title: "What Is a KVM VPS?"
-sidebarTitle: "KVM Explained"
-description: "See how EDBB uses KVM virtualization to deliver bare-metal style performance, OS freedom, and networking options."
+title: "What is a KVM VPS?"
+sidebarTitle: "KVM explained"
+description: "Understand KVM virtualization, virtual hardware and administrative access. Learn which responsibilities remain with you when running an EDBB VPS."
 ---
 
-import { CtaButton } from "/snippets/cta-button.mdx";
+<span id="frequently-asked-questions" />
+<span id="typical-kvm-use-cases" />
+<span id="understanding-kvm-virtualization" />
+<span id="why-kvm-matters-at-edbb" />
 
-# Understanding KVM Virtualization
+KVM is a virtualization technology that lets a physical host run separate virtual machines. An EDBB KVM VPS has virtual CPU, memory, storage and network devices and runs its own supported operating system.
 
-<Info>
-  Kernel-based Virtual Machine (KVM) turns the Linux kernel into a type-1 hypervisor. Each VPS runs as an isolated virtual machine with direct access to CPU features, so it behaves much like a dedicated server while retaining cloud flexibility.
-</Info>
+## What you control
 
----
+You administer the guest operating system and applications through Linux root access or Windows Administrator access. Use the EDBB panel to install supported images, access the console and manage available virtual hardware settings.
 
-## Why KVM Matters at EDBB
+A vCPU is a virtual processor presented to the guest. It is not a promise of an exclusively reserved physical core. Performance depends on the workload and shared infrastructure; a host uplink specification is not guaranteed per-VPS throughput.
 
-<CardGroup cols={3}>
-  <Card title="⚡ Host CPU Passthrough">
-    Guests see modern CPU extensions (AES-NI, AVX2, etc.) for encryption and compute-heavy workloads.
-  </Card>
-  <Card title="🧰 Bring Your Own OS">
-    Boot Linux, BSD, or Windows images—or upload custom ISOs and qcow2 snapshots directly in the Control Panel.
-  </Card>
-  <Card title="🔗 Advanced Networking">
-    Create TUN/TAP interfaces, attach additional NICs, or place VPSs on private VLANs.
-  </Card>
-  <Card title="🖥️ Console Access">
-    noVNC provides full console control even if SSH or RDP is unreachable.
-  </Card>
-  <Card title="🛡️ Isolation & Security">
-    Each VPS gets dedicated resources and hardware-level isolation, reducing noisy neighbor issues.
-  </Card>
-  <Card title="🔄 Automation Friendly">
-    Snapshot, reinstall, or restore with Cloud-Init and API workflows.
-  </Card>
-</CardGroup>
+## EDBB capabilities and limits
 
----
+- EDBB has its own VPS specifications and included traffic, with globally uniform pricing for each plan.
+- Locations and operating-system availability use the EDIS Global resource pool; the EDBB panel and customer account are separate.
+- There is no EDBB customer or order API, BYOIP or commercial /24-prefix offering.
+- SSH, Cloud-Init and configuration-management tools can automate your guest system.
+- You maintain backups, updates, firewall rules and application security. A paid disk export is separate from routine backups.
 
-## Typical KVM Use Cases
-
-- Network appliances (firewalls, BGP routers, VPN concentrators)
-- Security labs and malware analysis sandboxes
-- Container platforms and orchestration clusters
-- Game and voice servers requiring low latency
-- Virtual desktops (Windows or Linux) delivered over RDP/VNC
-- Dev/test environments for CI pipelines
-
----
-
-## Frequently Asked Questions
-
-**Is KVM close to bare metal performance?**  
-Yes. With CPU passthrough and Virtio drivers, performance is near-native while disk and network remain virtualized for flexibility.
-
-**Can I install any OS?**  
-Upload your ISO or qcow2 image and mount it from the Control Panel. You can also use EDBB’s library of Linux and Windows templates.
-
-**Does it support VPN protocols?**  
-Absolutely—TUN/TAP interfaces are available for OpenVPN, WireGuard, IPsec, and other tunneling solutions.
-
-**Can I run hosting control panels?**  
-Yes. Plesk, cPanel, DirectAdmin, or any similar stack functions normally on a KVM VPS.
-
-KVM gives you the control of a dedicated server with the convenience of EDBB’s Control Panel and automation tools.
-
-<CtaButton label="Explore the VPS Control Center" link="/vps-management/vps-control-panel" />
+See [VPS basics](/faq/what-is-a-virtual-private-server), [system configuration](/vps-management/system-configuration-dialog), [support scope](/how-our-support-team-helps-you) and the [AUP](/acceptable-use-policy).

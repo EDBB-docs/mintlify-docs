@@ -1,131 +1,52 @@
 ---
-title: "Understand the System Configuration Dialog"
-sidebarTitle: "System Configuration"
-description: "Tune CPU, boot, storage, network, and display settings for your EDBB VPS using the System Configuration dialog."
+title: "Understand the system configuration dialog"
+sidebarTitle: "System configuration"
+description: "Review EDBB Settings controls for virtual CPU, storage, networking and display. Check driver compatibility and recovery access before applying changes."
 ---
 
-## System Configuration Overview
+<span id="default-behavior" />
+<span id="system-configuration-overview" />
 
-<Info>
-  The System Configuration dialog controls how the hypervisor presents hardware to your VPS. Changes typically require a reboot—save your work before applying them.
-</Info>
+The **Settings** tab controls how virtual hardware is presented to your VPS. Record the current configuration before making a change and plan a maintenance window.
 
----
+<span id="important-considerations" />
 
-## Accessing the Dialog
+<Warning>
+Changing disk/network drivers or boot mode can prevent startup or remote access. Verify guest driver support, keep backups and a console recovery path, and store encryption recovery keys before changing vTPM settings.
+</Warning>
 
-<Steps>
-  <Step title="Open the service Control Panel">
-    Sign in to the <a href="https://my.edbb.com/clientarea.php" target="_blank">EDBB Control Panel</a>, open <strong>Services</strong>, and select the VPS you want to adjust.
-  </Step>
-  <Step title="Launch System Configuration">
-    Click on the Settings tab. The dialog opens with tabs for each hardware category.
-    ![settings](/assets/settings.png)
-  </Step>
-</Steps>
+<span id="how-settings-are-applied" />
+<span id="key-settings" />
 
----
+<span id="accessing-the-dialog" />
 
-## Key Settings
+## Open Settings
 
-<CardGroup cols={3}>
-  <Card title="⏲️ Boot Menu Timeout">
-    Controls how long the boot menu appears at startup. <strong>5 seconds</strong> offers a brief window to select alternate boot devices.
-  </Card>
-  <Card title="🧠 CPU Layout">
-    Choose how virtual CPUs are exposed—<strong>Multi-Core</strong> for efficiency, or <strong>Multi-Socket</strong> if legacy software requires it.
-  </Card>
-  <Card title="🧩 CPU Model">
-    Set <strong>Host CPU Passthrough</strong> to expose advanced instruction sets unless an OS needs a more generic model.
-  </Card>
-  <Card title="🖥️ Video Adapter">
-    Pick <strong>Cirrus</strong> for broad compatibility or <strong>QXL</strong> if you use SPICE-aware systems and need smoother graphics.
-  </Card>
-  <Card title="💾 Disk Driver">
-    <strong>Virtio</strong> delivers best performance (Windows may need drivers). Use <strong>IDE</strong> for legacy guests or RouterOS.
-  </Card>
-  <Card title="🌐 Network Driver">
-    Choose <strong>Virtio</strong> for high throughput, <strong>E1000</strong> for broad compatibility, or <strong>RTL8139</strong> when legacy OS support is required.
-  </Card>
-  <Card title="⌨️ VNC Keymap">
-    Match the console keyboard layout (e.g., <strong>en-us</strong>, <strong>de</strong>, <strong>fr</strong>) to your physical keyboard.
-  </Card>
-  <Card title="📝 Description">
-    Add a friendly label to help identify the VPS inside the client area (e.g., <em>prod-web-fra</em>).
-  </Card>
-  <Card title="🔒 VLAN Assignment">
-    If Private VLAN is enabled, select the VLAN ID to place this VPS on an isolated network segment.
-  </Card>
-</CardGroup>
+Select the VPS in the [EDBB Control Panel](https://my.edbb.com/clientarea.php), then open **Settings**.
 
----
+<Frame>
+![EDBB Settings tab showing boot, CPU, display, driver and identification controls](/assets/settings.png)
+</Frame>
 
-## 🆕 Boot Mode and TPM
+## Review the available controls
 
-The System Configuration dialog also lets you control how your VPS boots and whether a Trusted Platform Module (TPM) is available.
+| Control | Purpose and caution |
+| --- | --- |
+| Boot Menu Timeout | Time available to select a boot device |
+| CPU Model | Model exposed to the guest; host passthrough exposes host features but can affect migration compatibility |
+| CPU cores vs sockets | Virtual topology; check guest and application limits, not assumptions about physical core ownership |
+| Video Driver | Guest display adapter; choose a driver supported by the OS |
+| Disk Driver | Storage controller; install the guest driver before switching |
+| Network Driver | Virtual NIC; switching can change guest interface behavior |
+| VNC Keymap | Console keyboard interpretation; test special characters before changing passwords |
+| Description | Service label; changing it does not rename an already installed guest OS |
 
-<CardGroup cols={2}>
-  <Card title="🧭 Boot Mode">
-    Choose between <strong>BIOS</strong> and <strong>UEFI</strong> firmware.
-    <ul>
-      <li><strong>BIOS</strong>: Maximum compatibility with legacy operating systems.</li>
-      <li><strong>UEFI</strong>: Required for modern features such as Secure Boot and newer OS releases.</li>
-    </ul>
-  </Card>
+<span id="-boot-mode-and-tpm" />
 
-  <Card title="🔐 TPM">
-    Enable or disable a virtual TPM device.
-    <ul>
-      <li><strong>Disabled</strong>: Default, widest compatibility.</li>
-      <li><strong>Software TPM (vTPM)</strong>: Needed for certain modern OS requirements.</li>
-    </ul>
-  </Card>
-</CardGroup>
+Boot mode and vTPM options, where exposed for your service, must match your image and recovery requirements. See [boot mode and TPM](/vps-management/efi-vs-bios-and-tpm). UEFI does not by itself establish that Secure Boot is enabled.
 
----
+<span id="apply-changes" />
 
-### Default behavior
+## Apply and verify
 
-- <strong>BIOS</strong> and <strong>TPM disabled</strong> are selected by default to ensure maximum compatibility across operating systems.
-
----
-
-### Important considerations
-
-- Many operating systems are <strong>not compatible with UEFI</strong> and may fail to boot if switched.
-- Some modern systems, such as <strong>Windows 11</strong>, <strong>require UEFI and TPM</strong> to install and run.
-
----
-
-### How settings are applied
-
-- <strong>Auto-installers</strong> automatically select the correct Boot Mode and TPM configuration.
-- Manual configuration is mainly relevant when:
-  - Using <strong>custom images</strong>
-  - Booting from an <strong>ISO</strong>
-
-<Callout type="info">
-  Not sure which option to choose? In most cases, leaving the default settings unchanged is the safest approach unless your OS explicitly requires UEFI or TPM.
-</Callout>
-
-👉 For detailed guidance, see:  
-[**UEFI vs BIOS & vTPM explained**](/vps-management/efi-vs-bios-and-tpm)
-
----
-
-## Apply Changes
-
-<Steps>
-  <Step title="Review and save">
-    Adjust the relevant fields and click <strong>Apply</strong>. The dialog closes once the settings are stored.
-  </Step>
-  <Step title="Reboot if required">
-    Most hardware changes need a restart. Use the <strong>Server On</strong> menu to reboot the VPS so the new configuration takes effect.
-  </Step>
-</Steps>
-
-<Callout type="warning">
-  Switching disk or network drivers can make the guest OS unbootable if drivers aren’t installed. Confirm driver support before applying changes.
-</Callout>
-
-You’re ready to tailor the virtual hardware for your workload while staying within the EDBB Control Panel.
+Review the changes and select **Apply**. Follow the required [full power-cycle procedure](/vps-management/power-cycle-or-reboot-a-vps) for hardware changes, then verify boot, networking and applications through the console before closing it. If a setting is absent, ask support rather than assuming an EDIS Global panel workflow applies.

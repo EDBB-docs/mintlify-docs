@@ -1,0 +1,2144 @@
+[
+  {
+    "old_path": "/acceptable-use-policy",
+    "final_path": "/acceptable-use-policy",
+    "fragment": "1-zero-tolerance-offences",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/acceptable-use-policy",
+    "final_path": "/acceptable-use-policy",
+    "fragment": "2-network-and-platform-safeguards",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/acceptable-use-policy",
+    "final_path": "/acceptable-use-policy",
+    "fragment": "3-content-and-conduct-rules",
+    "outcome": "alias before Prohibited content and conduct"
+  },
+  {
+    "old_path": "/acceptable-use-policy",
+    "final_path": "/acceptable-use-policy",
+    "fragment": "4-staying-compliant",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/acceptable-use-policy",
+    "final_path": "/acceptable-use-policy",
+    "fragment": "5-security-research-and-authorized-testing-activities",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/advanced-setup-guides/basic-ufw-debian-ubuntu",
+    "final_path": "/advanced-setup-guides/ufw-firewall",
+    "fragment": "advanced-configuration",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/advanced-setup-guides/basic-ufw-debian-ubuntu",
+    "final_path": "/advanced-setup-guides/ufw-firewall",
+    "fragment": "allow-incoming-connections",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/advanced-setup-guides/basic-ufw-debian-ubuntu",
+    "final_path": "/advanced-setup-guides/ufw-firewall",
+    "fragment": "allow-specific-ip-addresses",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/advanced-setup-guides/basic-ufw-debian-ubuntu",
+    "final_path": "/advanced-setup-guides/ufw-firewall",
+    "fragment": "basic-ufw-commands",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/advanced-setup-guides/basic-ufw-debian-ubuntu",
+    "final_path": "/advanced-setup-guides/ufw-firewall",
+    "fragment": "basic-web-server-setup",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/advanced-setup-guides/basic-ufw-debian-ubuntu",
+    "final_path": "/advanced-setup-guides/ufw-firewall",
+    "fragment": "best-practices",
+    "outcome": "alias before Recover access"
+  },
+  {
+    "old_path": "/advanced-setup-guides/basic-ufw-debian-ubuntu",
+    "final_path": "/advanced-setup-guides/ufw-firewall",
+    "fragment": "check-ufw-status",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/advanced-setup-guides/basic-ufw-debian-ubuntu",
+    "final_path": "/advanced-setup-guides/ufw-firewall",
+    "fragment": "common-configuration-examples",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/advanced-setup-guides/basic-ufw-debian-ubuntu",
+    "final_path": "/advanced-setup-guides/ufw-firewall",
+    "fragment": "conclusion",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/advanced-setup-guides/basic-ufw-debian-ubuntu",
+    "final_path": "/advanced-setup-guides/ufw-firewall",
+    "fragment": "configure-default-policies",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/advanced-setup-guides/basic-ufw-debian-ubuntu",
+    "final_path": "/advanced-setup-guides/ufw-firewall",
+    "fragment": "database-server-setup",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/advanced-setup-guides/basic-ufw-debian-ubuntu",
+    "final_path": "/advanced-setup-guides/ufw-firewall",
+    "fragment": "delete-rules",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/advanced-setup-guides/basic-ufw-debian-ubuntu",
+    "final_path": "/advanced-setup-guides/ufw-firewall",
+    "fragment": "deny-incoming-connections",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/advanced-setup-guides/basic-ufw-debian-ubuntu",
+    "final_path": "/advanced-setup-guides/ufw-firewall",
+    "fragment": "enable-and-disable-ufw",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/advanced-setup-guides/basic-ufw-debian-ubuntu",
+    "final_path": "/advanced-setup-guides/ufw-firewall",
+    "fragment": "installation",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/advanced-setup-guides/basic-ufw-debian-ubuntu",
+    "final_path": "/advanced-setup-guides/ufw-firewall",
+    "fragment": "introduction-to-ufw",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/advanced-setup-guides/basic-ufw-debian-ubuntu",
+    "final_path": "/advanced-setup-guides/ufw-firewall",
+    "fragment": "managing-basic-rules",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/advanced-setup-guides/basic-ufw-debian-ubuntu",
+    "final_path": "/advanced-setup-guides/ufw-firewall",
+    "fragment": "rate-limiting",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/advanced-setup-guides/basic-ufw-debian-ubuntu",
+    "final_path": "/advanced-setup-guides/ufw-firewall",
+    "fragment": "troubleshooting",
+    "outcome": "alias before Before you begin"
+  },
+  {
+    "old_path": "/advanced-setup-guides/extend-hard-drive-windows-guide",
+    "final_path": "/advanced-setup-guides/extend-windows-disk",
+    "fragment": "alternative-tools",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/advanced-setup-guides/extend-hard-drive-windows-guide",
+    "final_path": "/advanced-setup-guides/extend-windows-disk",
+    "fragment": "common-issues-and-solutions",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/advanced-setup-guides/extend-hard-drive-windows-guide",
+    "final_path": "/advanced-setup-guides/extend-windows-disk",
+    "fragment": "introduction",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/advanced-setup-guides/extend-hard-drive-windows-guide",
+    "final_path": "/advanced-setup-guides/extend-windows-disk",
+    "fragment": "step-5-shrinking-a-volume",
+    "outcome": "alias before Step 4: Extending a Volume"
+  },
+  {
+    "old_path": "/advanced-setup-guides/extend-hard-drive-windows-guide",
+    "final_path": "/advanced-setup-guides/extend-windows-disk",
+    "fragment": "step-6-verify-changes",
+    "outcome": "alias before Step 5: Verify changes"
+  },
+  {
+    "old_path": "/advanced-setup-guides/gui-versions-of-ubuntu-debian",
+    "final_path": "/advanced-setup-guides/ubuntu-desktop",
+    "fragment": "os-images-with-graphical-desktop-enabled",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/advanced-setup-guides/manually-resize-disk-after-plan-upgrade-on-live-linux-systems",
+    "final_path": "/advanced-setup-guides/resize-linux-disk",
+    "fragment": "access-the-edbb-vps-control-panel",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/advanced-setup-guides/manually-resize-disk-after-plan-upgrade-on-live-linux-systems",
+    "final_path": "/advanced-setup-guides/resize-linux-disk",
+    "fragment": "identify-the-new-swap-partition",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/advanced-setup-guides/manually-resize-disk-after-plan-upgrade-on-live-linux-systems",
+    "final_path": "/advanced-setup-guides/resize-linux-disk",
+    "fragment": "important-notice-risks-associated-with-resizing-disk-space",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/advanced-setup-guides/manually-resize-disk-after-plan-upgrade-on-live-linux-systems",
+    "final_path": "/advanced-setup-guides/resize-linux-disk",
+    "fragment": "launch-novnc",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/advanced-setup-guides/manually-resize-disk-after-plan-upgrade-on-live-linux-systems",
+    "final_path": "/advanced-setup-guides/resize-linux-disk",
+    "fragment": "mount-system-rescue-cd-and-boot",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/advanced-setup-guides/manually-resize-disk-after-plan-upgrade-on-live-linux-systems",
+    "final_path": "/advanced-setup-guides/resize-linux-disk",
+    "fragment": "resize-partition",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/advanced-setup-guides/script-based-mikrotik-router-os-installation-guide-winbox",
+    "final_path": "/advanced-setup-guides/install-mikrotik-chr",
+    "fragment": "1-prepare-the-vps",
+    "outcome": "alias before Prepare the image and console"
+  },
+  {
+    "old_path": "/advanced-setup-guides/script-based-mikrotik-router-os-installation-guide-winbox",
+    "final_path": "/advanced-setup-guides/install-mikrotik-chr",
+    "fragment": "2-create-the-installation-script",
+    "outcome": "alias before Identify the destination"
+  },
+  {
+    "old_path": "/advanced-setup-guides/script-based-mikrotik-router-os-installation-guide-winbox",
+    "final_path": "/advanced-setup-guides/install-mikrotik-chr",
+    "fragment": "3-run-the-installer",
+    "outcome": "alias before Write the image"
+  },
+  {
+    "old_path": "/advanced-setup-guides/script-based-mikrotik-router-os-installation-guide-winbox",
+    "final_path": "/advanced-setup-guides/install-mikrotik-chr",
+    "fragment": "4-connect-with-winbox",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/advanced-setup-guides/script-based-mikrotik-router-os-installation-guide-winbox",
+    "final_path": "/advanced-setup-guides/install-mikrotik-chr",
+    "fragment": "configure-routeros-manually",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/backups",
+    "final_path": "/backups",
+    "fragment": "build-a-simple-and-reliable-backup-plan",
+    "outcome": "alias before ##"
+  },
+  {
+    "old_path": "/backups",
+    "final_path": "/backups",
+    "fragment": "protecting-your-vps-data",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/backups",
+    "final_path": "/backups",
+    "fragment": "requesting-a-downloadable-image",
+    "outcome": "alias before ## Paid"
+  },
+  {
+    "old_path": "/backups",
+    "final_path": "/backups",
+    "fragment": "what-this-means-for-you",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/backups",
+    "final_path": "/backups",
+    "fragment": "why-it-matters",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/backups",
+    "final_path": "/backups",
+    "fragment": "why-regular-backups-are-essential-for-your-vps-data-protection",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/changelog/product",
+    "final_path": "/changelog/product",
+    "fragment": "november-1-2025-—-edbb-officially-launches-",
+    "outcome": "alias before November 1, 2025 — EDBB Officially Launches "
+  },
+  {
+    "old_path": "/changelog/product",
+    "final_path": "/changelog/product",
+    "fragment": "november-2025",
+    "outcome": "preserved by rendered heading ID; duplicate alias removed"
+  },
+  {
+    "old_path": "/changelog/product",
+    "final_path": "/changelog/product",
+    "fragment": "what’s-new",
+    "outcome": "preserved by rendered heading ID; duplicate alias removed"
+  },
+  {
+    "old_path": "/getting-started/QQQQ_check-your-inbox",
+    "final_path": "/check-your-inbox",
+    "fragment": "bookmark-these-links",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/check-your-inbox",
+    "final_path": "/check-your-inbox",
+    "fragment": "didn’t-receive-the-email",
+    "outcome": "preserved by rendered heading ID; duplicate alias removed"
+  },
+  {
+    "old_path": "/getting-started/QQQQ_check-your-inbox",
+    "final_path": "/check-your-inbox",
+    "fragment": "didn’t-receive-the-email",
+    "outcome": "preserved by rendered heading ID; duplicate alias removed"
+  },
+  {
+    "old_path": "/getting-started/QQQQ_check-your-inbox",
+    "final_path": "/check-your-inbox",
+    "fragment": "need-assistance",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/getting-started/QQQQ_check-your-inbox",
+    "final_path": "/check-your-inbox",
+    "fragment": "security-tip",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/getting-started/QQQQ_check-your-inbox",
+    "final_path": "/check-your-inbox",
+    "fragment": "what-to-expect-in-the-welcome-email",
+    "outcome": "alias before What's in the Email"
+  },
+  {
+    "old_path": "/check-your-inbox",
+    "final_path": "/check-your-inbox",
+    "fragment": "what’s-in-the-email",
+    "outcome": "preserved by rendered heading ID; duplicate alias removed"
+  },
+  {
+    "old_path": "/check-your-inbox",
+    "final_path": "/check-your-inbox",
+    "fragment": "what’s-next",
+    "outcome": "preserved by rendered heading ID; duplicate alias removed"
+  },
+  {
+    "old_path": "/check-your-inbox",
+    "final_path": "/check-your-inbox",
+    "fragment": "you-are-almost-ready-to-go-",
+    "outcome": "alias before You are almost ready to go! "
+  },
+  {
+    "old_path": "/getting-started/QQQQ_check-your-inbox",
+    "final_path": "/check-your-inbox",
+    "fragment": "you’re-almost-ready-",
+    "outcome": "alias before You are almost ready to go! "
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/accepted-payment-methods",
+    "final_path": "/faq/billing-lifecycle/accepted-payment-methods",
+    "fragment": "cards",
+    "outcome": "alias before ## Cards"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/accepted-payment-methods",
+    "final_path": "/faq/billing-lifecycle/accepted-payment-methods",
+    "fragment": "cryptocurrencies",
+    "outcome": "alias before Cryptocurrency"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/accepted-payment-methods",
+    "final_path": "/faq/billing-lifecycle/accepted-payment-methods",
+    "fragment": "digital-wallets",
+    "outcome": "alias before | Method"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/accepted-payment-methods",
+    "final_path": "/faq/billing-lifecycle/accepted-payment-methods",
+    "fragment": "payment-gateways-at-a-glance",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/accidental-renewal-convert-payment-to-credit",
+    "final_path": "/faq/billing-lifecycle/accidental-renewal",
+    "fragment": "eligibility-checklist",
+    "outcome": "alias before Eligibility"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/accidental-renewal-convert-payment-to-credit",
+    "final_path": "/faq/billing-lifecycle/accidental-renewal",
+    "fragment": "turn-an-accidental-renewal-into-credit",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/accidental-renewal-convert-payment-to-credit",
+    "final_path": "/faq/billing-lifecycle/accidental-renewal",
+    "fragment": "what-to-do",
+    "outcome": "alias before ## Request a review"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/automated-vps-billing-workflow",
+    "final_path": "/faq/billing-lifecycle/billing-workflow",
+    "fragment": "-if-your-invoice-is-cancelled",
+    "outcome": "alias before ## Invoice cancellation"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/automated-vps-billing-workflow",
+    "final_path": "/faq/billing-lifecycle/billing-workflow",
+    "fragment": "-your-invoice-shows-unpaid",
+    "outcome": "alias before ## Recover service"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/automated-vps-billing-workflow",
+    "final_path": "/faq/billing-lifecycle/billing-workflow",
+    "fragment": "client-responsibility-notice",
+    "outcome": "alias before ## Avoid an unwanted renewal"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/automated-vps-billing-workflow",
+    "final_path": "/faq/billing-lifecycle/billing-workflow",
+    "fragment": "service-recovery-is-not-available",
+    "outcome": "alias before Invoice cancellation is not always data deletion"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/automated-vps-billing-workflow",
+    "final_path": "/faq/billing-lifecycle/billing-workflow",
+    "fragment": "service-recovery-options",
+    "outcome": "alias before Recover service before deletion"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/automated-vps-billing-workflow",
+    "final_path": "/faq/billing-lifecycle/billing-workflow",
+    "fragment": "simplified-vps-billing-workflow",
+    "outcome": "alias before ## Non-payment timeline"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/can-i-get-a-refund",
+    "final_path": "/faq/billing-lifecycle/can-i-get-a-refund",
+    "fragment": "eligibility-checklist",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/cancel-a-service",
+    "final_path": "/faq/billing-lifecycle/cancel-a-service",
+    "fragment": "after-you-cancel",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/cancel-a-service",
+    "final_path": "/faq/billing-lifecycle/cancel-a-service",
+    "fragment": "before-you-cancel",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/cancel-a-service",
+    "final_path": "/faq/billing-lifecycle/cancel-a-service",
+    "fragment": "how-to-cancel-your-vps",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/cancel-a-service",
+    "final_path": "/faq/billing-lifecycle/cancel-a-service",
+    "fragment": "pick-the-timing-that-fits",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/cancel-a-service",
+    "final_path": "/faq/billing-lifecycle/cancel-a-service",
+    "fragment": "submit-the-cancellation-request-in-the-control-panel",
+    "outcome": "alias before Submit the request"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/cancellation-and-refund-policy",
+    "final_path": "/faq/billing-lifecycle/cancellation-and-refund-policy",
+    "fragment": "additional-information",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/cancellation-and-refund-policy",
+    "final_path": "/faq/billing-lifecycle/cancellation-and-refund-policy",
+    "fragment": "alternative-to-refund-location-change",
+    "outcome": "alias before Free location change"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/cancellation-and-refund-policy",
+    "final_path": "/faq/billing-lifecycle/cancellation-and-refund-policy",
+    "fragment": "step-1-—-cancel-the-service",
+    "outcome": "alias before <Step"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/cancellation-and-refund-policy",
+    "final_path": "/faq/billing-lifecycle/cancellation-and-refund-policy",
+    "fragment": "step-2-—-check-refund-eligibility",
+    "outcome": "alias before VPS cancellation and 24-hour refund policy"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/cancellation-and-refund-policy",
+    "final_path": "/faq/billing-lifecycle/cancellation-and-refund-policy",
+    "fragment": "step-3-—-contact-edbb-support",
+    "outcome": "alias before <Step"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/cryptocurrency-payments-confirmation-guide-edbb",
+    "final_path": "/faq/billing-lifecycle/crypto-confirmations",
+    "fragment": "confirmation-basics",
+    "outcome": "alias before Check confirmations"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/cryptocurrency-payments-confirmation-guide-edbb",
+    "final_path": "/faq/billing-lifecycle/crypto-confirmations",
+    "fragment": "if-the-timer-expires",
+    "outcome": "alias before If the invoice remains unpaid"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/cryptocurrency-payments-confirmation-guide-edbb",
+    "final_path": "/faq/billing-lifecycle/crypto-confirmations",
+    "fragment": "track-your-payment",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/cryptocurrency-payments-confirmation-guide-edbb",
+    "final_path": "/faq/billing-lifecycle/crypto-confirmations",
+    "fragment": "typical-thresholds",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/data-retention-period",
+    "final_path": "/faq/billing-lifecycle/data-retention-period",
+    "fragment": "qcow2-export-availability",
+    "outcome": "alias before Paid qcow2 exports"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/data-retention-period",
+    "final_path": "/faq/billing-lifecycle/data-retention-period",
+    "fragment": "vps-retention-timeline",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/eu-vat-explained-if-and-how-much",
+    "final_path": "/faq/billing-lifecycle/vat",
+    "fragment": "how-vat-applies",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/eu-vat-explained-if-and-how-much",
+    "final_path": "/faq/billing-lifecycle/vat",
+    "fragment": "vat-charged-automatically",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/eu-vat-explained-if-and-how-much",
+    "final_path": "/faq/billing-lifecycle/vat",
+    "fragment": "when-vat-is-0%",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/how-fast-instant-delivery",
+    "final_path": "/faq/billing-lifecycle/provisioning-time",
+    "fragment": "from-payment-to-login",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/how-fast-instant-delivery",
+    "final_path": "/faq/billing-lifecycle/provisioning-time",
+    "fragment": "instant-deployment-highlights",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/how-fast-instant-delivery",
+    "final_path": "/faq/billing-lifecycle/provisioning-time",
+    "fragment": "payment-speed-snapshot",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/how-fast-instant-delivery",
+    "final_path": "/faq/billing-lifecycle/provisioning-time",
+    "fragment": "what-can-slow-things-down",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/moving-services-to-different-client-account",
+    "final_path": "/faq/billing-lifecycle/account-transfers",
+    "fragment": "why-services-can’t-be-moved",
+    "outcome": "preserved by rendered heading ID; duplicate alias removed"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/scheduled-billing-window",
+    "final_path": "/faq/billing-lifecycle/scheduled-billing-window",
+    "fragment": "-credit-manipulation",
+    "outcome": "alias before ## Account credit"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/scheduled-billing-window",
+    "final_path": "/faq/billing-lifecycle/scheduled-billing-window",
+    "fragment": "-scheduled-billing-window",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/scheduled-billing-window",
+    "final_path": "/faq/billing-lifecycle/scheduled-billing-window",
+    "fragment": "-service-suspension",
+    "outcome": "alias before Suspension and recovery"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/scheduled-billing-window",
+    "final_path": "/faq/billing-lifecycle/scheduled-billing-window",
+    "fragment": "-summary",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/scheduled-billing-window",
+    "final_path": "/faq/billing-lifecycle/scheduled-billing-window",
+    "fragment": "-timeframe",
+    "outcome": "alias before ## Billing schedule"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/scheduled-billing-window",
+    "final_path": "/faq/billing-lifecycle/scheduled-billing-window",
+    "fragment": "-what-happens-during-the-billing-window",
+    "outcome": "alias before ## Billing schedule"
+  },
+  {
+    "old_path": "/faq/billing-lifecycle/scheduled-billing-window",
+    "final_path": "/faq/billing-lifecycle/scheduled-billing-window",
+    "fragment": "important",
+    "outcome": "alias before ## Account credit"
+  },
+  {
+    "old_path": "/faq/free-trials-available",
+    "final_path": "/faq/free-trials-available",
+    "fragment": "evaluation-options-without-a-free-trial",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/free-trials-available",
+    "final_path": "/faq/free-trials-available",
+    "fragment": "frequently-asked-questions",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/free-trials-available",
+    "final_path": "/faq/free-trials-available",
+    "fragment": "test-performance-before-you-commit",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/hourly-plans-available",
+    "final_path": "/faq/hourly-plans-available",
+    "fragment": "monthly-billing-instead-of-hourly",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/hourly-plans-available",
+    "final_path": "/faq/hourly-plans-available",
+    "fragment": "why-we-skip-hourly-invoicing",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/hourly-plans-available",
+    "final_path": "/faq/hourly-plans-available",
+    "fragment": "working-within-monthly-billing",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/ip-addresses/announcing-third-party-ip-prefixes",
+    "final_path": "/faq/ip-addresses/announcing-third-party-ip-prefixes",
+    "fragment": "can-vps-plans-announce-customer-prefixes",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/ip-addresses/announcing-third-party-ip-prefixes",
+    "final_path": "/faq/ip-addresses/announcing-third-party-ip-prefixes",
+    "fragment": "dedicated-server-requirements",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/ip-addresses/understanding-dns-systems",
+    "final_path": "/faq/ip-addresses/anycast-and-dns-location",
+    "fragment": "customizing-settings",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/ip-addresses/understanding-dns-systems",
+    "final_path": "/faq/ip-addresses/anycast-and-dns-location",
+    "fragment": "forward-dns-resolvers",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/ip-addresses/anycast-reverse-dns-nameserver-locations-vs-vps-location",
+    "final_path": "/faq/ip-addresses/anycast-and-dns-location",
+    "fragment": "how-edbb-anycast-works",
+    "outcome": "alias before Anycast"
+  },
+  {
+    "old_path": "/faq/ip-addresses/anycast-reverse-dns-nameserver-locations-vs-vps-location",
+    "final_path": "/faq/ip-addresses/anycast-and-dns-location",
+    "fragment": "key-takeaway",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/ip-addresses/understanding-dns-systems",
+    "final_path": "/faq/ip-addresses/anycast-and-dns-location",
+    "fragment": "reverse-dns-ptr",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/ip-addresses/anycast-reverse-dns-nameserver-locations-vs-vps-location",
+    "final_path": "/faq/ip-addresses/anycast-and-dns-location",
+    "fragment": "why-ptr-lookups-show-varied-locations",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/ip-addresses/change-ip-address",
+    "final_path": "/faq/ip-addresses/change-ip-address",
+    "fragment": "don’t-forget-to-apply-the-new-ip",
+    "outcome": "alias before Apply the new IP to Apply the New IP"
+  },
+  {
+    "old_path": "/faq/ip-addresses/change-ip-address",
+    "final_path": "/faq/ip-addresses/change-ip-address",
+    "fragment": "paid-ip-change-after-24-hours",
+    "outcome": "alias before Paid changes"
+  },
+  {
+    "old_path": "/faq/ip-addresses/debugging-packet-loss-traceroute-mtr-windows",
+    "final_path": "/faq/ip-addresses/diagnose-packet-loss",
+    "fragment": "before-you-start",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/ip-addresses/debugging-packet-loss-traceroute-mtr-windows",
+    "final_path": "/faq/ip-addresses/diagnose-packet-loss",
+    "fragment": "command-prompt-traceroute",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/ip-addresses/debugging-packet-loss-traceroute-mtr-windows",
+    "final_path": "/faq/ip-addresses/diagnose-packet-loss",
+    "fragment": "linux-or-macos",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/ip-addresses/debugging-packet-loss-traceroute-mtr-windows",
+    "final_path": "/faq/ip-addresses/diagnose-packet-loss",
+    "fragment": "submitting-the-results",
+    "outcome": "alias before Interpret results"
+  },
+  {
+    "old_path": "/faq/ip-addresses/debugging-packet-loss-traceroute-mtr-windows",
+    "final_path": "/faq/ip-addresses/diagnose-packet-loss",
+    "fragment": "windows-tools",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/ip-addresses/debugging-packet-loss-traceroute-mtr-windows",
+    "final_path": "/faq/ip-addresses/diagnose-packet-loss",
+    "fragment": "winmtr-recommended-for-trending-loss",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/ip-addresses/geolocation-geoip-databases",
+    "final_path": "/faq/ip-addresses/geolocation-geoip-databases",
+    "fragment": "verifying-your-address",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/ip-addresses/geolocation-geoip-databases",
+    "final_path": "/faq/ip-addresses/geolocation-geoip-databases",
+    "fragment": "where-geoip-data-comes-from",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/ip-addresses/geolocation-geoip-databases",
+    "final_path": "/faq/ip-addresses/geolocation-geoip-databases",
+    "fragment": "why-lookup-results-sometimes-differ",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/ip-addresses/ip-can-not-be-reached-from-my-country",
+    "final_path": "/faq/ip-addresses/country-reachability",
+    "fragment": "first-confirm-the-scope",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/ip-addresses/ip-can-not-be-reached-from-my-country",
+    "final_path": "/faq/ip-addresses/country-reachability",
+    "fragment": "mitigation-tips",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/ip-addresses/ip-can-not-be-reached-from-my-country",
+    "final_path": "/faq/ip-addresses/country-reachability",
+    "fragment": "request-a-replacement-ip",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/ip-addresses/ip-can-not-be-reached-from-my-country",
+    "final_path": "/faq/ip-addresses/country-reachability",
+    "fragment": "verify-the-scope-of-the-issue",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/ip-addresses/ip-location-incorrect-on-whatismyipaddresscom",
+    "final_path": "/faq/ip-addresses/correct-geolocation",
+    "fragment": "confirm-the-actual-location",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/ip-addresses/ip-location-incorrect-on-whatismyipaddresscom",
+    "final_path": "/faq/ip-addresses/correct-geolocation",
+    "fragment": "submit-a-correction-to-whatismyipaddress",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/ip-addresses/ip-location-incorrect-on-whatismyipaddresscom",
+    "final_path": "/faq/ip-addresses/correct-geolocation",
+    "fragment": "when-to-contact-edbb-support",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/ip-addresses/ip-location-incorrect-on-whatismyipaddresscom",
+    "final_path": "/faq/ip-addresses/correct-geolocation",
+    "fragment": "why-whatismyipaddress-shows-the-wrong-city",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/ip-addresses/order-additional-ip-address",
+    "final_path": "/faq/ip-addresses/order-additional-ip-address",
+    "fragment": "pricing-snapshot",
+    "outcome": "alias before ## Price"
+  },
+  {
+    "old_path": "/faq/ip-addresses/order-additional-ip-address",
+    "final_path": "/faq/ip-addresses/order-additional-ip-address",
+    "fragment": "what’s-included",
+    "outcome": "preserved by rendered heading ID; duplicate alias removed"
+  },
+  {
+    "old_path": "/faq/ip-addresses/order-bespoke-ip-address",
+    "final_path": "/faq/ip-addresses/order-bespoke-ip-address",
+    "fragment": "pricing-snapshot",
+    "outcome": "alias before ## Price"
+  },
+  {
+    "old_path": "/faq/ip-addresses/ping-test-ip",
+    "final_path": "/faq/ip-addresses/ping-test-ip",
+    "fragment": "latency-route-testing-toolkit",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/ip-addresses/ping-test-ip",
+    "final_path": "/faq/ip-addresses/ping-test-ip",
+    "fragment": "measure-latency-before-you-deploy",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/ip-addresses/ping-test-ip",
+    "final_path": "/faq/ip-addresses/ping-test-ip",
+    "fragment": "suggested-workflow",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/ip-addresses/setting-up-reverse-pointers",
+    "final_path": "/faq/ip-addresses/reverse-dns",
+    "fragment": "verify-troubleshoot",
+    "outcome": "preserved by rendered heading ID; duplicate alias removed"
+  },
+  {
+    "old_path": "/faq/ip-addresses/understanding-ip-address-location",
+    "final_path": "/faq/ip-addresses/ip-location",
+    "fragment": "need-an-ip-from-another-country",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/ip-addresses/understanding-ip-address-location",
+    "final_path": "/faq/ip-addresses/ip-location",
+    "fragment": "the-geographic-link-of-ip-addresses",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/ip-addresses/understanding-ip-address-location",
+    "final_path": "/faq/ip-addresses/ip-location",
+    "fragment": "the-limitations-and-principles-of-ip-address-allocation-why-your-server’s-location-matters",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/port-25-smtp-rate-limit-policy",
+    "final_path": "/faq/port-25-smtp-rate-limit-policy",
+    "fragment": "best-practices",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/is-port-25-open",
+    "final_path": "/faq/port-25-smtp-rate-limit-policy",
+    "fragment": "does-edbb-filter-or-block-any-ports",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/port-25-smtp-rate-limit-policy",
+    "final_path": "/faq/port-25-smtp-rate-limit-policy",
+    "fragment": "outbound-smtp-policy",
+    "outcome": "alias before Why outbound Port 25 is rate-limited"
+  },
+  {
+    "old_path": "/faq/port-25-smtp-rate-limit-policy",
+    "final_path": "/faq/port-25-smtp-rate-limit-policy",
+    "fragment": "what-this-means-for-you",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/port-25-smtp-rate-limit-policy",
+    "final_path": "/faq/port-25-smtp-rate-limit-policy",
+    "fragment": "why-we-rate-limit-port-25",
+    "outcome": "alias before Why outbound Port 25 is rate-limited"
+  },
+  {
+    "old_path": "/faq/server-locations/change-server-location",
+    "final_path": "/faq/server-locations/change-server-location",
+    "fragment": "after-24-hours",
+    "outcome": "alias before During the first 24 hours"
+  },
+  {
+    "old_path": "/faq/server-locations/change-server-location",
+    "final_path": "/faq/server-locations/change-server-location",
+    "fragment": "eligibility-requirements",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/server-locations/change-server-location",
+    "final_path": "/faq/server-locations/change-server-location",
+    "fragment": "free-location-change-within-24-hours",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/server-locations/change-server-location",
+    "final_path": "/faq/server-locations/change-server-location",
+    "fragment": "why-we-don’t-“move”-an-existing-vps",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/traffic-bandwidth/dos-attacks/edbb-ddos-protection-overview",
+    "final_path": "/faq/traffic-bandwidth/dos-attacks/ddos-protection",
+    "fragment": "limitations",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/traffic-bandwidth/dos-attacks/edbb-ddos-protection-overview",
+    "final_path": "/faq/traffic-bandwidth/dos-attacks/ddos-protection",
+    "fragment": "protection-scope",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/traffic-bandwidth/exceeding-monthly-included-traffic",
+    "final_path": "/faq/traffic-bandwidth/exceeding-monthly-included-traffic",
+    "fragment": "options-to-restore-full-speed",
+    "outcome": "alias before Restore full speed"
+  },
+  {
+    "old_path": "/faq/traffic-bandwidth/exceeding-monthly-included-traffic",
+    "final_path": "/faq/traffic-bandwidth/exceeding-monthly-included-traffic",
+    "fragment": "stay-ahead-of-the-curve",
+    "outcome": "alias before ## Prevent"
+  },
+  {
+    "old_path": "/faq/traffic-bandwidth/exceeding-monthly-included-traffic",
+    "final_path": "/faq/traffic-bandwidth/exceeding-monthly-included-traffic",
+    "fragment": "what-happens-when-you-hit-the-limit",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/traffic-bandwidth/how-to-investigate-and-stop-unusual-network-usage",
+    "final_path": "/faq/traffic-bandwidth/investigate-network-usage",
+    "fragment": "1-monitor-live-network-activity",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/traffic-bandwidth/how-to-investigate-and-stop-unusual-network-usage",
+    "final_path": "/faq/traffic-bandwidth/investigate-network-usage",
+    "fragment": "2-identify-which-process-is-behind-the-network-usage",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/traffic-bandwidth/how-to-investigate-and-stop-unusual-network-usage",
+    "final_path": "/faq/traffic-bandwidth/investigate-network-usage",
+    "fragment": "3-inspect-the-suspicious-process",
+    "outcome": "alias before Preserve evidence before stopping a process"
+  },
+  {
+    "old_path": "/faq/traffic-bandwidth/how-to-investigate-and-stop-unusual-network-usage",
+    "final_path": "/faq/traffic-bandwidth/investigate-network-usage",
+    "fragment": "4-kill-and-quarantine-the-script",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/traffic-bandwidth/how-to-investigate-and-stop-unusual-network-usage",
+    "final_path": "/faq/traffic-bandwidth/investigate-network-usage",
+    "fragment": "5-check-cron-jobs-and-autostart-entries",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/traffic-bandwidth/how-to-investigate-and-stop-unusual-network-usage",
+    "final_path": "/faq/traffic-bandwidth/investigate-network-usage",
+    "fragment": "6-use-nethogs-for-per-process-network-tracking",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/traffic-bandwidth/how-to-investigate-and-stop-unusual-network-usage",
+    "final_path": "/faq/traffic-bandwidth/investigate-network-usage",
+    "fragment": "7-check-your-overall-network-usage",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/traffic-bandwidth/how-to-investigate-and-stop-unusual-network-usage",
+    "final_path": "/faq/traffic-bandwidth/investigate-network-usage",
+    "fragment": "8-harden-the-system-against-rogue-scripts-",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/traffic-bandwidth/how-to-investigate-and-stop-unusual-network-usage",
+    "final_path": "/faq/traffic-bandwidth/investigate-network-usage",
+    "fragment": "detecting-suspicious-network-spikes-in-linux-servers-",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/traffic-bandwidth/traffic-pool",
+    "final_path": "/faq/traffic-bandwidth/traffic-pool",
+    "fragment": "how-to-get-started",
+    "outcome": "alias before ## Buy and assign"
+  },
+  {
+    "old_path": "/faq/traffic-bandwidth/traffic-pool",
+    "final_path": "/faq/traffic-bandwidth/traffic-pool",
+    "fragment": "monitor-and-refill",
+    "outcome": "alias before ## Low-balance"
+  },
+  {
+    "old_path": "/faq/traffic-bandwidth/traffic-pool",
+    "final_path": "/faq/traffic-bandwidth/traffic-pool",
+    "fragment": "traffic-pool-balance-sheet",
+    "outcome": "alias before Which traffic expires?"
+  },
+  {
+    "old_path": "/faq/traffic-bandwidth/traffic-pool",
+    "final_path": "/faq/traffic-bandwidth/traffic-pool",
+    "fragment": "traffic-pool-starter-credit",
+    "outcome": "alias before Which traffic expires?"
+  },
+  {
+    "old_path": "/faq/traffic-bandwidth/traffic-pool",
+    "final_path": "/faq/traffic-bandwidth/traffic-pool",
+    "fragment": "what-is-a-traffic-pool",
+    "outcome": "alias before Which traffic expires?"
+  },
+  {
+    "old_path": "/faq/traffic-bandwidth/traffic-stats-refill-explained",
+    "final_path": "/faq/traffic-bandwidth/traffic-statistics",
+    "fragment": "edbb-traffic-overview",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/traffic-bandwidth/traffic-stats-refill-explained",
+    "final_path": "/faq/traffic-bandwidth/traffic-statistics",
+    "fragment": "how-we-meter-traffic",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/traffic-bandwidth/traffic-stats-refill-explained",
+    "final_path": "/faq/traffic-bandwidth/traffic-statistics",
+    "fragment": "inspect-daily-cumulative-graphs",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/traffic-bandwidth/traffic-stats-refill-explained",
+    "final_path": "/faq/traffic-bandwidth/traffic-statistics",
+    "fragment": "manage-traffic-pool-hydration",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/traffic-bandwidth/traffic-stats-refill-explained",
+    "final_path": "/faq/traffic-bandwidth/traffic-statistics",
+    "fragment": "read-the-summary-card",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/traffic-bandwidth/traffic-stats-refill-explained",
+    "final_path": "/faq/traffic-bandwidth/traffic-statistics",
+    "fragment": "what-happens-at-100%-usage",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/traffic-bandwidth/traffic-vs-bandwidth",
+    "final_path": "/faq/traffic-bandwidth/traffic-vs-bandwidth",
+    "fragment": "same-pipe-different-metrics",
+    "outcome": "preserved by rendered heading ID; duplicate alias removed"
+  },
+  {
+    "old_path": "/faq/upgrades-downgrades/cpu-cores-vs-cpu-sockets-in-vps-environments/how-to-check-cpu-cores-linux-vps",
+    "final_path": "/faq/upgrades-downgrades/check-cpu-linux",
+    "fragment": "conclusion",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/upgrades-downgrades/cpu-cores-vs-cpu-sockets-in-vps-environments/how-to-check-cpu-cores-linux-vps",
+    "final_path": "/faq/upgrades-downgrades/check-cpu-linux",
+    "fragment": "introduction-to-cpu-cores",
+    "outcome": "alias before Inspect virtual CPU resources"
+  },
+  {
+    "old_path": "/faq/upgrades-downgrades/cpu-cores-vs-cpu-sockets-in-vps-environments/how-to-check-cpu-cores-linux-vps",
+    "final_path": "/faq/upgrades-downgrades/check-cpu-linux",
+    "fragment": "the-/proc/cpuinfo-file",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/upgrades-downgrades/cpu-cores-vs-cpu-sockets-in-vps-environments/how-to-check-cpu-cores-linux-vps",
+    "final_path": "/faq/upgrades-downgrades/check-cpu-linux",
+    "fragment": "the-hwinfo-command",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/upgrades-downgrades/cpu-cores-vs-cpu-sockets-in-vps-environments/how-to-check-cpu-cores-linux-vps",
+    "final_path": "/faq/upgrades-downgrades/check-cpu-linux",
+    "fragment": "the-lscpu-command",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/upgrades-downgrades/cpu-cores-vs-cpu-sockets-in-vps-environments/how-to-check-cpu-cores-linux-vps",
+    "final_path": "/faq/upgrades-downgrades/check-cpu-linux",
+    "fragment": "the-nproc-command",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/upgrades-downgrades/cpu-cores-vs-cpu-sockets-in-vps-environments/how-to-check-cpu-cores-linux-vps",
+    "final_path": "/faq/upgrades-downgrades/check-cpu-linux",
+    "fragment": "the-top-and-htop-commands",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/upgrades-downgrades/cpu-cores-vs-cpu-sockets-in-vps-environments/how-to-check-cpu-cores-linux-vps",
+    "final_path": "/faq/upgrades-downgrades/check-cpu-linux",
+    "fragment": "verifying-the-number-of-cores-available-to-linux",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/upgrades-downgrades/cpu-cores-vs-cpu-sockets-in-vps-environments/how-to-check-cpu-cores-windows-vps",
+    "final_path": "/faq/upgrades-downgrades/check-cpu-windows",
+    "fragment": "how-to-check-number-of-cpu-cores-available-to-windows",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/upgrades-downgrades/cpu-cores-vs-cpu-sockets-in-vps-environments/understanding-cpu-cores-vs-sockets-in-vps",
+    "final_path": "/faq/upgrades-downgrades/cpu-cores-and-sockets",
+    "fragment": "change-the-cpu-topology-in-the-control-panel",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/upgrades-downgrades/cpu-cores-vs-cpu-sockets-in-vps-environments/understanding-cpu-cores-vs-sockets-in-vps",
+    "final_path": "/faq/upgrades-downgrades/cpu-cores-and-sockets",
+    "fragment": "core-vs-socket-basics",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/upgrades-downgrades/cpu-cores-vs-cpu-sockets-in-vps-environments/understanding-cpu-cores-vs-sockets-in-vps",
+    "final_path": "/faq/upgrades-downgrades/cpu-cores-and-sockets",
+    "fragment": "why-the-topology-matters",
+    "outcome": "alias before Why the layout matters"
+  },
+  {
+    "old_path": "/faq/upgrades-downgrades/requesting-qcow2-image-backup",
+    "final_path": "/faq/upgrades-downgrades/qcow2-export",
+    "fragment": "how-to-order",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/upgrades-downgrades/requesting-qcow2-image-backup",
+    "final_path": "/faq/upgrades-downgrades/qcow2-export",
+    "fragment": "when-to-request-an-export",
+    "outcome": "alias before Request the export"
+  },
+  {
+    "old_path": "/faq/upgrades-downgrades/upgrade-disk-drive-boost",
+    "final_path": "/faq/upgrades-downgrades/upgrade-disk-drive-boost",
+    "fragment": "finish-the-expansion-inside-your-os",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/upgrades-downgrades/upgrade-disk-drive-boost",
+    "final_path": "/faq/upgrades-downgrades/upgrade-disk-drive-boost",
+    "fragment": "order-the-boost-through-the-control-panel",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/upgrades-downgrades/upgrade-disk-drive-boost",
+    "final_path": "/faq/upgrades-downgrades/upgrade-disk-drive-boost",
+    "fragment": "why-choose-drive-boost",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/upgrades-downgrades/upgrade-plan",
+    "final_path": "/faq/upgrades-downgrades/upgrade-plan",
+    "fragment": "option-1-—-use-the-quick-upgrade-card",
+    "outcome": "preserved by rendered heading ID; duplicate alias removed"
+  },
+  {
+    "old_path": "/faq/upgrades-downgrades/upgrade-plan",
+    "final_path": "/faq/upgrades-downgrades/upgrade-plan",
+    "fragment": "option-2-—-order-from-the-upgrade-tab",
+    "outcome": "alias before Option 2 — Order from the Upgrades tab"
+  },
+  {
+    "old_path": "/faq/upgrades-downgrades/upgrades",
+    "final_path": "/faq/upgrades-downgrades/upgrades",
+    "fragment": "choose-the-right-upgrade-strategy",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/upgrades-downgrades/will-i-lose-data-when-i-upgrade",
+    "final_path": "/faq/upgrades-downgrades/upgrade-data-safety",
+    "fragment": "keeping-data-safe",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/upgrades-downgrades/will-i-lose-data-when-i-upgrade",
+    "final_path": "/faq/upgrades-downgrades/upgrade-data-safety",
+    "fragment": "upgrade-impact-at-a-glance",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/what-is-a-kvm-vps",
+    "final_path": "/faq/what-is-a-kvm-vps",
+    "fragment": "frequently-asked-questions",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/what-is-a-kvm-vps",
+    "final_path": "/faq/what-is-a-kvm-vps",
+    "fragment": "typical-kvm-use-cases",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/what-is-a-kvm-vps",
+    "final_path": "/faq/what-is-a-kvm-vps",
+    "fragment": "understanding-kvm-virtualization",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/what-is-a-kvm-vps",
+    "final_path": "/faq/what-is-a-kvm-vps",
+    "fragment": "why-kvm-matters-at-edbb",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/what-is-a-virtual-private-server",
+    "final_path": "/faq/what-is-a-virtual-private-server",
+    "fragment": "common-vps-workloads",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/what-is-a-virtual-private-server",
+    "final_path": "/faq/what-is-a-virtual-private-server",
+    "fragment": "launch-in-four-steps",
+    "outcome": "alias before Manage your VPS"
+  },
+  {
+    "old_path": "/faq/what-is-a-virtual-private-server",
+    "final_path": "/faq/what-is-a-virtual-private-server",
+    "fragment": "vps-fundamentals",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/what-is-a-virtual-private-server",
+    "final_path": "/faq/what-is-a-virtual-private-server",
+    "fragment": "vps-vs-shared-hosting",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/faq/what-is-a-virtual-private-server",
+    "final_path": "/faq/what-is-a-virtual-private-server",
+    "fragment": "what-you-get-with-an-edbb-vps",
+    "outcome": "alias before What you are responsible for"
+  },
+  {
+    "old_path": "/how-our-support-team-helps-you",
+    "final_path": "/how-our-support-team-helps-you",
+    "fragment": "bring-in-a-systems-expert",
+    "outcome": "alias before EDBB VPS services are unmanaged"
+  },
+  {
+    "old_path": "/how-our-support-team-helps-you",
+    "final_path": "/how-our-support-team-helps-you",
+    "fragment": "explore-our-knowledge-base-",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/how-our-support-team-helps-you",
+    "final_path": "/how-our-support-team-helps-you",
+    "fragment": "get-the-help-you-need",
+    "outcome": "alias before ## Prepare a useful request"
+  },
+  {
+    "old_path": "/how-our-support-team-helps-you",
+    "final_path": "/how-our-support-team-helps-you",
+    "fragment": "meet-the-edbb-support-desk",
+    "outcome": "alias before What support covers"
+  },
+  {
+    "old_path": "/how-our-support-team-helps-you",
+    "final_path": "/how-our-support-team-helps-you",
+    "fragment": "support-boundaries-for-your-security",
+    "outcome": "alias before ## What support covers"
+  },
+  {
+    "old_path": "/how-our-support-team-helps-you",
+    "final_path": "/how-our-support-team-helps-you",
+    "fragment": "tap-into-the-community",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/how-our-support-team-helps-you",
+    "final_path": "/how-our-support-team-helps-you",
+    "fragment": "we’re-ready-when-you-are",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/how-our-support-team-helps-you",
+    "final_path": "/how-our-support-team-helps-you",
+    "fragment": "what-we-handle-and-how",
+    "outcome": "alias before ## What support covers"
+  },
+  {
+    "old_path": "/index",
+    "final_path": "/index",
+    "fragment": "getting-started-with-your-vps-",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/linux-secure-shell-ssh",
+    "final_path": "/linux-secure-shell-ssh",
+    "fragment": "connect-to-your-vps",
+    "outcome": "alias before Connect"
+  },
+  {
+    "old_path": "/linux-secure-shell-ssh",
+    "final_path": "/linux-secure-shell-ssh",
+    "fragment": "quick-safety-checks",
+    "outcome": "alias before ## Secure ongoing access"
+  },
+  {
+    "old_path": "/linux-secure-shell-ssh",
+    "final_path": "/linux-secure-shell-ssh",
+    "fragment": "why-ssh-matters",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/misc/extending-180-day-trial-version-of-windows",
+    "final_path": "/misc/windows-server-evaluation",
+    "fragment": "extend-the-trial-in-three-commands",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/misc/extending-180-day-trial-version-of-windows",
+    "final_path": "/misc/windows-server-evaluation",
+    "fragment": "stay-within-microsoft’s-rules",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/misc/extending-180-day-trial-version-of-windows",
+    "final_path": "/misc/windows-server-evaluation",
+    "fragment": "what-to-expect",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/misc/fix-black-screen-windows-server",
+    "final_path": "/misc/rdp-black-screen",
+    "fragment": "fix-black-screen-when-connecting-to-windows-server",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/misc/fix-black-screen-windows-server",
+    "final_path": "/misc/rdp-black-screen",
+    "fragment": "issue-black-screen-after-connecting-via-remote-desktop-rdp",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/misc/fix-black-screen-windows-server",
+    "final_path": "/misc/rdp-black-screen",
+    "fragment": "modify-the-registry-and-reboot",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/misc/fix-black-screen-windows-server",
+    "final_path": "/misc/rdp-black-screen",
+    "fragment": "solution-1-modify-the-windows-registry",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/misc/fix-black-screen-windows-server",
+    "final_path": "/misc/rdp-black-screen",
+    "fragment": "solution-2-use-alternative-rdp-clients",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/misc/fix-for-realvnc-closing-connection",
+    "final_path": "/misc/realvnc-disconnects",
+    "fragment": "fix-for-realvnc-closing-connection-after-connection",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/misc/reporting-abuse",
+    "final_path": "/misc/reporting-abuse",
+    "fragment": "build-a-complete-abuse-report",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/misc/reporting-abuse",
+    "final_path": "/misc/reporting-abuse",
+    "fragment": "contact-&-context",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/misc/reporting-abuse",
+    "final_path": "/misc/reporting-abuse",
+    "fragment": "evidence-&-scope",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/misc/reporting-abuse",
+    "final_path": "/misc/reporting-abuse",
+    "fragment": "reach-the-edbb-abuse-team",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/misc/reporting-abuse",
+    "final_path": "/misc/reporting-abuse",
+    "fragment": "supporting-material",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/misc/reporting-abuse",
+    "final_path": "/misc/reporting-abuse",
+    "fragment": "what-happens-next",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/misc/security-compliance",
+    "final_path": "/misc/security-compliance",
+    "fragment": "code-of-ethics-responsible-operations",
+    "outcome": "alias before Shared responsibilities"
+  },
+  {
+    "old_path": "/misc/security-compliance",
+    "final_path": "/misc/security-compliance",
+    "fragment": "compliance-framework-mapping",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/misc/security-compliance",
+    "final_path": "/misc/security-compliance",
+    "fragment": "data-center-partners-example-site",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/misc/security-compliance",
+    "final_path": "/misc/security-compliance",
+    "fragment": "edbb-security-posture-at-a-glance",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/misc/security-compliance",
+    "final_path": "/misc/security-compliance",
+    "fragment": "frankfurt-equinix-fr5",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/misc/security-compliance",
+    "final_path": "/misc/security-compliance",
+    "fragment": "operational-security-layers",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/misc/security-compliance",
+    "final_path": "/misc/security-compliance",
+    "fragment": "questionnaires-documentation-access",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/misc/security-compliance",
+    "final_path": "/misc/security-compliance",
+    "fragment": "safeguarding-the-organisation",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/misc/security-compliance",
+    "final_path": "/misc/security-compliance",
+    "fragment": "trust-transparency",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/no-email-received",
+    "final_path": "/no-email-received",
+    "fragment": "how-to-access-your-new-vps",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/no-email-received",
+    "final_path": "/no-email-received",
+    "fragment": "we-can-not-send-emails-again",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/vps-management/autoinstall-reinstall-install-vps-linux-windows",
+    "final_path": "/vps-management/reinstall-vps",
+    "fragment": "automated-installation-in-5-easy-steps",
+    "outcome": "alias before Reinstall from the Installation Tab"
+  },
+  {
+    "old_path": "/vps-management/autoinstall-reinstall-install-vps-linux-windows",
+    "final_path": "/vps-management/reinstall-vps",
+    "fragment": "track-progress-then-connect",
+    "outcome": "preserved by rendered heading ID; duplicate alias removed"
+  },
+  {
+    "old_path": "/vps-management/basic-ipv6-troubleshooting",
+    "final_path": "/vps-management/basic-ipv6-troubleshooting",
+    "fragment": "ipv6-troubleshooting-playbook",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/vps-management/basic-ipv6-troubleshooting",
+    "final_path": "/vps-management/basic-ipv6-troubleshooting",
+    "fragment": "preventive-tips",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/vps-management/basic-ipv6-troubleshooting",
+    "final_path": "/vps-management/basic-ipv6-troubleshooting",
+    "fragment": "step-1-–-confirm-assigned-values",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/vps-management/basic-ipv6-troubleshooting",
+    "final_path": "/vps-management/basic-ipv6-troubleshooting",
+    "fragment": "step-2-–-verify-interface-state",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/vps-management/basic-ipv6-troubleshooting",
+    "final_path": "/vps-management/basic-ipv6-troubleshooting",
+    "fragment": "step-3-–-test-local-connectivity",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/vps-management/basic-ipv6-troubleshooting",
+    "final_path": "/vps-management/basic-ipv6-troubleshooting",
+    "fragment": "step-4-–-probe-external-reachability",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/vps-management/basic-ipv6-troubleshooting",
+    "final_path": "/vps-management/basic-ipv6-troubleshooting",
+    "fragment": "step-5-–-check-application-bindings",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/vps-management/basic-ipv6-troubleshooting",
+    "final_path": "/vps-management/basic-ipv6-troubleshooting",
+    "fragment": "step-6-–-gather-diagnostics-for-support",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/vps-management/bring-your-own-iso",
+    "final_path": "/vps-management/bring-your-own-iso",
+    "fragment": "retention-cleanup",
+    "outcome": "preserved by rendered heading ID; duplicate alias removed"
+  },
+  {
+    "old_path": "/vps-management/cloud-init-vps-installation",
+    "final_path": "/vps-management/cloud-init-vps-installation",
+    "fragment": "sample-cloud-config",
+    "outcome": "alias before Debian/Ubuntu example `cloud-config`"
+  },
+  {
+    "old_path": "/vps-management/cloud-init-vps-installation",
+    "final_path": "/vps-management/cloud-init-vps-installation",
+    "fragment": "upload-provision-existing-vps",
+    "outcome": "preserved by rendered heading ID; duplicate alias removed"
+  },
+  {
+    "old_path": "/vps-management/cloud-init-vps-installation",
+    "final_path": "/vps-management/cloud-init-vps-installation",
+    "fragment": "validate-troubleshoot",
+    "outcome": "preserved by rendered heading ID; duplicate alias removed"
+  },
+  {
+    "old_path": "/vps-management/efi-vs-bios-and-tpm",
+    "final_path": "/vps-management/efi-vs-bios-and-tpm",
+    "fragment": "-automatic-configuration",
+    "outcome": "alias before Automatic Configuration"
+  },
+  {
+    "old_path": "/vps-management/efi-vs-bios-and-tpm",
+    "final_path": "/vps-management/efi-vs-bios-and-tpm",
+    "fragment": "-available-options",
+    "outcome": "alias before Available options"
+  },
+  {
+    "old_path": "/vps-management/efi-vs-bios-and-tpm",
+    "final_path": "/vps-management/efi-vs-bios-and-tpm",
+    "fragment": "-bios-vs-uefi",
+    "outcome": "alias before BIOS vs UEFI"
+  },
+  {
+    "old_path": "/vps-management/efi-vs-bios-and-tpm",
+    "final_path": "/vps-management/efi-vs-bios-and-tpm",
+    "fragment": "-boot-mode-and-tpm-overview",
+    "outcome": "alias before Boot Mode and TPM Overview"
+  },
+  {
+    "old_path": "/vps-management/efi-vs-bios-and-tpm",
+    "final_path": "/vps-management/efi-vs-bios-and-tpm",
+    "fragment": "-changing-boot-mode",
+    "outcome": "alias before Changing boot mode"
+  },
+  {
+    "old_path": "/vps-management/efi-vs-bios-and-tpm",
+    "final_path": "/vps-management/efi-vs-bios-and-tpm",
+    "fragment": "-custom-images",
+    "outcome": "alias before Custom images"
+  },
+  {
+    "old_path": "/vps-management/efi-vs-bios-and-tpm",
+    "final_path": "/vps-management/efi-vs-bios-and-tpm",
+    "fragment": "-default-settings",
+    "outcome": "alias before Default Settings"
+  },
+  {
+    "old_path": "/vps-management/efi-vs-bios-and-tpm",
+    "final_path": "/vps-management/efi-vs-bios-and-tpm",
+    "fragment": "-important-notes",
+    "outcome": "alias before Important Notes"
+  },
+  {
+    "old_path": "/vps-management/efi-vs-bios-and-tpm",
+    "final_path": "/vps-management/efi-vs-bios-and-tpm",
+    "fragment": "-iso-based-installations",
+    "outcome": "alias before ISO-based installations"
+  },
+  {
+    "old_path": "/vps-management/efi-vs-bios-and-tpm",
+    "final_path": "/vps-management/efi-vs-bios-and-tpm",
+    "fragment": "-operating-system-compatibility",
+    "outcome": "alias before Operating system compatibility"
+  },
+  {
+    "old_path": "/vps-management/efi-vs-bios-and-tpm",
+    "final_path": "/vps-management/efi-vs-bios-and-tpm",
+    "fragment": "-recommendations",
+    "outcome": "alias before Recommendations"
+  },
+  {
+    "old_path": "/vps-management/efi-vs-bios-and-tpm",
+    "final_path": "/vps-management/efi-vs-bios-and-tpm",
+    "fragment": "-summary",
+    "outcome": "alias before Summary"
+  },
+  {
+    "old_path": "/vps-management/efi-vs-bios-and-tpm",
+    "final_path": "/vps-management/efi-vs-bios-and-tpm",
+    "fragment": "-tpm-usage",
+    "outcome": "alias before TPM usage"
+  },
+  {
+    "old_path": "/vps-management/efi-vs-bios-and-tpm",
+    "final_path": "/vps-management/efi-vs-bios-and-tpm",
+    "fragment": "-what-is-vtpm",
+    "outcome": "alias before What is vTPM?"
+  },
+  {
+    "old_path": "/vps-management/efi-vs-bios-and-tpm",
+    "final_path": "/vps-management/efi-vs-bios-and-tpm",
+    "fragment": "-when-manual-configuration-is-needed",
+    "outcome": "alias before When Manual Configuration Is Needed"
+  },
+  {
+    "old_path": "/vps-management/enable-vnc-server",
+    "final_path": "/vps-management/enable-vnc-server",
+    "fragment": "step-1-–-toggle-vnc",
+    "outcome": "preserved by rendered heading ID; duplicate alias removed"
+  },
+  {
+    "old_path": "/vps-management/enable-vnc-server",
+    "final_path": "/vps-management/enable-vnc-server",
+    "fragment": "step-2-–-open-the-console",
+    "outcome": "preserved by rendered heading ID; duplicate alias removed"
+  },
+  {
+    "old_path": "/vps-management/enable-vnc-server",
+    "final_path": "/vps-management/enable-vnc-server",
+    "fragment": "step-3-–-disable-vnc-when-finished",
+    "outcome": "preserved by rendered heading ID; duplicate alias removed"
+  },
+  {
+    "old_path": "/vps-management/enable-vnc-server",
+    "final_path": "/vps-management/enable-vnc-server",
+    "fragment": "what-you’ll-need",
+    "outcome": "preserved by rendered heading ID; duplicate alias removed"
+  },
+  {
+    "old_path": "/vps-management/how-to-change-ip-address-in-windows-server",
+    "final_path": "/vps-management/change-ip-windows",
+    "fragment": "automation-option",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/vps-management/how-to-change-ip-address-in-windows-server",
+    "final_path": "/vps-management/change-ip-windows",
+    "fragment": "change-the-ipv4-address-in-windows-server",
+    "outcome": "alias before Update the intended address"
+  },
+  {
+    "old_path": "/vps-management/how-to-change-ip-address-in-windows-server",
+    "final_path": "/vps-management/change-ip-windows",
+    "fragment": "final-checklist",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/vps-management/how-to-change-ip-address-in-windows-server",
+    "final_path": "/vps-management/change-ip-windows",
+    "fragment": "step-1-–-collect-the-new-settings",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/vps-management/how-to-change-ip-address-in-windows-server",
+    "final_path": "/vps-management/change-ip-windows",
+    "fragment": "step-2-–-connect-to-the-server",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/vps-management/how-to-change-ip-address-in-windows-server",
+    "final_path": "/vps-management/change-ip-windows",
+    "fragment": "step-3-–-open-adapter-properties",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/vps-management/how-to-change-ip-address-in-windows-server",
+    "final_path": "/vps-management/change-ip-windows",
+    "fragment": "step-4-–-enter-the-new-ipv4-values",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/vps-management/how-to-change-ip-address-in-windows-server",
+    "final_path": "/vps-management/change-ip-windows",
+    "fragment": "step-5-–-verify-with-powershell",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/vps-management/how-to-change-ip-address-in-windows-server",
+    "final_path": "/vps-management/change-ip-windows",
+    "fragment": "step-6-–-test-connectivity",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/vps-management/ip-address-information",
+    "final_path": "/vps-management/ip-address-information",
+    "fragment": "step-1-–-open-the-network-tab",
+    "outcome": "preserved by rendered heading ID; duplicate alias removed"
+  },
+  {
+    "old_path": "/vps-management/ipv6-configuration",
+    "final_path": "/vps-management/ipv6-configuration",
+    "fragment": "best-practices",
+    "outcome": "alias before ## Make the working"
+  },
+  {
+    "old_path": "/vps-management/ipv6-configuration",
+    "final_path": "/vps-management/ipv6-configuration",
+    "fragment": "ipv6-on-edbb-vps",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/vps-management/ipv6-configuration",
+    "final_path": "/vps-management/ipv6-configuration",
+    "fragment": "step-1-–-grab-the-details-from-the-control-panel",
+    "outcome": "alias before ## Copy your service"
+  },
+  {
+    "old_path": "/vps-management/ipv6-configuration",
+    "final_path": "/vps-management/ipv6-configuration",
+    "fragment": "step-2-–-add-an-ipv6-address-linux-example",
+    "outcome": "alias before ## Test a Linux"
+  },
+  {
+    "old_path": "/vps-management/ipv6-configuration",
+    "final_path": "/vps-management/ipv6-configuration",
+    "fragment": "step-3-–-test-connectivity",
+    "outcome": "alias before Test the actual gateway"
+  },
+  {
+    "old_path": "/vps-management/manually-change-the-ip-address-in-ubuntu-versions-1804-to-2404",
+    "final_path": "/vps-management/change-ip-ubuntu-1804-to-2404",
+    "fragment": "best-practices",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/vps-management/manually-change-the-ip-address-in-ubuntu-versions-1804-to-2404",
+    "final_path": "/vps-management/change-ip-ubuntu-1804-to-2404",
+    "fragment": "step-1-–-collect-network-information",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/vps-management/manually-change-the-ip-address-in-ubuntu-versions-1804-to-2404",
+    "final_path": "/vps-management/change-ip-ubuntu-1804-to-2404",
+    "fragment": "step-2-–-access-the-server",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/vps-management/manually-change-the-ip-address-in-ubuntu-versions-1804-to-2404",
+    "final_path": "/vps-management/change-ip-ubuntu-1804-to-2404",
+    "fragment": "step-3-–-locate-the-netplan-file",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/vps-management/manually-change-the-ip-address-in-ubuntu-versions-1804-to-2404",
+    "final_path": "/vps-management/change-ip-ubuntu-1804-to-2404",
+    "fragment": "step-4-–-edit-ipv4-addresses-and-dns",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/vps-management/manually-change-the-ip-address-in-ubuntu-versions-1804-to-2404",
+    "final_path": "/vps-management/change-ip-ubuntu-1804-to-2404",
+    "fragment": "step-5-–-apply-the-configuration",
+    "outcome": "alias before Record and back up the configuration"
+  },
+  {
+    "old_path": "/vps-management/manually-change-the-ip-address-in-ubuntu-versions-1804-to-2404",
+    "final_path": "/vps-management/change-ip-ubuntu-1804-to-2404",
+    "fragment": "step-6-–-confirm-connectivity",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/vps-management/manually-change-the-ip-address-in-ubuntu-versions-1804-to-2404",
+    "final_path": "/vps-management/change-ip-ubuntu-1804-to-2404",
+    "fragment": "update-ipv4-settings-via-netplan",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/vps-management/os-availability",
+    "final_path": "/vps-management/os-availability",
+    "fragment": "-cloud-init",
+    "outcome": "alias before ## Installation methods"
+  },
+  {
+    "old_path": "/vps-management/os-availability",
+    "final_path": "/vps-management/os-availability",
+    "fragment": "-manual-vnc-/-iso-installation",
+    "outcome": "alias before Installation methods"
+  },
+  {
+    "old_path": "/vps-management/os-availability",
+    "final_path": "/vps-management/os-availability",
+    "fragment": "-related-articles",
+    "outcome": "alias before - [Reinstall"
+  },
+  {
+    "old_path": "/vps-management/os-availability",
+    "final_path": "/vps-management/os-availability",
+    "fragment": "almalinux",
+    "outcome": "alias before ## Shared image"
+  },
+  {
+    "old_path": "/vps-management/os-availability",
+    "final_path": "/vps-management/os-availability",
+    "fragment": "almalinux-2",
+    "outcome": "alias before ## Shared image"
+  },
+  {
+    "old_path": "/vps-management/os-availability",
+    "final_path": "/vps-management/os-availability",
+    "fragment": "arch-linux",
+    "outcome": "alias before ## Shared image"
+  },
+  {
+    "old_path": "/vps-management/os-availability",
+    "final_path": "/vps-management/os-availability",
+    "fragment": "arch-linux-2",
+    "outcome": "alias before ## Shared image"
+  },
+  {
+    "old_path": "/vps-management/os-availability",
+    "final_path": "/vps-management/os-availability",
+    "fragment": "available-os-in-the-shopping-cart",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/vps-management/os-availability",
+    "final_path": "/vps-management/os-availability",
+    "fragment": "centos-/-centos-stream",
+    "outcome": "alias before ## Shared image"
+  },
+  {
+    "old_path": "/vps-management/os-availability",
+    "final_path": "/vps-management/os-availability",
+    "fragment": "centos-stream",
+    "outcome": "alias before ## Shared image"
+  },
+  {
+    "old_path": "/vps-management/os-availability",
+    "final_path": "/vps-management/os-availability",
+    "fragment": "custom-installation",
+    "outcome": "alias before Installation methods"
+  },
+  {
+    "old_path": "/vps-management/os-availability",
+    "final_path": "/vps-management/os-availability",
+    "fragment": "custom-os",
+    "outcome": "alias before ## ISO and recovery"
+  },
+  {
+    "old_path": "/vps-management/os-availability",
+    "final_path": "/vps-management/os-availability",
+    "fragment": "debian",
+    "outcome": "alias before ## Shared image"
+  },
+  {
+    "old_path": "/vps-management/os-availability",
+    "final_path": "/vps-management/os-availability",
+    "fragment": "debian-2",
+    "outcome": "alias before ## Shared image"
+  },
+  {
+    "old_path": "/vps-management/os-availability",
+    "final_path": "/vps-management/os-availability",
+    "fragment": "full-os-list-in-control-panel-auto-install",
+    "outcome": "alias before ## Shared image"
+  },
+  {
+    "old_path": "/vps-management/os-availability",
+    "final_path": "/vps-management/os-availability",
+    "fragment": "installing-other-operating-systems",
+    "outcome": "alias before Installation methods"
+  },
+  {
+    "old_path": "/vps-management/os-availability",
+    "final_path": "/vps-management/os-availability",
+    "fragment": "operating-system-availability",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/vps-management/os-availability",
+    "final_path": "/vps-management/os-availability",
+    "fragment": "os-options-available-in-the-control-panel-auto-install",
+    "outcome": "alias before ## Shared image"
+  },
+  {
+    "old_path": "/vps-management/os-availability",
+    "final_path": "/vps-management/os-availability",
+    "fragment": "os-options-available-in-the-shopping-cart",
+    "outcome": "alias before ## Shared image"
+  },
+  {
+    "old_path": "/vps-management/os-availability",
+    "final_path": "/vps-management/os-availability",
+    "fragment": "rocky-linux",
+    "outcome": "alias before ## Shared image"
+  },
+  {
+    "old_path": "/vps-management/os-availability",
+    "final_path": "/vps-management/os-availability",
+    "fragment": "rocky-linux-2",
+    "outcome": "alias before ## Shared image"
+  },
+  {
+    "old_path": "/vps-management/os-availability",
+    "final_path": "/vps-management/os-availability",
+    "fragment": "shopping-cart-=-recommended-defaults",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/vps-management/os-availability",
+    "final_path": "/vps-management/os-availability",
+    "fragment": "summary",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/vps-management/os-availability",
+    "final_path": "/vps-management/os-availability",
+    "fragment": "ubuntu-lts",
+    "outcome": "alias before ## Shared image"
+  },
+  {
+    "old_path": "/vps-management/os-availability",
+    "final_path": "/vps-management/os-availability",
+    "fragment": "ubuntu-lts-2",
+    "outcome": "alias before ## Shared image"
+  },
+  {
+    "old_path": "/vps-management/os-availability",
+    "final_path": "/vps-management/os-availability",
+    "fragment": "vps-control-panel-=-full-flexibility",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/vps-management/os-availability",
+    "final_path": "/vps-management/os-availability",
+    "fragment": "why-are-the-lists-different",
+    "outcome": "alias before Shared image inventory reference"
+  },
+  {
+    "old_path": "/vps-management/os-availability",
+    "final_path": "/vps-management/os-availability",
+    "fragment": "windows",
+    "outcome": "alias before ## Shared image"
+  },
+  {
+    "old_path": "/vps-management/os-availability",
+    "final_path": "/vps-management/os-availability",
+    "fragment": "windows-server-trial-installers",
+    "outcome": "alias before ## Shared image"
+  },
+  {
+    "old_path": "/vps-management/reset-root-password-linux",
+    "final_path": "/vps-management/reset-root-password",
+    "fragment": "step-1-–-open-the-control-panel",
+    "outcome": "preserved by rendered heading ID; duplicate alias removed"
+  },
+  {
+    "old_path": "/vps-management/reset-root-password-linux",
+    "final_path": "/vps-management/reset-root-password",
+    "fragment": "step-2-–-boot-from-the-password-helper-iso",
+    "outcome": "preserved by rendered heading ID; duplicate alias removed"
+  },
+  {
+    "old_path": "/vps-management/reset-root-password-linux",
+    "final_path": "/vps-management/reset-root-password",
+    "fragment": "step-3-–-set-the-new-root-password",
+    "outcome": "preserved by rendered heading ID; duplicate alias removed"
+  },
+  {
+    "old_path": "/vps-management/reset-root-password-linux",
+    "final_path": "/vps-management/reset-root-password",
+    "fragment": "step-4-–-return-to-normal-boot",
+    "outcome": "preserved by rendered heading ID; duplicate alias removed"
+  },
+  {
+    "old_path": "/vps-management/reset-windows-admin-password",
+    "final_path": "/vps-management/reset-windows-password",
+    "fragment": "step-1-–-open-the-vps-control-panel",
+    "outcome": "preserved by rendered heading ID; duplicate alias removed"
+  },
+  {
+    "old_path": "/vps-management/reset-windows-admin-password",
+    "final_path": "/vps-management/reset-windows-password",
+    "fragment": "step-2-–-boot-from-the-password-helper-iso",
+    "outcome": "preserved by rendered heading ID; duplicate alias removed"
+  },
+  {
+    "old_path": "/vps-management/reset-windows-admin-password",
+    "final_path": "/vps-management/reset-windows-password",
+    "fragment": "step-3-–-clear-the-administrator-password",
+    "outcome": "preserved by rendered heading ID; duplicate alias removed"
+  },
+  {
+    "old_path": "/vps-management/reset-windows-admin-password",
+    "final_path": "/vps-management/reset-windows-password",
+    "fragment": "step-4-–-sign-in-and-set-a-new-password",
+    "outcome": "preserved by rendered heading ID; duplicate alias removed"
+  },
+  {
+    "old_path": "/vps-management/reset-windows-admin-password",
+    "final_path": "/vps-management/reset-windows-password",
+    "fragment": "step-5-–-return-to-normal-boot",
+    "outcome": "preserved by rendered heading ID; duplicate alias removed"
+  },
+  {
+    "old_path": "/vps-management/system-configuration-dialog",
+    "final_path": "/vps-management/system-configuration-dialog",
+    "fragment": "-boot-mode-and-tpm",
+    "outcome": "alias before Boot mode and vTPM"
+  },
+  {
+    "old_path": "/vps-management/system-configuration-dialog",
+    "final_path": "/vps-management/system-configuration-dialog",
+    "fragment": "accessing-the-dialog",
+    "outcome": "alias before ## Open Settings"
+  },
+  {
+    "old_path": "/vps-management/system-configuration-dialog",
+    "final_path": "/vps-management/system-configuration-dialog",
+    "fragment": "apply-changes",
+    "outcome": "alias before Apply and verify"
+  },
+  {
+    "old_path": "/vps-management/system-configuration-dialog",
+    "final_path": "/vps-management/system-configuration-dialog",
+    "fragment": "default-behavior",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/vps-management/system-configuration-dialog",
+    "final_path": "/vps-management/system-configuration-dialog",
+    "fragment": "how-settings-are-applied",
+    "outcome": "alias before Open Settings"
+  },
+  {
+    "old_path": "/vps-management/system-configuration-dialog",
+    "final_path": "/vps-management/system-configuration-dialog",
+    "fragment": "important-considerations",
+    "outcome": "alias before <Warning>"
+  },
+  {
+    "old_path": "/vps-management/system-configuration-dialog",
+    "final_path": "/vps-management/system-configuration-dialog",
+    "fragment": "key-settings",
+    "outcome": "alias before Open Settings"
+  },
+  {
+    "old_path": "/vps-management/system-configuration-dialog",
+    "final_path": "/vps-management/system-configuration-dialog",
+    "fragment": "system-configuration-overview",
+    "outcome": "alias at article start"
+  },
+  {
+    "old_path": "/vps-management/vps-control-panel",
+    "final_path": "/vps-management/vps-control-panel",
+    "fragment": "quick-actions-console-access",
+    "outcome": "preserved by rendered heading ID; duplicate alias removed"
+  },
+  {
+    "old_path": "/vps-management/vps-control-panel",
+    "final_path": "/vps-management/vps-control-panel",
+    "fragment": "tabs-for-installation-networking",
+    "outcome": "preserved by rendered heading ID; duplicate alias removed"
+  },
+  {
+    "old_path": "/changelog/product",
+    "final_path": "/changelog/product",
+    "fragment": "product-updates",
+    "outcome": "alias at article start"
+  }
+]

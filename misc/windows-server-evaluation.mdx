@@ -1,0 +1,34 @@
+---
+title: "Manage a Windows Server evaluation"
+sidebarTitle: "Windows evaluation"
+description: "Check Windows Server evaluation status and remaining rearms. Understand licensing responsibilities before extending a test installation or using it in production."
+---
+
+<span id="extend-the-trial-in-three-commands" />
+<span id="stay-within-microsoft’s-rules" />
+<span id="what-to-expect" />
+
+Windows Server evaluation images are for evaluation, not a substitute for a production license. Check the terms and supported conversion path for your exact Windows Server release and edition before extending or activating it.
+
+## Check the installed evaluation
+
+Open PowerShell as Administrator:
+
+```powershell
+slmgr /dlv
+```
+
+Review the edition, evaluation expiry and remaining rearm count. Do not assume every image has the same count or that every rearm grants the same extension.
+
+## Rearm when permitted
+
+If the installed evaluation and Microsoft's terms permit another rearm, save work, schedule a restart and run:
+
+```powershell
+slmgr /rearm
+Restart-Computer
+```
+
+After restarting, run `slmgr /dlv` again and confirm the resulting expiry. If no rearms remain or the command fails, check the release-specific Microsoft guidance rather than repeatedly reinstalling to bypass licensing.
+
+For production, obtain a license valid for the edition and hosting arrangement and follow Microsoft's supported activation/conversion procedure. Do not assume an Azure-specific licensing benefit applies to an EDBB VPS. See [Microsoft Windows Server deployment guidance](https://learn.microsoft.com/en-us/windows-server/get-started/upgrade-conversion-options).

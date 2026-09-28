@@ -1,117 +1,39 @@
 ---
-title: "Getting Started with Your VPS"
-sidebarTitle: "Getting Started"
-description: "Essential EDBB guides for launching, securing, and managing your VPS with confidence."
+title: "Get started with your EDBB VPS"
+sidebarTitle: "Getting started"
+description: "Find your server, connect with SSH or Remote Desktop, secure access and arrange backups. Follow EDBB guides for everyday management and recovery."
 ---
 
-export const accentColor = "#3857e8";
+<span id="getting-started-with-your-vps-" />
 
-export const StartIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke={accentColor} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2.1-.1-2.9-.8-.8-2-.8-2.9.9z"/>
-    <path d="M12 15l-3-3c.5-1.4 1.2-2.7 2-3.9C13.4 4.3 17.5 2 22 2c0 2.7-.8 7.5-6 11-1.3.8-2.6 1.5-4 2z"/>
-    <path d="M9 12H4s.6-3 2-4c1.6-1.1 5 0 5 0"/>
-    <path d="M12 15v5s3-.5 4-2c1.1-1.6 0-5 0-5"/>
-  </svg>
-);
+Use these guides to bring your EDBB VPS online and keep it manageable. EDBB provides the infrastructure; you manage the operating system, applications, access security and backups.
 
-export const PanelIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke={accentColor} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="2" y="2" width="20" height="8" rx="2"/>
-    <rect x="2" y="14" width="20" height="8" rx="2"/>
-    <circle cx="6" cy="6" r="0.75"/>
-    <circle cx="6" cy="18" r="0.75"/>
-  </svg>
-);
+## Set up your server
 
-export const FaqIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke={accentColor} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M20 13c0 5-3.5 7.5-7.7 9-.2.1-.5.1-.7 0C7.5 20.5 4 18 4 13V6c0-.6.4-1 1-1 2 0 4.5-1.2 6.2-2.7.4-.4 1.1-.4 1.5 0C14.5 3.8 17 5 19 5c.6 0 1 .4 1 1v7z"/>
-    <path d="M9.1 9c.6-1.6 2.3-2.4 3.8-1.8 1.2.4 2 1.5 2 2.8 0 2-3 3-3 3"/>
-    <path d="M12 17h0"/>
-  </svg>
-);
+<Steps>
+  <Step title="Find your service">
+    Open the [EDBB Control Panel](https://my.edbb.com/clientarea.php) and select your VPS. Check the [welcome email](/check-your-inbox), assigned IP and installation status.
+  </Step>
+  <Step title="Connect">
+    Use [SSH for Linux](/linux-secure-shell-ssh) or [Remote Desktop for Windows](/windows-remote-desktop). Keep the [VNC console](/vps-management/enable-vnc-server) available for recovery.
+  </Step>
+  <Step title="Secure access">
+    Apply operating-system updates, configure permitted access and test a second login before removing the original access method. Follow [SSH hardening](/getting-started/ssh-security-hardening).
+  </Step>
+  <Step title="Arrange backups">
+    Set up [independent backups](/backups) and test a restore before the server holds your only copy of important data.
+  </Step>
+</Steps>
 
-export const IpIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke={accentColor} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M15 20l3-3h2a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h2l3 3h6z"/>
-    <path d="M6 8v1M10 8v1M14 8v1M18 8v1"/>
-  </svg>
-);
+## Common tasks
 
-export const ReinstallIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke={accentColor} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M12 2v4M16.2 7.8l2.9-2.9M18 12h4M16.2 16.2l2.9 2.9M12 18v4M4.9 19.1l2.9-2.9M2 12h4M4.9 4.9l2.9 2.9"/>
-  </svg>
-);
-
-export const BillingIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke={accentColor} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M4 3h12l4 4v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/>
-    <path d="M8 7h6M8 11h8M8 15h4"/>
-    <path d="M16 19c0-1.1-.9-2-2-2s-2 .9-2 2 0 2 2 2 2-1 2-2zM14 17v4"/>
-  </svg>
-);
-
-export const VlanIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke={accentColor} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="5" cy="6" r="2"/>
-    <circle cx="19" cy="6" r="2"/>
-    <circle cx="12" cy="18" r="2"/>
-    <path d="M7 6h10M6.2 7.6l4.4 7.6M17.8 7.6l-4.4 7.6"/>
-  </svg>
-);
-
-export const MikrotikIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke={accentColor} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="3" y="12" width="18" height="7" rx="2"/>
-    <path d="M6 15h2M10 15h2M14 15h2"/>
-    <path d="M12 12V7"/>
-    <path d="M12 7c1.5-1.5 3.9-1.5 5.4 0M12 9c1-.9 2.6-.9 3.6 0M12 5c2.4-2.4 6.3-2.4 8.7 0"/>
-  </svg>
-);
-
-## Getting Started with Your VPS 🚀
-
-Your VPS is ready — let’s get it running smoothly.  
-In **EDBB Docs**, you’ll find quick-start guides, management tips, and security best practices to help you make the most of your server.
-
-Need assistance? Click the blue **Chat Icon** at the bottom of the page to connect with our team.
-
----
-
-<CardGroup cols={4}>
-  <Card title="Get Started" icon={<StartIcon />} href="/check-your-inbox">
-    First things first. Start here to get going.
-  </Card>
-
-  <Card title="VPS Management" icon={<PanelIcon />} href="/vps-management/vps-control-panel">
-    Manage and optimize your VPS
-  </Card>
-
-  <Card title="VPS FAQs" icon={<FaqIcon />} href="/faq/what-is-a-virtual-private-server">
-    Find answers to common technical questions.
-  </Card>
-
-  <Card title="IP Change" icon={<IpIcon />} href="/faq/ip-addresses/change-ip-address">
-    Options to safely change your VPS IP address.
-  </Card>
-
-  <Card title="Network Tools" icon={<VlanIcon />} href="/faq/ip-addresses/ping-test-ip">
-    Diagnose routing, latency, and reachability from multiple regions.
-  </Card>
-
-  <Card title="Reinstall" icon={<ReinstallIcon />} href="/vps-management/autoinstall-reinstall-install-vps-linux-windows">
-    Reinstall your OS: Linux or Windows in just a few clicks.
-  </Card>
-
-  <Card title="MikroTik Guide" icon={<MikrotikIcon />} href="/advanced-setup-guides/script-based-mikrotik-router-os-installation-guide-winbox">
-    MikroTik CHR installs with a battle-tested script.
-  </Card>
-
-  <Card title="Billing Workflow" icon={<BillingIcon />} href="/faq/billing-lifecycle/automated-vps-billing-workflow">
-    Understand when we send invoices, reminders and connected workflows.
-  </Card>
+<CardGroup cols={2}>
+  <Card title="Manage your VPS" icon="server" href="/vps-management/vps-control-panel">Find Installation, Traffic, Settings, Network, rDNS and Upgrades.</Card>
+  <Card title="Reinstall an OS" icon="rotate" href="/vps-management/reinstall-vps">Install Linux or Windows after backing up existing data.</Card>
+  <Card title="Traffic and refills" icon="chart-line" href="/faq/traffic-bandwidth/traffic-pool">Understand your plan allowance and shared Traffic Pool.</Card>
+  <Card title="Billing and renewals" icon="receipt" href="/faq/billing-lifecycle/billing-workflow">Check invoices, renewal deadlines and cancellation.</Card>
 </CardGroup>
 
----
+## Get help
+
+Read [support scope](/how-our-support-team-helps-you) and contact [support@edbb.com](mailto:support@edbb.com). Check [shared infrastructure status](https://status.edis.global/) for incidents affecting the underlying platform.

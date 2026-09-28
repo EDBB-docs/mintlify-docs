@@ -1,0 +1,18 @@
+---
+title: "EDBB DDoS protection overview"
+sidebarTitle: "DDoS protection"
+description: "EDBB shields its infrastructure against DDoS attacks; learn what is covered and when null-routing may occur."
+---
+
+<span id="limitations" />
+<span id="protection-scope" />
+
+EDBB uses the shared infrastructure protection provided by the EDIS Global resource pool. Protection focuses on limiting the effect of attacks on the network and other customers; EDBB does not provide service-specific DDoS scrubbing or bespoke mitigation.
+
+## During an attack
+
+The infrastructure detects abnormal traffic and may filter or redirect it. If necessary, the attacked IP can be null-routed to protect the rest of the network. Null-routing makes the affected service unreachable; it is not a guarantee that your application stays online.
+
+Contact [support@edbb.com](mailto:support@edbb.com) with the affected IP, timestamps, symptoms and relevant traffic observations. Check the legitimate shared [infrastructure status service](https://status.edis.global/).
+
+For frequently targeted applications, review [high-risk workloads](/faq/traffic-bandwidth/dos-attacks/high-risk-workloads) and arrange suitable mitigation before deployment. Prohibited attack activity is covered by the [AUP](/acceptable-use-policy).

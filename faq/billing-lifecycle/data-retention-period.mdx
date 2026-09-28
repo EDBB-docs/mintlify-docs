@@ -1,22 +1,25 @@
 ---
-title: "Data Retention After Cancellation"
-sidebarTitle: "Data Retention"
-description: "EDBB removes VPS data six days after cancellation; qcow2 exports stay available for 30 days."
+title: "Data retention after cancellation"
+sidebarTitle: "Data retention"
+description: "Compare data retention after customer-requested termination and non-payment. Contact support before permanent deletion and download paid exports within 30 days."
 ---
 
-## VPS Retention Timeline
+<span id="vps-retention-timeline" />
 
-<Info>
-  Once a VPS is cancelled (immediate or end-of-term), the instance stays in the platform for **six days**. After that, storage is wiped and recovery is impossible.
-</Info>
+VPS data is retained for **six days after service termination**, then permanently deleted. The retention period is not a routine backup service and does not guarantee continued access to a stopped VPS.
 
-- Use the window to collect final backups or confirm your migration succeeded.  
-- Ensure snapshots, ISO mounts, and secondary IPs are no longer needed before the timer expires.
+| Situation | Retention starts |
+| --- | --- |
+| Immediate cancellation | When the service terminates immediately |
+| End-of-term cancellation | When the service terminates on its due date |
+| Termination for non-payment | At termination, normally 14 days after the renewal due date |
 
-## qcow2 Export Availability
+Contact [support@edbb.com](mailto:support@edbb.com) promptly to request recovery or reactivation before deletion. After permanent deletion, recovery is not possible. Back up data **before** cancelling.
 
-- A downloadable `.qcow2` image costs **€25** per export.  
-- Download links remain active for **30 days** and are password-protected.  
-- Links are deleted automatically after the window closes for security.
+An invoice being cancelled or adjusted is a billing action; it does not by itself prove that VPS data has been deleted. See [cancellation](/faq/billing-lifecycle/cancel-a-service) and the [non-payment workflow](/faq/billing-lifecycle/billing-workflow).
 
-Plan your archival workflow so exports are downloaded to your storage before the link expires.
+<span id="qcow2-export-availability" />
+
+## Paid qcow2 exports
+
+A separately requested [qcow2 disk export](/faq/upgrades-downgrades/qcow2-export) costs **EUR 25** and is supplied through a password-protected download link available for **30 days**. Download and store your own copy before the file is removed. This download period is separate from the six-day VPS retention period.

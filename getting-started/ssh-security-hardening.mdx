@@ -1,0 +1,27 @@
+---
+title: "Secure SSH access to your VPS"
+sidebarTitle: "SSH security"
+description: "Set up key authentication, verify sudo and recovery access, and restrict SSH safely. Test a second connection before disabling the old login method."
+---
+
+Harden SSH in stages so you can verify access after each change. Keep the [VNC console](/vps-management/enable-vnc-server) and your current SSH session open.
+
+## Establish trusted access
+
+Verify the server's host-key fingerprint through the trusted console before accepting it on first connection. A changed fingerprint can be expected after reinstalling, but investigate unexpected changes rather than suppressing the warning.
+
+Create a normal administrative user appropriate for your distribution. Install your public key for that user, protect the private key with a passphrase and confirm the user can run the required `sudo` commands.
+
+## Test before restricting login
+
+1. Open a second SSH session using the new user and key.
+2. Verify administrative commands work without relying on the old root session.
+3. Review the active SSH configuration, including distribution-specific include files.
+4. Validate syntax with `sudo sshd -t` before reloading the correct SSH service for your distribution.
+5. Confirm a fresh login after each change before closing the recovery session.
+
+Disable password or root login only after key access and recovery are working. A key and password are not automatically two-factor authentication; additional authentication methods require deliberate server configuration and testing.
+
+## Limit exposure
+
+Allow only necessary source networks where practical, keep OpenSSH updated and monitor authentication logs. Changing the port can reduce background noise but does not replace authentication or patching. Review [UFW firewall setup](/advanced-setup-guides/ufw-firewall) before enabling firewall rules.

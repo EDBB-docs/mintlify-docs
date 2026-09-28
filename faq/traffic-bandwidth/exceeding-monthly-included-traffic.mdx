@@ -1,35 +1,33 @@
 ---
-title: "Exceeded Monthly Traffic"
-sidebarTitle: "Over Limit"
-description: "When your VPS hits 100% of its traffic allocation, throughput is throttled; learn how to restore full speed." 
+title: "Exceeded monthly traffic"
+sidebarTitle: "Traffic limits"
+description: "Understand the traffic grace allowance and throttling near 105% usage. Assign pool traffic, upgrade or wait for refill to restore normal throughput."
 ---
 
-## What Happens When You Hit the Limit
+<span id="what-happens-when-you-hit-the-limit" />
 
-<Info>
-  Once your monthly traffic allowance (plus a 5% grace buffer) is exhausted, EDBB throttles the VPS NIC to roughly **64 kbit/s**. The VM stays online, but production workloads will feel sluggish until you add traffic or reach the next reset.
-</Info>
+EDBB measures incoming plus outgoing traffic. Your current allowance is the monthly Plan Traffic plus any Pool Traffic assigned to the VPS during that cycle.
 
----
+An approximately **5% grace allowance** applies. If no further traffic becomes available, the interface is limited to approximately **64 kbit/s at around 105% usage**. There is no automatic overage charge. The VPS remains online, but applications may be effectively unavailable at the reduced speed.
 
-## Options to Restore Full Speed
+<span id="options-to-restore-full-speed" />
 
-<CardGroup cols={3}>
-  <Card title="🔁 Assign Pool Traffic">
-    Move capacity from your global traffic pool. Manual assignments apply instantly; auto hydration can top up automatically if enabled.
-  </Card>
-  <Card title="📦 Upgrade Your Plan">
-    Switching to a plan with a larger monthly allowance removes the throttle as soon as the upgrade completes.
-  </Card>
-  <Card title="🕒 Wait for Renewal">
-    If you don’t need immediate bandwidth, the cap lifts automatically on the next billing cycle reset.
-  </Card>
-</CardGroup>
+## Restore full speed
 
----
+1. Check the shared Traffic Pool in the VPS **Traffic** tab. Every new VPS adds **100 GB starter credit** to the account pool.
+2. Assign available Pool Traffic to the affected VPS. If the pool is empty, [purchase traffic](https://my.edbb.com/cart.php?gid=214), then assign it.
+3. Alternatively, complete a plan upgrade that provides more traffic, or wait for the VPS's monthly refill.
 
-## Stay Ahead of the Curve
+<Warning>
+  Buying traffic only adds it to your account pool. It must be assigned to the affected VPS before it increases that VPS's allowance. Unused assigned traffic expires at the next monthly refill.
+</Warning>
 
-- Monitor usage on the **Traffic** tab in the Control Panel—graphs show both consumption and remaining pool balance.  
-- Set calendar reminders around high-usage campaigns so you can assign extra traffic proactively.  
-- Combine with off-peak batch jobs or CDN caching to stretch your allowance further.
+The rate limit lifts automatically after additional traffic becomes available; a reboot is not required to remove the traffic throttle. Resource upgrades can have separate activation/restart requirements.
+
+<span id="stay-ahead-of-the-curve" />
+
+## Prevent another interruption
+
+Auto-Hydration assigns a selected **100, 200, 300 or 500 GB** increment at **99%** usage if sufficient pool balance exists. It does not purchase more traffic. For an already throttled VPS, manual assignment is the clearest recovery step.
+
+See [Traffic Pool](/faq/traffic-bandwidth/traffic-pool) and [traffic statistics](/faq/traffic-bandwidth/traffic-statistics) for expiry rules and notifications.

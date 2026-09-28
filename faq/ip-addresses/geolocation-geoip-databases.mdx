@@ -1,29 +1,23 @@
 ---
-title: "How GeoIP Databases See EDBB Addresses"
-sidebarTitle: "GeoIP Databases"
+title: "How GeoIP databases see EDBB addresses"
+sidebarTitle: "GeoIP databases"
 description: "GeoIP providers rely on registry and geofeed data. EDBB keeps records current, but third-party databases may lag until they refresh."
 ---
 
-## Where GeoIP Data Comes From
+<span id="verifying-your-address" />
+<span id="where-geoip-data-comes-from" />
+<span id="why-lookup-results-sometimes-differ" />
 
-<Info>
-  Geo-location services combine registry data, geofeed files, and crowd-sourced updates. EDBB publishes accurate records to each Regional Internet Registry (RIR) and maintains geofeeds so providers know where our prefixes live.
-</Info>
+Commercial GeoIP databases estimate an IP address's location. Their labels can differ from the VPS's physical hosting location and can change independently of your service.
 
-- RIR WHOIS listings include our organization details, country codes, and abuse contacts. Check the prefix in <a href="https://stat.ripe.net/" target="_blank" rel="noreferrer">RIPEstat</a>, <a href="https://whois.arin.net/ui/" target="_blank" rel="noreferrer">ARIN</a>, <a href="https://rdap.apnic.net/" target="_blank" rel="noreferrer">APNIC</a>, <a href="https://rdap.lacnic.net/rdap/" target="_blank" rel="noreferrer">LACNIC</a>, or <a href="https://rdap.afrinic.net/rdap/" target="_blank" rel="noreferrer">AFRINIC</a> depending on the allocation.  
-- Geofeed files supply latitude/longitude hints for automated platforms—see the <a href="https://datatracker.ietf.org/doc/html/rfc8805" target="_blank" rel="noreferrer">RFC 8805 geofeed format</a> for details.  
-- Some vendors accept corrections directly from users (for example, <a href="https://whatismyipaddress.com/location-feedback" target="_blank" rel="noreferrer">WhatIsMyIPAddress feedback</a> or <a href="https://db-ip.com/report" target="_blank" rel="noreferrer">DB-IP reports</a>), which can temporarily override authoritative data.
+## Sources are different
 
-## Why Lookup Results Sometimes Differ
+- Registry/WHOIS information records allocation and registration data. Its country field is not definitive proof of where a server runs.
+- Commercial providers maintain their own location databases and correction processes.
+- A geofeed provides provider-published location information in the [RFC 8805 format](https://www.rfc-editor.org/rfc/rfc8805.html): prefix, country, region, city and postal code. It does not contain latitude/longitude columns.
 
-- Each provider refreshes on its own cadence (from daily to monthly).  
-- User-submitted overrides or stale caches can surface outdated city/country mappings.  
-- New deployments may take a refresh cycle or two before every dataset aligns.
+## Report a mismatch
 
-If you spot incorrect results, reach out to the GeoIP service with the correct WHOIS and geofeed reference. Most vendors re-sync within their next batch update; common contact points include <a href="https://support.maxmind.com/hc/en-us/articles/4407111580443-Correct-a-Location" target="_blank" rel="noreferrer">MaxMind GeoIP corrections</a>, <a href="https://ipinfo.io/account/data-corrections" target="_blank" rel="noreferrer">IPinfo data corrections</a>, and the <a href="https://whatismyipaddress.com/location-feedback" target="_blank" rel="noreferrer">WhatIsMyIPAddress feedback form</a>.
+Identify the exact database or website displaying the incorrect result, the IP address, the displayed location and your ordered VPS location. Send the evidence to [support@edbb.com](mailto:support@edbb.com), and use the database vendor's current official correction form where available.
 
-## Verifying Your Address
-
-- Run a WHOIS lookup on the prefix to view the authoritative country and organization fields—<a href="https://stat.ripe.net/" target="_blank" rel="noreferrer">RIPEstat</a> and <a href="https://whois.arin.net/ui/" target="_blank" rel="noreferrer">ARIN WHOIS</a> are good starting points.  
-- Compare several GeoIP databases (e.g., <a href="https://www.maxmind.com/en/geoip-demo" target="_blank" rel="noreferrer">MaxMind demo</a>, <a href="https://ipinfo.io/" target="_blank" rel="noreferrer">ipinfo.io</a>, <a href="https://db-ip.com/" target="_blank" rel="noreferrer">DB-IP</a>). If only one disagrees, it likely needs to refresh.  
-- Contact EDBB Support if you require assistance nudging a particular provider.
+EDBB cannot guarantee when a third party will accept or distribute an update. Changing a PTR record alone does not update every location database. See [IP location](/faq/ip-addresses/ip-location) and [correct geolocation](/faq/ip-addresses/correct-geolocation).

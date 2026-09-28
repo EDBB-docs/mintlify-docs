@@ -1,26 +1,24 @@
 ---
-title: "Upgrade to a Higher VPS Plan"
-sidebarTitle: "Upgrade Plan"
-description: "Scale your EDBB VPS to the next tier, add more resources instantly, and understand billing, timing, and post-upgrade steps."
+title: "Upgrade to a higher VPS plan"
+sidebarTitle: "Upgrade plan"
+description: "Order a higher EDBB VPS plan, review prorated billing and activate new resources. Keep your existing installation and expand guest storage separately."
 ---
 
-import { CtaButton } from "/snippets/cta-button.mdx";
-
-# Upgrade a VPS Plan in Minutes
+## Upgrade a VPS Plan in Minutes
 
 <Info>
-  Plan upgrades swap your current VPS for a larger predefined tier—more vCPU, RAM, disk, and monthly traffic—without reinstalling or changing the IP address.
+  Plan upgrades move your existing VPS for a larger predefined tier—more vCPU, RAM, disk, and monthly traffic—without reinstalling or changing the IP address.
 </Info>
 
 ## Why Upgrade
 
-- Add CPU, memory, and disk space in one step.  
-- Boost the monthly traffic allowance tied to the plan.  
+- Add CPU, memory, and disk space in one step.
+- Boost the monthly traffic allowance tied to the plan.
 - Keep your data intact; the upgrade happens in-place.
 
-<Callout type="info">
+<Info>
   Upgrades are prorated. You pay only the price difference for the remaining days in your billing cycle.
-</Callout>
+</Info>
 
 ---
 
@@ -44,40 +42,40 @@ If you already know which tier you need, click the upgrade shortcut on the servi
 
 ---
 
-## Option 2 — Order from the Upgrade Tab
+<span id="option-2-—-order-from-the-upgrade-tab" />
 
-Need to compare plan details first? Use the dedicated Upgrade tab.
+## Option 2 — Order from the Upgrades tab
+
+Need to compare plan details first? Use the dedicated Upgrades tab.
 
 ![Upgrade plan selector in the tab view](/assets/Upgrade-newplan.png)
 
 <Steps>
-  <Step title="Navigate to the Upgrade tab">
+  <Step title="Navigate to the Upgrades tab">
     In the service view, click <strong>Upgrade</strong> in the tabs bar.
   </Step>
   <Step title="Open Upgrade Plan">
-    Press the blue <strong>Upgrade Plan</strong> button. This loads the comparison page that lists each higher tier with resource details.
+    Press the blue <strong>Upgrade Your Plan</strong> button. This loads the comparison page that lists each higher tier with resource details.
   </Step>
   <Step title="Review and checkout">
-    Compare CPU, RAM, storage, and traffic quotas. Select your target plan, pay the prorated invoice, and the Control Panel handles the rest.
+    Compare CPU, RAM, storage, and traffic quotas. Select your target plan, pay the prorated invoice, and follow the activation email and the steps below.
   </Step>
 </Steps>
 
-<Callout type="warning">
-  Upgrades trigger a short reboot so the new resources can load. Save work inside the OS before confirming the change.
-</Callout>
+<Warning>Back up important data and schedule downtime. After payment, follow the activation email and perform a full power cycle to load CPU/RAM changes; a guest reboot is not the same operation.</Warning>
 
 ---
 
 ## After the Upgrade
 
-- **IP & data** stay the same—no migration is required.  
-- **RAM & vCPU** are available after a cold reboot of the VPS.  
-- **Disk size** increases, but filesystems and partitions are untouched; expand them manually if you want to use the extra space.  
+- **IP & data** stay the same—no migration is required.
+- **RAM & vCPU** are available after a full power cycle from the EDBB panel.
+- **Disk size** increases, but filesystems and partitions are untouched; expand them manually if you want to use the extra space.
 - **Traffic allowance** increases immediately.
 
 Need granular resource changes instead? Use Upgrade Components.
 
-<CtaButton label="Upgrade components individually" link="../upgrades-downgrades/upgrade-resources" />
+[Upgrade components individually](/faq/upgrades-downgrades/upgrade-resources)
 
 ---
 
@@ -85,4 +83,6 @@ Need granular resource changes instead? Use Upgrade Components.
 
 Top up your traffic pool to share data transfer across services. Auto-hydration can refill VPS traffic automatically when it nears 99% usage.
 
-<CtaButton label="Learn about Traffic Pools" link="../traffic-bandwidth/traffic-pool-global-and-premium-traffic-zone" />
+[Learn about Traffic Pools](/faq/traffic-bandwidth/traffic-pool)
+
+For restart terminology and the EDBB controls, see [restart and power cycle](/vps-management/power-cycle-or-reboot-a-vps). Use the current EDBB order summary for resource totals and prices; do not substitute EDIS Global plan specifications.

@@ -1,0 +1,13 @@
+---
+title: "RealVNC Viewer closes after connecting"
+sidebarTitle: "RealVNC disconnects"
+description: "Investigate RealVNC Viewer disconnects using the browser console and version-specific color settings. Restore the previous setting if the test does not help."
+---
+
+<span id="fix-for-realvnc-closing-connection-after-connection" />
+
+If RealVNC Viewer closes immediately after connection, compare the same VPS with the browser-based [EDBB console](/vps-management/enable-vnc-server). This helps distinguish a client setting from a guest or network issue.
+
+In RealVNC versions that expose **Advanced Options → Expert → ColorLevel**, record the current value. If it is `pal8`, try `full`, reconnect and compare the result. Supported values and menu names vary by client version; use that version's documentation if the option is absent.
+
+If changing color depth has no effect, restore the previous setting and inspect the client error and current console credentials. Do not assume this setting fixes every disconnect. Send the client version, timestamp and observed error to support if you need help with the EDBB console service.

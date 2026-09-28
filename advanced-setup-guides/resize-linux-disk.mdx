@@ -1,0 +1,63 @@
+---
+title: "Resize a Linux disk after an upgrade"
+sidebarTitle: "Resize Linux disk"
+description: "Identify your Linux disk, partition and filesystem before expanding storage after a VPS upgrade. Review supported layouts and recovery precautions."
+---
+
+<span id="access-the-edbb-vps-control-panel" />
+<span id="identify-the-new-swap-partition" />
+<span id="important-notice-risks-associated-with-resizing-disk-space" />
+<span id="launch-novnc" />
+<span id="mount-system-rescue-cd-and-boot" />
+<span id="resize-partition" />
+
+A VPS disk upgrade increases the virtual disk capacity. It does not automatically extend the guest partition or filesystem. Make a recoverable off-server backup and schedule maintenance before changing storage.
+
+<Warning>
+  This worked procedure covers a **plain ext4 root filesystem on the last partition of a single disk**, with contiguous free space immediately after it. It does not cover LVM, encryption, RAID, XFS, a full-disk filesystem or a partition followed by swap/EFI/recovery partitions. Stop if your layout differs; do not delete another partition to force it to fit.
+</Warning>
+
+## Inspect the existing layout
+
+Activate the upgrade using the [power-cycle guide](/vps-management/power-cycle-or-reboot-a-vps) and keep the [console](/vps-management/enable-vnc-server) open. Inspect the disk from Linux:
+
+```bash
+findmnt -no SOURCE,FSTYPE /
+lsblk -o NAME,SIZE,TYPE,FSTYPE,MOUNTPOINTS
+df -hT /
+```
+
+Confirm the virtual disk is larger than the root partition and identify the actual disk and partition. If the disk still shows its old size, resolve upgrade activation before altering partitions.
+
+## Expand a matching ext4 layout
+
+On Debian or Ubuntu, `growpart` is supplied by `cloud-guest-utils`. Review installation before proceeding:
+
+```bash
+sudo apt update
+sudo apt install cloud-guest-utils
+```
+
+The following example is **only for `/dev/vda1` on `/dev/vda`**. Substitute your verified values. First inspect the proposed partition change without applying it:
+
+```bash
+sudo growpart -N /dev/vda 1
+```
+
+Proceed only if the output extends the intended partition into free space and leaves its start unchanged:
+
+```bash
+sudo growpart /dev/vda 1
+sudo resize2fs /dev/vda1
+```
+
+`resize2fs` is for ext filesystems, not XFS. If the kernel cannot reread the partition table, stop and arrange a clean reboot before continuing; do not force repeated writes.
+
+## Verify
+
+```bash
+lsblk -o NAME,SIZE,TYPE,FSTYPE,MOUNTPOINTS
+df -hT /
+```
+
+Check the expected filesystem capacity and application health. For another layout, obtain a procedure specific to the filesystem and volume manager. If rescue media is required, mount it through the [ISO guide](/vps-management/mount-iso-image), avoid formatting existing data, and eject the ISO before booting from disk again.

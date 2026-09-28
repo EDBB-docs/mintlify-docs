@@ -1,28 +1,21 @@
 ---
-title: "No email received?"
-description: "If you did not receive the email with your VPS credentials, there's no need to worry. Install your VPS with fresh password and the OS of your choice. Instructions for installing Linux/Windows are provided."
+title: "Find a missing VPS welcome email"
+sidebarTitle: "Missing welcome email"
+description: "Check your account, payment and email folders before attempting access recovery. Avoid reinstalling a server when you still need its existing data."
 ---
 
-import { CtaButton } from "/snippets/cta-button.mdx";
+<span id="how-to-access-your-new-vps" />
+<span id="we-can-not-send-emails-again" />
 
-## We can not send emails again!
+If you cannot find a welcome email, check the service and payment status before changing anything on the VPS.
 
-If you did not receive our email with VPS credentials:
+1. Check spam, junk and filtered folders for the address used on your EDBB account.
+2. Sign in to the [EDBB Control Panel](https://my.edbb.com/clientarea.php) and confirm the invoice is paid and the service exists.
+3. Open the service and review its **Dashboard**, IP details and **Installation** status. An installation still in progress is not ready for SSH or RDP.
+4. If the email or access details remain unavailable, contact [support@edbb.com](mailto:support@edbb.com) from your account email with the order/invoice number. Do not send passwords.
 
-<Info> We can't resend passwords! We can't resend Welcome Emails. For security reasons, we don’t store your passwords. Don't worry, you can easily set up your service with your own password!</Info>
+<Warning>
+  Do not reinstall merely to locate a missing email if the VPS contains data you need. Reinstallation erases the existing system. Use the [Linux](/vps-management/reset-root-password) or [Windows](/vps-management/reset-windows-password) recovery guide when appropriate.
+</Warning>
 
-## How to Access Your New VPS
-
-<Steps>
-  <Step title="Log in to your">
-    [Control Panel](https://my.edbb.com/clientarea.php)
-  </Step>
-
-  <Step title="Locate your VPS in the Services tab" />
-
-  <Step title="Reinstall your VPS with a fresh OS and your own password">
-    <CtaButton label="Linux and Windows Reinstall Guide" link="/vps-management/autoinstall-reinstall-install-vps-linux-windows" />
-  </Step>
-</Steps>
-
-<Info>We do not send a new Welcome Email when you reinstall! The password you specify during installation will be the password to access your OS</Info>
+A deliberate [reinstall](/vps-management/reinstall-vps) uses the password or SSH key you provide and does not send another welcome email.

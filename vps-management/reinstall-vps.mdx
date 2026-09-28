@@ -1,0 +1,74 @@
+---
+title: "Reinstall your VPS with Linux or Windows"
+sidebarTitle: "Reinstall VPS"
+description: "Use the EDBB Installation tab to select an operating system, set access credentials and follow installation progress. Reinstalling erases existing data."
+---
+
+<span id="automated-installation-in-5-easy-steps" />
+
+## Reinstall from the Installation Tab
+
+<Warning>
+  Important: Reinstalling your VPS will permanently erase all data. Make sure you have backups before proceeding.
+</Warning>
+
+## Install the operating system
+
+<Steps>
+  <Step title="Locate your VPS in the control panel">
+    Sign in to the <a href="https://my.edbb.com/clientarea.php" target="_blank">
+     EDBB Control Panel</a>
+
+    Go to <strong>Services</strong>
+     and select the VPS you would like to reinstall.
+  </Step>
+  <Step title="Switch to Installation tab → Select Automated Installers">
+    Use the <strong>Installation</strong>
+     tab on the service Control Panel, then stay on the default <strong>Automated Installers</strong>
+     view.
+
+    <Frame>
+      ![Install OS in Control Panel](/assets/reinstall.png)
+    </Frame>
+  </Step>
+  <Step title="Select the operating system">
+    Click the tile of the OS family you would like to install (Ubuntu, Debian, Rocky, AlmaLinux, Windows Server, etc.). The available releases are shown in the version selector.
+
+
+<Frame>
+![Selecting an AutoInstall template](/assets/reinstall-OS.png)
+</Frame>
+
+  </Step>
+  <Step title="Choose the OS version">
+    Use the dropdown below the OS family tile to pick the version/release you would like to install.
+  </Step>
+  <Step title="Set password and launch">
+    Enter a password (or paste an SSH public key) and click <strong>Start the installation.</strong>
+     Our Control Panel initiates the installation.
+
+    We do not send a new Welcome Email when you reinstall! The password you specify during installation will be your new root (Linux) or Windows Administrator password.
+  </Step>
+</Steps>
+
+---
+
+## Track Progress - then Connect
+
+| OS          | Approx. time | What happens / What to do                                                                                                                                                                                                                                   |
+| ----------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Linux**   | **≈ 5 min**  | AutoInstall provisions and reboots automatically — no extra clicks required. SSH is blocked during installation. Linux typically finishes installation in 5 minutes. When the status changes to _Running_, connect via **SSH** using the new root password. |
+| **Windows** | **≈ 15 min** | RDP access is blocked during installation. When the status changes to _Running_, connect via **RDP** using the new Administrator password. Windows usually takes 15 minutes to install.                                                                     |
+
+<Warning>
+  The **Installation** tab streams logs while the image is provisioned. SSH/RDP ports stay closed until the job finishes.\
+   Do **not** power off or reboot the VPS manually — AutoInstall restarts it automatically when the OS is ready.
+</Warning>
+
+---
+
+## Install a Custom Image
+
+Prefer to Bring Your Own .qcow2 image and/or run a cloud-init automation? Use the Cloud-Init workflow to keep full control over first boot actions.
+
+[Provision with Cloud-Init](/vps-management/cloud-init-vps-installation)

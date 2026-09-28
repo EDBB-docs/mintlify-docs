@@ -1,0 +1,49 @@
+---
+title: "Change an Ubuntu IP address with Netplan"
+sidebarTitle: "Change IP on Ubuntu"
+description: "Update an Ubuntu 18.04–24.04 IPv4 configuration using Netplan, preserve existing settings and use the console and timed rollback to avoid losing access."
+---
+
+<span id="best-practices" />
+<span id="step-1-–-collect-network-information" />
+<span id="step-2-–-access-the-server" />
+<span id="step-3-–-locate-the-netplan-file" />
+<span id="step-4-–-edit-ipv4-addresses-and-dns" />
+<span id="step-6-–-confirm-connectivity" />
+<span id="update-ipv4-settings-via-netplan" />
+
+Use this Netplan procedure only on Ubuntu **18.04–24.04** installations actually managed by Netplan. A desktop or custom image may use a different backend. Open the [VNC console](/vps-management/enable-vnc-server) before changing the active network connection.
+
+<span id="step-5-–-apply-the-configuration" />
+
+## Record and back up the configuration
+
+```bash
+ip -4 addr show
+ip route show
+ls -l /etc/netplan
+sudo cp -a /etc/netplan /root/netplan-before-ip-change
+```
+
+If that backup path already exists, choose a new clearly named directory instead of overwriting an earlier recovery copy. Inspect the active YAML files and any cloud-init/generated-file comments. Resolve which tool owns the configuration before editing.
+
+## Edit only the necessary settings
+
+Copy the service's assigned IPv4, prefix, gateway and DNS from the EDBB **Network** tab. Update the intended interface and address in its existing Netplan configuration. Preserve IPv6, secondary addresses, routes, renderer and DNS settings that are still needed.
+
+Use the route syntax supported by your installed Netplan version. Current versions prefer a default route under `routes` rather than deprecated `gateway4`; do not blindly replace a working older-release configuration with a new-version example.
+
+## Validate and apply with rollback
+
+```bash
+sudo netplan generate
+sudo netplan try --timeout 120
+```
+
+`generate` checks/generates the configuration. **`try` applies it temporarily** and asks for confirmation; it is not a dry run. Keep the console open, test gateway/external connectivity and a new SSH session, then confirm only if the expected access works. Check rollback in the console if connectivity fails rather than assuming recovery always succeeded.
+
+## Verify persistence
+
+Inspect `ip -4 addr show` and `ip route show` again. Confirm the intended address, DNS resolution and application bindings. Plan a restart when appropriate to check persistence. If needed, restore the saved configuration through the console and validate it before applying.
+
+See the [official Netplan try documentation](https://netplan.readthedocs.io/en/stable/netplan-try/) for limitations and rollback behavior.

@@ -1,11 +1,11 @@
 ---
-title: "Power Cycle or Reboot a VPS"
-sidebarTitle: "Reboot VPS"
-description: "Control VPS power states from the EDBB Control Panel—restart, stop, or start with a couple of clicks."
+title: "Power cycle or reboot a VPS"
+sidebarTitle: "Restart and power cycle"
+description: "Choose a guest restart or a full VPS power cycle. Save work, use the EDBB power controls and verify hardware changes after the service starts again."
 ---
 
 <Note>
-  Prefer graceful reboots whenever possible: run <code>sudo shutdown -h now</code> or <code>sudo halt</code> inside Linux (or the equivalent command in Windows), then start the VPS from the Control Panel. This keeps filesystems and services healthy before you resort to a forced power cycle.
+  For a graceful Linux restart, use <code>sudo shutdown -r now</code>. For a full power cycle, shut the guest down cleanly with <code>sudo shutdown -h now</code>, wait for shutdown, then start it from the EDBB panel. In Windows, use the corresponding Restart or Shut down action. A guest reboot is not a full hypervisor stop/start.
 </Note>
 
 ## Restart a Running VPS
@@ -21,9 +21,9 @@ description: "Control VPS power states from the EDBB Control Panel—restart, st
   </Step>
 </Steps>
 
-<Callout type="warning">
+<Warning>
   Restart performs an immediate power cycle at the hypervisor level. If the operating system still responds, run its built-in reboot command first for a graceful shutdown.
-</Callout>
+</Warning>
 
 ---
 
@@ -38,7 +38,6 @@ description: "Control VPS power states from the EDBB Control Panel—restart, st
     ![Restart server menu](/assets/stop-server.png)
   </Step>
 </Steps>
-
 
 ---
 
@@ -55,6 +54,10 @@ description: "Control VPS power states from the EDBB Control Panel—restart, st
   </Step>
 </Steps>
 
-<Callout type="warning">
+<Warning>
   Stop is equivalent to pulling the power cable. Use it only if the guest OS no longer reacts to `shutdown` or `poweroff` commands.
-</Callout>
+</Warning>
+
+## Upgrade activation
+
+Follow the activation email for CPU, RAM or disk changes. When a full power cycle is required, shut the guest down cleanly, confirm it is stopped, then use **Start Server**. Save work and plan for SSH/RDP and application interruption. Stopping a VPS does not cancel billing. If your panel differs from these retained EDBB screenshots, contact support before guessing an action.

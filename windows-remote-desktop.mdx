@@ -1,10 +1,8 @@
 ---
-title: "Windows Remote Desktop Access"
-sidebarTitle: "RDP How-To"
-description: "Launch Remote Desktop from Windows or macOS to reach your EDBB Windows VPS in a secure graphical session."
+title: "Windows remote desktop access"
+sidebarTitle: "Connect with RDP"
+description: "Connect to your Windows VPS using Remote Desktop, verify server identity and understand the difference between disconnecting and signing out."
 ---
-
-import { CtaButton } from "/snippets/cta-button.mdx";
 
 ## Connect to Your Windows VPS
 
@@ -12,23 +10,26 @@ import { CtaButton } from "/snippets/cta-button.mdx";
   Remote Desktop Protocol (RDP) delivers full graphical control of your Windows VPS. Bring the server’s IPv4 address, the <code>Administrator</code> password you set in the portal, and a stable network connection.
 </Info>
 
-Need to deploy Windows first? Reinstall from the EDBB Control Panel with the <a href="/vps-management/autoinstall-reinstall-install-vps-linux-windows">OS reinstall guide</a>.
+Need to deploy Windows first? Reinstall from the EDBB Control Panel with the <a href="/vps-management/reinstall-vps">OS reinstall guide</a>.
 
 ---
 
 ## Why Use RDP
 
-<CardGroup cols={3}>
-  <Card title="🖥️ Full Desktop">
-    Interact with the VPS as if you were sitting in front of the console—perfect for GUI apps, MMC tools, and quick configuration checks.
-  </Card>
-  <Card title="🔐 Secure Transport">
-    RDP sessions are encrypted end-to-end. Combine it with the portal’s one-time console access for password resets or emergency recovery.
-  </Card>
-  <Card title="🪟 Cross-Platform Clients">
-    Microsoft ships native clients for Windows and macOS, and open-source alternatives exist for Linux—use whichever device you prefer.
-  </Card>
-</CardGroup>
+
+###  Full Desktop
+
+Interact with the VPS as if you were sitting in front of the console—perfect for GUI apps, MMC tools, and quick configuration checks.
+
+
+###  Secure Transport
+
+RDP supports encrypted transport; verify the server identity and keep the client and server updated. Combine it with the portal’s one-time console access for password resets or emergency recovery.
+
+
+###  Cross-Platform Clients
+
+Microsoft ships native clients for Windows and macOS, and open-source alternatives exist for Linux—use whichever device you prefer.
 
 ---
 
@@ -51,21 +52,23 @@ Need to deploy Windows first? Reinstall from the EDBB Control Panel with the <a 
     ![Enter Administrator as the username](/assets/1sSq3fI0sZJj8Zc4RoSr4-K1RXNa_wHwVjBcGOvTw4K-20241202-112943.png)
   </Step>
   <Step title="Connect and authenticate">
-    Click <strong>Connect</strong>, enter the VPS password, and accept the certificate warning. Tick “Don’t ask me again” once you trust the fingerprint so the prompt stays hidden next time.
+    Click <strong>Connect</strong>, enter the VPS password, and inspect the certificate prompt. Verify the server identity through a trusted source such as your VPS console before accepting an unfamiliar certificate; investigate unexpected changes.
 
     ![Password prompt and certificate warning](/assets/1sSq3fI0sZJj8Zc4RoSr4-AGGOxauevnKCyRuSL3vFW-20241202-113527.png)
   </Step>
 </Steps>
 
-Once authenticated, the Windows desktop loads and you can begin managing your VPS. Close the session any time via **Start → Sign out** or by closing the RDP window.
+Once authenticated, the Windows desktop loads and you can begin managing your VPS. Closing the RDP window disconnects while applications can remain running. **Start → Sign out** ends the user session and closes its applications; save work first.
 
 ---
 
 ## macOS Client (Microsoft Windows App)
 
+The screenshots show an earlier Windows App release. Current versions can arrange controls differently; use the equivalent Add PC and connection settings for your installed version.
+
 <Steps>
   <Step title="Install Microsoft Windows App">
-    Download the free client (formerly Microsoft Remote Desktop) from the <a href="https://apps.apple.com/app/microsoft-remote-desktop/id1295203466" target="_blank" rel="noreferrer">Mac App Store</a>.
+    Download the free client (formerly Microsoft Remote Desktop) from the <a href="https://apps.apple.com/us/app/windows-app/id1295203466" target="_blank" rel="noreferrer">Mac App Store</a>.
 
     ![Microsoft Windows App listing in the Mac App Store](/assets/huaNpFAxK5PVCl_NLo3ID-QlQORqnbwx4sd8x4KCHOl-20241202-160326.png)
   </Step>
@@ -80,7 +83,7 @@ Once authenticated, the Windows desktop loads and you can begin managing your VP
     ![Saved connection tile ready to launch](/assets/bYb9Hny4tfRDK5FcumtQA_screenshot-2024-12-02-at-171013.png)
   </Step>
   <Step title="Approve prompts and sign in">
-    macOS will ask about certificates and optionally keychain storage—press <strong>Continue</strong>. Enter the password and you’ll land on the Windows desktop.
+    Review the certificate and optional keychain-storage prompts. Verify the server identity before selecting <strong>Continue</strong>. Enter the password and you’ll land on the Windows desktop.
 
     ![Certificate prompt during first RDP connection on macOS](/assets/vI9GQIvvP61Ayho-Uhrnj_screenshot-2024-12-02-at-171118.png)
   </Step>
@@ -94,11 +97,10 @@ Pro tip: If you’re using a MacBook, enable “Fit session to window” in the 
 
 ## Keep RDP Secure
 
-- Rotate the Administrator password regularly and store it in a password manager.  
-- Use the portal VNC console to disable/enable RDP if you ever need to lock access quickly.  
+- Use a strong, unique Administrator password, store it in a password manager and change it if it may have been exposed.
+- Use the portal VNC console to disable/enable RDP if you ever need to lock access quickly.
 - Maintain Windows Updates (`Settings → Windows Update`) so security patches install promptly.
 
-<CtaButton
-  label="Reset the Windows Admin Password"
-  link="/vps-management/reset-windows-admin-password"
-/>
+[Reset the Windows Admin Password](/vps-management/reset-windows-password)
+
+Restrict RDP access to trusted source networks where practical and use Network Level Authentication when supported. Keep the VNC console as a recovery path before changing access rules.

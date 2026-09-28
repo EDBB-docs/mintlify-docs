@@ -1,0 +1,34 @@
+---
+title: "Anycast, DNS and VPS location"
+sidebarTitle: "Anycast and DNS"
+description: "Distinguish your VPS location from DNS resolver and authoritative nameserver locations. Understand what anycast and reverse DNS can and cannot show."
+---
+
+<span id="customizing-settings" />
+<span id="forward-dns-resolvers" />
+<span id="key-takeaway" />
+<span id="reverse-dns-ptr" />
+<span id="why-ptr-lookups-show-varied-locations" />
+
+A DNS server shown in another city or country does not establish that your VPS is hosted there. Different parts of the DNS process can use different networks and locations.
+
+| Item | What it tells you |
+| --- | --- |
+| VPS service location | The physical hosting location you selected for the service |
+| Recursive resolver | The service answering DNS lookups for your system |
+| Authoritative nameserver | The server publishing records for a domain or reverse-DNS zone |
+| PTR record | A hostname associated with an IP address; it is not physical-location proof |
+| GeoIP result | A third party's estimate of an IP address location |
+
+<span id="how-edbb-anycast-works" />
+
+## Anycast
+
+Anycast can advertise the same service address from multiple sites. Routing selects an available path according to network policy and reachability; it does not guarantee the geographically nearest site. A resolver provider may process a query outside your VPS country.
+
+## Diagnose the actual question
+
+- For where a service is hosted, check its ordered EDBB location and ask support about any discrepancy.
+- For an incorrect database label, use [GeoIP correction](/faq/ip-addresses/correct-geolocation).
+- For VPN resolver behavior, review [DNS leak tests](/faq/ip-addresses/dns-leak-tests).
+- For latency or loss, collect [end-to-end network tests](/faq/ip-addresses/diagnose-packet-loss).

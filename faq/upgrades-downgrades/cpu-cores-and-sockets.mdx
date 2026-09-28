@@ -1,0 +1,20 @@
+---
+title: "CPU cores vs sockets in an EDBB VPS"
+sidebarTitle: "CPU cores and sockets"
+description: "Understand how vCPUs are mapped to sockets and cores, why it matters for licensing/performance, and how to change the topology in the Control Panel."
+---
+
+<span id="change-the-cpu-topology-in-the-control-panel" />
+<span id="core-vs-socket-basics" />
+
+A VPS can present its virtual CPUs as multiple cores in one virtual socket or as several virtual sockets. This is a guest-visible layout, not a description of the physical processors dedicated to your service.
+
+<span id="why-the-topology-matters" />
+
+## Why the layout matters
+
+Some operating systems and applications limit the number of sockets or license software according to processors or cores. Check the exact edition and current vendor licensing terms before changing the layout. A different socket count alone does not guarantee improved performance or physical NUMA placement.
+
+Use the **Settings** tab and [system configuration](/vps-management/system-configuration-dialog) to review the options available for your VPS. Record the existing settings before making a change and plan for a restart.
+
+Check what the guest actually sees using the [Linux](/faq/upgrades-downgrades/check-cpu-linux) or [Windows](/faq/upgrades-downgrades/check-cpu-windows) guide.

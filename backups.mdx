@@ -1,142 +1,44 @@
 ---
-title: "Backups"
-sidebarTitle: "Backup Guide"
-description: "You are responsible for creating backups! Ensure you manage your machines and regularly backup your servers and all your important data!"
+title: "Back up your VPS"
+sidebarTitle: "Backups"
+description: "Plan independent VPS backups, keep versioned copies off the server, and test recovery. Understand how a paid qcow2 export differs from routine backups."
 ---
 
-## Protecting Your VPS Data
+<span id="protecting-your-vps-data" />
+<span id="what-this-means-for-you" />
+<span id="why-it-matters" />
+<span id="why-regular-backups-are-essential-for-your-vps-data-protection" />
 
-EDBB does not provide any backup services for VPS. \
-It is important that you manage your own backups to protect your data.
+EDBB does not provide routine VPS backups. You are responsible for backing up the operating system configuration, application data and anything else needed to recover your service. Keep copies outside the VPS and test them.
 
-## **What this means for you**
+<span id="build-a-simple-and-reliable-backup-plan" />
 
-🛡 **You are responsible** for creating backups of your server and all important data. \
-🛡 We recommend scheduling regular backups to ensure your data is safe.
+## Choose what to protect
 
-### **Why Regular Backups Are Essential for Your VPS Data Protection**
+| Data | Backup approach | Recovery check |
+| --- | --- | --- |
+| Application and website files | Versioned file backups to a separate system | Restore to a temporary directory and compare contents |
+| Databases | Database-native dumps or a tested consistent backup method | Import into an isolated database and run application checks |
+| Configuration and secrets | Encrypted backups with restricted access | Confirm required keys and configuration can be recovered |
+| Entire VPS disk | A separately requested [qcow2 export](/faq/upgrades-downgrades/qcow2-export) | Check image compatibility, capacity and a restore procedure |
 
-> Regular backups are essential for protecting your data against hardware failures, accidental deletions, or cyber threats. Without proper backups, you risk losing critical data, leading to costly downtime or permanent data loss. By scheduling regular backups, you safeguard your systems, enabling quick recovery and uninterrupted operations, minimizing significant disruptions.
+<Warning>
+  A synchronization job is not automatically a historical backup. Tools such as `rsync --delete` and `rclone sync` can copy accidental deletions to the destination. Use versioned retention and review a dry run before enabling destructive synchronization.
+</Warning>
 
-## Why It Matters
+## Establish a backup routine
 
-<CardGroup cols={3}>
-  <Card title="🛡️ You Own the Recovery Plan">
-    Operating system files, application configs, and customer data are your responsibility. Schedule backups before you need them.
-  </Card>
-  <Card title="⚡ Incidents Happen">
-    Hardware faults, accidental deletes, or security breaches can strike without warning. Prepared backups mean rapid recovery.
-  </Card>
-  <Card title="🌍 Off-Site Saves the Day">
-    Keep at least one copy outside the VPS—object storage, another data centre, or your own infrastructure.
-  </Card>
-</CardGroup>
+1. Decide how much recent data you can afford to lose and how quickly you must restore service.
+2. Choose a backup schedule and retention period that meet those needs.
+3. Store encrypted copies on a separate system. Keep the decryption credentials accessible if the VPS is unavailable.
+4. Monitor each job and available backup storage. A scheduled job that failed is not a backup.
+5. Restore representative files and databases regularly to an isolated environment.
+6. Before an upgrade, reinstall, disk change or cancellation, create a fresh backup and confirm it is usable.
 
----
+<span id="requesting-a-downloadable-image" />
 
-## Build a Simple and Reliable Backup Plan 
+## Paid disk exports are separate
 
-Having regular backups makes sure you can recover your VPS fast — even after system crashes, mistakes, or attacks.
+EDBB offers a manually requested qcow2 disk export for **EUR 25**. A password-protected download link is available for **30 days**. Download and store your own copy within that period. This service is not a recurring backup schedule or an instant snapshot feature.
 
-<Steps>
-  <Step title="1. Pick your backup type">
-    Choose the method that best fits your setup:
-
-    - **Full snapshots:** save the whole server or disk. Best for complete restores.\
-      Tools: <code>
-      dd</code>
-
-      , <code>
-      qemu-img</code>
-
-      , or hosting snapshots.
-    - **File backups:** copy only selected files or folders. Great for websites, configs, and databases.\
-      Tools: <code>
-      tar</code>
-
-      , <code>
-      rsync</code>
-
-      .
-    - **Cloud or incremental backups:** keep changes synced to remote storage for safety.\
-      Tools: <code>
-      rclone</code>
-
-      , <code>
-      restic</code>
-
-      , <code>
-      borg</code>
-
-      .
-  </Step>
-  <Step title="2. Automate your backups">
-    Backups you run manually are easy to forget — automate them with cron or systemd timers.
-
-    **Example (runs every day at 2:30 AM):**
-
-    ```bash
-    crontab -e
-    ```
-
-    Then add:
-
-    ```bash
-    30 2 * * * /usr/local/bin/backup.sh >> /var/log/backup.log 2>&1
-    ```
-
-    You can also sync your files automatically to cloud storage or another VPS:
-
-    ```bash
-    rclone sync /var/www remote:backups/server1 --exclude "cache/**"
-    ```
-  </Step>
-  <Step title="3. Check and clean your backups">
-    A backup only helps if it actually works.
-
-    - **Check file hashes:** use SHA256 or MD5 to verify backups are valid.
-    - **Test restores:** try extracting or mounting backups in a test folder.
-    - **Clean up old files:** delete backups older than 30 days.
-
-      ```bash
-      find /backups -type f -mtime +30 -delete
-      ```
-  </Step>
-  <Step title="4. Keep a copy somewhere safe">
-    Don’t store all backups on one machine.
-
-    - Keep one local copy for quick recovery.
-    - Upload another to external or cloud storage (S3, Backblaze, Google Drive, etc.).
-    - Encrypt files before upload using <code>
-      gpg</code>
-
-       or <code>
-      restic --password-command</code>
-
-      .
-
-    💡 _Tip:_ Follow the **3-2-1 rule** — 3 copies, 2 different places, 1 offsite.
-  </Step>
-</Steps>
-
----
-
-✅ A simple, automated backup plan keeps your server safe and restorable — no matter what goes wrong.
-
----
-
-## Requesting a Downloadable Image
-
-<Info>
-  Instant snapshots are not included, but you can request a downloadable <code>
-   .qcow2</code>
-
-  image of your VPS disk. Each export costs <strong>€25</strong>
-   to cover handling.
-</Info>
-
-- Contact Support via the portal messenger or by email with the VPS ID and timeframe.
-- We prepare the image and provide a secure download link.
-- Download promptly—links expire to keep data safe.
-
-Full instructions live in [Requesting a Downloadable .qcow2 Image Backup](https://docs.edbb.com/faq/upgrades-downgrades/requesting-qcow2-image-backup).
+See [request a qcow2 export](/faq/upgrades-downgrades/qcow2-export). Service [data retention](/faq/billing-lifecycle/data-retention-period) after termination is also separate and must not be used as a backup plan.

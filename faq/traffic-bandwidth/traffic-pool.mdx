@@ -1,86 +1,66 @@
 ---
-title: "EDBB Traffic Pool"
+title: "Traffic Pool and Auto-Hydration"
 sidebarTitle: "Traffic Pool"
-description: "Learn more about your traffic pool, starter credit, how to get started in general (buy and assign traffic)"
+description: "Use your shared Traffic Pool, 100 GB starter credit and automatic assignments. Understand which traffic expires at your VPS monthly refill."
 ---
 
-## What Is a Traffic Pool
 
-<Info>
-  The traffic pool is like a bank account holding a traffic reserve. Top-up your account and assign traffic to any VPS in your account when needed.
-</Info>
+The Traffic Pool is a shared account reserve. Assign traffic from it to a VPS when the monthly allowance is insufficient. Every newly purchased VPS adds **100 GB starter credit** to your pool.
 
-- Unused Pool Traffic does not expire.
-- Hydration assigns traffic to a VPS (manual or auto at 99% usage)
-- Traffic purchases are instant and are logged in the pool log.
-- Traffic assignments are instant and are logged in the hydration log
+<span id="traffic-pool-balance-sheet" />
+<span id="traffic-pool-starter-credit" />
+<span id="what-is-a-traffic-pool" />
 
----
+## Which traffic expires?
 
-## Traffic Pool Starter Credit
+| Traffic | Where it is held | At the VPS monthly refill |
+| --- | --- | --- |
+| Monthly Plan Traffic | Included with that EDBB VPS plan | Usage resets; unused allowance does not carry forward |
+| Unassigned Pool Traffic | Shared account pool | Does not expire |
+| Assigned Pool Traffic | Added to one VPS's current allowance | Any unused remainder expires |
+| 100 GB starter credit | Shared account pool | Does not expire while unassigned |
 
-Starting **November 19, 2025**, every newly purchased VPS includes **100 GB of complimentary traffic**. We automatically add **\+100 GB** to your Traffic Pool account for each new VPS you order. This starter credit lets you explore how the Traffic Pool works — and gives you a safety buffer if you ever run low on traffic.
+The monthly allowance comes from your **EDBB plan**, not an EDIS Global plan. Pool mechanics are shared, but EDBB has its own commercial terms and no volume discounts.
 
-Your 100 GB starter credit:
+<span id="how-to-get-started" />
 
-- **never expires**
-- **can be assigned to any VPS** in your account
-- works with both **manual-** and **Auto-Hydration**
+## Buy and assign traffic
 
----
+Open the VPS in the [EDBB Control Panel](https://my.edbb.com/clientarea.php) and select the **Traffic** tab. Use **Top up** or the verified [EDBB traffic purchase page](https://my.edbb.com/cart.php?gid=214). Confirm the amount and price in checkout.
 
-## How to Get Started
+After payment is confirmed, assign traffic using **Manual Hydration**: **+100 GB**, **+500 GB**, **+1 TB** or **+10 TB**, then **Assign Traffic**. The amount is deducted from the account pool and added to this VPS's current allowance.
 
-**🛒 Purchase Traffic**: Choose the amount of traffic you need and [Top Up](https://manage.edisglobal.com/cart.php?gid=214) your Traffic Pool.
+<Frame>
+![EDBB Traffic tab with pool balance, manual assignment and Auto-Hydration controls](/assets/traffic-pool-edbb-manual-auto-hydration.png)
+</Frame>
 
-**📌 Assign Traffic**: Once payment is complete, head to the **Traffic** **tab** in your control panel to assign traffic to your VPS. Use +100GB, +500GB, +1TB, +10TB buttons for **Manual Hydration**.
+<Warning>
+  Check the monthly refill date before assigning a large amount. Assigned traffic expires at that refill even if unused. Purchasing alone does not assign traffic to a VPS.
+</Warning>
 
-**📌 Enable Auto-Hydration:**  Enable Auto-Hydration for automatic traffic assignment when usage reaches 99%.
+## Auto-Hydration
 
-![Traffic hydration controls](/assets/traffic-pool-edbb-manual-auto-hydration.png)
+Enable Auto-Hydration separately for each VPS and select **100 GB**, **200 GB**, **300 GB** or **500 GB**. At **99% of the current allowance**, the selected amount is assigned from the pool if enough balance is available.
 
-**A — Traffic Pool Balance**: shows remaining TB and provides a button to <strong>Top up</strong>
- the pool.\
-**B — Manual Hydration**: manually assign portions of +100 GB, +500 GB, +1 TB, or +10 TB to the selected VPS.\
-**C — Auto Hydration**: choose a profile (e.g., +100 GB). The system automatically adds e.g. +100GB to your VPS at 99% traffic usage levels.
+The current allowance includes Plan Traffic and traffic already assigned during the cycle. Auto-Hydration uses existing pool balance; it never purchases traffic automatically.
 
----
+## Read the logs
 
-## Traffic Pool Balance Sheet 
+Use **Hydration log** and **Pool log** to distinguish assignment to a VPS from actual network usage. A pool deduction means traffic was assigned, not that it was already consumed.
 
-The traffic pool balance sheet (pool log) below works like a bank account statement.  
-We log **traffic top-ups**, **pool traffic usage**, and the resulting balance after each transaction.  
-This report (demo data below) provides a transparent overview of **traffic pool usage across your entire VPS hosting account**.
+This fictional example uses GB consistently and starts with a zero pool balance. Newest transactions are shown first.
 
-**How to Read the Balance Sheet**
+| Event | Pool change | New pool balance |
+| --- | --- | --- |
+| Assign traffic to demo-vps-b | -100 GB | 500 GB |
+| Starter credit for demo-vps-b | +100 GB | 600 GB |
+| Assign traffic to demo-vps-a | -500 GB | 500 GB |
+| Purchase traffic | +1,000 GB | 1,000 GB |
 
-- **Date/Time:** Timestamp of the transaction  
-- **Source:** VPS consuming traffic, a Traffic Pool Top-Up, or Starter Credit
-- **Change:** Traffic added (positive) or used (negative)  
-- **New Balance:** Remaining traffic after the transaction  
+<span id="monitor-and-refill" />
 
-| Date/Time           | Source                                                  | Change         | New Balance |
-|---------------------|---------------------------------------------------------|----------------|-------------|
-| 2025-03-19 17:14:42 | kvm_demo_id105                                          | -100 GB        | 6000 GB     |
-| 2025-03-19 15:01:33 | kvm_demo_id105                                          | -100 GB        | 6700 GB     |
-| 2025-03-19 12:44:11 | **Traffic Pool Starter Credit (100GB) kvm_demo_id207**  | **+100 GB**    | 6800 GB     |
-| 2025-03-18 18:22:09 | kvm_demo_id105                                          | -1000 GB       | 6700 GB     |
-| 2025-03-18 10:48:55 | kvm_demo_id304                                          | -500 GB        | 7700 GB     |
-| 2025-03-18 10:45:02 | kvm_demo_id412                                          | -300 GB        | 8200 GB     |
-| 2025-03-18 09:32:50 | **Traffic Pool Top-Up**                                 | **+1000 GB**   | 8500 GB     |
-| 2025-03-17 20:11:27 | kvm_demo_id105                                          | -1000 GB       | 7500 GB     |
-| 2025-03-17 19:08:44 | kvm_demo_id105                                          | -1000 GB       | 8500 GB     |
-| 2025-03-17 17:55:31 | kvm_demo_id207                                          | -500 GB        | 9500 GB     |
-| 2025-03-12 11:22:54 | **Traffic Pool Top-Up**                                 | **+10000 GB**  | 10000 GB    |
+## Low-balance notifications
 
+After a top-up, the resulting pool balance becomes the reference for the low-balance notice. When **80% or more has been assigned**, an email indicates that **20% or less remains**. Fixed assignment increments can cross that threshold and leave less than 20%, including zero.
 
----
-
-## Monitor and Refill
-
-- Check pool balance and assignment history via the **Hydration log** and **Pool log** buttons.
-- Email alerts fire at 80% pool usage; top up before the traffic pool is exhausted.
-- Combine traffic pool with plan upgrades if your baseline traffic requirement grows over time.
-
-Need more detail on usage graphs and throttling rules? \
-See [Traffic Stats & Monthly Refills](./traffic-stats-refill-explained) and [Exceeded Monthly Traffic](./exceeding-monthly-included-traffic).
+A low pool balance does not stop a VPS that still has traffic available. It prevents further assignments when the selected increment cannot be funded. See [traffic statistics](/faq/traffic-bandwidth/traffic-statistics) and [traffic limits](/faq/traffic-bandwidth/exceeding-monthly-included-traffic).

@@ -1,211 +1,88 @@
 ---
-title: "Operating System Availability on EDBB"
+title: "Operating system availability on EDBB"
+sidebarTitle: "Operating systems"
 description: "Understand which operating systems are available during order and which additional OS images can be selected later in the control panel for auto-installation."
-sidebarTitle: "Available OS Images"
 ---
 
-## Operating System Availability
+<span id="available-os-in-the-shopping-cart" />
+<span id="operating-system-availability" />
+<span id="shopping-cart-=-recommended-defaults" />
+<span id="summary" />
+<span id="vps-control-panel-=-full-flexibility" />
 
-EDBB provides a wide selection of operating systems for VPS deployments.\
-The list of OS images shown **during the initial order** is intentionally different from the list shown later in the **Control Panel (Auto-Installation)**.
+EDBB and EDIS Global use the same operating-system inventory. EDBB has a distinct panel: select **Installation → Automated Installers** on your VPS to see its available images. The current selector is authoritative for the service.
 
-This guide explains the differences and helps you choose the right OS for your setup.
+<span id="-manual-vnc-/-iso-installation" />
+<span id="custom-installation" />
+<span id="installing-other-operating-systems" />
 
----
+<span id="-cloud-init" />
 
-## OS Options Available in the Shopping Cart
+## Installation methods
 
-🛒 The shopping cart shows a **curated, recommended list** of operating systems.\
-These versions are selected for:
+| Method | Purpose |
+| --- | --- |
+| Automated Installers | Install a supplied Linux or Windows image |
+| Custom Image | Install a compatible qcow2 image with Cloud-Init support |
+| ISO Boot | Boot installation or recovery media through the console |
 
-- Stability and long-term support
-- Broad compatibility
-- Fastest deployment
-- Cloud-Init support
-- Ease of use for new customers
+The order form can show a smaller selection than the panel. Availability does not mean a release still receives vendor security updates. Check the vendor lifecycle before choosing an older release for production.
 
-### **Available OS in the Shopping Cart**
+<span id="why-are-the-lists-different" />
 
-#### **Debian**
+<span id="almalinux" />
 
-- Debian 13 (Trixie) 64-bit
-- Debian 12 (Bookworm) 64-bit
-- Debian 11 (Bullseye) 64-bit
-- Debian 10 (Buster) 64-bit
+<span id="almalinux-2" />
 
-#### **AlmaLinux**
+<span id="arch-linux" />
 
-- AlmaLinux 9 (64-bit)
-- AlmaLinux 8 (64-bit)
+<span id="arch-linux-2" />
 
-#### **Arch Linux**
+<span id="centos-/-centos-stream" />
 
-- Arch Linux 20250815 (64-bit)
+<span id="centos-stream" />
 
-#### **Rocky Linux**
+<span id="debian" />
 
-- Rocky Linux 10 (64-bit)
-- Rocky Linux 9 (64-bit)
+<span id="debian-2" />
 
-#### **CentOS Stream**
+<span id="full-os-list-in-control-panel-auto-install" />
 
-- CentOS Stream 10 (64-bit)
-- CentOS Stream 9 (64-bit)
-- CentOS Stream 8 (64-bit)
+<span id="os-options-available-in-the-control-panel-auto-install" />
 
-#### **Ubuntu LTS**
+<span id="os-options-available-in-the-shopping-cart" />
 
-- Ubuntu 24.04 LTS (64-bit)
-- Ubuntu 22.04 LTS (64-bit)
-- Ubuntu 20.04 LTS (64-bit)
+<span id="rocky-linux" />
 
-#### **Windows Server (Trial Installers)**
+<span id="rocky-linux-2" />
 
-- Windows Server 2022 (180-day trial)
-- Windows Server 2019 (180-day trial)
-- Windows Server 2016 (180-day trial)
+<span id="ubuntu-lts" />
 
-#### **Custom Installation**
+<span id="ubuntu-lts-2" />
 
-- Alternative / Manual installation via VNC\
-  (Boot your own ISO or use an installer)
+<span id="windows" />
 
----
+<span id="windows-server-trial-installers" />
 
-## OS Options Available in the Control Panel (Auto-Install)
+## Shared image inventory reference
 
-🖥️  After your VPS is deployed, the **Control Panel → Auto-Install** section provides a **much broader** OS selection.
+The shared image inventory lists Debian 13, 12 and 11; Ubuntu 24.04, 22.04 and 20.04; AlmaLinux 9 and 8; Rocky Linux 10 and 9; CentOS Stream 10, 9 and legacy 8; and Arch Linux snapshots. The broader panel inventory also lists older Ubuntu versions and CentOS 7 for compatibility.
 
-This includes:
+Windows Server 2025, 2022 and 2019 evaluation images are listed, with additional Windows evaluation choices in the panel. Evaluation media do not include a production license. Use only an edition/license valid for your workload and hosting arrangement.
 
-- Older versions
-- Multiple LTS generations
-- Legacy builds for compatibility
-- Additional Arch Linux snapshots
-- Windows 10
-- Archived OS templates
-- More advanced choices intended for experienced users
+<span id="custom-os" />
 
-### **Full OS List in Control Panel Auto-Install**
+## ISO and recovery media
 
-#### **Debian**
+The shared ISO inventory includes fixed-version installers, some older than current vendor releases. It lists **SystemRescue 10.02** and **1_Password-Reset-Helper.iso** as recovery tools. Check the actual **ISO Boot** selector before following a version-specific procedure.
 
-- Debian 13
-- Debian 12
-- Debian 11
-- Debian 10
-- Debian 9
+A compatible custom image must support the virtual architecture, boot mode and devices presented by your VPS. Cloud-Init configures an existing compatible OS; it does not make arbitrary software or architectures bootable.
 
-#### **Ubuntu LTS**
+<Warning>Automated or manual installation can overwrite your disk. Back up existing data first. Recovery media should be used without formatting or reinstalling when the aim is to recover the current system.</Warning>
 
-- Ubuntu 24.04
-- Ubuntu 22.04
-- Ubuntu 20.04
-- Ubuntu 18.04
-- Ubuntu 16.04
+<span id="-related-articles" />
 
-#### **AlmaLinux**
-
-- AlmaLinux 9
-- AlmaLinux 8
-
-#### **Rocky Linux**
-
-- Rocky Linux 10
-- Rocky Linux 9
-
-#### **CentOS / CentOS Stream**
-
-- CentOS Stream 10
-- CentOS Stream 9
-- CentOS Stream 8
-- CentOS 7
-
-#### **Arch Linux**
-
-- Arch Linux 20250815
-- Arch Linux 20231115
-
-#### **Windows**
-
-- Windows Server 2022
-- Windows Server 2019
-- Windows Server 2016
-- Windows 10
-
-#### **Custom OS**
-
-- Manual installation via VNC / ISO
-- Cloud-Init custom configurations (QCOW2)
-
----
-
-## Why Are The Lists Different?
-
-### **Shopping Cart = Recommended Defaults**
-
-A simplified list that avoids:
-
-- Very old or deprecated OS versions
-- Niche or advanced setups
-- Confusing duplicate entries
-- Legacy LTS generations no longer recommended
-
-This ensures a smooth onboarding experience for new users.
-
----
-
-### **VPS Control Panel = Full Flexibility**
-
-The control panel exposes **all available auto-install images**, including:
-
-- Legacy templates still needed by existing customers
-- Older LTS releases
-- Additional builds and snapshots
-- Advanced OS options
-- Deprecated versions kept for compatibility
-
-This allows experienced users full control over their environment.
-
----
-
-## Installing Other Operating Systems
-
-Even if your preferred OS does not appear in the shopping cart, you can install **anything** via:
-
-### ✔ **Cloud-Init**
-
-Automatic configuration (users, SSH keys, packages, scripts).
-
-### ✔ **Manual VNC / ISO Installation**
-
-Boot into any installer:
-
-- FreeBSD / OpenBSD / NetBSD
-- Custom Linux distributions
-- Security appliances
-- Custom ISO images
-
----
-
-## Summary
-
-| Feature                    | Shopping Cart | Control Panel Auto-Install |
-| -------------------------- | ------------- | -------------------------- |
-| Modern OS versions         | ✔             | ✔                          |
-| Older LTS releases         | —             | ✔                          |
-| Debian 9 / Ubuntu 16.04    | —             | ✔                          |
-| Multiple Arch Linux builds | —             | ✔                          |
-| CentOS 7                   | —             | ✔                          |
-| Windows 10                 | —             | ✔                          |
-| Windows Server             | ✔             | ✔                          |
-
----
-
-## 📎 Related Articles
-
-- [How to Install a Custom Image using Cloud-Init](https://docs.edbb.com/vps-management/cloud-init-vps-installation)
-- [Reinstall Your VPS](https://docs.edbb.com/vps-management/autoinstall-reinstall-install-vps-linux-windows)
-- [Install MikroTik RouterOS (CHR)](https://docs.edbb.com/advanced-setup-guides/script-based-mikrotik-router-os-installation-guide-winbox)
-
----
+- [Reinstall Linux or Windows](/vps-management/reinstall-vps)
+- [Cloud-Init installation](/vps-management/cloud-init-vps-installation)
+- [Custom ISO](/vps-management/bring-your-own-iso)
+- [Mount or unmount an ISO](/vps-management/mount-iso-image)

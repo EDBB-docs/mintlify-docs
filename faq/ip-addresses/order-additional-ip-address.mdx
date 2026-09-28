@@ -1,21 +1,23 @@
 ---
-title: "Order Additional IPv4 Addresses"
-sidebarTitle: "Additional IPs"
-description: "Add up to 10 randomly-assigned IPv4 addresses to your EDBB VPS with a flat monthly fee per address."
+title: "Order additional IPv4 addresses"
+sidebarTitle: "Additional IP addresses"
+description: "Request additional provider-assigned IPv4 addresses for your EDBB VPS, confirm current pricing and limits, then configure them in the guest operating system."
 ---
 
-import { CtaButton } from "/snippets/cta-button.mdx";
 
 ## What’s Included
 
 <Info>
-  The additional IPv4 add-on delivers up to <strong>10 randomly assigned addresses</strong> per VPS. Each IP comes from the local pool for your data center and is billed monthly.
+  The additional IPv4 add-on delivers additional provider-assigned IPv4 addresses per VPS. Each IP comes from the local pool for your data center and is billed monthly.
 </Info>
 
-## Pricing Snapshot
+<span id="pricing-snapshot" />
 
-| Item | Price |
-|------|-------|
+## Price and availability
+
+Confirm the current EDBB price, recurring charge and available quantity in the order summary or with [support@edbb.com](mailto:support@edbb.com) before payment. Do not use EDIS Global prices as an EDBB quote.
+
+------|-------|
 | Provisioning fee | Included |
 | Monthly charge per additional IPv4 | **€5** |
 
@@ -30,7 +32,7 @@ import { CtaButton } from "/snippets/cta-button.mdx";
     Sign in to the EDBB Control Panel and contact Support via the messenger or by email—let them know you’d like more IPv4 addresses.
   </Step>
   <Step title="Share the service details">
-    Provide the primary IPv4 (or KVM service ID) and state how many extra addresses you need—up to ten per VPS.
+    Provide the primary IPv4 (or KVM service ID) and state how many extra addresses you need.
   </Step>
   <Step title="Approve the invoice">
     Support sends a payment link for the add-on. Once it’s paid, the new IPv4 addresses appear under the <strong>Network</strong> tab of the service.
@@ -44,15 +46,17 @@ import { CtaButton } from "/snippets/cta-button.mdx";
     From <strong>Services</strong>, pick the VPS and switch to the <strong>Upgrades</strong> tab. Choose <strong>Upgrade Components</strong>.
   </Step>
   <Step title="Select Additional IPs">
-    Enter the number of addresses you want (up to ten) and proceed to checkout.
+    Enter the number of addresses you want within the limit shown for this service and proceed to checkout.
   </Step>
   <Step title="Pay and confirm">
     Complete the payment. The new IPv4 assignments populate automatically under the <strong>Network</strong> tab.
   </Step>
 </Steps>
 
-After either option, configure each IP inside your operating system (netplan, NetworkManager, or Windows TCP/IP settings) so traffic starts flowing—or reinstall the VPS to let the new addresses apply automatically.
+After either option, configure each IP inside your operating system (netplan, NetworkManager, or Windows TCP/IP settings) so traffic starts flowing.
 
 ---
 
-<CtaButton label="Need a specific IP?" link="./order-bespoke-ip-address" />
+[Need a specific IP?](/faq/ip-addresses/order-bespoke-ip-address)
+
+Use the [VNC console](/vps-management/enable-vnc-server) before changing network settings. Preserve existing addresses and data. Reinstalling erases the VPS and is not necessary just to add a guest network address.

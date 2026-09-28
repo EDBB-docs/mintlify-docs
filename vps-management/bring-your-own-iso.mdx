@@ -1,8 +1,10 @@
 ---
-title: "Upload a Custom ISO Image"
-sidebarTitle: "Upload Custom ISO"
-description: "EDBB lets you mount your own ISO images—install custom OS builds, appliances, or bare-metal backups directly from the Control Panel."
+title: "Upload a custom ISO image"
+sidebarTitle: "Custom ISO"
+description: "Download a compatible custom ISO through the EDBB Installation tab, mount it for installation or recovery, and remove the media when finished."
 ---
+
+<Warning>Booting an installer can erase the VPS disk. Back up first and distinguish mounting media from confirming an installation inside it.</Warning>
 
 ## Bring Your Own ISO
 
@@ -16,20 +18,23 @@ description: "EDBB lets you mount your own ISO images—install custom OS builds
 
 ## Quick Health Check
 
-<CardGroup cols={3}>
-  <Card title="🌐 Direct Download Link">
-    Host the ISO on a public HTTP/HTTPS URL without authentication, captchas, or
-    one-time tokens. Object storage with static links works best.
-  </Card>
-  <Card title="🕒 Maintenance Window">
-    The VPS reboots when the ISO is mounted. Schedule a maintenance slot so users
+
+###  Direct Download Link
+
+Host the ISO on a direct HTTPS URL without authentication, captchas, or
+    one-time tokens. Do not make sensitive media publicly accessible to satisfy this requirement; ask support for an appropriate transfer method instead.
+
+
+###  Maintenance Window
+
+Selecting the force-reset/boot option reboots the VPS. Schedule a maintenance slot so users
     aren’t surprised by downtime.
-  </Card>
-  <Card title="🖥️ Console Access">
-    Keep the portal console (or your VNC client) ready—you’ll need it to interact
+
+
+###  Console Access
+
+Keep the portal console (or your VNC client) ready—you’ll need it to interact
     with the installer once the VPS boots from the image.
-  </Card>
-</CardGroup>
 
 ---
 
@@ -40,19 +45,21 @@ description: "EDBB lets you mount your own ISO images—install custom OS builds
     Sign in to the <a href="https://my.edbb.com/clientarea.php" target="_blank" rel="noreferrer">EDBB Control Panel</a>, open your VPS, and switch to <strong>Installation</strong>. Choose the <strong>Custom Image</strong> tab.
   </Step>
   <Step title="Paste the ISO URL">
-    Select <strong>Download ISO</strong>, paste the direct link (for example, <code>https://cdn.example.com/os/custom.iso</code>), and confirm.
+    Select <strong>Download ISO</strong>, paste the direct link (the documentation-only example <code>https://cdn.example.com/os/custom.iso</code> must be replaced with your real image URL), and confirm.
   </Step>
   <Step title="Wait for the transfer">
     The Control Panel downloads the file into your account. Leave the page open until the status changes to <strong>Ready</strong>.
-    <div style={{marginTop: "16px"}}>
-      <img src="/assets/vps-mount-iso-co.png" alt="Custom ISO download in the Installation tab" style={{width: "100%", maxWidth: "820px", borderRadius: "16px", border: "1px solid rgba(0,0,0,0.08)"}} />
-    </div>
+
+<Frame>
+![Custom ISO download in the Installation tab](/assets/vps-mount-iso-co.png)
+</Frame>
+
   </Step>
 </Steps>
 
-<Callout type="info">
+<Info>
   Completed uploads receive an internal filename such as <code>xxxx/iso/KVM_custom_12345.iso</code>. Jot this down—you will select it in the mounting step.
-</Callout>
+</Info>
 
 ---
 
@@ -70,18 +77,18 @@ description: "EDBB lets you mount your own ISO images—install custom OS builds
   </Step>
 </Steps>
 
-Need a refresher on console controls or unmounting? Review the <a href="./mount-iso-image">Mount ISO</a> guide.
+Need a refresher on console controls or unmounting? Review the <a href="/vps-management/mount-iso-image">Mount ISO</a> guide.
 
 ---
 
 ## Retention - Cleanup
 
-- Custom ISOs stay available for **24 hours**. Re-upload them if you need another session later.  
-- For sensitive media, remove the ISO manually once you finish the installation.  
+- Custom ISOs stay available for **24 hours**. Re-upload them if you need another session later.
+- For sensitive media, remove the ISO manually once you finish the installation.
 - Keep local copies—expired files are purged automatically and cannot be restored.
 
-<Callout type="warning">
+<Warning>
   Downloads that fail usually indicate an inaccessible URL. Verify the link by
   running <code>curl -I &lt;your-link&gt;</code> from an external network and ensure
   it returns HTTP 200 without redirects.
-</Callout>
+</Warning>
