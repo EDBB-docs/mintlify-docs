@@ -18,13 +18,30 @@ Each VPS receives an IPv6 allocation equivalent in size to a **/64**. The gatewa
 
 ## Find your IPv6 settings
 
-Open **Services**, select your VPS, then open **Network**. Copy your assigned IPv6 range and gateway. Open the [VNC console](/vps-management/enable-vnc-server) before changing networking.
+Open **Services → My Services**, select your VPS, then open **Network**. The IPv6 Configuration section is below IPv4 Configuration.
 
-<Frame>
-![EDBB Network tab with assigned addresses and gateway](/assets/vps-network-tab.png)
+<Frame caption="Open Network to find your assigned IPv6 range and gateway. Addresses shown are examples.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/ipv6-network-overview.png" alt="EDBB Network tab overview showing the IPv4 and IPv6 configuration sections" />
+  </div>
 </Frame>
 
-The following examples use documentation addresses and `eth0`. Replace them with an address from your allocation, your location's gateway and the actual interface name.
+Copy the **IPv6 assignment** and **Gateway** from your own panel. The **Prefix** column describes the assigned range; the note below the table explains the prefix to configure inside your operating system.
+
+<Frame caption="Your assigned range is /64 equivalent. Configure an address from that range with /48 to reach the gateway. Example addresses shown.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/ipv6-assignment-detail.png" alt="Closeup of IPv6 assignment, prefix and gateway, with the required /48 configuration note highlighted" />
+  </div>
+</Frame>
+
+| Panel field | How to use it |
+| --- | --- |
+| IPv6 assignment | Choose an address within this range, such as `2001:db8:1234:5678::10` in the example. |
+| Prefix: /64 | Describes your allocation. It does not change when you use /48 on the interface. |
+| Gateway | Copy the exact gateway displayed for your VPS. |
+| /48 configuration note | Use `/48` when adding the chosen address to your network interface. |
+
+Open the [VNC console](/vps-management/enable-vnc-server) before changing networking. The following examples use documentation addresses and `eth0`. Replace them with an address from your allocation, your location's gateway and the actual interface name. Check your IPv6 firewall rules as well; IPv4 rules do not automatically cover IPv6.
 
 <span id="step-2-–-add-an-ipv6-address-linux-example" />
 
