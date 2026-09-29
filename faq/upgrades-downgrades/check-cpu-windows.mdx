@@ -10,7 +10,41 @@ Windows reports the virtual CPU layout presented to the VPS. Use Task Manager or
 
 ## Task Manager
 
-Open **Task Manager → Performance → CPU**. Review sockets, cores and logical processors. Where available, change the graph to show logical processors separately.
+1. Open **Task Manager** with **Ctrl + Shift + Esc**. If it opens in a compact view, choose **More details**.
+2. Select **Performance**, then **CPU**. Expand the navigation menu if you need to see the section names.
+3. Read **Virtual processors** below the graph. Other Windows versions may show **Logical processors** and **Cores** instead.
+
+The following example uses Windows Server 2025 on a VPS with **4 virtual processors**. The graphs show a moment in time; utilization changes as applications run.
+
+<Frame caption="Start with Performance → CPU. This example already uses the individual processor graph view.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/guide-batch/windows-cpu-overview.png" alt="Windows Server 2025 Task Manager CPU overview showing four processor graphs and four virtual processors" />
+  </div>
+</Frame>
+
+### Read your CPU allocation
+
+Compare **Virtual processors** (or **Logical processors**) with the vCPU allocation of your VPS. In this example, **Virtual processors: 4** is the relevant count, and **Virtual machine: Yes** confirms Windows is running as a guest.
+
+<Frame caption="The allocation in this example is 4 virtual processors.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6", maxWidth: "480px", margin: "0 auto" }}>
+    <img src="/assets/guide-batch/windows-cpu-count.png" alt="Closeup showing Virtual processors 4 and Virtual machine Yes" />
+  </div>
+</Frame>
+
+<Note>
+The processor model name contains “64-Core Processor”. That identifies the CPU model exposed to Windows; it does **not** mean this VPS has 64 vCPUs. The socket layout is also virtual and does not establish physical host-core exclusivity.
+</Note>
+
+### Show one graph per processor
+
+Right-click inside the CPU graph and choose **Change graph to → Logical processors**. Windows then displays a separate activity graph for each logical processor, as shown in the overview above. To return to a single graph, choose **Overall utilization**.
+
+<Frame caption="Right-click the CPU graph, then select Change graph to → Logical processors.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/guide-batch/windows-cpu-menu.png" alt="Task Manager context menu with Change graph to and Logical processors visible" />
+  </div>
+</Frame>
 
 ## PowerShell
 
