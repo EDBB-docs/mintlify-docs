@@ -118,6 +118,8 @@
               "faq/ip-addresses/configure-additional-ip-linux",
               "faq/ip-addresses/order-bespoke-ip-address",
               "faq/ip-addresses/change-ip-address",
+              "faq/ip-addresses/standard-ip-change",
+              "faq/ip-addresses/bespoke-ip-change",
               "vps-management/change-ip-ubuntu-1804-to-2404",
               "vps-management/change-ip-windows",
               "faq/ip-addresses/ip-addresses-after-upgrade-or-reinstall",

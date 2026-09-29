@@ -1,0 +1,71 @@
+---
+title: "Choose your replacement with Bespoke IP Change"
+sidebarTitle: "Bespoke IP change"
+description: "Choose a replacement IPv4 from the available list in the EDBB cart. Select the old and new IP, review the one-time charge, then configure the replacement."
+---
+
+**Bespoke IP Change** replaces an existing VPS IPv4 with an address **you select from an available list**. Make the selection yourself in the cart before checkout. If you prefer automatic random assignment, use [Standard IP Change](/faq/ip-addresses/standard-ip-change).
+
+<Warning>
+The old IP stops working as soon as its replacement is assigned. Open the [VNC console](/vps-management/enable-vnc-server) beforehand and be ready to update the operating system's network configuration. Existing SSH, RDP and application connections to the old address will be interrupted.
+</Warning>
+
+## Find Bespoke IP Change
+
+In the [EDBB Control Panel](https://my.edbb.com/clientarea.php), choose **Services → Order New Services → Product Addons**, or open [Product Addons directly](https://my.edbb.com/cart.php?gid=addons).
+
+<Frame caption="Choose Bespoke IP Change on the left to select your replacement yourself. Service addresses are examples.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/ip-addons/overview.png" alt="Product Addons with Bespoke IP Change and Standard IP Change service selectors" />
+  </div>
+</Frame>
+
+The listed charge is **EUR 10 one time**. Check applicable VAT and the final total in the order summary. This is an IP replacement; [ordering an additional bespoke IPv4](/faq/ip-addresses/order-bespoke-ip-address) is a separate request.
+
+## Choose the old and new IP
+
+<Steps>
+  <Step title="Choose your VPS">
+    Select the service in the **Bespoke IP Change** card, checking its plan, location code and current address. Click **Order Now** to open the cart review.
+  </Step>
+  <Step title="Select Old IP">
+    Choose the existing IPv4 you want to replace. If your VPS has multiple addresses, check this field carefully.
+  </Step>
+  <Step title="Select New IP">
+    Open **Select New IP** and choose an address from the available list. The choices depend on inventory at your VPS location. You select an individual listed address, rather than entering an arbitrary IP.
+  </Step>
+  <Step title="Review the order">
+    Check both selections and the total. Click **Checkout**, review your billing information, choose a payment method, review the terms and complete the order when ready.
+  </Step>
+</Steps>
+
+<Frame caption="Select Old IP identifies what you replace; Select New IP is your chosen replacement. Addresses are fictional; the example total includes 21% VAT.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/ip-addons/bespoke-review.png" alt="Bespoke IP Change review with Select Old IP and highlighted Select New IP dropdown" />
+  </div>
+</Frame>
+
+<Frame caption="Illustrated closeup: choose an address from the dropdown; use the small circular-arrow button below it to refresh when refreshes remain. Example addresses, not live inventory.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/ip-addons/bespoke-selection-detail.png" alt="Illustrated expanded IP dropdown beside an enlarged view of the Refresh IP List button and remaining-refresh counter" />
+  </div>
+</Frame>
+
+### Refresh the available list
+
+The circular-arrow button below **Select New IP** is labeled **Refresh IP List**. The counter beside it shows how many refreshes remain. When refreshes are available, use it to request another list, then check your selected address again. Close the dropdown to reach the refresh button. After refreshing, open the dropdown again and choose from the updated list. The example shows **0 refreshes left**, meaning no refresh allowance remains. Choices are limited to available inventory; a particular prefix is not guaranteed to appear.
+
+## After the replacement
+
+The EDBB add-on page states delivery within **seven minutes of payment confirmation**. Check the assigned address and network settings in your VPS's **Network** tab.
+
+Use VNC to configure the replacement in your operating system. Follow the [Ubuntu IP-change guide](/vps-management/change-ip-ubuntu-1804-to-2404) or [Windows IP-change guide](/vps-management/change-ip-windows) where applicable. Update DNS records, firewall allowlists, VPN endpoints and saved connections that use the old IP, then verify access through the replacement.
+
+<Warning>
+Reinstall only if you deliberately want a fresh system. [Reinstallation](/vps-management/reinstall-vps) erases the VPS disk; changing the network configuration manually preserves the installation.
+</Warning>
+
+An IP replacement does not guarantee access from a particular country, ISP or website, or a particular reputation or geolocation result.
+
+
+See [Change your VPS IP address](/faq/ip-addresses/change-ip-address) to compare free, Standard and Bespoke changes.

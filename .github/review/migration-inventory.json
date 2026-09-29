@@ -1158,5 +1158,25 @@
     "title": "RDP error 0xd07: account locked",
     "sidebarTitle": "RDP account locked",
     "description": "Resolve Windows RDP error 0xd07 after failed sign-in attempts. Check saved credentials, recover access and restrict Remote Desktop to trusted connections."
+  },
+  {
+    "existing_path": "",
+    "final_path": "/faq/ip-addresses/standard-ip-change",
+    "action": "new",
+    "redirect_destination": "",
+    "reason": "Document the verified EDBB Product Addons IP replacement workflow.",
+    "title": "Order a Standard IP change",
+    "sidebarTitle": "Standard IP change",
+    "description": "Replace an existing EDBB VPS IPv4 with a randomly assigned address. Select the VPS and old IP, review the one-time charge, then configure the replacement."
+  },
+  {
+    "existing_path": "",
+    "final_path": "/faq/ip-addresses/bespoke-ip-change",
+    "action": "new",
+    "redirect_destination": "",
+    "reason": "Document the verified EDBB Product Addons IP replacement workflow.",
+    "title": "Choose your replacement with Bespoke IP Change",
+    "sidebarTitle": "Bespoke IP change",
+    "description": "Choose a replacement IPv4 from the available list in the EDBB cart. Select the old and new IP, review the one-time charge, then configure the replacement."
   }
 ]
