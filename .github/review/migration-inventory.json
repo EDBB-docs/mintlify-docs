@@ -1178,5 +1178,15 @@
     "title": "Choose your replacement with Bespoke IP Change",
     "sidebarTitle": "Bespoke IP change",
     "description": "Choose a replacement IPv4 from the available list in the EDBB cart. Select the old and new IP, review the one-time charge, then configure the replacement."
+  },
+  {
+    "existing_path": "/faq/billing-lifecycle/top-up-credit-balance-by-bank-transfer",
+    "final_path": "/faq/billing-lifecycle/top-up-credit-balance-by-bank-transfer",
+    "action": "create",
+    "title": "Top up account balance by bank transfer",
+    "sidebarTitle": "Top up by bank transfer",
+    "description": "Add at least EUR 250 to your EDBB account balance by bank transfer. Follow the invoice-reference and manual-processing requirements.",
+    "redirect_destination": "",
+    "reason": "New EUR bank-transfer top-up guide with approved bank details and manual-processing rules."
   }
 ]
