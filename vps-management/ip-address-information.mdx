@@ -4,56 +4,50 @@ sidebarTitle: "IP settings"
 description: "Find IPv4, IPv6, gateway, and DNS details for your VPS on the Network tab of the EDBB Control Panel."
 ---
 
-## Network Tab Overview
+The **Network** tab contains the IPv4 addresses, IPv6 allocation, gateways and DNS resolvers for your VPS. Copy the values from your own service before changing its operating-system network configuration.
 
-<Info>
-  The Network tab shows every IP assigned to your VPS plus the gateways and DNS resolvers you need when configuring the operating system. Copy these values before changing your server's network configuration.
-</Info>
+## Open Network
 
----
+Sign in to the [EDBB Control Panel](https://my.edbb.com/clientarea.php), open **Services → My Services**, select your VPS and choose **Network**.
 
-## Step 1 – Open the Network Tab
+<Frame caption="Start with Network. Addresses in these screenshots are documentation examples.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/ipv6-network-overview.png" alt="EDBB Network tab with IPv4 and IPv6 configuration sections" />
+  </div>
+</Frame>
 
-<Steps>
-  <Step title="Log in to the Control Panel">
-    Visit the <a href="https://my.edbb.com/clientarea.php" target="_blank">EDBB Control Panel</a>, go to <strong>Services</strong>, and select your VPS.
-  </Step>
-  <Step title="Switch to Network">
-    Click the <strong>Network</strong> tab in the service navigation. The page lists IPv4, IPv6, and DNS information.
-  </Step>
-</Steps>
+## IPv4 address, subnet mask and gateway
 
-![Network tab with IPv4, IPv6, and DNS details](/assets/vps-network-info.png)
+Use the **IP Address**, **Subnet Mask** and **Gateway** shown for your service. The primary address is marked **Primary IP**. Additional addresses must also be configured inside the operating system.
 
----
+<Frame caption="Copy all three values from your own VPS. The example address is not usable on your service.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/guide-batch/ipv4-detail.png" alt="IPv4 address, subnet mask and gateway in the Network tab" />
+  </div>
+</Frame>
 
-## What the Tab Shows
+**Add IP +** opens the component-upgrade page. Follow [Order additional IPv4 addresses](/faq/ip-addresses/order-additional-ip-address) to review the available quantity and charge. To replace an existing primary address, see [Change an IP address](/faq/ip-addresses/change-ip-address).
 
+## IPv6 allocation and gateway
 
-### IPv4 Configuration
+The panel shows an assigned **/64 equivalent** range. Choose an address within that allocation and configure it with a **/48 interface prefix** so it can reach the displayed gateway. The /48 setting does not expand your assigned allocation.
 
-Dedicated IPv4 addresses, subnet mask, and gateway. Use these values when adding or reconfiguring addresses in your OS.
+<Frame caption="The assignment column describes your allocation; the note explains the interface prefix.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/ipv6-assignment-detail.png" alt="IPv6 range and gateway with the required /48 interface prefix note" />
+  </div>
+</Frame>
 
+See [Configure IPv6](/vps-management/ipv6-configuration) for Linux commands and persistent settings.
 
-### IPv6 Configuration
+## DNS resolvers
 
-Your assigned /64 equivalent range, gateway, and a reminder to configure routes with a /48 prefix. Dual-stack tips are provided for Linux and other OSes.
+The **Nameservers** section is below the address configuration. It lists recommended public IPv4 and IPv6 resolvers; enter the chosen DNS settings in your operating system or its network configuration tool.
 
+<Frame caption="Scroll down within Network to find the DNS1 and DNS2 values.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/guide-batch/dns.png" alt="Nameservers table with recommended IPv4 and IPv6 DNS resolvers" />
+  </div>
+</Frame>
 
-### DNS Resolvers
-
-Recommended public resolvers (IPv4 and IPv6) for dual-stack compatibility.
-
-
-### Add IP Helper
-
-The **Add IP** button (when available) creates requests for additional IPv4 addresses that support team members can review.
-
----
-
-## Tips for Using the Data
-
-- Configure additional IPv4 addresses using the subnet mask and gateway shown. Use only one gateway in your OS configuration.
-- For IPv6, assign addresses from your range and route traffic through the listed gateway using a /48 prefix.
-- Apply DNS entries directly in your operating system or cloud-init user-data so services resolve correctly.
-- Need to change or order more addresses? Follow the <a href="/faq/ip-addresses/change-ip-address">Change IP</a> or <a href="/faq/ip-addresses/order-additional-ip-address">Order Additional IPv4</a> guides.
+Open the [VNC console](/vps-management/enable-vnc-server) before changing networking. Preserve working IPv4 settings, use the correct interface name, and verify connectivity before closing your existing connection.

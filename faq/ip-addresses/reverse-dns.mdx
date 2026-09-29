@@ -4,50 +4,48 @@ sidebarTitle: "Reverse DNS"
 description: "Set or remove reverse DNS records for provider-assigned VPS addresses in the EDBB rDNS tab. Check forward DNS and verify the result afterward."
 ---
 
-## Prep Checklist
+Set reverse DNS (PTR) records for your assigned addresses in the **rDNS** tab. Prepare the hostname's forward DNS first: its A or AAAA record should resolve to the corresponding VPS address.
 
-<Info>
-  Reverse DNS works best when the hostname already resolves forward to your VPS.
-  Create or update the A/AAAA record first so mail servers and reputation
-  services see a matching pair.
-</Info>
+## Open the rDNS tab
 
--  Have the exact FQDN you want to publish (for example `mail.example.com`).
--  Keep both IPv4 and IPv6 assignments handy—the Network tab lists them.
--  Plan to use lowercase hostnames without trailing dots; the Control Panel formats PTRs automatically.
+Sign in to the [EDBB Control Panel](https://my.edbb.com/clientarea.php), open **Services → My Services**, select your VPS and choose **rDNS**.
 
----
-
-## Update PTR Records in the Control Panel
-
-<Steps>
-  <Step title="Open the rDNS panel">
-    Sign in to the <a href="https://my.edbb.com/clientarea.php" target="_blank" rel="noreferrer">EDBB Control Panel</a>, select your VPS under <strong>Services</strong>, and choose the <strong>rDNS</strong> tab.
-  </Step>
-  <Step title="Set the primary IPv4 hostname">
-    Replace the default value with your hostname and click <strong>Set</strong>. Use <strong>Unset</strong> if you need to revert to the system default.
-  </Step>
-  <Step title="Add IPv6 reverse records">
-    For each IPv6 address, enter the suffix (for example <code>:1</code>) and matching hostname, then press <strong>Add</strong>.
-  </Step>
-  <Step title="Review the summary">
-    Confirm the updated entries in the list; edits take effect immediately on EDBB’s side.
-  </Step>
-</Steps>
-
-<Frame>
-![Reverse DNS configuration tab with IPv4 and IPv6 PTR fields](/assets/setting-up-reverse-pointers.png)
+<Frame caption="Example addresses and hostname shown. Use your assigned addresses and a hostname you control.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/guide-batch/rdns-overview.png" alt="Current rDNS tab with IPv4 PTR input, checkmark and cross buttons, and IPv6 suffix fields" />
+  </div>
 </Frame>
 
----
+## Set or remove an IPv4 PTR
 
-## Verify - Troubleshoot
+1. Find the row for your IPv4 address.
+2. Replace the **PTR Record** value with your fully qualified hostname, such as `mail.example.com`.
+3. Click the **checkmark (Set)** button to save.
+4. To remove your custom PTR, use the **red cross (Unset)** button.
 
-- Use `dig -x <ip>` or an external rDNS checker after a few minutes—public caches may need time to refresh.
-- If the hostname doesn’t appear, double-check that the forward record exists and matches exactly (including subdomain).
-- Still seeing the old PTR? Clear local DNS caches or test from another network.
+Review the value after saving, then check the public result as described below.
 
-<Warning>
-  Reverse DNS updates for mail servers should be paired with SPF/DKIM updates.
-  Mismatched hostnames can cause outgoing messages to be rejected or flagged as spam.
-</Warning>
+## Add an IPv6 PTR
+
+The IPv6 row shows the beginning of your allocation, followed by a suffix field and a hostname field.
+
+1. Enter the suffix for the IPv6 address you use. With an example prefix of `2001:db8:1234:5678:`, the suffix `:1` completes `2001:db8:1234:5678::1`.
+2. Enter the matching fully qualified hostname in the next field.
+3. Click **add**, then review the record shown in the table.
+
+Use only an address within your assigned allocation. Find it under [Network](/vps-management/ip-address-information).
+
+## Verify the result
+
+Replace the examples with your own address and hostname:
+
+```bash
+dig -x 192.0.2.10 +short
+dig A mail.example.com +short
+dig -x 2001:db8:1234:5678::1 +short
+dig AAAA mail.example.com +short
+```
+
+The reverse lookup should return the intended hostname, and the corresponding forward lookup should include the address. Public DNS caches can retain earlier answers until their TTL expires.
+
+If the result is unexpected, check spelling, the saved panel value and the forward record. PTR records alone do not replace a mail server's SPF, DKIM or other configuration.

@@ -21,14 +21,22 @@ If Linux still boots, first use the [VNC console](/vps-management/enable-vnc-ser
   <Step title="Mount the rescue ISO">
     Select the available Linux rescue image, such as **SystemRescue**, enable **Force reset & boot from the selected ISO**, then click **Mount ISO**. This interrupts the running VPS.
 
-    <Frame>
-      ![Select recovery media in EDBB ISO Boot](/assets/vps-mount-iso.png)
-    </Frame>
+<Frame caption="Select rescue media rather than an operating-system installer. Mounting with Force reset interrupts the VPS.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/guide-batch/rescue-iso.png" alt="Installation and ISO Boot tabs with SystemRescue selected and Force reset checked" />
+  </div>
+</Frame>
   </Step>
   <Step title="Open the console">
     Open the VNC console and follow the rescue image's boot prompts. The shell now belongs to the rescue environment, not your installed Linux system.
   </Step>
 </Steps>
+
+<Frame caption="A successful rescue boot reaches the SystemRescue shell. This is separate from your installed Linux system.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/guide-batch/rescue-shell.png" alt="SystemRescue console showing automatic root login and the rescue shell prompt" />
+  </div>
+</Frame>
 
 ## Identify the installed system
 

@@ -4,85 +4,51 @@ sidebarTitle: "Upgrade plan"
 description: "Order a higher EDBB VPS plan, review prorated billing and activate new resources. Keep your existing installation and expand the filesystem separately."
 ---
 
-## Upgrade a VPS Plan in Minutes
+A plan upgrade adds the resources included in a larger plan while retaining your existing installation and IP address. If you only need individual components, see [Upgrade resources](/faq/upgrades-downgrades/upgrade-resources).
 
-<Info>
-  A plan upgrade adds the resources included in a larger plan without reinstalling your VPS or changing its IP address.
-</Info>
+## Open the plan upgrade
 
-## Why Upgrade
+Select your VPS under **Services → My Services** in the [EDBB Control Panel](https://my.edbb.com/clientarea.php). Click **Upgrade Plan** in the service card, or open **Upgrades** and choose **Upgrade Your Plan**.
 
-- Add CPU, memory, and disk space in one step.
-- Boost the monthly traffic allowance tied to the plan.
-- Keep your data intact; the upgrade happens in-place.
+<Frame caption="Choose Upgrade Your Plan for a higher tier, or Upgrade Components for individual resources.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/panel-workflows/upgrades-overview.png" alt="Upgrades tab with Upgrade Your Plan and Upgrade Components sections" />
+  </div>
+</Frame>
 
-<Info>
-  Upgrades are prorated. You pay only the price difference for the remaining days in your billing cycle.
-</Info>
+## Choose a plan and billing cycle
 
----
+Review the available plans under **New Configuration**. Compare their CPU, RAM, storage and traffic. Select a **Billing cycle**, then click **Choose Product** to see the quote.
 
-## Option 1 — Use the Quick Upgrade Card
+<Frame caption="An example available upgrade. Plans, billing cycles and prices depend on your service.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/guide-batch/plan-selection.png" alt="Available VPS plan with resources, billing cycle selector and Choose Product button" />
+  </div>
+</Frame>
 
-If you already know which tier you need, click the upgrade shortcut on the service Control Panel.
+## Review the prorated quote
 
-![Quick upgrade button on the dashboard](/assets/Upgrade-plan-card.png)
+The review page identifies the current and new plan and shows **Subtotal**, applicable tax and **Total Due Today**. The panel explains the remaining billing period used for the calculation: unused time on the current plan is credited against the new plan for the same period.
 
-<Steps>
-  <Step title="Open the VPS dashboard">
-    Sign in to the <a href="https://my.edbb.com/clientarea.php" target="_blank">EDBB Control Panel</a> and choose the VPS you want to upgrade.
-  </Step>
-  <Step title="Press Upgrade">
-    Click the green <strong>Upgrade</strong> button in the right-hand column. You’ll land on the plan comparison page that lists every tier above your current one.
-  </Step>
-  <Step title="Choose a plan and pay">
-    Pick the higher plan, review the prorated amount, and pay the invoice. Once the payment clears, the upgrade finalises automatically.
-  </Step>
-</Steps>
+<Frame caption="Example quote from a test service. Use the amount displayed for your own order.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/guide-batch/plan-review.png" alt="Plan upgrade quote showing the plan change, tax and amount due today" />
+  </div>
+</Frame>
 
----
+Choose your payment method, continue and complete payment. Follow the activation instructions in the upgrade email.
+
+<Warning>
+Back up important data and schedule downtime. Perform a full **Power Cycle VPS** from the panel when instructed to activate CPU or RAM changes. A restart inside the operating system is not the same operation.
+</Warning>
+
+## Verify the new resources
+
+- **IP address and installation:** a plan upgrade does not require a reinstall.
+- **RAM and vCPU:** check the allocation after the required power cycle.
+- **Disk:** a larger virtual disk does not automatically enlarge every partition or filesystem. Follow [Linux disk expansion](/advanced-setup-guides/resize-linux-disk) or [Windows disk expansion](/advanced-setup-guides/extend-windows-disk).
+- **Traffic:** check the new allowance in the panel.
+
+See [Restart and power cycle](/vps-management/power-cycle-or-reboot-a-vps) for the panel controls, or [Traffic Pool](/faq/traffic-bandwidth/traffic-pool) if you only need more data transfer.
 
 <span id="option-2-—-order-from-the-upgrade-tab" />
-
-## Option 2 — Order from the Upgrades tab
-
-Need to compare plan details first? Use the dedicated Upgrades tab.
-
-![Upgrade plan selector in the tab view](/assets/Upgrade-newplan.png)
-
-<Steps>
-  <Step title="Navigate to the Upgrades tab">
-    In the service view, click <strong>Upgrade</strong> in the tabs bar.
-  </Step>
-  <Step title="Open Upgrade Plan">
-    Press the blue <strong>Upgrade Your Plan</strong> button. This loads the comparison page that lists each higher tier with resource details.
-  </Step>
-  <Step title="Review and checkout">
-    Compare CPU, RAM, storage, and traffic quotas. Select your target plan, pay the prorated invoice, and follow the activation email and the steps below.
-  </Step>
-</Steps>
-
-<Warning>Back up important data and schedule downtime. After payment, follow the activation email and perform a full power cycle to load CPU/RAM changes; a restart inside the operating system is not the same operation.</Warning>
-
----
-
-## After the Upgrade
-
-- **IP & data** stay the same—no migration is required.
-- **RAM & vCPU** are available after a full power cycle from the EDBB panel.
-- **Disk size** increases, but filesystems and partitions are untouched; expand them manually if you want to use the extra space.
-- **Traffic allowance** increases immediately.
-
-If you only need more RAM, CPU, disk space or IP addresses, use Upgrade Components.
-
-[Upgrade components individually](/faq/upgrades-downgrades/upgrade-resources)
-
----
-
-## Need Even More Traffic
-
-Top up your traffic pool to share data transfer across services. Auto-hydration can refill VPS traffic automatically when it nears 99% usage.
-
-[Learn about Traffic Pools](/faq/traffic-bandwidth/traffic-pool)
-
-For restart terminology and the EDBB controls, see [restart and power cycle](/vps-management/power-cycle-or-reboot-a-vps). Check the new resource totals and price in the order summary before you pay.

@@ -20,20 +20,40 @@ The **Upgrades** tab shows the available quantity and current price for your ser
 
 ## Order in the control panel
 
-<Steps>
-  <Step title="Open Upgrade Components">
-    Sign in to the [EDBB Control Panel](https://my.edbb.com/clientarea.php), open **Services**, select your VPS, then choose **Upgrades → Upgrade Components**.
-  </Step>
-  <Step title="Choose Additional IPs">
-    Select the quantity you need within the limit shown for your VPS. Review the new total and complete checkout.
-  </Step>
-  <Step title="Find the assigned addresses">
-    After payment is processed, open the VPS's **Network** tab. Copy the new IPv4 addresses and their network settings.
-  </Step>
-  <Step title="Configure the addresses on your server">
-    Add the addresses to your operating system. They are not ready for use merely because they appear in the panel. Follow [configure an additional Linux IPv4 address](/faq/ip-addresses/configure-additional-ip-linux), or add them to the existing network adapter's advanced TCP/IP settings on Windows.
-  </Step>
-</Steps>
+Open **Services → My Services**, select your VPS, then choose **Upgrades → Upgrade Now** under **Upgrade Components**. You can also use **Add IP +** in the Network tab.
+
+<Frame caption="Use the Upgrade Components section to add IPs without changing the whole plan.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/panel-workflows/upgrades-overview.png" alt="Upgrades tab showing plan and component upgrade choices" />
+  </div>
+</Frame>
+
+### Choose the additional IP quantity
+
+In **Additional IPs**, compare **Current Configuration** with **New Configuration** and select the quantity you need. Leave unrelated components on **No Change**, then click **Click to Continue &gt;&gt;**.
+
+<Frame caption="Example selection. Available quantities and prices are shown for your service.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/guide-batch/additional-ip-choice.png" alt="Additional IPs selector with one IP selected" />
+  </div>
+</Frame>
+
+### Review the charge
+
+Check the change description, tax and **Total Due Today**, then choose a payment method and continue with the order. Review the recurring price as well as today's charge.
+
+<Frame caption="Example quote only. Your price and tax depend on your service, account and order date.">
+  <div style={{ background: "#0b1830", padding: "24px", borderRadius: "12px", borderTop: "3px solid #14b8a6" }}>
+    <img src="/assets/guide-batch/additional-ip-review.png" alt="Additional IPv4 upgrade review showing subtotal, VAT, total and payment method" />
+  </div>
+</Frame>
+
+### Find and configure the assigned addresses
+
+After the order is paid and provisioned, open your VPS's **Network** tab. Find the new addresses in **IPv4 Configuration** and copy their subnet mask and gateway. See [IP settings](/vps-management/ip-address-information) for the field locations.
+
+Add the addresses to your operating system. They are not ready for use merely because they appear in the panel. Follow [configure an additional Linux IPv4 address](/faq/ip-addresses/configure-additional-ip-linux), or use the existing adapter's advanced TCP/IP settings on Windows.
+
 
 <Note>
   Keep your existing primary address and gateway. Reinstalling is not necessary to add an IP address and would erase the VPS disk. Open the [VNC console](/vps-management/enable-vnc-server) before changing network settings.
