@@ -44,6 +44,7 @@
             "group": "Getting started",
             "pages": [
               "index",
+              "getting-started/common-vps-tasks",
               "check-your-inbox",
               "no-email-received",
               "linux-secure-shell-ssh",

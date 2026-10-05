@@ -1,39 +1,93 @@
 ---
-title: "Understand EDBB service emails"
-sidebarTitle: "Service emails"
-description: "Understand EDBB emails about VPS access, traffic, upgrades and billing. Check what happened, which service is affected and whether you need to take action."
+title: "Understanding EDBB email notifications"
+sidebarTitle: "Email notifications"
+description: "Understand the symbols and subject lines in EDBB automated emails, including traffic warnings, upgrade activation, IP changes, and completed actions."
 ---
 
-Service emails explain what has changed and whether you need to do anything. Read the body as well as the subject, and check which VPS or invoice it refers to.
+Our automated emails use a symbol and a descriptive subject line to help you recognize the type of notification. The subject identifies what happened; the email explains which service is affected and any next steps.
 
-## Common notifications
+You do not need to memorize the symbols. Read the wording alongside them and follow the instructions in the email. Symbols may look different depending on your email app.
 
-| Email about | What to check or do |
+## What each symbol means
+
+| Symbol | Meaning | What to do |
+| --- | --- | --- |
+| 👋 | **New service** | Read your service details and follow the initial setup instructions. |
+| 🎁 | **Complimentary benefit** | Review the benefit added to your account and how to use it. |
+| ✅ | **Successfully completed** | The specific action named in the email is complete. Check the details for any separate next steps. |
+| 🔄 | **Ready on the EDBB side; activation or configuration required** | Complete the customer-side steps described in the email. |
+| ℹ️ | **Information** | Review the update and monitor the situation where relevant. |
+| ⚠️ | **Attention recommended** | Review the warning and take preventive action where needed. This does not by itself mean a restriction is already applied. |
+| ⛔ | **Restriction currently applied** | Read which restriction is in effect and follow the steps to resolve it. This does not necessarily mean the VPS or account is suspended. |
+
+## Examples of email subjects
+
+These examples show how the symbol, event, and any next step work together. Read the email body for the details that apply to your service.
+
+| Example subject | What it tells you |
 | --- | --- |
-| New VPS access details | Save the login details and follow [your welcome email](/check-your-inbox). If it is missing, use [access recovery](/no-email-received). |
-| 100 GB starter traffic or a pool top-up | The traffic is in your account's shared pool. Assign it to a VPS before expecting that VPS's allowance to increase. |
-| Traffic usage approaching the limit | Check that VPS's remaining allowance and arrange more traffic if needed. |
-| Low Traffic Pool balance | Refill the shared reserve if you want to keep using it. A low pool balance does not necessarily mean a VPS has run out of traffic. |
-| Network speed restriction | Check the affected VPS and [restore its traffic allowance](/faq/traffic-bandwidth/exceeding-monthly-included-traffic). |
-| RAM or vCPU upgrade ready | Follow the activation instructions. A full shutdown and power-on is needed; a restart inside the operating system is not enough. |
-| IPv4 address added or changed | Configure the address inside the operating system. An assignment in the panel is not the same as a working network configuration. |
-| Invoice or payment reminder | Check the amount, due date and payment status in the panel. See [billing and renewals](/faq/billing-lifecycle/billing-workflow). |
-| Abuse notification | Investigate and [reply to the notice](/misc/responding-to-abuse-complaints), following its instructions and deadline. |
+| 👋 Your Linux VPS Credentials | Your new Linux VPS access details are available. Follow [Check your inbox](/check-your-inbox) to get started. |
+| 🎁 Your complimentary 100 GB of Pool Traffic is ready | Starter credit has been added to your shared Traffic Pool. It is available for assignment to a VPS. |
+| ✅ Traffic Pool top-up confirmed | The top-up is complete and traffic has been added to your shared Pool. |
+| ℹ️ Traffic notice: 80% of VPS traffic used | The specified VPS has reached the usage level shown in the notice. Review its remaining allowance. |
+| ⚠️ Action recommended: 90% of VPS traffic used | The specified VPS is approaching its traffic allowance. Review the remaining traffic and arrange more if needed. |
+| ⚠️ Traffic Pool low: 20% low-balance threshold crossed | Your shared Pool has crossed its low-balance threshold. This refers to the Pool reserve, not the remaining allowance of an individual VPS. |
+| 🔄 RAM upgrade ready — activation required | EDBB has prepared the RAM upgrade. Follow the activation steps before expecting the new RAM to be available inside the VPS. |
+| 🔄 vCPU upgrade ready — activation required | EDBB has prepared the vCPU upgrade. Follow the activation steps before expecting the additional CPU resources to be available. |
+| 🔄 Additional IPv4 address assigned — configuration required | An additional IPv4 address has been assigned. Configure it inside your operating system. |
+| 🔄 IPv4 address changed — configuration required | Your IPv4 address has changed. Update the operating-system network configuration as instructed. |
+| ⛔ Action required: VPS rate-limited — restore network speed | A network speed restriction is already in effect on the specified VPS. Follow the traffic restoration instructions. |
 
-## Pool traffic and VPS traffic are different
+## Traffic emails: pool balance and VPS allowance are different
 
-A pool top-up adds traffic to the account's reserve. It does not automatically assign traffic to a VPS or restore a rate-limited VPS's speed.
+Your **shared Traffic Pool** is an account-wide reserve. A VPS has its own **current traffic allowance**, made up of its Plan Traffic plus any Pool Traffic assigned to it.
 
-Assign traffic manually or use Auto-Hydration when it is enabled and its conditions are met. Auto-Hydration uses the existing pool balance; it does not purchase more traffic. See [Traffic Pool](/faq/traffic-bandwidth/traffic-pool).
+A complimentary credit or successful Pool top-up adds traffic to the reserve. It does **not** automatically assign that traffic to a VPS or, by itself, restore the speed of a rate-limited VPS.
 
-## Ready does not always mean active
+To use the reserve, assign Pool Traffic to the affected VPS manually, or use Auto-Hydration when it is enabled for that VPS and its conditions are met. Auto-Hydration uses the existing Pool balance; it does not purchase more traffic automatically.
 
-For CPU or RAM changes, follow the [power-cycle procedure](/vps-management/power-cycle-or-reboot-a-vps). For extra IPv4 addresses, follow [Linux IP configuration](/faq/ip-addresses/configure-additional-ip-linux) or your Windows adapter settings.
+A low Pool warning means the reserve has crossed its low-balance threshold. The remaining balance may already be below 20%, or even zero, when the notification is sent. A VPS can still have available traffic even when the Pool is low or empty.
 
-When the primary IPv4 address changes, the old address stops working immediately. Use the [IP-change guide](/faq/ip-addresses/change-ip-address) and console access to update the configuration.
+- [Traffic Pool and Auto-Hydration](/faq/traffic-bandwidth/traffic-pool): top-ups, assignments, starter credit, and low-balance notifications.
+- [Traffic usage and monthly refill](/faq/traffic-bandwidth/traffic-statistics): understand the allowance and cycle for an individual VPS.
+- [Traffic limits and restoring full speed](/faq/traffic-bandwidth/exceeding-monthly-included-traffic): what to do if your VPS is rate-limited.
 
-## Check the current status
+## Upgrade and IP emails: ready does not always mean active
 
-An email describes the situation when it was sent. Sign in to the [EDBB Control Panel](https://my.edbb.com/clientarea.php) to check the latest service, traffic and invoice status.
+The 🔄 symbol means EDBB has completed its part, but you still need to activate or configure the change.
 
-If you are unsure what a message means, email [support@edbb.com](mailto:support@edbb.com) with its subject and the affected service. Do not include passwords or authentication codes.
+For **RAM and vCPU upgrades**, follow the email's activation instructions. These upgrades require a **cold boot**: shut down the operating system cleanly, wait for **Turned off**, then click **Server Off** in the EDBB panel to start it again. **Restart VPS** and an operating-system restart do not perform this full stop/start. See [Upgrade resources](/faq/upgrades-downgrades/upgrade-resources) and [Restart or power cycle your VPS](/vps-management/power-cycle-or-reboot-a-vps).
+
+For **IPv4 additions or changes**, configure the address inside the operating system. Restarting the VPS alone does not replace the required network configuration.
+
+- [Configure an additional IPv4 address on Linux](/faq/ip-addresses/configure-additional-ip-linux).
+- [Change your IP address](/faq/ip-addresses/change-ip-address).
+- [Update the IP configuration on Ubuntu](/vps-management/change-ip-ubuntu-1804-to-2404).
+- [Update the IP configuration on Windows Server](/vps-management/change-ip-windows).
+
+<Warning>
+  When your primary IPv4 address is replaced, the old address stops working immediately. Use the configuration guidance linked above and VNC access where needed. Reinstallation is a separate option that deletes the VPS contents; it is not required when you configure the new address manually.
+</Warning>
+
+For **Drive Boost and plan upgrades that increase storage**, complete the required cold boot, then extend the partition and filesystem inside the operating system. EDBB expands the virtual drive only. Back up first and follow the [Linux disk](/advanced-setup-guides/resize-linux-disk) or [Windows disk](/advanced-setup-guides/extend-windows-disk) instructions.
+
+## Billing and other service notices
+
+Payment reminders and abuse notices have their own instructions. Do not infer their status or deadline from an emoji alone.
+
+| Notice | What to check |
+| --- | --- |
+| Invoice or payment reminder | Check the invoice amount, due date and current payment status. Follow [billing and renewals](/faq/billing-lifecycle/billing-workflow). |
+| Abuse notification | Investigate and [respond to the notice](/misc/responding-to-abuse-complaints), following the instructions and deadline in it. |
+| Missing VPS welcome email | Use [welcome-email recovery](/no-email-received) to find the next step for your service. |
+
+## How to act on a notification
+
+1. **Read the subject and email body.** Identify what happened and whether action is recommended or required.
+2. **Check the scope.** Confirm which VPS is affected using the service details in the email, or whether the message concerns your shared Traffic Pool.
+3. **Follow the relevant instructions.** A completed top-up, a prepared upgrade, and a removed restriction are different events.
+4. **Check the current state in the [EDBB Control Panel](https://my.edbb.com/clientarea.php).** An email describes the situation when it was sent; usage and service status may have changed since then.
+
+If you are unsure what a message means, [contact EDBB support](/how-our-support-team-helps-you) and include the subject and affected service details. Do not include your VPS password.
+
+For the steps behind these notices, see [Common VPS tasks](/getting-started/common-vps-tasks).

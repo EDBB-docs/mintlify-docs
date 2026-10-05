@@ -1135,9 +1135,9 @@
     "action": "new",
     "redirect_destination": "",
     "reason": "Support gap identified in the recovery audit; EDIS explanation adapted for EDBB.",
-    "title": "Understand EDBB service emails",
-    "sidebarTitle": "Service emails",
-    "description": "Understand EDBB emails about VPS access, traffic, upgrades and billing. Check what happened, which service is affected and whether you need to take action."
+    "title": "Understanding EDBB email notifications",
+    "sidebarTitle": "Email notifications",
+    "description": "Understand the symbols and subject lines in EDBB automated emails, including traffic warnings, upgrade activation, IP changes, and completed actions."
   },
   {
     "existing_path": "",
@@ -1188,5 +1188,15 @@
     "description": "Add at least EUR 250 to your EDBB account balance by bank transfer. Follow the invoice-reference and manual-processing requirements.",
     "redirect_destination": "",
     "reason": "New EUR bank-transfer top-up guide with approved bank details and manual-processing rules."
+  },
+  {
+    "existing_path": "",
+    "final_path": "/getting-started/common-vps-tasks",
+    "action": "new",
+    "title": "Everyday EDBB VPS tasks: OS, IPs, billing and upgrades",
+    "sidebarTitle": "Common VPS tasks",
+    "description": "Find the EDBB steps for restarting or reinstalling a VPS, changing IP addresses, activating upgrades, managing traffic and renewals, and recovering access.",
+    "redirect_destination": "",
+    "reason": "EDBB overview for provisioning emails, with current control labels and links to detailed workflows."
   }
 ]

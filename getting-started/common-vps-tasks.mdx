@@ -1,0 +1,223 @@
+---
+title: "Everyday EDBB VPS tasks: OS, IPs, billing and upgrades"
+sidebarTitle: "Common VPS tasks"
+description: "Find the EDBB steps for restarting or reinstalling a VPS, changing IP addresses, activating upgrades, managing traffic and renewals, and recovering access."
+---
+
+Use this guide to find the right action for your EDBB VPS and understand what it changes. Open the [EDBB Control Panel](https://my.edbb.com/clientarea.php), go to **Services**, and select your VPS. Check its identifier, description and IP address before making changes.
+
+| I want to… | Start here |
+| --- | --- |
+| Restart a server or activate hardware changes | [Restart or complete a cold boot](#restart-or-complete-a-cold-boot) |
+| Start fresh or switch between Linux and Windows | [Reinstall or change operating system](#reinstall-or-change-operating-system) |
+| Replace an IPv4 address | [Change an IP address](#change-an-ip-address) |
+| Check renewal invoices or restore an unpaid service | [Manage billing and renewals](#manage-billing-and-renewals) |
+| Protect files, databases and configuration | [Create backups you can restore](#create-backups-you-can-restore) |
+| Add RAM, vCPU, disk space or IPv4 addresses | [Upgrade your VPS](#upgrade-your-vps) |
+| Add traffic or restore network speed | [Manage traffic and monthly refills](#manage-traffic-and-monthly-refills) |
+| Recover SSH, RDP or a forgotten password | [Recover access](#recover-access) |
+| Configure networking or use another location | [Networking and location changes](#networking-and-location-changes) |
+| End a service and stop future renewals | [Cancel a VPS correctly](#cancel-a-vps-correctly) |
+
+<Note>
+  Your VPS is unmanaged. You are responsible for its operating system, applications, security and backups. EDBB support helps with the infrastructure, control panel, account and billing, and can point you to configuration guides.
+</Note>
+
+## Restart or complete a cold boot
+
+For routine maintenance, use the operating system's normal restart command when it responds. This allows applications to close and finish pending writes. A restart interrupts SSH, RDP and hosted services.
+
+The EDBB panel offers these separate actions:
+
+| Control | What happens |
+| --- | --- |
+| **Restart → Restart VPS** | Restarts the virtual machine without a full power-off/power-on cycle. The panel indicates that VNC stays connected. |
+| **Restart → Power Cycle VPS** | Powers the virtual machine off and on. VNC disconnects. |
+| **Server On → Power Off** | Stops the virtual machine immediately and leaves it off. |
+| **Server Off** | Starts a stopped VPS; despite its label, this button powers it on. |
+
+These panel actions do not replace an orderly operating-system shutdown. Save your work before using them.
+
+### Activate hardware changes
+
+When an upgrade requires a cold boot, shut down cleanly and then start the VPS from the panel:
+
+<Steps>
+  <Step title="Shut down inside the VPS">
+    Save your work. On Linux, run `shutdown -h now` as root. On Windows, run `shutdown /s /t 0` from an Administrator command prompt.
+  </Step>
+  <Step title="Check that the VPS is off">
+    Wait for **Turned off**. If the operating system has finished shutting down but the panel still shows **Running**, click **Server On**, then confirm **Power Off**.
+  </Step>
+  <Step title="Start and verify">
+    Click **Server Off** to start it. Wait for the OS to boot, reconnect, and check the new resources inside the operating system. Enable VNC again if needed.
+  </Step>
+</Steps>
+
+**Restart VPS and a restart inside Linux or Windows do not perform the full cold boot required for hardware activation.** The **Power Cycle VPS** action also performs a full stop/start, but can lose unsaved work if used before a clean shutdown.
+
+[Detailed power-control guide](/vps-management/power-cycle-or-reboot-a-vps)
+
+## Reinstall or change operating system
+
+Reinstallation replaces your existing system with a clean Linux or Windows installation. It does not by itself change the assigned IP addresses.
+
+<Warning>
+  Reinstallation erases the VPS disk. Download and check your backups first. Do not reinstall as the first response to a forgotten password or a connection problem.
+</Warning>
+
+1. Check the [available operating systems](/vps-management/os-availability).
+2. Open **Installation → Automated Installers**, select the OS family and **Version**, and set your access credentials.
+3. Store the new password securely. A reinstall does not send a new welcome email. For Linux, the optional SSH key field accepts a public key, never a private key.
+4. Check that you selected the correct VPS, then click **Start the installation**. This starts the destructive operation; do not expect another confirmation.
+5. Wait for installation to finish before connecting. Linux normally takes up to five minutes and Windows up to fifteen minutes. Do not power off or restart during setup.
+
+Use the **Dashboard** screenshot or console to check boot progress, then test SSH or RDP. **Running** means the virtual machine has power; it does not prove that every service is ready.
+
+[Reinstallation walkthrough](/vps-management/reinstall-vps) · [Mount an ISO](/vps-management/mount-iso-image)
+
+## Change an IP address
+
+An IP change replaces an address on the same VPS. It does not change the server location, plan or billing cycle.
+
+| Option | How it works |
+| --- | --- |
+| **Eligible free primary IPv4 change** | Use the recycle icon beside **Primary IPv4** on the Dashboard during the initial 24-hour window. Check the [eligibility and procedure](/faq/ip-addresses/change-ip-address). |
+| **Standard IP Change** | An available replacement is assigned automatically. |
+| **Bespoke IP Change** | Choose from the available replacement addresses in the cart. |
+
+For paid options, use **IP Change** below the Dashboard cards or [Product Addons](https://my.edbb.com/cart.php?gid=addons). Select your VPS and old IP, review the current price and applicable VAT, and follow the [Standard](/faq/ip-addresses/standard-ip-change) or [Bespoke](/faq/ip-addresses/bespoke-ip-change) guide.
+
+**Prepare VNC access before confirming a replacement. The old IP is released and stops working immediately; you cannot switch back to it.** After assignment:
+
+1. Copy the new IP, subnet mask and gateway from **Network**.
+2. Use the [VNC console](/vps-management/enable-vnc-server) to configure the OS. Follow the [Ubuntu](/vps-management/change-ip-ubuntu-1804-to-2404) or [Windows Server](/vps-management/change-ip-windows) guide.
+3. Update DNS records, VPN endpoints, allowlists and application settings that use the old address.
+4. Test access and applications on the new address before closing the console.
+
+Reinstallation can configure the assigned address automatically, but erases existing data. Manual network configuration keeps your installation. An IP replacement cannot guarantee a particular reputation, geolocation result or access through another network's filters.
+
+Need another address alongside the current one? [Order an additional IPv4](/faq/ip-addresses/order-additional-ip-address) instead.
+
+## Manage billing and renewals
+
+Your VPS renews unless you cancel it. Renewal and successful payment are separate: keep your payment method current and check that the invoice is paid.
+
+For the automated **non-payment** workflow, day 0 is the renewal invoice's due date:
+
+| Relative to the due date | What happens |
+| --- | --- |
+| 7 days before | Renewal pro-forma invoice is created; available account credit is applied by default. |
+| 3 days before | An automatic saved-card charge is attempted, where applicable. |
+| 2 days before | Unpaid reminder. |
+| Due date | Payment is due. |
+| 1, 2 and 3 days after | Overdue reminders. |
+| 7 days after | The VPS is suspended and powered down. |
+| 14 days after | The service is terminated. |
+| 20 days after | Its data is permanently deleted, six days after termination; the renewal invoice is cancelled. |
+
+If suspended for non-payment, pay the outstanding renewal invoice to reactivate the VPS automatically. If already terminated, contact support promptly to request recovery before deletion; do not assume that paying an old invoice alone restores a terminated service. After permanent deletion, recovery requires your own backup.
+
+Retention is not a backup service or an extension of the payment deadline. Customer-requested cancellation follows the separate timetable below. A cancelled invoice alone does not prove that VPS data has been deleted.
+
+Review PayPal subscriptions separately after upgrades or cancellation: their amount and schedule do not automatically follow VPS changes.
+
+[Billing and renewals](/faq/billing-lifecycle/billing-workflow) · [Find invoices](/faq/billing-lifecycle/find-and-download-invoices) · [Payment methods](/faq/billing-lifecycle/accepted-payment-methods) · [Data retention](/faq/billing-lifecycle/data-retention-period)
+
+## Create backups you can restore
+
+EDBB does not supply routine backups of your VPS. Keep an independent copy of the data you need to rebuild it.
+
+1. Identify files, databases, uploaded content, application settings and recovery keys.
+2. Make a consistent backup. Use database or application export tools rather than copying live database files while they change.
+3. Transfer the backup outside the VPS, for example by SFTP to your computer or through a scheduled backup to separate storage.
+4. Keep several dated versions. A single synchronised copy can also reproduce deletion or corruption.
+5. Test restoration in a separate location and verify the application works.
+
+A website often needs both its files and a database export. Store sensitive backups securely and keep recovery credentials accessible without the VPS.
+
+You can separately request a **EUR 25 qcow2 disk export** from support. Its protected download is available for **30 days**; download and retain your own copy before it expires. This is a requested image export, not scheduled backup coverage or an instant snapshot.
+
+[Backup guide](/backups) · [Request a qcow2 export](/faq/upgrades-downgrades/qcow2-export)
+
+## Upgrade your VPS
+
+Open **Upgrades**. Choose **Upgrade Your Plan** for a higher tier, or **Upgrade Now** under **Upgrade Components** for individual RAM, vCPU, Drive Boost or IPv4 additions. Review the resource totals, recurring price and prorated charge before checkout.
+
+Follow the activation email after payment:
+
+- **Traffic increases** are available immediately.
+- **RAM and vCPU increases** require a full cold boot.
+- **Larger virtual drives** require the specified cold boot, then a check and expansion of the partition and filesystem inside the OS.
+- **Additional IPv4 addresses** must also be configured inside the operating system.
+
+EDBB expands the virtual drive; it does not resize your partitions or filesystem. Back up important data before changing storage layout. Check the resulting capacity inside the OS after completing the work.
+
+[Upgrade options](/faq/upgrades-downgrades/upgrades) · [Extend Linux storage](/advanced-setup-guides/resize-linux-disk) · [Extend Windows storage](/advanced-setup-guides/extend-windows-disk)
+
+## Manage traffic and monthly refills
+
+Open **Traffic** to check usage, allowance and the next monthly refill. Incoming and outgoing traffic both count.
+
+Your shared **Traffic Pool** can supply additional allowance to any VPS in your account. Each new VPS contributes **100 GB starter credit**. In **Manual Hydration**, select an amount and click **Assign Traffic**. Buying Pool Traffic alone does not assign it to a VPS or restore its speed.
+
+For automatic assignments, enable **Auto Hydration** for the VPS and choose 100, 200, 300 or 500 GB. At **99% of the current allowance**, it assigns that amount if your pool has sufficient balance. It never purchases traffic automatically.
+
+| Balance | At the VPS monthly refill |
+| --- | --- |
+| Unassigned Pool Traffic | Does not expire. |
+| Traffic assigned to this VPS | Any unused amount expires. |
+| Included Plan Traffic | Refills for the new monthly cycle; unused allowance does not carry forward. |
+
+If the allowance runs out, the VPS remains online but can be rate-limited. Check **Traffic** before treating a slow connection as a server failure. Assign sufficient Pool Traffic, upgrade where available, or wait for the monthly refill.
+
+[Traffic Pool and Auto-Hydration](/faq/traffic-bandwidth/traffic-pool) · [Traffic statistics](/faq/traffic-bandwidth/traffic-statistics) · [Traffic limits and restoring speed](/faq/traffic-bandwidth/exceeding-monthly-included-traffic)
+
+## Recover access
+
+Check the VPS power state and the [shared infrastructure status page](https://status.edis.global/). If it is powered on but SSH or RDP fails, open the [VNC console](/vps-management/enable-vnc-server) to inspect boot progress and OS errors independently of the guest network.
+
+Choose the guide that matches the problem:
+
+- [Diagnose an unreachable VPS](/faq/ip-addresses/network-is-down).
+- [Reset a Linux root password](/vps-management/reset-root-password).
+- [Reset a Windows Administrator password](/vps-management/reset-windows-password).
+- [Resolve RDP account lockout](/vps-management/rdp-account-locked).
+- [Recover Linux with rescue media](/vps-management/linux-rescue).
+
+Reinstall only when you intend to replace the system and have backed up the data you need. Disable VNC when your work is finished.
+
+## Networking and location changes
+
+Use **Network** for your IPv4, IPv6, gateway and DNS details. Configure addresses inside the OS using the values shown for your own VPS. See [IP settings](/vps-management/ip-address-information), [additional IPv4 configuration](/faq/ip-addresses/configure-additional-ip-linux) and [IPv6 configuration](/vps-management/ipv6-configuration).
+
+Use **rDNS** to manage reverse-DNS PTR records. PTR records are separate from the forward DNS records that point a domain to your VPS. [Reverse-DNS guide](/faq/ip-addresses/reverse-dns).
+
+A different server location requires a replacement VPS, not a simple IP edit. An eligible one-time free replacement within 24 hours keeps the plan and billing cycle but provides new login details and a new IP. Data and configuration do not move automatically. Back up and plan the migration first. Once the replacement is provisioned, the order is no longer eligible for a refund.
+
+For a later move, order a VPS in the new location, migrate and test your services, update DNS, then cancel the old VPS. Allow for overlapping billing. [Location-change conditions](/faq/server-locations/change-server-location).
+
+## Cancel a VPS correctly
+
+**Powering off a VPS does not cancel it or stop billing.** Download and verify your backups before opening **Request Cancellation** on the service.
+
+- **Immediate:** the service stops when termination is processed.
+- **End of Billing Period:** it continues until the service due date, then terminates.
+
+Check the selected **Cancellation Type** before submitting; the form initially selects Immediate. Verify the resulting status and cancellation email. For customer-requested cancellation, permanent deletion follows **six days after actual termination**, not six days after an end-of-term request is submitted.
+
+If you made a mistake, contact support promptly before deletion. Do not treat retention as backup coverage. [Cancel any PayPal subscription separately](/faq/billing-lifecycle/cancel-paypal-subscription).
+
+Cancellation does not automatically request a refund. An eligible refund requires immediate cancellation and an explicit, complete support request within the original 24-hour purchase window. Other conditions apply; purchases using coupons, including the annual 11+1 offer, are excluded.
+
+[Cancellation steps](/faq/billing-lifecycle/cancel-a-service) · [Data retention](/faq/billing-lifecycle/data-retention-period) · [Refund policy](/faq/billing-lifecycle/cancellation-and-refund-policy)
+
+## Understand service emails
+
+The symbol and subject line identify the notification; the body explains the affected service and next steps. See [Understanding EDBB email notifications](/getting-started/email-notifications) for the meanings of 👋, 🎁, ✅, 🔄, ℹ️, ⚠️ and ⛔, including the difference between a low Traffic Pool and a VPS speed restriction.
+
+## Get help with the right details
+
+Contact [EDBB support](https://www.edbb.com/contact) with the VPS identifier or IP, a short description, when the problem started and what you tried. Include the invoice number for billing questions.
+
+Keep passwords, private keys and your [Support PIN](/vps-management/your-support-pin) private. Provide the PIN directly through official support channels when required; do not publish it in screenshots or public discussions.
