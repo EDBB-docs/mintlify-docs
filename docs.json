@@ -189,6 +189,7 @@
           {
             "group": "Policies and abuse",
             "pages": [
+              "faq/data-processing-agreement",
               "acceptable-use-policy",
               "faq/port-25-smtp-rate-limit-policy",
               "faq/traffic-bandwidth/dos-attacks/ddos-protection",
