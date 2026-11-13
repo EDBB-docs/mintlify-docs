@@ -1,27 +1,27 @@
 ---
 title: "Crypto payment arrived after the time window"
 sidebarTitle: "Late crypto payments"
-description: "If your crypto payment misses the quoted window, share the transaction details with EDBB so we can reconcile it manually."
+description: "If a cryptocurrency payment arrives after the invoice payment window, send EDBB the transaction details for review."
 ---
 
 ## Why It Happens
 
-<Info>
-  CoinPayments and Coinbase Commerce lock the FX rate for a short window (usually around 60 minutes). Payments that land on-chain after the timer can’t be auto-matched to your invoice without manual review.
-</Info>
+The current EDBB payment page shows the payment address, currency, network, amount and expiry timer. Network congestion or a wallet or exchange withdrawal delay may cause a payment to arrive after that window.
+
+A transaction broadcast before expiry is not necessarily confirmed or credited before expiry. An expired payment session and an unpaid invoice need review; do not assume that the payment has been lost or refunded.
 
 ## What to Do
 
 <Steps>
+  <Step title="Check the payment and invoice status">
+    Save the message displayed by the payment page and check the EDBB invoice. Do not send a second payment while the first is unresolved, and do not reuse an expired payment address.
+  </Step>
   <Step title="Collect the details">
-    Save the transaction hash (TXID) and any order reference the gateway displayed.
+    Collect the transaction hash (TXID), currency, network, amount, approximate sending time, receiving address and invoice or payment reference, if available.
   </Step>
-  <Step title="Share with Support">
-    Contact us via messenger or email with the invoice number, TXID, timestamp, and amount sent.
-  </Step>
-  <Step title="Wait for processor review">
-    We liaise with the gateway to apply the payment or trigger a refund, then confirm the outcome.
+  <Step title="Contact EDBB support">
+    Send these details to [support@edbb.com](mailto:support@edbb.com) or use the portal messenger. Our team will review the transaction and invoice records and explain the available next step. Manual credit, recovery or a refund cannot be promised before that review.
   </Step>
 </Steps>
 
-Future tip: send the payment immediately after the checkout page displays the wallet and amount to avoid rate-lock expiration.
+For future payments, follow the timer and instructions on the current invoice page. Check that your wallet or exchange can send the exact currency on the exact network shown. See [crypto confirmations](/faq/billing-lifecycle/crypto-confirmations).

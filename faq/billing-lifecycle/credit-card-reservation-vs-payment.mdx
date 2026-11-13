@@ -6,19 +6,33 @@ description: "Understand why a card authorization may appear without a charge an
 
 ## Authorization (Reservation)
 
-<Info>
-  When you begin checkout, Stripe places an authorization hold. It checks the card balance but does not transfer funds.
-</Info>
+An authorization reserves an amount on your card without transferring it to EDBB. Your banking app may display it as a pending transaction, reservation or card entry.
 
-- Holds usually expire within seven days if the payment isn’t captured.
-- Because no money moves, authorizations cannot be refunded—they simply drop from the statement.
+A checkout session can fail after an authorization was created, for example if the connection is interrupted or a VPN changes your IP address. In that case, you may see a reservation even though no order or invoice was created.
+
+- An uncaptured reservation is not money received by EDBB, so we cannot refund it.
+- The card issuer releases an uncaptured reservation automatically. The timing depends on the issuer; we cannot guarantee a particular release date.
+- Your card issuer can explain how the entry is displayed and when a confirmed reservation expires.
 
 ## Captured Payment
 
-After a successful checkout, the authorization is captured and the charge posts to your statement.
+A captured payment is a completed charge. If it has been captured but the order or invoice is missing or still unpaid, contact EDBB so our team can reconcile the payment.
 
-- EDBB receives the funds.
-- If a refund is approved, it returns as a separate credit once processed by your bank.
+An approved refund of a captured payment is separate from the release of an authorization. The time until a refund appears depends on your payment provider.
 
-If you see a hold without a matching invoice, wait for the authorization to expire or contact your card issuer for details.
-For questions about completed charges, contact Support via the messenger or by email with the invoice number and we’ll review the transaction.
+## If the payment status is unclear
+
+<Warning>
+  A missing order, an unpaid invoice or the wording in a banking app does not by itself establish whether a payment was captured. Do not make another payment until the first attempt has been clarified.
+</Warning>
+
+Contact [support@edbb.com](mailto:support@edbb.com) or use the portal messenger. Include:
+
+- Your EDBB account email address, or the email used at checkout.
+- The amount, currency and approximate date and time of the attempt.
+- The order or invoice reference, **if one exists**.
+- The status shown by your bank, such as pending or completed. If you share a screenshot, hide unrelated transactions and sensitive card information.
+
+You do **not** need a VPS IP address or Support PIN if no VPS was provisioned. Never send a full card number, CVC or account password.
+
+Our team will check the available payment records to distinguish an authorization, a captured payment or an unresolved attempt. If capture is confirmed, we will review why the payment was not assigned correctly and explain the next step.
